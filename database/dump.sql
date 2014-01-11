@@ -51,7 +51,9 @@ CREATE TABLE  "CITY"
 	"NAME" VARCHAR2(256) NOT NULL ENABLE, 
 	"POPULATION" NUMBER, 
 	"SQUARE" NUMBER, 
-	 CONSTRAINT "CITY_PK" PRIMARY KEY ("ID") ENABLE
+	 CONSTRAINT "CITY_PK" PRIMARY KEY ("ID") ENABLE, 
+	 CONSTRAINT "CITY_CON" FOREIGN KEY ("PARENT_ID")
+	  REFERENCES  "REGION" ("ID") ENABLE
    )
 /
 
@@ -65,6 +67,7 @@ end;
 /
 ALTER TRIGGER  "BI_CITY" ENABLE
 /
+
 
 CREATE TABLE  "UNIVERSITY" 
    (	"PARENT_ID" NUMBER NOT NULL ENABLE, 
@@ -101,14 +104,14 @@ INSERT INTO REGION VALUES (2, 1, "Sumy region", 1137069, 23834000);
 INSERT INTO REGION VALUES (2, 2, "Kiev region", 1722875, 28131000);
 INSERT INTO REGION VALUES (2, 5, "Kharkov region", 2762200, 31415000);
 
-INSERT INTO REGION VALUES (1, 2, "Konotop", 88983, 103);
-INSERT INTO REGION VALUES (1, 4, "Seredyna-Buda", 7526, null);
-INSERT INTO REGION VALUES (1, 1, "Sumy", 271016, 145);
-INSERT INTO REGION VALUES (1, 3, "Nedrygailov", 6186, null);
-INSERT INTO REGION VALUES (1, 5, "Lebedyn", 26226, 10);
+INSERT INTO CITY VALUES (1, 2, "Konotop", 88983, 103);
+INSERT INTO CITY VALUES (1, 4, "Seredyna-Buda", 7526, null);
+INSERT INTO CITY VALUES (1, 1, "Sumy", 271016, 145);
+INSERT INTO CITY VALUES (1, 3, "Nedrygailov", 6186, null);
+INSERT INTO CITY VALUES (1, 5, "Lebedyn", 26226, 10);
 
-INSERT INTO REGION VALUES (1, 1, "Sumy State Pedagogical University Of Makarenko", 8, "www.sspu.sumy.ua");
-INSERT INTO REGION VALUES (1, 2, "Sumy National Agrarian University", 9, "www.sau.sumy.ua");
-INSERT INTO REGION VALUES (1, 3, "Ukrainian Academy of Banking", 3, "www.uabs.edu.ua");
-INSERT INTO REGION VALUES (1, 4, "Sumy Institute of Inter-Regional Academy of Personnel Management", 3, null);
-INSERT INTO REGION VALUES (1, 5, "Sumy State University", 5, "www.sumdu.edu.ua");	
+INSERT INTO UNIVERSITY VALUES (1, 1, "Sumy State Pedagogical University Of Makarenko", 8, "www.sspu.sumy.ua");
+INSERT INTO UNIVERSITY VALUES (1, 2, "Sumy National Agrarian University", 9, "www.sau.sumy.ua");
+INSERT INTO UNIVERSITY VALUES (1, 3, "Ukrainian Academy of Banking", 3, "www.uabs.edu.ua");
+INSERT INTO UNIVERSITY VALUES (1, 4, "Sumy Institute of Inter-Regional Academy of Personnel Management", 3, null);
+INSERT INTO UNIVERSITY VALUES (1, 5, "Sumy State University", 5, "www.sumdu.edu.ua");	
