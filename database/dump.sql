@@ -92,9 +92,9 @@ end;
 ALTER TRIGGER  "BI_UNIVERSITY" ENABLE
 /
 
-INSERT INTO COUNTRY VALUES (1, "USA", "American", 317320000, null);
+INSERT INTO COUNTRY VALUES (1, "USA", "English (US)", 317320000, null);
 INSERT INTO COUNTRY VALUES (2, "Russia", "Russian", 143608700, null);
-INSERT INTO COUNTRY VALUES (3, "United Kingdom", "American", 63887988, null);
+INSERT INTO COUNTRY VALUES (3, "United Kingdom", "English (UK)", 63887988, null);
 INSERT INTO COUNTRY VALUES (4, "Ukraine", "Ukrainian", 45447010, 2);
 INSERT INTO COUNTRY VALUES (5, "Japan", "Japanese", 127325000, 9);
 
@@ -110,7 +110,7 @@ INSERT INTO CITY VALUES (1, 1, "Sumy", 271016, 145);
 INSERT INTO CITY VALUES (1, 3, "Nedrygailov", 6186, null);
 INSERT INTO CITY VALUES (1, 5, "Lebedyn", 26226, 10);
 
-INSERT INTO UNIVERSITY VALUES (1, 1, "Sumy State Pedagogical University Of Makarenko", 8, "www.sspu.sumy.ua");
+INSERT INTO UNIVERSITY VALUES (1, 1, "Sumy State Makarenko Pedagogical University", 8, "www.sspu.sumy.ua");
 INSERT INTO UNIVERSITY VALUES (1, 2, "Sumy National Agrarian University", 9, "www.sau.sumy.ua");
 INSERT INTO UNIVERSITY VALUES (1, 3, "Ukrainian Academy of Banking", 3, "www.uabs.edu.ua");
 INSERT INTO UNIVERSITY VALUES (1, 4, "Sumy Institute of Inter-Regional Academy of Personnel Management", 3, null);
