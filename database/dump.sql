@@ -1,1 +1,114 @@
 --some commands
+
+CREATE TABLE  "COUNTRY" 
+   (	"ID" NUMBER NOT NULL ENABLE, 
+	"NAME" VARCHAR2(256) NOT NULL ENABLE, 
+	"LANGUAGE" VARCHAR2(256), 
+	"POPULATION" NUMBER, 
+	"TIMEZONE" NUMBER, 
+	 CONSTRAINT "COUNTRY_PK" PRIMARY KEY ("ID") ENABLE
+   )
+/
+
+CREATE OR REPLACE TRIGGER  "BI_COUNTRY" 
+  before insert on "COUNTRY"               
+  for each row  
+begin   
+    select "COUNTRY_SEQ".nextval into :NEW.ID from dual; 
+end; 
+
+/
+ALTER TRIGGER  "BI_COUNTRY" ENABLE
+/
+
+CREATE TABLE  "REGION" 
+   (	"PARENT_ID" NUMBER NOT NULL ENABLE, 
+	"ID" NUMBER, 
+	"NAME" VARCHAR2(256) NOT NULL ENABLE, 
+	"POPULATION" NUMBER, 
+	"SQUARE" NUMBER, 
+	 CONSTRAINT "REGION_PK" PRIMARY KEY ("ID") ENABLE, 
+	 CONSTRAINT "REGION_FK" FOREIGN KEY ("PARENT_ID")
+	  REFERENCES  "COUNTRY" ("ID") ON DELETE CASCADE ENABLE
+   )
+/
+
+CREATE OR REPLACE TRIGGER  "BI_REGION" 
+  before insert on "REGION"               
+  for each row  
+begin   
+    select "REGION_SEQ".nextval into :NEW.ID from dual; 
+end; 
+
+/
+ALTER TRIGGER  "BI_REGION" ENABLE
+/
+
+
+CREATE TABLE  "CITY" 
+   (	"PARENT_ID" NUMBER NOT NULL ENABLE, 
+	"ID" NUMBER NOT NULL ENABLE, 
+	"NAME" VARCHAR2(256) NOT NULL ENABLE, 
+	"POPULATION" NUMBER, 
+	"SQUARE" NUMBER, 
+	 CONSTRAINT "CITY_PK" PRIMARY KEY ("ID") ENABLE
+   )
+/
+
+CREATE OR REPLACE TRIGGER  "BI_CITY" 
+  before insert on "CITY"               
+  for each row  
+begin   
+    select "CITY_SEQ".nextval into :NEW.ID from dual; 
+end; 
+
+/
+ALTER TRIGGER  "BI_CITY" ENABLE
+/
+
+CREATE TABLE  "UNIVERSITY" 
+   (	"PARENT_ID" NUMBER NOT NULL ENABLE, 
+	"ID" NUMBER, 
+	"NAME" VARCHAR2(256) NOT NULL ENABLE, 
+	"DEPARTAMENTS_COUNT" NUMBER, 
+	"WWW" VARCHAR2(256), 
+	 CONSTRAINT "UNIVERSITY_PK" PRIMARY KEY ("ID") ENABLE, 
+	 CONSTRAINT "UNIVERSITY_FK" FOREIGN KEY ("PARENT_ID")
+	  REFERENCES  "CITY" ("ID") ON DELETE CASCADE ENABLE
+   )
+/
+
+CREATE OR REPLACE TRIGGER  "BI_UNIVERSITY" 
+  before insert on "UNIVERSITY"               
+  for each row  
+begin   
+    select "UNIVERSITY_SEQ".nextval into :NEW.ID from dual; 
+end; 
+
+/
+ALTER TRIGGER  "BI_UNIVERSITY" ENABLE
+/
+
+INSERT INTO COUNTRY VALUES (1, "USA", "American", 317320000, null);
+INSERT INTO COUNTRY VALUES (2, "Russia", "Russian", 143608700, null);
+INSERT INTO COUNTRY VALUES (3, "United Kingdom", "American", 63887988, null);
+INSERT INTO COUNTRY VALUES (4, "Ukraine", "Ukrainian", 45447010, 2);
+INSERT INTO COUNTRY VALUES (5, "Japan", "Japanese", 127325000, 9);
+
+INSERT INTO REGION VALUES (2, 3, "Zhytomyr region", 1266938, 2983200);
+INSERT INTO REGION VALUES (2, 4, "ARC", 1963000, 26200000);
+INSERT INTO REGION VALUES (2, 1, "Sumy region", 1137069, 23834000);
+INSERT INTO REGION VALUES (2, 2, "Kiev region", 1722875, 28131000);
+INSERT INTO REGION VALUES (2, 5, "Kharkov region", 2762200, 31415000);
+
+INSERT INTO REGION VALUES (1, 2, "Konotop", 88983, 103);
+INSERT INTO REGION VALUES (1, 4, "Seredyna-Buda", 7526, null);
+INSERT INTO REGION VALUES (1, 1, "Sumy", 271016, 145);
+INSERT INTO REGION VALUES (1, 3, "Nedrygailov", 6186, null);
+INSERT INTO REGION VALUES (1, 5, "Lebedyn", 26226, 10);
+
+INSERT INTO REGION VALUES (1, 1, "Sumy State Pedagogical University Of Makarenko", 8, "www.sspu.sumy.ua");
+INSERT INTO REGION VALUES (1, 2, "Sumy National Agrarian University", 9, "www.sau.sumy.ua");
+INSERT INTO REGION VALUES (1, 3, "Ukrainian Academy of Banking", 3, "www.uabs.edu.ua");
+INSERT INTO REGION VALUES (1, 4, "Sumy Institute of Inter-Regional Academy of Personnel Management", 3, null);
+INSERT INTO REGION VALUES (1, 5, "Sumy State University", 5, "www.sumdu.edu.ua");	
