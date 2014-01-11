@@ -5,7 +5,7 @@ import javax.sql.*;
 
 public abstract class AbstractDataBase {
 
-	protected Connection connect(String driver, String url, String username, String password) throws SQLException {
+	protected Connection connect(String driver, String url, String username, String password) throws SQLException, ClassNotFoundException {
 		Locale.setDefault(Locale.ENGLISH);
 		Class.forName(driver);
 		return DriverManager.getConnection(url, username, password);
