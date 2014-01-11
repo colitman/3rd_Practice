@@ -3,27 +3,27 @@ package database;
 import java.util.*
 import javax.sql.*;
 
-public class CountryDataBase extends AbstractDataBase {
+public class CityDataBase extends AbstractDataBase {
 
 	private Connection conn;
 		
-	public CountryDataBase(String driver, String sql, String username, String password) {
+	public CityDataBase(String driver, String sql, String username, String password) {
 		conn = connect(driver, sql, username, password);
 	}
 
 	@Override
 	public String getDatabaseName() {
-		return "Country";
+		return "City";
 	}
-	
+
 	@Override
 	public List<String> getDatabaseFields() {
 		List<String> list = new List<String>();
+		list.add("PARENT_ID");
 		list.add("ID");
 		list.add("NAME");
-		list.add("LANGUAGE");
 		list.add("POPULATION");
-		list.add("TIMEZONE");
+		list.add("SQUARE");
 		return list;
 	}
 }
