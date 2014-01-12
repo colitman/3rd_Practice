@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="Windows-1251"?>
+
+<hibernate-mapping>
+	<class name="hibernate.logic.University" table="University">
+		<id column="id" name="id" type="java.lang.Integer">
+			<generator class="increment"/>
+		</id>
+		<property column="name" name="name" type="java.lang.String"/>
+		<property column="departaments_count" name="departamentsCount" type="java.lang.Integer"/>
+		<property columt="www" name="www" type="java.lang.String"/>
+	</class>
+</hibernate-mapping>
