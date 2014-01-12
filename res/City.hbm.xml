@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="Windows-1251"?>
+
+<hibernate-mapping>
+	<class name="hibernate.logic.City" table="City">
+		<id column="id" name="id" type="java.lang.Integer">
+			<generator class="increment"/>
+		</id>
+		<property column="name" name="name" type="java.lang.String"/>
+		<property column="population" name="population" type="java.lang.Integer"/>
+		<property columt="square" name="square" type="java.lang.Integer"/>
+		<set name="universities" lazy="false">
+			<key column="parent_id"/>
+			<one-to-many class="hibernate.logic.University"/>
+		</set>
+	</class>
+</hibernate-mapping>

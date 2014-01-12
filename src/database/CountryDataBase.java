@@ -1,7 +1,7 @@
 package database;
 
-import java.util.*
-import javax.sql.*;
+import java.util.*;
+import java.sql.*;
 
 public class CountryDataBase extends AbstractDataBase {
 

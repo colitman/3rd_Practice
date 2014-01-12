@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="Windows-1251"?>
+
+<hibernate-configuration>
+	<session-factory>
+		<property name="connection.url">jdbc:oracle:thin:@localhost:1521:xe</property>
+		<property name="connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+		<property name="connection.username">admin</property>
+		<property name="connection.password">admin</property>
+		<property name="connection.pool_size">1</property>
+		<property name="current_session_context_class">thread</property>
+		<property name="show_sql">true</property>
+		<property name="dialect">org.hibernate.dialect.Oracle10gDialect</property>
+
+		<mapping resource="Country.hbm.xml"/>
+		<mapping resource="Region.hbm.xml"/>
+		<mapping resource="City.hbm.xml"/>
+		<mapping resource="University.hbm.xml"/>
+	</session-factory>
+</hibernate-configuration>
