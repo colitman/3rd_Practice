@@ -1,0 +1,58 @@
+#!/bin/csh -f
+
+# Set this to the userid you want to perform the export as I always use OPS$ (os
+# authenticated) accounts for all jobs that will be run in the background. In that
+# way a password never appears in a script file or in the ps output.
+setenv UID /
+
+# This is the name of the export file. SPLIT will use this to name the pieces of
+# the compressed DMP file.
+setenv FN  exp.`date +%j_%Y`.dmp
+
+# This is the name of the named pipe we will use.
+setenv PIPE /tmp/exp_tmp_ora8i.dmp
+
+# Here I limit the size of the compressed files to 500 MG each. Anything less
+# than 2 GB would be fine.
+setenv MAXSIZE 500m
+
+# This is what we are going to export. By default I am doing a full database
+# export.
+setenv EXPORT_WHAT "full=y COMPRESS=n"
+
+
+# This is where the export will go to.
+cd /nfs/atc-netapp1/expbkup_ora8i
+
+# Clear out the last export.
+rm expbkup.log export.test exp.*.dmp* $PIPE 
+
+# Create the named pipe.
+mknod $PIPE p
+
+# Write the datetime to the log file.
+date > expbkup.log
+
+# Start a gzip process in the background. Gzip will read the pipe and put the
+# compressed data out to split.  Split will then create 500 MB files out of the
+# input data adding .aa, .ab, .ac, .ad, ... file extensions to the template name
+# found in $FN.
+( gzip < $PIPE ) | split -b $MAXSIZE - $FN. &
+
+# Now, start up export. The Gzip above is waiting for export to start filling the
+# pipe up.
+exp userid=$UID buffer=20000000 file=$PIPE $EXPORT_WHAT >>& expbkup.log
+date >> expbkup.log
+
+# Now the export is done, this is how to IMP. We need to sort the filenames and
+# then simply cat their contents into gunzip. We write that into the pipe. IMP
+# will then read that pipe and write what it would do to stderr.  The >>& in the
+# csh redirects both stdout and stderr for us.
+
+date > export.test
+cat `echo $FN.* | sort` | gunzip > $PIPE &
+imp userid=$UID file=$PIPE show=y full=y >>& export.test
+date >> export.test
+
+# Clean up the pipe, we don't need it anymore.
+rm -f $PIPE

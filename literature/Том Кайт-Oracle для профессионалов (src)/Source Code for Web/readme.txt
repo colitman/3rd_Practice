@@ -1,0 +1,1 @@
+The code examples in this download from Wrox Press have been named according to the page they appear on for ease of reference. Since some code examples rely on each other, care must be taken to change these references in order for these examples to work properly.

@@ -1,0 +1,26 @@
+tkyte@TKYTE816> select
+  2  	 'colmap = ' || user || ' ' || table_name || ' (' ||
+  3  	max( decode( column_id, 1,	 column_id  , null ) ) ||
+  4  	max( decode( column_id, 1, ', '||column_name, null ) ) ||
+  5  	max( decode( column_id, 2, ', '||column_id  , null ) ) ||
+  6  	max( decode( column_id, 2, ', '||column_name, null ) ) ||
+  7  	max( decode( column_id, 3, ', '||column_id  , null ) ) ||
+  8  	max( decode( column_id, 3, ', '||column_name, null ) ) ||
+  9  	max( decode( column_id, 4, ', '||column_id  , null ) ) ||
+ 10  	max( decode( column_id, 4, ', '||column_name, null ) ) ||
+ 11  	max( decode( column_id, 5, ', '||column_id  , null ) ) ||
+ 12  	max( decode( column_id, 5, ', '||column_name, null ) ) || ');' colmap
+ 13   from user_tab_columns
+ 14  group by user, table_name
+ 15  /
+colmap = TKYTE ALERT_MESSAGES (1, JOB_ID, 2, ALERT_NAME, 3, MESSAGE);
+colmap = TKYTE CLOB_TABLE (1, ID, 2, DATA);
+colmap = TKYTE DEMO (1, X);
+colmap = TKYTE DEPT (1, DEPTNO, 2, DNAME, 3, LOC);
+colmap = TKYTE EMP (1, EMPNO, 2, ENAME, 3, JOB, 4, MGR, 5, HIREDATE);
+colmap = TKYTE LOB_TEMP (1, ID, 2, C_LOB, 3, B_LOB);
+colmap = TKYTE LONG_RAW_TABLE (1, ID, 2, DATA);
+colmap = TKYTE LONG_TABLE (1, ID, 2, DATA);
+colmap = TKYTE SEND_MAIL_DATA (1, ID, 2, SENDER, 3, RECIPIENT, 4, MESSAGE, 5, SENTON);
+colmap = TKYTE T (1, X);
+tkyte@TKYTE816> spool off

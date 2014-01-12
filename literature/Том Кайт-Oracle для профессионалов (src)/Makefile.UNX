@@ -1,0 +1,30 @@
+MAKEFILE= $(ORACLE_HOME)/rdbms/demo/demo_rdbms.mk
+
+INCLUDE= -I$(ORACLE_HOME)/rdbms/demo \
+         -I$(ORACLE_HOME)/rdbms/public \
+         -I$(ORACLE_HOME)/plsql/public \
+         -I$(ORACLE_HOME)/network/public
+
+TGTDLL= extproc.so
+OBJS  = lobtofile.o
+
+
+all: $(TGTDLL)
+
+clean: 
+	rm *.o
+
+lobtofile.c: lobtofile.pc
+	proc include=$(ORACLE_HOME)/network/public \
+         include=$(ORACLE_HOME)/proc/lib \
+		 include=$(ORACLE_HOME)/rdbms/demo \
+		 include=$(ORACLE_HOME)/rdbms/public \
+		 lines=yes \
+		 iname=lobtofile.pc
+
+extproc.so: lobtofile.c lobtofile.o
+	$(MAKE) -f $(MAKEFILE) extproc_callback \
+     SHARED_LIBNAME=extproc.so OBJS="lobtofile.o"
+
+CC=cc
+CFLAGS= -g -I. $(INCLUDE) 

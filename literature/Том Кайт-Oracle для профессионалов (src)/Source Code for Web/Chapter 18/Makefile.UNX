@@ -1,0 +1,21 @@
+MAKEFILE= $(ORACLE_HOME)/rdbms/demo/demo_rdbms.mk
+
+INCLUDE= -I$(ORACLE_HOME)/rdbms/demo \
+		 -I$(ORACLE_HOME)/rdbms/public \
+         -I$(ORACLE_HOME)/plsql/public \
+		 -I$(ORACLE_HOME)/network/public
+
+TGTDLL= extproc.so
+OBJS  = extproc.o
+
+all: extproc.so
+
+clean: 
+	rm *.o
+
+extproc.so: $(OBJS)
+	$(MAKE) -f $(MAKEFILE) extproc_callback \
+	 SHARED_LIBNAME=$(TGTDLL) OBJS=$(OBJS)
+
+CC=cc
+CFLAGS= -g -I. $(INCLUDE) -Wall

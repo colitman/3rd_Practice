@@ -1,0 +1,510 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdarg.h>
+#include <time.h>
+#include <string.h>
+#include <errno.h>
+#include <ctype.h>
+
+#include <oci.h>
+
+#ifdef WIN_NT
+#define INI_FILE_NAME "c:\\temp\\extproc.ini"
+#else
+#define INI_FILE_NAME "/export/home/tkyte/src/demo_passing/extproc.ini"
+#endif
+
+#define strupr(a) {char * cp; for(cp=a;*cp;*cp=toupper(*cp), cp++);}
+
+/*
+ * This is our "context".  It holds what normally might be global variables
+ * in a typical program.  We cannot (should not) use global variables in an
+ * external procedure.  Also, since static data will be reinitialized
+ * between calls -- globals would not work correct anyway.  We will use the
+ * OCI context management API calls to get and set a global context for 
+ * our extproc.  You would add any state variables you needed to preserve
+ * from call to call in this structure below.
+ *
+ * the debugf_* variables are initialized from a parameter file.  In our
+ * init() routine, we will read the parameter file and set these values.
+ * you may add your own parameters to this structure as well and set them
+ * in init() as I do.
+ *
+ * curr_lineno and curr_filename are set by the debugf macro below so when
+ * we create a trace file, I can tell you what line number and source code
+ * file a message was generated from
+ *
+ */
+
+typedef struct myCtx 
+{ 
+  OCIExtProcContext * ctx;		/* Context passed to all external procs */
+  OCIEnv *            envhp;    /* OCI environment handle */
+  OCISvcCtx *         svchp;    /* OCI Service handle */
+  OCIError *          errhp;    /* OCI Error handle */
+
+  int                 curr_lineno;
+  char *              curr_filename;
+
+  ub1                 debugf_flag;
+  char                debugf_path[255];
+  char                debugf_filename[50];
+
+  /* add your own state variables here... */
+}    
+    myCtxStruct;
+
+
+/*
+ * Here is the implementation of our "debugf" routine.  It is used to 
+ * instrument the code and aid in debugging runtime issues.  
+ * 
+ * It works much like the C printf function (well, exactly like it)
+ * in that you send a C format and then a varying number of arguments
+ * to be formatted and printed.  We add to it the Year, Month, Day,
+ * Hour, Minute, Second in GMT to each trace record as well as the name
+ * of the C source code file and the line number.
+ *
+ * Note that in order to be as OS independent as possible, we use the 
+ * OCI API's to write to files.  The File API's are expected to have
+ * been initialized in the init() routine alread and will be closed out
+ * in the term() routine.
+ */
+
+void _debugf( myCtxStruct * myCtx, char * fmt, ... )
+{
+va_list         ap;
+OCIFileObject * fp;
+time_t          theTime = time(NULL);
+char            msg[8192];
+ub4             bytes;
+
+    if ( OCIFileOpen( myCtx->envhp, myCtx->errhp, &fp, 
+                      myCtx->debugf_filename,
+                      myCtx->debugf_path, 
+                      OCI_FILE_WRITE_ONLY, OCI_FILE_APPEND|OCI_FILE_CREATE,
+                      OCI_FILE_TEXT ) != OCI_SUCCESS ) return;
+
+    strftime( msg, sizeof(msg), 
+             "%y%m%d %H%M%S GMT ", gmtime(&theTime) );
+    OCIFileWrite( myCtx->envhp, myCtx->errhp, fp, msg, strlen(msg), &bytes );
+
+    va_start(ap,fmt);
+    vsprintf( msg, fmt, ap );
+    va_end(ap);
+    strcat( msg,"\n");
+
+    OCIFileWrite( myCtx->envhp, myCtx->errhp, fp, msg, strlen(msg), &bytes );
+    OCIFileClose( myCtx->envhp, myCtx->errhp, fp );
+}
+
+/*
+ * this macro is a more convienent way to use debugf. Instead of have
+ * to pass the __LINE__, __FILE__ each time we call -- we just code:
+ *
+ *     debugf( myCtx, "This is some format %s", some_string );
+ *
+ * and this macro will set them in our context and then call _debugf for us.
+ *
+ */
+void _debugf( myCtxStruct * myCtx, char * fmt, ... );
+#define debugf  \
+if ((myCtx!=NULL) && (myCtx->debugf_flag)) \
+    myCtx->curr_lineno = __LINE__, \
+    myCtx->curr_filename = __FILE__, \
+    _debugf 
+
+
+/*
+ * This routine works like the PLSQL builtin by the same name.  It 
+ * sets an application defined error message and error code.  It also
+ * works like the C printf routine in that you pass to it a C format
+ * string and then a varying number of arguments
+ *
+ * The resulting string is limited to 8k in size.  Note the call
+ * to debugf.  Debugf is the macro above, we will use it throughout
+ * the code to 'instrument' it.  
+ */
+
+static int raise_application_error(  myCtxStruct * myCtx,
+                                     int           errCode, 
+                                     char *        errMsg, ...)
+{
+char    msg[8192];
+va_list ap;
+
+    va_start(ap,errMsg);
+    vsprintf( msg, errMsg, ap );
+    va_end(ap);
+
+    debugf( myCtx,  "raise application error( %d, %s )", errCode, msg );
+    if ( OCIExtProcRaiseExcpWithMsg(myCtx->ctx,errCode,msg,0) == 
+                                                OCIEXTPROC_ERROR )
+    {
+      debugf( myCtx,  "Unable to raise exception" );
+    }
+    return -1;
+}
+
+
+
+/* 
+ * This is a convienence routine to allocate storage for an error message
+ * and return it.  Note that the type of storage we allocate is CALL based,
+ * hence, when we return from the extproc, OCI will automatically free it
+ * for us.
+ *
+ * This routine removes the trailing newline from the error message as well
+ */
+static char * lastOciError( myCtxStruct * myCtx )
+{
+sb4       errcode;
+char      * errbuf = (char*)OCIExtProcAllocCallMemory( myCtx->ctx, 256 );
+
+    strcpy( errbuf, "unable to retrieve message\n" );
+    OCIErrorGet( myCtx->errhp, 1, NULL, &errcode, errbuf, 
+                 255, OCI_HTYPE_ERROR );
+    errbuf[strlen(errbuf)-1] = 0;
+    return errbuf;
+}
+
+/*
+ * Here is the init routine.  This routine must be called very early 
+ * in the execution of any external procedure using this template.  It
+ * will 
+ *   o retrieve the OCI handles and set them in the context for us
+ *   o retrieve our CONTEXT, if the context has not yet been allocated,
+ *     it will allocate storage for our context and save it.  The memory
+ *     is allocated to last as long as our process lasts.
+ *   o it will read and retrieve the values from the parameter file if
+ *     they have not been.  You can add more parameters of your own by:
+ *     - adding elements the the myCtxStruct above
+ *     - increment the counter sent into ExtractSetNumKeys appropriately
+ *     - adding a call to ExtractSetKey
+ *     - adding a call to ExtractTo* (string, bool, int, etc)
+ *   o it will initialize the FILE apis via OCIFileInit().  This is crucial
+ *     for the successful operation of debugf above.
+ *
+ * You may add other "init" type of calls.  for example, if you choose to 
+ * use the String Formatting Interface (similar to vsprintf() but in OCI)
+ * You could add a call to OCIFormatInit() here.  You would add the 
+ * corresponding OCIFormatTerm() call to term() below.
+ *
+ */
+
+#define SQLCA_INIT
+EXEC SQL INCLUDE sqlca;
+
+static myCtxStruct * init( OCIExtProcContext * ctx )
+{
+ub1          false = 0;
+myCtxStruct *myCtx = NULL;
+OCIEnv      *envhp;
+OCISvcCtx   *svchp;
+OCIError    *errhp;
+ub4          key = 1;
+
+
+
+    EXEC SQL REGISTER CONNECT USING :ctx;
+    if ( sqlca.sqlcode < 0 )
+	{
+    	OCIExtProcRaiseExcpWithMsg(ctx,20000,sqlca.sqlerrm.sqlerrmc,70);
+		return NULL;
+	}
+	if ( ( SQLEnvGet(0, &envhp ) != OCI_SUCCESS )  ||
+	     ( OCIHandleAlloc(envhp, (dvoid**)&errhp, 
+						OCI_HTYPE_ERROR,0,0) != OCI_SUCCESS ) ||
+	     ( SQLSvcCtxGet(0, NULL, 0, &svchp ) != OCI_SUCCESS ) )
+	{
+         OCIExtProcRaiseExcpWithMsg(ctx,20000,"failed to get OCI ENV",0);
+         return NULL;
+	}
+    if ( OCIContextGetValue( envhp, errhp, (ub1*)&key, sizeof(key), 
+                             (dvoid**)&myCtx ) != OCI_SUCCESS ) 
+    {
+        OCIExtProcRaiseExcpWithMsg(ctx,20000,"failed to get OCI Context",0);
+        return NULL;
+    }
+ 
+    if ( myCtx == NULL )
+    {
+        if ( OCIMemoryAlloc( envhp, errhp, (dvoid**)&myCtx, 
+                             OCI_DURATION_PROCESS, 
+                             sizeof(myCtxStruct), 
+                             OCI_MEMORY_CLEARED ) != OCI_SUCCESS )
+        {
+            OCIExtProcRaiseExcpWithMsg(ctx,20000,
+                                      "failed to get OCI Memory",0);
+            return NULL;
+        }
+        myCtx->ctx   = ctx;
+        myCtx->envhp = envhp;
+        myCtx->svchp = svchp;
+        myCtx->errhp = errhp;
+        if ( OCIContextSetValue( envhp, errhp, 
+                                 OCI_DURATION_SESSION, (ub1*)&key, 
+                                 sizeof(key), myCtx ) != OCI_SUCCESS )
+        {
+            raise_application_error(myCtx, 20000, "%s", lastOciError(myCtx));
+            return NULL;
+        }
+
+        if (( OCIExtractInit( envhp, errhp ) != OCI_SUCCESS )  ||
+            ( OCIExtractSetNumKeys( envhp, errhp, 3 ) != OCI_SUCCESS ) ||
+            ( OCIExtractSetKey( envhp, errhp, "debugf", 
+                                OCI_EXTRACT_TYPE_BOOLEAN, 
+                                0, &false, NULL, NULL ) != OCI_SUCCESS ) ||
+            ( OCIExtractSetKey( envhp, errhp, "debugf_filename", 
+                                OCI_EXTRACT_TYPE_STRING, 
+                                0, "extproc.log", 
+                                NULL, NULL ) != OCI_SUCCESS )  ||
+            ( OCIExtractSetKey( envhp, errhp, "debugf_path", 
+                                OCI_EXTRACT_TYPE_STRING, 
+                                0, "", NULL, NULL ) != OCI_SUCCESS )  ||
+            ( OCIExtractFromFile( envhp, errhp, 0, 
+                                  INI_FILE_NAME ) != OCI_SUCCESS ) ||
+            ( OCIExtractToBool( envhp, errhp, "debugf", 0, 
+                                &myCtx->debugf_flag ) != OCI_SUCCESS ) ||
+            ( OCIExtractToStr( envhp, errhp, "debugf_filename", 0, 
+                               myCtx->debugf_filename,
+                               sizeof(myCtx->debugf_filename ) )
+                                                     != OCI_SUCCESS ) ||
+            ( OCIExtractToStr( envhp, errhp, "debugf_path", 
+                               0, myCtx->debugf_path,
+                               sizeof(myCtx->debugf_path ) ) 
+                                                     != OCI_SUCCESS ) ||
+            ( OCIExtractTerm( envhp, errhp ) != OCI_SUCCESS ))
+        {
+            raise_application_error(myCtx, 20000, "%s", lastOciError(myCtx));
+            return NULL;
+        }
+    }
+    else
+    {
+        myCtx->ctx   = ctx;
+        myCtx->envhp = envhp;
+        myCtx->svchp = svchp;
+        myCtx->errhp = errhp;
+    }
+    if ( OCIFileInit( myCtx->envhp, myCtx->errhp ) != OCI_SUCCESS ) 
+    {
+        raise_application_error(myCtx, 20000, "%s", lastOciError(myCtx));
+        return NULL;
+    }
+    return myCtx;
+}
+
+/* 
+ * This must be called after any successful call to init() above.  It
+ * should be the last thing you call in your routine before returning
+ * from C to SQL
+ */
+static void term( myCtxStruct * myCtx )
+{
+    OCIFileTerm( myCtx->envhp, myCtx->errhp );
+}
+
+
+/* 
+ * error codes go here.  Error numbers must be in the range of
+ * 20000 to 20999.  Each extproc will register all of their error
+ * codes here.  It will make it easier to "pragma EXCEPTION_INIT" them
+ * later in the PLSQL code.  This will let plsql programs catch nice 
+ * named exceptions
+ */
+
+#define ERROR_FWRITE              20001 
+#define ERROR_REGISTER_CONNECT    20002  
+#define ERROR_BLOB_IS_NULL        20003 
+#define ERROR_FILENAME_IS_NULL    20004 
+#define ERROR_OPEN_FILE           20005 
+#define ERROR_LOB_READ            20006 
+
+
+
+
+/*
+ * A subroutine to write a buffer to an output file.  It does all of the
+ * error detection necessary and keeps a running total of the bytes read
+ */
+
+static int writeToFile( myCtxStruct         * myCtx,
+                        OCIFileObject *     output, 
+                        char *              buff, 
+                        int                 bytes, 
+                        int *               totalWritten )
+{
+ub4    bytesWritten;
+
+    debugf( myCtx, "Writing %d bytes to output", bytes );
+    if ( OCIFileWrite( myCtx->envhp, myCtx->errhp, output, 
+			           buff, bytes, &bytesWritten ) != OCI_SUCCESS )
+	{
+        return raise_application_error
+               ( myCtx, 
+                 ERROR_FWRITE, 
+                 "Error writing to file '%s'",
+				 lastOciError(myCtx) );
+	}
+
+    if ( bytesWritten != bytes )
+    {
+        return raise_application_error
+               ( myCtx, 
+                 ERROR_FWRITE, 
+                 "Error writing %d bytes to file, only %d written",
+                  bytes, bytesWritten );
+    }
+    *totalWritten += bytesWritten;
+    return 0;
+}
+
+/* 
+ * Here is the main routine.  It is able to take a lob locator as an 
+ * input (any of blob, clob, or bfile) and write the contents to the
+ * named file
+ */
+
+#ifdef WIN_NT
+_declspec (dllexport)
+#endif
+int lobToFile( OCIExtProcContext * ctx, 
+               char *              path, 
+               short               path_i,
+               char *              filename, 
+               short               filename_i,
+               OCIBlobLocator  *   blob, 
+               short               blob_i,
+               short *             return_indicator )
+{
+
+/* 
+ * This is the structure we will fetch into.  It contains a leading 
+ * byte count and then 64k of data space.  We'll fetch 64k at a time
+ */
+
+typedef struct long_varraw 
+{
+  ub4  len;
+  text buf[65536];
+} long_varraw;
+
+/*
+ * This is needed to allow Pro*C to understand what our structure above
+ * "really is".  We are telling pro*c our structure above is its internal
+ * "LONG VARRAW" type of 64k.  
+ */
+EXEC SQL TYPE long_varraw IS LONG VARRAW(65536);
+
+long_varraw     data;    /* we'll fetch into this */
+ub4             amt;     /* this will be how much was fetched */
+ub4             buffsize = sizeof(data.buf);  /* this is the amt we ask for*/
+int             offset = 1; /* where in the lob we are currently reading */
+OCIFileObject   * output = NULL; /* file we write to */
+int             bytesWritten = 0; /* how many bytes we WROTE in total */
+myCtxStruct *   myCtx;
+
+
+    /* set up to return NULL by default.. */
+    *return_indicator = 1;
+	if ( (myCtx=init(ctx)) == NULL )  return 0;
+
+    /*
+     * We begin by inspecting the NULL indicators.  If either is 
+     * set, we must fail the request.  This points out the importance
+     * of ALWAYS passing an indicator to an external procedure in C.
+     * You never know when the end user of your code will slip you 
+     * a NULL by accident.  It we attempt to access filename or blob
+     * without checking first AND they are NULL -- we may very well
+     * "crash" (our extproc will crash) as they are not initialized
+     */
+    if ( blob_i == OCI_IND_NULL )
+	{
+        raise_application_error
+               ( myCtx, 
+                 ERROR_BLOB_IS_NULL, 
+                 "Null lob passed to lobToFile, invalid argument" );
+	}
+    else if ( filename_i == OCI_IND_NULL || path_i == OCI_IND_NULL ) 
+	{
+        raise_application_error
+               ( myCtx,
+                 ERROR_FILENAME_IS_NULL, 
+                "Null Filename/path passed to lobToFile, invalid argument");
+	}
+    /*
+     * Now, open the file.  We open with wb to "Write" in "binary" mode
+     * We just want to dump bytes from the database to a file.
+     */
+	else if ( OCIFileOpen( myCtx->envhp, myCtx->errhp, &output,
+					  filename, path, 
+					  OCI_FILE_WRITE_ONLY, OCI_FILE_CREATE, 
+					  OCI_FILE_BIN ) != OCI_SUCCESS ) 
+    {
+		raise_application_error( myCtx, 
+								 ERROR_OPEN_FILE,
+		                        "Error opening file '%s'", 
+					             lastOciError(myCtx) );
+    }
+	else
+	{
+    	debugf( myCtx, "lobToFile( filename => '%s%s', lob => %X )", 
+			 	path, filename, blob );
+
+    	/*
+       	 * We will now read the LOB using pro*c in a NON-POLLING method.
+         * This is important, you cannot "poll" for a lob in an external 
+         * procedure.  Hence, we will never ask for more then we can recieve
+         * in one call (non-polling)
+         *
+         * We start at offset 1 (the first byte) and will read BUFSIZE (64k
+         * in this case) bytes at a time.  Everytime through, we'll increment
+         * our offset by the amount we just read and we'll exit the loop
+         * when the amount read is less then the amount requested --
+         * indicating we have read the entire blob
+         */
+
+    	for( offset = 1, amt = buffsize; 
+         	 amt == buffsize;
+             offset += amt )
+    	{
+        	debugf( myCtx, "Attempt to read %d bytes from LOB", amt );
+	        EXEC SQL LOB 
+                  	READ :amt 
+                  	FROM :blob 
+                  	AT   :offset 
+                  	INTO :data 
+                  	WITH LENGTH :buffsize;
+
+            /*
+             * Check for any and all errors, we'll convert that into OUR 
+             * error message and add the real error message onto the PLSQL
+             * error stack
+             * 
+             * Note how we are careful to clean up any and all resources
+             * (the open file) before we return.  This is important.  You 
+             * do not want to "leak" resources if possible.
+             */
+            if ( sqlca.sqlcode < 0 )
+			    break;	
+    
+            if ( writeToFile( myCtx, output, data.buf, amt, &bytesWritten ) )
+			    break;
+        }
+	}
+    /*
+     * And thats it.  We are done.  All we need do now is close the fie
+     * and return
+     */
+
+    debugf( myCtx, "Done and closing file" );
+	OCIFileClose( myCtx->envhp, myCtx->errhp, output );
+
+    *return_indicator = 0;
+    debugf( myCtx, "Returning a value of %d for total bytes written", 
+			bytesWritten );
+
+	term( myCtx );
+    return bytesWritten;
+}

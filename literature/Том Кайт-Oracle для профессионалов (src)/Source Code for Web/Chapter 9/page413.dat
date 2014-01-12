@@ -1,0 +1,14 @@
+10,Sales,Virginia,01-april-2001,This is the Sales
+Office in Virginia|
+20,Accounting,Virginia,13/04/2001,This is the Accounting
+Office in Virginia|
+30,Consulting,Virginia,14/04/2001 12:02:02,This is the Consulting
+Office in Virginia|
+40,Finance,Virginia,987268297,"This is the Finance
+Office in Virginia, it has embedded commas and is
+much longer then the other comments field.  If you 
+feel the need to add double quoted text in here like
+this: ""You will need to double up those quotes!"" to 
+preserve them in the string.  This field keeps going for upto
+1,000,000 bytes or until we hit the magic end of record marker, 
+the | followed by a end of line -- it is right here ->"|

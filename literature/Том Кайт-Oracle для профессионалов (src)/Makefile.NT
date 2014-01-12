@@ -1,0 +1,49 @@
+CPU=i386
+WRB_DIR         = .\     
+
+!include <c:\msdev\include\win32.mak>
+
+MSDEV       = c:\msdev
+ORACLE_HOME = c:\oracle
+
+TGTDLL      = extproc.dll
+
+OBJS = lobtofile.obj
+
+NTUSER32LIBS    = $(MSDEV)\lib\user32.lib   \
+				  $(MSDEV)\lib\msvcrt.lib  \
+				  $(MSDEV)\lib\oldnames.lib  \
+				  $(MSDEV)\lib\kernel32.lib   \
+				  $(MSDEV)\lib\advapi32.lib  
+
+SQLLIB  = $(ORACLE_HOME)\precomp\lib\msvc\orasql8.lib  \
+          $(ORACLE_HOME)\oci\lib\msvc\oci.lib
+
+INCLS   = -I$(MSDEV)\include \
+		  -I$(ORACLE_HOME)\oci\include \
+		  -I.
+
+CFLAGS  = $(INCLS) -DWIN32 -DWIN_NT -D_DLL
+
+all: $(TGTDLL) 
+
+cleanup:
+	erase *.obj *.lib *.exp lobtofile.c
+
+$(TGTDLL): $(OBJS) 
+    $(link) -DLL $(dllflags) \
+		/NODEFAULTLIB:LIBC.LIB -out:$(TGTDLL) \
+		$(OBJS) \
+        $(NTUSER32LIBS) \
+		$(SQLLIB) \
+
+lobtofile.c: lobtofile.pc
+	    proc sqlcheck=semantics \
+         include=$(ORACLE_HOME)\network\public \
+         include=$(ORACLE_HOME)\proc\lib \
+         include=$(ORACLE_HOME)\rdbms\demo \
+		 include=$(ORACLE_HOME)\oci\include \
+		 include=\msdev\include \
+         lines=yes \
+         parse=full \
+         iname=lobtofile.pc
