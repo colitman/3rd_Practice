@@ -5,6 +5,7 @@ public class Country {
 	private int id;
 	private String name;
 	private String language;
+	private String capital;
 	private int population;
 	private int timezone;
 	private Set<Region> regions;
@@ -35,6 +36,14 @@ public class Country {
 
 	public Srting getLanguage() {
 		return language;
+	}
+	
+	public void setCapital(String capital) {
+		this.capital = capital;
+	}
+
+	public Srting getCapital() {
+		return capital;
 	}
 
 	public void setPopulation(int population) {

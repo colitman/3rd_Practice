@@ -6,7 +6,8 @@
 			<generator class="increment"/>
 		</id>
 		<property column="name" name="name" type="java.lang.String"/>
-		<property column="language" name="language" type="java.lang.String"/>
+		<property column="lang" name="lang" type="java.lang.String"/>
+		<property column="capital" name="capital" type="java.lang.String"/>
 		<property column="population" name="population" type="java.lang.Integer"/>
 		<property columt="timezone" name="timezone" type="java.lang.Integer"/>
 		<set name="regions" lazy="false">
