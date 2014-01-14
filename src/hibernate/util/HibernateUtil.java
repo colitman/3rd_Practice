@@ -3,6 +3,10 @@ package hibernate.util;
 import org.hibernate.*;
 import org.hibernate.cfg.*;
 
+/**
+*Utils
+*/
+
 public class HibernateUtil {
 	
 	private static final SessionFactory sessionFactory = newSessionFactory();
