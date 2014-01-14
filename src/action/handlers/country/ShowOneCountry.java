@@ -1,8 +1,8 @@
-package action.handlers.city;
+package action.handlers.country;
 
 import action.*;
 
-public ShowAllAction implements Action {
+public ShowOneCountry implements Action {
 	
 	public void perform(Object... args) throws ActionException {
 		//TODO something

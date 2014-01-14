@@ -4,7 +4,7 @@ import action.*;
 import hibernate.dao.*;
 import hibernate.logic.*;
 
-public ModifyAction implements Action {
+public ModifyCity extends GatewayAction {
 	
 	public void perform(Object... args) throws ActionException {
 		City city = null;
@@ -15,6 +15,6 @@ public ModifyAction implements Action {
 		if (args[0] != null) {
 			index = args[0];
 		}
-		new OracleGateway<City>().modify(index, city);
+		getGateway().modify(index, city);
 	}
 }

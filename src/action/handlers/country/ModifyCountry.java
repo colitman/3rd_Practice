@@ -4,7 +4,7 @@ import action.*;
 import hibernate.dao.*;
 import hibernate.logic.*;
 
-public ModifyAction implements Action {
+public ModifyCountry extends GatewayAction {
 	
 	public void perform(Object... args) throws ActionException {
 		Country country = null;
@@ -15,6 +15,6 @@ public ModifyAction implements Action {
 		if (args[0] != null) {
 			index = args[0];
 		}
-		new OracleGateway<Country>().modify(index, country);
+		getGateway().modify(index, country);
 	}
 }

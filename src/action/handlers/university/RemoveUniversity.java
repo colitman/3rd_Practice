@@ -4,13 +4,13 @@ import action.*;
 import hibernate.dao.*;
 import hibernate.logic.*;
 
-public AddAction implements Action {
+public RemoveUniversity extends GatewayAction {
 	
 	public void perform(Object... args) throws ActionException {
 		University university = null;
-		if (args[0] instanceof university) {
+		if (args[0] instanceof University) {
 			university = (University) args[0];
 		}
-		new OracleGateway<University>().add(university);
+		getGateway().remove(university);
 	}
 }

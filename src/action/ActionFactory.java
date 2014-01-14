@@ -25,32 +25,32 @@ public class ActionFactory {
 		
 		map.put("homepage", action.handlers.homepage.GoHomePageAction.class);
 		
-		map.put("addCountry", action.handlers.country.AddAction.class);
-		map.put("modifyCountry", action.handlers.country.ModifyAction.class);
-		map.put("removeCountry", action.handlers.country.RemoveAction.class);
-		map.put("showAllCountry", action.handlers.country.ShowAllAction.class);
-		map.put("showOneCountry", action.handlers.country.ShowOneAction.class);
+		map.put("addCountry", action.handlers.country.AddCountry.class);
+		map.put("modifyCountry", action.handlers.country.ModifyCountry.class);
+		map.put("removeCountry", action.handlers.country.RemoveCountry.class);
+		map.put("showAllCountry", action.handlers.country.ShowAllCountry.class);
+		map.put("showOneCountry", action.handlers.country.ShowOneCountry.class);
 
-		map.put("addRegion", action.handlers.region.AddAction.class);
-		map.put("modifyRegion", action.handlers.region.ModifyAction.class);
-		map.put("removeRegion", action.handlers.region.RemoveAction.class);
-		map.put("showAllRegion", action.handlers.region.ShowAllAction.class);
-		map.put("showOneRegion", action.handlers.region.ShowOneAction.class);
-		map.put("showAllRegionInCountry". action.handlers.region.ShowAllInCountryAction.class);
+		map.put("addRegion", action.handlers.region.AddRegion.class);
+		map.put("modifyRegion", action.handlers.region.ModifyRegion.class);
+		map.put("removeRegion", action.handlers.region.RemoveRegion.class);
+		map.put("showAllRegion", action.handlers.region.ShowAllRegion.class);
+		map.put("showOneRegion", action.handlers.region.ShowOneRegion.class);
+		map.put("showAllRegionInCountry". action.handlers.region.ShowAllRegionInCountry.class);
 
-		map.put("addCity", action.handlers.city.AddAction.class);
-		map.put("modifyCity", action.handlers.city.ModifyAction.class);
-		map.put("removeCity", action.handlers.city.RemoveAction.class);
-		map.put("showAllCity", action.handlers.city.ShowAllAction.class);
-		map.put("showOneCity", action.handlers.city.ShowOneAction.class);
-		map.put("showAllCityInRegion". action.handlers.region.ShowAllInRegionAction.class);
+		map.put("addCity", action.handlers.city.AddCity.class);
+		map.put("modifyCity", action.handlers.city.ModifyCity.class);
+		map.put("removeCity", action.handlers.city.RemoveCity.class);
+		map.put("showAllCity", action.handlers.city.ShowAllCity.class);
+		map.put("showOneCity", action.handlers.city.ShowOneCity.class);
+		map.put("showAllCityInRegion". action.handlers.region.ShowAllCityInRegion.class);
 
-		map.put("addUniversity", action.handlers.university.AddAction.class);
-		map.put("modifyUniversity", action.handlers.university.ModifyAction.class);
-		map.put("removeUniversity", action.handlers.university.RemoveAction.class);
-		map.put("showAllUniversity", action.handlers.university.ShowAllAction.class);
-		map.put("showOneUniversity", action.handlers.university.ShowOneAction.class);
-		map.put("showAllUniversityInCity". action.handlers.region.ShowAllInCityAction.class);
+		map.put("addUniversity", action.handlers.university.AddUniversity.class);
+		map.put("modifyUniversity", action.handlers.university.ModifyUniversity.class);
+		map.put("removeUniversity", action.handlers.university.RemoveUniversity.class);
+		map.put("showAllUniversity", action.handlers.university.ShowAllUniversity.class);
+		map.put("showOneUniversity", action.handlers.university.ShowOneUniversity.class);
+		map.put("showAllUniversityInCity". action.handlers.region.ShowAllUniversityInCity.class);
 
 		return map;
 	}

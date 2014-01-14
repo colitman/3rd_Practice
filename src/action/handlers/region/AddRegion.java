@@ -4,13 +4,13 @@ import action.*;
 import hibernate.dao.*;
 import hibernate.logic.*;
 
-public AddAction implements Action {
+public AddRegion extends GatewayAction {
 	
 	public void perform(Object... args) throws ActionException {
 		Region region = null;
 		if (args[0] instanceof Region) {
 			region = (Region) args[0];
 		}
-		new OracleGateway<Region>().add(region);
+		getGateway().add(region);
 	}
 }
