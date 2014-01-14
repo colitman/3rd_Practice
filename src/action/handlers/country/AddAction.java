@@ -4,7 +4,7 @@ import action.*;
 import hibernate.dao.*;
 import hibernate.logic.*;
 
-public AddCountryAction implements Action {
+public AddAction implements Action {
 	
 	public void perform(Object... args) throws ActionException {
 		Country country = null;
