@@ -1,4 +1,4 @@
-package action.handlers.homepage;
+package action.handlers.country;
 
 import action.*;
 import hibernate.dao.*;
@@ -11,6 +11,6 @@ public AddCountryAction implements Action {
 		if (args[0] instanceof Country) {
 			country = (Country) args[0];
 		}
-		new OracleGateway<Country>().add(Country country);
+		new OracleGateway<Country>().add(country);
 	}
 }
