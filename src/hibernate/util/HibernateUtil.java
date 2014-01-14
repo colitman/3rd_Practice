@@ -12,6 +12,8 @@ public class HibernateUtil {
 	}
 
 	private static SessionFactory newSessionFactory() throws Exception {
-		return new Configuration().configure().buildSessionFactory();
+		Configuration configuration = new Configuration().configure();
+		StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties());
+		return configuration.buildSessionFactory(builder.build());
 	}
 }
