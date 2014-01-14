@@ -6,49 +6,43 @@ import java.sql.*;
 import java.util.*;
 import org.hibernate.*;
 
-public class EntityDAOImpl<T> implements EntityDAO<T> {
+public class OracleGateway<T> implements Gateway<T> {
 	
 	@Override
 	public void add(T entity) throws SQLException {
 		Session session = null;
 		try {
-			session = HibernateUtil.getSessionFactory().openSession();
+			session = getSession();
 			session.beginTransaction();
 			session.save(entity);
 			session.getTransaction().commit();
 		}
 		finally {
-			if (session != null && session.isOpen()) {
-				session.close();
-			}
+			closeSession(session);
 		}
 	}
 
 	public void modify(int id, T entity) throws SQLException {
 		Session session = null;
 		try {
-			session = HibernateUtil.getSessionFactory().openSession();
+			session = getSession();
 			session.beginTransaction();
 			session.update(entity);
 			session.getTransaction().commit();
 		}
  		finally {
-			if (session != null && session.isOpen()) {
-				session.close();
-			}
+			closeSession(session);
 		}
 	}
 	public T get(int id) throws SQLException {
 		Session session = null;
 		T entity = null;
 		try {
-			session = HibernateUtil.getSessionFactory().openSession();
+			session = getSession();
 			entity = (T) session.load(T.class, id);
 		}
  		finally {
-			if (session != null && session.isOpen()) {
-				session.close();
-			}
+			closeSession(session);
 		}
 		return entity;
 	}
@@ -56,13 +50,11 @@ public class EntityDAOImpl<T> implements EntityDAO<T> {
 		Session session = null;
 		List<T> entities = new ArrayList<T>();
 		try {
-			session = HibernateUtil.getSessionFactory().openSession();
+			session = getSession();
 			entities = session.createCriteria(T.class).list();
 		}
  		finally {
-			if (session != null && session.isOpen()) {
-				session.close();
-			}
+			closeSession(session);
 		}
 		return entities;
 	}
@@ -70,15 +62,23 @@ public class EntityDAOImpl<T> implements EntityDAO<T> {
 	public void remove(T entity) throws SQLException {
 		Session session = null;
 		try {
-			session = HibernateUtil.getSessionFactory().openSession();
+			session = getSession();
 			session.beginTransaction();
 			session.delete(entity);
 			session.getTransaction().commit();
 		}
  		finally {
-			if (session != null && session.isOpen()) {
-				session.close();
-			}
+			closeSession(session);
+		}
+	}
+
+	private Session getSession() {
+		return HibernateUtil.getSessionFactory().openSession();
+	}
+
+	private void closeSession(Session session) {
+		if (session != null && session.isOpen()) {
+			session.close();
 		}
 	}
 }
