@@ -3,12 +3,13 @@ package action.handlers.university;
 import action.*;
 import hibernate.dao.*;
 import hibernate.logic.*;
+import java.sql.*;
 
-public AddUniversity extends GatewayAction {
+public class AddUniversity extends GatewayAction {
 	
-	public void perform(Object... args) throws ActionException {
+	public void perform(Object... args) throws ActionException, SQLException {
 		University university = null;
-		if (args[0] instanceof university) {
+		if (args[0] instanceof University) {
 			university = (University) args[0];
 		}
 		getGateway().add(university);

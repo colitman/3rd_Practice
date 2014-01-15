@@ -1,7 +1,7 @@
 package action;
 
 public class ActionException extends Exception {
-	private static final long serialVersionUID = 759723552907482745946L;
+	private static final long serialVersionUID = 552907482745946L;
 
 	public ActionException() {
 		// TODO Auto-generated constructor stub

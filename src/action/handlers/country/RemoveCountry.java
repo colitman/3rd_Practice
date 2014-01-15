@@ -3,10 +3,11 @@ package action.handlers.country;
 import action.*;
 import hibernate.dao.*;
 import hibernate.logic.*;
+import java.sql.*;
 
-public RemoveCountry extends GatewayAction {
+public class RemoveCountry extends GatewayAction {
 	
-	public void perform(Object... args) throws ActionException {
+	public void perform(Object... args) throws ActionException, SQLException {
 		Country country = null;
 		if (args[0] instanceof Country) {
 			country = (Country) args[0];
