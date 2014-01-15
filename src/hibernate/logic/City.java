@@ -1,5 +1,7 @@
 package hibernate.logic;
 
+import java.util.*;
+
 public class City {
 
 	private int parentID;
@@ -9,7 +11,7 @@ public class City {
 	private int square;
 	private Set<University> universities;
 
-	public City {
+	public City() {
 
 	}
 	
@@ -54,7 +56,7 @@ public class City {
 	}
 
 	public void setUniversities(Set<University> universities) {
-		this.universities = universities.clone();
+		this.universities = universities;
 	}
 
 	public Set<University> getUniversities() {

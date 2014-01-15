@@ -8,7 +8,7 @@ public class University {
 	private int departamentsCount;
 	private String www;
 
-	public University {
+	public University() {
 
 	}
 	

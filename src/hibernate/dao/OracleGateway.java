@@ -4,6 +4,7 @@ import hibernate.util.*;
 import hibernate.logic.*;
 import java.sql.*;
 import java.util.*;
+import java.lang.reflect.*;
 import org.hibernate.*;
 
 public class OracleGateway<T> implements Gateway<T> {
@@ -39,7 +40,7 @@ public class OracleGateway<T> implements Gateway<T> {
 		T entity = null;
 		try {
 			session = getSession();
-			entity = (T) session.load(T.class, id);
+			session.load(entity, id);
 		}
  		finally {
 			closeSession(session);
@@ -51,7 +52,8 @@ public class OracleGateway<T> implements Gateway<T> {
 		List<T> entities = new ArrayList<T>();
 		try {
 			session = getSession();
-			entities = session.createCriteria(T.class).list();
+			Class entityClass = getGenericParameterClass(entities.getClass(), 0);
+			entities = session.createCriteria(entityClass).list();
 		}
  		finally {
 			closeSession(session);
@@ -81,4 +83,8 @@ public class OracleGateway<T> implements Gateway<T> {
 			session.close();
 		}
 	}
+	
+	private Class getGenericParameterClass(Class actualClass, int parameterIndex) {
+    		return (Class) ((ParameterizedType) actualClass.getGenericSuperclass()).getActualTypeArguments()[parameterIndex];
+ 	}
 }

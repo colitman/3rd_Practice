@@ -1,5 +1,7 @@
 package hibernate.logic;
 
+import java.util.*;
+
 public class Region {
 
 	private int parentID;
@@ -9,7 +11,7 @@ public class Region {
 	private int square;
 	private Set<City> cities;
 
-	public Region {
+	public Region() {
 
 	}
 	
@@ -54,7 +56,7 @@ public class Region {
 	}
 
 	public void setCities(Set<City> cities) {
-		this.cities = cities.clone();
+		this.cities = cities;
 	}
 	
 	public Set<City> getCities() {

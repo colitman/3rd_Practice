@@ -1,5 +1,7 @@
 package hibernate.logic;
 
+import java.util.*;
+
 public class Country {
 
 	private int id;
@@ -10,7 +12,7 @@ public class Country {
 	private int timezone;
 	private Set<Region> regions;
 
-	public Country {
+	public Country() {
 
 	}
 	
@@ -34,7 +36,7 @@ public class Country {
 		this.language = language;
 	}
 
-	public Srting getLanguage() {
+	public String getLanguage() {
 		return language;
 	}
 	
@@ -42,7 +44,7 @@ public class Country {
 		this.capital = capital;
 	}
 
-	public Srting getCapital() {
+	public String getCapital() {
 		return capital;
 	}
 
@@ -63,7 +65,7 @@ public class Country {
 	}
 
 	public void setRegions(Set<Region> regions) {
-		this.regions = regions.clone();
+		this.regions = regions;
 	}
 	
 	public Set<Region> getRegions() {
