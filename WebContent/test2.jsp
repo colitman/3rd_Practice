@@ -7,7 +7,7 @@
 <body>
 	<p>JSP Page 2</p>
 	<form action="test1.jsp" method="get">
-		<input type="sumbit" name="Go to next page">
+		<INPUT type="submit" value="Go to test1.jsp">
 	</form>
 </body>
 
