@@ -4,14 +4,27 @@ import action.*;
 import hibernate.dao.*;
 import hibernate.logic.*;
 import java.sql.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
 
 public class RemoveRegion extends GatewayAction {
 	
-	public void perform(Object... args) throws ActionException, SQLException {
-		Region region = null;
-		if (args[0] instanceof Region) {
-			region = (Region) args[0];
+	public void perform(HttpServletRequest request, HttpServletResponse response) throws ActionException {
+		try {
+			Gateway gateway = getGateway();
+			int id = Integer.valueOf(request.getParameter("id"));
+			Region region = (Region) gateway.get(id);
+			gateway.remove(region);
+	
+			response.sendRedirect("region/showAll.jsp?success=true");
+		}	
+		catch (Exception e) {
+			try {
+				response.sendRedirect("error.jsp");
+			}
+			catch (Exception ex) {
+				
+			}
 		}
-		getGateway().remove(region);
 	}
 }

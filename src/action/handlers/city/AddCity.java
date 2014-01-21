@@ -4,14 +4,30 @@ import action.*;
 import hibernate.dao.*;
 import hibernate.logic.*;
 import java.sql.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
 
 public class AddCity extends GatewayAction {
 	
-	public void perform(Object... args) throws ActionException, SQLException {
-		City city = null;
-		if (args[0] instanceof City) {
-			city = (City) args[0];
+	public void perform(HttpServletRequest request, HttpServletResponse response) throws ActionException {
+		try {
+			City city = new City();
+			city.setName(request.getParameter("name"));
+			city.setPopulation(Integer.valueOf(request.getParameter("population")));
+			city.setSquare(Integer.valueOf(request.getParameter("square")));
+			city.setParentID(Integer.valueOf(request.getParameter("parent_id")));
+				
+			getGateway().add(city);
+	
+			response.sendRedirect("city/showAll.jsp?success=true");
 		}
-		getGateway().add(city);
+		catch (Exception e) {
+			try {
+				response.sendRedirect("error.jsp");
+			}
+			catch (Exception ex) {
+				
+			}
+		}
 	}
 }

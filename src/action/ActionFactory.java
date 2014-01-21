@@ -5,7 +5,7 @@ import java.util.*;
 public class ActionFactory {
 	
 	private static ActionFactory instance = new ActionFactory();	
-	private static Map<String, Class<? extends Action>> actions = getActions();
+	private static Map<String, Class<? extends HttpAction>> actions = getActions();
 
 	private ActionFactory() {}
 	
@@ -13,15 +13,15 @@ public class ActionFactory {
 		return instance;
 	}
 	
-	public Action build(String actionName) throws WrongCommandException, InstantiationException, IllegalAccessException {
+	public HttpAction build(String actionName) throws WrongCommandException, InstantiationException, IllegalAccessException {
 		if (!actions.keySet().contains(actionName)) {
 			throw new WrongCommandException();
 		}
 		return actions.get(actionName).newInstance();
 	}
 
-	private static Map<String, Class<? extends Action>> getActions() {
-		Map<String, Class<? extends Action>> map = new HashMap<String, Class<? extends Action>>();
+	private static Map<String, Class<? extends HttpAction>> getActions() {
+		Map<String, Class<? extends HttpAction>> map = new HashMap<String, Class<? extends HttpAction>>();
 		
 		map.put("homepage", action.handlers.homepage.GoHomePageAction.class);
 		

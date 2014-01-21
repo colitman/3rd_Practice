@@ -4,14 +4,27 @@ import action.*;
 import hibernate.dao.*;
 import hibernate.logic.*;
 import java.sql.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
 
 public class RemoveUniversity extends GatewayAction {
 	
-	public void perform(Object... args) throws ActionException, SQLException {
-		University university = null;
-		if (args[0] instanceof University) {
-			university = (University) args[0];
+	public void perform(HttpServletRequest request, HttpServletResponse response) throws ActionException {
+		try {
+			int id = Integer.valueOf(request.getParameter("id"));
+			Gateway gateway = getGateway();
+			University university = (University) gateway.get(id);
+			gateway.remove(university);
+				
+			response.sendRedirect("university/showAll?success=true");
 		}
-		getGateway().remove(university);
+		catch (Exception e) {
+			try {
+				response.sendRedirect("error.jsp");
+			}
+			catch (Exception ex) {
+				
+			}
+		}
 	}
 }

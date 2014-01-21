@@ -4,18 +4,32 @@ import action.*;
 import hibernate.dao.*;
 import hibernate.logic.*;
 import java.sql.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
 
 public class ModifyCountry extends GatewayAction {
 	
-	public void perform(Object... args) throws ActionException, SQLException {
-		Country country = null;
-		int index = 0;
-		if (args[1] instanceof Country) {
-			country = (Country) args[1];
+	public void perform(HttpServletRequest request, HttpServletResponse response) throws ActionException {
+		try {
+			int id = Integer.valueOf(request.getParameter("id"));
+			Country country = new Country();
+			country.setName(request.getParameter("name"));
+			country.setLanguage(request.getParameter("language"));
+			country.setCapital(request.getParameter("capital"));
+			country.setPopulation(Integer.valueOf(request.getParameter("population")));
+			country.setTimezone(Integer.valueOf(request.getParameter("timezone")));
+
+			getGateway().modify(id, country);
+
+			response.sendRedirect("country/showAll.jsp?success=true");
 		}
-		if (args[0] != null) {
-			index = (int) args[0];
+		catch (Exception e) {
+			try {
+				response.sendRedirect("error.jsp");
+			}
+			catch (Exception ex) {
+				
+			}
 		}
-		getGateway().modify(index, country);
 	}
 }
