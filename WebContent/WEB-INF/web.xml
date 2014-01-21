@@ -11,6 +11,6 @@
 
 	<servlet-mapping>
 		<servlet-name>ServletPrototype</servlet-name>
-		<url-pattern>ServletPrototype<url-pattern>
+		<url-pattern>ServletPrototype</url-pattern>
 	</servlet-mapping>
  </web-app>
