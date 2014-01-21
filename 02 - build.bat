@@ -1,2 +1,2 @@
-jar -cvf build/WebPrototype.war -C WebContent/ .
+jar -cvf build/WebPrototype.war -C WebContent/ . lib/
 @pause

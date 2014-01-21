@@ -1,15 +1,19 @@
 package servlet;
 
 import action.*;
-import java.servlet.*;
-import java.servlet.http.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
 
 public class ServletPrototype extends HttpServlet {
 	
 	@Override
 	public void service(HttpServletRequest request, HttpServletResponse responce) {
-		
-		String code = request.getParamater("code");
-		ActionFactory.getInstance().build(code).perform(request, responce);
+		try {
+			String code = request.getParameter("code");
+			ActionFactory.getInstance().build(code).perform(request, responce);
+		}
+		catch (Exception e) {
+
+		}
 	}
 }
