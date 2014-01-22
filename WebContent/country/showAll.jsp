@@ -5,15 +5,24 @@
 </head>
 
 <body>
-	
-	<% 	Collection<University> univers = request.getParameter("universities"); %>
-
+	<h1>All Countries</h1><br>
+	<% 	boolean flag = Boolean.valueOf(request.getParameter("success"));
+		ApplicationContext context = new FileSystemXmlApplicationContext("res/beans.xml");
+		Gateway<Country> gateway = (Gateway) context.getBean("oracleGateway");
+		Collection<Country> countries = gateway.getAll();
+		if (flag) {
+	%>
+		<color="green">Your request was success denied</color><br>
+	<%  }
+	%>
 	<ul>	
-	<% 	for (University university : univers) {  %>
+	<% 	for (Country country : countries) {  %>
 	
 		<li>
-
-		<%= university.getName(); %>	
+		<% 	String href = "action?code=ShowOneCountry&id=" + country.getID();
+			String name = country.getName();
+		%>
+		<a href=<%= href %>><%= name %></a>	
 	
 		</li>
 	  

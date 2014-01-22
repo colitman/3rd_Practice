@@ -7,7 +7,7 @@
 <body>
 	<h1>Add Country </h1><br>
 
-	<form action="AddCountry" method="post">
+	<form action="action?code=AddCountry" method="post">
 		<label for="name">Name : </label>
 			<input type="text" name="name"><br>
 		<label for="language">Language : </label>
