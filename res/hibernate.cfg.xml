@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="Windows-1251"?>
-
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
 	<session-factory>
 		<property name="connection.url">jdbc:oracle:thin:@localhost:1521:xe</property>
@@ -11,9 +13,9 @@
 		<property name="show_sql">true</property>
 		<property name="dialect">org.hibernate.dialect.Oracle10gDialect</property>
 
-		<mapping resource="Country.hbm.xml"/>
-		<mapping resource="Region.hbm.xml"/>
-		<mapping resource="City.hbm.xml"/>
-		<mapping resource="University.hbm.xml"/>
+		<mapping class="hibernate.logic.Country"/>
+		<mapping class="hibernate.logic.Region"/>
+		<mapping class="hibernate.logic.City"/>
+		<mapping class="hibernate.logic.University"/>
 	</session-factory>
 </hibernate-configuration>

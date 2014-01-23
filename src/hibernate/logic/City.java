@@ -1,7 +1,11 @@
 package hibernate.logic;
 
 import java.util.*;
+import javax.persistence.*;
+import org.hibernate.annotations.GenericGenerator;
 
+@Entity
+@Table(name="City")
 public class City {
 
 	private int parentID;
@@ -19,6 +23,7 @@ public class City {
 		parentID = id;
 	} 
 
+	@Column(name="parent_id")
 	public int getParentID() {
 		return parentID;
 	}
@@ -26,7 +31,11 @@ public class City {
 	public void setID(int id) {
 		this.id = id;
 	}	
-
+	
+	@Id
+    	@GeneratedValue(generator="increment")
+    	@GenericGenerator(name="increment", strategy = "increment")
+    	@Column(name="id")
 	public int getID() {
 		return id;
 	}
@@ -35,6 +44,7 @@ public class City {
 		this.name = name;
 	}
 
+	@Column(name="name")
 	public String getName() {
 		return name;
 	}
@@ -43,6 +53,7 @@ public class City {
 		this.population = population;
 	}
 
+	@Column(name="population")
 	public int getPopulation() {
 		return population;
 	}
@@ -51,6 +62,7 @@ public class City {
 		this.square = square;
 	}
 
+	@Column(name="square")
 	public int getSquare() {
 		return square;
 	}

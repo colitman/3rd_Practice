@@ -8,7 +8,7 @@ import org.springframework.beans.factory.*;
 public abstract class GatewayAction implements HttpAction {
 
 	protected Gateway getGateway() {
-		ApplicationContext context = new FileSystemXmlApplicationContext("res/beans.xml");
+		ApplicationContext context = new ClassPathXmlApplicationContext("res/beans.xml");
 		return (Gateway) context.getBean("oracleGateway");
 	}
 }

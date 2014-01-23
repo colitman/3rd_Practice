@@ -3,6 +3,7 @@ package hibernate.util;
 import org.hibernate.*;
 import org.hibernate.cfg.*;
 import org.hibernate.service.*;
+import java.io.File;
 
 /**
 *Utils
@@ -18,7 +19,7 @@ public class HibernateUtil {
 
 	private static SessionFactory newSessionFactory() { 
 		try {
-			Configuration conf = new Configuration().configure("res/hibernate.cfg.xml");
+			Configuration conf = new Configuration().configure(new File("C:/Workspace/LAB3/Mego_Portal_XD/res/hibernate.cfg.xml"));
 			ServiceRegistryBuilder builder = new ServiceRegistryBuilder().applySettings(conf.getProperties());
 			return conf.buildSessionFactory(builder.build());
 		}
