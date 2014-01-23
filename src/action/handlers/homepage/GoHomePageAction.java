@@ -11,7 +11,12 @@ public class GoHomePageAction implements HttpAction {
 			response.sendRedirect("index.jsp");
 		}
 		catch (Exception e) {
+			try {
+				response.sendRedirect("error.jsp?message=" + e.getMessage());
+			}
+			catch (Exception ex) {
 
+			}
 		}
 	}
 }

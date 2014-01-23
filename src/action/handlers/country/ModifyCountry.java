@@ -25,7 +25,7 @@ public class ModifyCountry extends GatewayAction {
 		}
 		catch (Exception e) {
 			try {
-				response.sendRedirect("error.jsp");
+				response.sendRedirect("error.jsp?message=" + e.getMessage());
 			}
 			catch (Exception ex) {
 				

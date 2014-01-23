@@ -13,7 +13,7 @@
 	<%@ page import = "hibernate.logic.*" %>
 	<%@ page import = "java.util.Collection" %>
 	<% 	boolean flag = Boolean.valueOf(request.getParameter("success"));
-		ApplicationContext context = new FileSystemXmlApplicationContext("beans.xml");
+		ApplicationContext context = new FileSystemXmlApplicationContext("res/beans.xml");
 		Gateway<Country> gateway = (Gateway) context.getBean("oracleGateway");
 		Collection<Country> countries = gateway.getAll();
 		if (flag) {

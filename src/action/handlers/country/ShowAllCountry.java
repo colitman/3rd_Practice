@@ -11,7 +11,12 @@ public class ShowAllCountry implements HttpAction {
 			response.sendRedirect("country/showAll.jsp");
 		}
 		catch (Exception e) {
+			try {
+				response.sendRedirect("error.jsp?message=" + e.getMessage());
+			}
+			catch (Exception ex) {
 
+			}
 		}
 	}
 }

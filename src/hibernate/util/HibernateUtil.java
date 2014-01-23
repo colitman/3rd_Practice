@@ -23,7 +23,7 @@ public class HibernateUtil {
 			return conf.buildSessionFactory(builder.build());
 		}
 		catch (Exception e) {
-		
+			e.printStackTrace();
 		}
 		return null;
 	}
