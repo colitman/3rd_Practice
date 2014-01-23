@@ -17,7 +17,7 @@
 		Population :<%= country.getPopulation() %><br>
 		Timezone :<%= country.getTimezone() %><br>
 	
-		<a href="action?code=ShowAllCountry">back to list</a>
+		<a href="action?code=showAllCountry">back to list</a>
 </body>
 
 </html>
