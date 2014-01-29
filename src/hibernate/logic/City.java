@@ -5,15 +5,23 @@ import javax.persistence.*;
 import org.hibernate.annotations.GenericGenerator;
 
 @Entity
-@Table(name="City")
+@Table(name="CITY")
 public class City {
 
+	@Column(name="PARENT_ID")
 	private int parentID;
+	@Id
+    	@GeneratedValue(generator="increment")
+    	@GenericGenerator(name="increment", strategy = "increment")
+    	@Column(name="ID")
 	private int id;
+	@Column(name="NAME")
 	private String name;
+	@Column(name="POPULATION")
 	private int population;
+	@Column(name="SQUARE")
 	private int square;
-	private Set<University> universities;
+	//private Set<University> universities;
 
 	public City() {
 
@@ -23,7 +31,6 @@ public class City {
 		parentID = id;
 	} 
 
-	@Column(name="parent_id")
 	public int getParentID() {
 		return parentID;
 	}
@@ -32,10 +39,6 @@ public class City {
 		this.id = id;
 	}	
 	
-	@Id
-    	@GeneratedValue(generator="increment")
-    	@GenericGenerator(name="increment", strategy = "increment")
-    	@Column(name="id")
 	public int getID() {
 		return id;
 	}
@@ -44,7 +47,6 @@ public class City {
 		this.name = name;
 	}
 
-	@Column(name="name")
 	public String getName() {
 		return name;
 	}
@@ -53,7 +55,6 @@ public class City {
 		this.population = population;
 	}
 
-	@Column(name="population")
 	public int getPopulation() {
 		return population;
 	}
@@ -62,11 +63,11 @@ public class City {
 		this.square = square;
 	}
 
-	@Column(name="square")
 	public int getSquare() {
 		return square;
 	}
 
+	/*
 	public void setUniversities(Set<University> universities) {
 		this.universities = universities;
 	}
@@ -74,4 +75,5 @@ public class City {
 	public Set<University> getUniversities() {
 		return universities;
 	}
+	*/
 }

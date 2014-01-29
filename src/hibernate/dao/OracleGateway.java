@@ -6,7 +6,9 @@ import java.sql.*;
 import java.util.*;
 import java.lang.reflect.*;
 import org.hibernate.*;
+import org.springframework.stereotype.Service;
 
+@Service
 public class OracleGateway<T> implements Gateway<T> {
 	
 	@Override
@@ -49,10 +51,11 @@ public class OracleGateway<T> implements Gateway<T> {
 	}
 	public Collection<T> getAll() throws SQLException {
 		Session session = null;
-		List<T> entities = new ArrayList<T>();
+		class EntityList extends ArrayList<T> {}
+		List<T> entities = new EntityList();
 		try {
 			session = getSession();
-			Class entityClass = getGenericParameterClass(entities.getClass(), 0);
+			String entityClass = getGenericParameterClass(entities.getClass(), 0);
 			entities = session.createCriteria(entityClass).list();
 		}
  		finally {
@@ -84,7 +87,11 @@ public class OracleGateway<T> implements Gateway<T> {
 		}
 	}
 	
-	private Class getGenericParameterClass(Class actualClass, int parameterIndex) {
-    		return (Class) ((ParameterizedType) actualClass.getGenericSuperclass()).getActualTypeArguments()[parameterIndex];
+	private String getGenericParameterClass(Class actualClass, int parameterIndex) {
+		ParameterizedType type = (ParameterizedType) actualClass.getGenericSuperclass();
+		//Class<T> param = (Class<T>) type.getActualTypeArguments()[parameterIndex];
+		//System.out.println(type);
+		//System.out.println(param);
+		return new StringBuilder().append(type.getActualTypeArguments()[parameterIndex]).toString();
  	}
 }

@@ -11,7 +11,12 @@ public class ShowAllUniversity implements HttpAction {
 			response.sendRedirect("university/showAll.jsp");
 		}
 		catch (Exception e) {
+			try {
+				response.sendRedirect("error.jsp?message=" + e.getMessage());
+			}
+			catch (Exception ex) {
 
+			}
 		}	
 	}
 }

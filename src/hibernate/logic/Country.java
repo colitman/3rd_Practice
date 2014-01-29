@@ -5,16 +5,25 @@ import javax.persistence.*;
 import org.hibernate.annotations.GenericGenerator;
 
 @Entity
-@Table(name="Country")
+@Table(name="COUNTRY")
 public class Country {
 
+	@Id
+    	@GeneratedValue(generator="increment")
+    	@GenericGenerator(name="increment", strategy = "increment")
+    	@Column(name="ID")
 	private int id;
+	@Column(name="NAME")
 	private String name;
+	@Column(name="LANGUAGE")
 	private String language;
+	@Column(name="CAPITAL")
 	private String capital;
+	@Column(name="POPULATION")
 	private int population;
+	@Column(name="TIMEZONE")
 	private int timezone;
-	private Set<Region> regions;
+	//private Set<Region> regions;
 
 	public Country() {
 
@@ -24,10 +33,6 @@ public class Country {
 		this.id = id;
 	} 
 	
-	@Id
-    	@GeneratedValue(generator="increment")
-    	@GenericGenerator(name="increment", strategy = "increment")
-    	@Column(name="id")
 	public int getID() {
 		return id;
 	}
@@ -36,7 +41,6 @@ public class Country {
 		this.name = name;
 	}
 
-	@Column(name="name")
 	public String getName() {
 		return name;
 	}
@@ -45,7 +49,6 @@ public class Country {
 		this.language = language;
 	}
 
-	@Column(name="language")
 	public String getLanguage() {
 		return language;
 	}
@@ -54,7 +57,6 @@ public class Country {
 		this.capital = capital;
 	}
 
-	@Column(name="capital")
 	public String getCapital() {
 		return capital;
 	}
@@ -63,7 +65,6 @@ public class Country {
 		this.population = population;
 	}
 
-	@Column(name="population")
 	public int getPopulation() {
 		return population;
 	}
@@ -72,11 +73,11 @@ public class Country {
 		this.timezone = timezone;
 	}
 
-	@Column(name="timezone")
 	public int getTimezone() {
 		return timezone;
 	}
 
+	/*
 	public void setRegions(Set<Region> regions) {
 		this.regions = regions;
 	}
@@ -84,4 +85,5 @@ public class Country {
 	public Set<Region> getRegions() {
 		return regions;
 	}
+	*/
 }

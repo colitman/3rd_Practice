@@ -4,13 +4,21 @@ import javax.persistence.*;
 import org.hibernate.annotations.GenericGenerator;
 
 @Entity
-@Table(name="University")
+@Table(name="UNIVERSITY")
 public class University {
 
+	@Column(name="PARENT_ID")
 	private int parentID;
+	@Id
+    	@GeneratedValue(generator="increment")
+    	@GenericGenerator(name="increment", strategy = "increment")
+    	@Column(name="ID")
 	private int id;
+	@Column(name="NAME")
 	private String name;
-	private int departamentsCount;
+	@Column(name="DEPS_COUNT")
+	private int departamentsCount;	
+	@Column(name="WWW")
 	private String www;
 
 	public University() {
@@ -21,7 +29,6 @@ public class University {
 		parentID = id;
 	} 
 	
-	@Column(name="parent_id")
 	public int getParentID() {
 		return parentID;
 	}
@@ -30,10 +37,6 @@ public class University {
 		this.id = id;
 	}	
 
-	@Id
-    	@GeneratedValue(generator="increment")
-    	@GenericGenerator(name="increment", strategy = "increment")
-    	@Column(name="id")
 	public int getID() {
 		return id;
 	}
@@ -42,7 +45,6 @@ public class University {
 		this.name = name;
 	}
 
-	@Column(name="name")
 	public String getName() {
 		return name;
 	}
@@ -51,7 +53,6 @@ public class University {
 		departamentsCount = count;
 	}
 
-	@Column(name="depts_count")
 	public int getDepartamentsCount() {
 		return departamentsCount;
 	}
@@ -60,7 +61,6 @@ public class University {
 		this.www = www;
 	}
 
-	@Column(name="www")
 	public String getWWW() {
 		return www;
 	}

@@ -5,15 +5,23 @@ import javax.persistence.*;
 import org.hibernate.annotations.GenericGenerator;
 
 @Entity
-@Table(name="Region")
+@Table(name="REGION")
 public class Region {
 
+	@Column(name="PARENT_ID")
 	private int parentID;
+	@Id
+    	@GeneratedValue(generator="increment")
+    	@GenericGenerator(name="increment", strategy = "increment")
+    	@Column(name="ID")
 	private int id;
+	@Column(name="NAME")
 	private String name;
+	@Column(name="POPULATION")
 	private int population;
+	@Column(name="SQUARE")
 	private int square;
-	private Set<City> cities;
+	//private Set<City> cities;
 
 	public Region() {
 
@@ -23,7 +31,6 @@ public class Region {
 		parentID = id;
 	} 
 
-	@Column(name="parent_id")
 	public int getParentID() {
 		return parentID;
 	}
@@ -32,10 +39,6 @@ public class Region {
 		this.id = id;
 	}	
 	
-	@Id
-    	@GeneratedValue(generator="increment")
-    	@GenericGenerator(name="increment", strategy = "increment")
-    	@Column(name="id")
 	public int getID() {
 		return id;
 	}
@@ -44,7 +47,6 @@ public class Region {
 		this.name = name;
 	}
 
-	@Column(name="name")
 	public String getName() {
 		return name;
 	}
@@ -53,7 +55,6 @@ public class Region {
 		this.population = population;
 	}
 
-	@Column(name="population")
 	public int getPopulation() {
 		return population;
 	}
@@ -62,11 +63,11 @@ public class Region {
 		this.square = square;
 	}
 
-	@Column(name="square")
 	public int getSquare() {
 		return square;
 	}
 
+	/*
 	public void setCities(Set<City> cities) {
 		this.cities = cities;
 	}
@@ -74,4 +75,5 @@ public class Region {
 	public Set<City> getCities() {
 		return cities;
 	}
+	*/
 }

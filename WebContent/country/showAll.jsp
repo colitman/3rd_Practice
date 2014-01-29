@@ -13,9 +13,9 @@
 	<%@ page import = "hibernate.logic.*" %>
 	<%@ page import = "java.util.Collection" %>
 	<% 	boolean flag = Boolean.valueOf(request.getParameter("success"));
-		ApplicationContext context = new FileSystemXmlApplicationContext("res/beans.xml");
-		Gateway<Country> gateway = (Gateway) context.getBean("oracleGateway");
-		Collection<Country> countries = gateway.getAll();
+		//ApplicationContext context = new FileSystemXmlApplicationContext("C:/Workspace/LAB3/Mego_Portal_XD/res/hibernate.cfg.xml");
+		//Gateway<Country> gateway = (Gateway) context.getBean("oracleGateway");
+		Collection<Country> countries = new OracleGateway<Country>().getAll();
 		if (flag) {
 	%>
 		<color="green">Your request was success denied</color><br>
