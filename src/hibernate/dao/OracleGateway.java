@@ -11,87 +11,82 @@ import org.springframework.stereotype.Service;
 @Service
 public class OracleGateway<T> implements Gateway<T> {
 	
+	private Session session;
+
 	@Override
 	public void add(T entity) throws SQLException {
-		Session session = null;
 		try {
-			session = getSession();
-			session.beginTransaction();
+			setSession();
+			beginTransaction();
 			session.save(entity);
-			session.getTransaction().commit();
+			commit();
 		}
 		finally {
-			closeSession(session);
+			closeSession();
 		}
 	}
 
 	public void modify(int id, T entity) throws SQLException {
-		Session session = null;
 		try {
-			session = getSession();
-			session.beginTransaction();
+			setSession();
+			beginTransaction();
 			session.update(entity);
-			session.getTransaction().commit();
+			commit();
 		}
  		finally {
-			closeSession(session);
+			closeSession();
 		}
 	}
 	public T get(int id) throws SQLException {
-		Session session = null;
 		T entity = null;
 		try {
-			session = getSession();
+			setSession();
 			session.load(entity, id);
 		}
  		finally {
-			closeSession(session);
+			closeSession();
 		}
 		return entity;
 	}
-	public Collection<T> getAll() throws SQLException {
-		Session session = null;
-		class EntityList extends ArrayList<T> {}
-		List<T> entities = new EntityList();
+	public Collection<T> getAll(Class className) throws SQLException {
+		List<T> entities = new ArrayList<T>();
 		try {
-			session = getSession();
-			String entityClass = getGenericParameterClass(entities.getClass(), 0);
-			entities = session.createCriteria(entityClass).list();
+			setSession();
+			entities = session.createCriteria(className).list();
 		}
  		finally {
-			closeSession(session);
+			closeSession();
 		}
 		return entities;
 	}
 
 	public void remove(T entity) throws SQLException {
-		Session session = null;
 		try {
-			session = getSession();
-			session.beginTransaction();
+			setSession();
+			beginTransaction();
 			session.delete(entity);
-			session.getTransaction().commit();
+			commit();
 		}
  		finally {
-			closeSession(session);
+			closeSession();
 		}
 	}
 
-	private Session getSession() {
-		return HibernateUtil.getSessionFactory().openSession();
+	private void setSession() {
+		session = HibernateUtil.getSessionFactory().openSession();
 	}
 
-	private void closeSession(Session session) {
+	private void closeSession() {
 		if (session != null && session.isOpen()) {
 			session.close();
 		}
 	}
-	
-	private String getGenericParameterClass(Class actualClass, int parameterIndex) {
-		ParameterizedType type = (ParameterizedType) actualClass.getGenericSuperclass();
-		//Class<T> param = (Class<T>) type.getActualTypeArguments()[parameterIndex];
-		//System.out.println(type);
-		//System.out.println(param);
-		return new StringBuilder().append(type.getActualTypeArguments()[parameterIndex]).toString();
- 	}
+
+	private void  beginTransaction() {
+		session.beginTransaction();
+	}
+
+	private void commit() {
+		session.getTransaction().commit();
+	}
 }
