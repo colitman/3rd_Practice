@@ -1,26 +1,33 @@
 package action;
 
 import java.util.*;
+import org.apache.log4j.*;
 
 public class ActionFactory {
 	
+	private static final Logger logger = Logger.getLogger("logger");	
 	private static ActionFactory instance = new ActionFactory();	
 	private static Map<String, Class<? extends HttpAction>> actions = getActions();
 
 	private ActionFactory() {}
 	
 	public static ActionFactory getInstance() {
+		logger.info("Getting ActionFactory...");
 		return instance;
 	}
 	
 	public HttpAction build(String actionName) throws WrongCommandException, InstantiationException, IllegalAccessException {
+		logger.info("Building HttpAction...");
 		if (!actions.keySet().contains(actionName)) {
+			logger.error("Error: wrong command");
 			throw new WrongCommandException();
 		}
 		return actions.get(actionName).newInstance();
 	}
 
 	private static Map<String, Class<? extends HttpAction>> getActions() {
+		logger.info("Initializing ActionFactory...");
+
 		Map<String, Class<? extends HttpAction>> map = new HashMap<String, Class<? extends HttpAction>>();
 		
 		map.put("homepage", action.handlers.homepage.GoHomePageAction.class);

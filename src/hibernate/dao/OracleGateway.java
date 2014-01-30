@@ -6,16 +6,20 @@ import java.sql.*;
 import java.util.*;
 import java.lang.reflect.*;
 import org.hibernate.*;
+import org.apache.log4j.*;
 import org.springframework.stereotype.Service;
 
 @Service
 public class OracleGateway<T> implements Gateway<T> {
 	
+	private static final Logger logger = Logger.getLogger("logger");	
 	private Session session;
 
 	@Override
 	public void add(T entity) throws SQLException {
 		try {
+			logger.info("Adding some entity...");
+			
 			setSession();
 			beginTransaction();
 			session.save(entity);
@@ -28,6 +32,8 @@ public class OracleGateway<T> implements Gateway<T> {
 
 	public void modify(int id, T entity) throws SQLException {
 		try {
+			logger.info("Modifing some entity...");
+	
 			setSession();
 			beginTransaction();
 			session.update(entity);
@@ -38,6 +44,8 @@ public class OracleGateway<T> implements Gateway<T> {
 		}
 	}
 	public T get(int id) throws SQLException {
+		logger.info("Getting some entity...");
+
 		T entity = null;
 		try {
 			setSession();
@@ -49,6 +57,8 @@ public class OracleGateway<T> implements Gateway<T> {
 		return entity;
 	}
 	public Collection<T> getAll(Class className) throws SQLException {
+		logger.info("Getting collection of entity...");
+
 		List<T> entities = new ArrayList<T>();
 		try {
 			setSession();
@@ -62,6 +72,8 @@ public class OracleGateway<T> implements Gateway<T> {
 
 	public void remove(T entity) throws SQLException {
 		try {
+			logger.info("Removing some entity...");
+		
 			setSession();
 			beginTransaction();
 			session.delete(entity);
@@ -73,20 +85,24 @@ public class OracleGateway<T> implements Gateway<T> {
 	}
 
 	private void setSession() {
+		logger.info("Setting session...");
 		session = HibernateUtil.getSessionFactory().openSession();
 	}
 
 	private void closeSession() {
+		logger.info("Closing session...");
 		if (session != null && session.isOpen()) {
 			session.close();
 		}
 	}
 
 	private void  beginTransaction() {
+		logger.info("Starting transaction...");
 		session.beginTransaction();
 	}
 
 	private void commit() {
+		logger.info("Commiting...");
 		session.getTransaction().commit();
 	}
 }
