@@ -6,10 +6,9 @@
 
 <body>
 	<h1>Country</h1>
-	<%	ApplicationContext context = new FileSystemXmlApplicationContext("res/beans.xml");
-		Gateway<Country> gateway = (Gateway) context.getBean("oracleGateway");
-		int id = Integer.valueOf(request.getParameter("id"));
-		Country country = gateway.get(id);
+	<%@ page import = "hibernate.logic.Country" %>
+	<%	
+		Country country = (Country) request.getSession().getAttribute("country");
 	%>
 		Name : <%= country.getName() %><br>
 		Language :<%= country.getLanguage() %><br>

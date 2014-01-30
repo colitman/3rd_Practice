@@ -18,9 +18,9 @@ public class City {
 	@Column(name="NAME")
 	private String name;
 	@Column(name="POPULATION")
-	private int population;
+	private Integer population;
 	@Column(name="SQUARE")
-	private int square;
+	private Integer square;
 	//private Set<University> universities;
 
 	public City() {

@@ -21,11 +21,11 @@ public class ModifyCountry extends GatewayAction {
 
 			getGateway().modify(id, country);
 
-			response.sendRedirect("country/showAll.jsp?success=true");
+			response.sendRedirect("/WebPrototype/country/showAll.jsp?success=true");
 		}
 		catch (Exception e) {
 			try {
-				response.sendRedirect("error.jsp?message=" + e.getMessage());
+				response.sendRedirect("/WebPrototype/error.jsp?message=" + e.getMessage());
 			}
 			catch (Exception ex) {
 				

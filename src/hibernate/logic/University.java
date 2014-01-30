@@ -17,7 +17,7 @@ public class University {
 	@Column(name="NAME")
 	private String name;
 	@Column(name="DEPS_COUNT")
-	private int departamentsCount;	
+	private Integer departamentsCount;	
 	@Column(name="WWW")
 	private String www;
 

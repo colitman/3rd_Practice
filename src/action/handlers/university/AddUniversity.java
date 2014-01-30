@@ -19,11 +19,11 @@ public class AddUniversity extends GatewayAction {
 		
 			getGateway().add(university);
 		
-			response.sendRedirect("university/showAll.jsp?success=true");
+			response.sendRedirect("/WebPrototype/university/showAll.jsp?success=true");
 		}
 		catch (Exception e) {
 			try {
-				response.sendRedirect("error.jsp");
+				response.sendRedirect("/WebPrototype/error.jsp?message=" + e.getMessage());
 			}
 			catch (Exception ex) {
 				

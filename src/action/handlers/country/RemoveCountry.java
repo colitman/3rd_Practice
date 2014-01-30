@@ -12,15 +12,15 @@ public class RemoveCountry extends GatewayAction {
 	public void perform(HttpServletRequest request, HttpServletResponse response) throws ActionException {
 		try {
 			int id = Integer.valueOf(request.getParameter("id"));
-			Gateway gateway = getGateway();
+			Gateway<Country> gateway = getGateway();
 			Country country = (Country) gateway.get(id);
 			gateway.remove(country);
 
-			response.sendRedirect("country/showAll.jsp?success=true");
+			response.sendRedirect("/WebPrototype/country/showAll.jsp?success=true");
 		}
 		catch (Exception e) {
 			try {
-				response.sendRedirect("error.jsp?message=" + e.getMessage());
+				response.sendRedirect("/WebPrototype/error.jsp?message=" + e.getMessage());
 			}
 			catch (Exception ex) {
 				

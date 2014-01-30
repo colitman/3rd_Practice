@@ -19,11 +19,11 @@ public class AddRegion extends GatewayAction {
 		
 			getGateway().add(region);
 
-			response.sendRedirect("region/showAll.jsp?success=true");
+			response.sendRedirect("/WebPrototype/region/showAll.jsp?success=true");
 		}
 		catch (Exception e) {
 			try {
-				response.sendRedirect("error.jsp");
+				response.sendRedirect("/WebPrototype/error.jsp?message=" + e.getMessage());
 			}
 			catch (Exception ex) {
 				

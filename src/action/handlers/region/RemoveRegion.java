@@ -16,11 +16,11 @@ public class RemoveRegion extends GatewayAction {
 			Region region = (Region) gateway.get(id);
 			gateway.remove(region);
 	
-			response.sendRedirect("region/showAll.jsp?success=true");
+			response.sendRedirect("/WebPrototype/region/showAll.jsp?success=true");
 		}	
 		catch (Exception e) {
 			try {
-				response.sendRedirect("error.jsp");
+				response.sendRedirect("/WebPrototype/error.jsp?message=" + e.getMessage());
 			}
 			catch (Exception ex) {
 				

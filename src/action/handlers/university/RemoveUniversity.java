@@ -16,11 +16,11 @@ public class RemoveUniversity extends GatewayAction {
 			University university = (University) gateway.get(id);
 			gateway.remove(university);
 				
-			response.sendRedirect("university/showAll?success=true");
+			response.sendRedirect("/WebPrototype/university/showAll?success=true");
 		}
 		catch (Exception e) {
 			try {
-				response.sendRedirect("error.jsp");
+				response.sendRedirect("/WebPrototype/error.jsp?message=" + e.getMessage());
 			}
 			catch (Exception ex) {
 				

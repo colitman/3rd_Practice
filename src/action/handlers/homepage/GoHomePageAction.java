@@ -8,11 +8,11 @@ public class GoHomePageAction implements HttpAction {
 	
 	public void perform(HttpServletRequest request, HttpServletResponse response) throws ActionException {
 		try {
-			response.sendRedirect("index.jsp");
+			response.sendRedirect("/WebPrototype/index.jsp");
 		}
 		catch (Exception e) {
 			try {
-				response.sendRedirect("error.jsp?message=" + e.getMessage());
+				response.sendRedirect("/WebPrototype/error.jsp?message=" + e.getMessage());
 			}
 			catch (Exception ex) {
 
