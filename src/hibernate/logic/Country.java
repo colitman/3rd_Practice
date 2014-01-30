@@ -15,14 +15,14 @@ public class Country {
 	private int id;
 	@Column(name="NAME")
 	private String name;
-	@Column(name="LANGUAGE")
+	@Column(name="LANG")
 	private String language;
 	@Column(name="CAPITAL")
 	private String capital;
 	@Column(name="POPULATION")
-	private int population;
+	private Integer population;
 	@Column(name="TIMEZONE")
-	private int timezone;
+	private Integer timezone;
 	//private Set<Region> regions;
 
 	public Country() {
