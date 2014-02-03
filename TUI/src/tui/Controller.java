@@ -19,21 +19,22 @@ public class Controller extends HttpServlet {
     
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String list = request.getParameter("list");
-		String filter = request.getParameter("filter");
 		String parent = request.getParameter("parent");
-		
-		if("countries".equals(list)) {
-			if("all".equals(filter)) {
-				ret = db.getCountries();
-			}
-		}
 		
 		if("children".equals(list)) {
 			boolean found = false;
-			for(Country c:db.getCountries()) {
-				if(c.getName().equals(parent)) {
-					ret = c.getRegs();
-					found = true;
+			
+			if("none".equals(parent)) {
+				ret = db.getCountries();
+				found = true;
+			}
+			
+			if(!found) {
+				for(Country c:db.getCountries()) {
+					if(c.getName().equals(parent)) {
+						ret = c.getRegs();
+						found = true;
+					}
 				}
 			}
 			

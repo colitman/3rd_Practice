@@ -31,7 +31,7 @@ $(function() {
 				%>
 				<tr>
 					<td class="thin"><input type="checkbox"></td>
-					<td><a class ="generated-data" href="show?list=children&filter=all&parent=<%=d.getName()%>"><%=d.getName()%></a></td>
+					<td><a class ="generated-data" href="show?list=children&parent=<%=d.getName()%>"><%=d.getName()%></a></td>
 					<td>
 						<%
 							Map<String, String> params = d.getParams();
