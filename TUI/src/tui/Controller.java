@@ -19,22 +19,23 @@ public class Controller extends HttpServlet {
     
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String list = request.getParameter("list");
+		String filter = request.getParameter("filter");
 		String parent = request.getParameter("parent");
+		
+		if("countries".equals(list)) {
+			if("all".equals(filter)) {
+				//ret = (OracleGateway<Country> getGateway()).getAll();
+				ret = db.getCountries();
+			}
+		}
 		
 		if("children".equals(list)) {
 			boolean found = false;
-			
-			if("none".equals(parent)) {
-				ret = db.getCountries();
-				found = true;
-			}
-			
-			if(!found) {
-				for(Country c:db.getCountries()) {
-					if(c.getName().equals(parent)) {
-						ret = c.getRegs();
-						found = true;
-					}
+			for(Country c:db.getCountries()) {
+				if(c.getName().equals(parent)) {
+					//ret = (OracleGateway<Region> getGateway()).getAllBy(c);
+					ret = c.getRegs();
+					found = true;
 				}
 			}
 			
@@ -42,6 +43,7 @@ public class Controller extends HttpServlet {
 				for(Country c:db.getCountries()) {
 					for(Region r:c.getRegs()) {
 						if(r.getName().equals(parent)) {
+							//ret = (OracleGateway<City> getGateway()).getAllBy(r);
 							ret = r.getCities();
 							found = true;
 						}
@@ -54,6 +56,7 @@ public class Controller extends HttpServlet {
 					for(Region r:c.getRegs()) {
 						for(City cit:r.getCities()) {
 							if(cit.getName().equals(parent)) {
+								//ret = (OracleGateway<University> getGateway()).getAllBy(cit);
 								ret = cit.getUnis();
 								found = true;
 							}
