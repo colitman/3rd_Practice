@@ -4,11 +4,19 @@
      "http://java.sun.com/j2ee/dtds/web-app_2_2.dtd">
  
  <web-app>
+	<display-name>WebPrototype</display-name>
+	<welcome-file-list>
+    		<welcome-file>index.html</welcome-file>
+    		<welcome-file>index.htm</welcome-file>
+    		<welcome-file>index.jsp</welcome-file>
+    		<welcome-file>default.html</welcome-file>
+    		<welcome-file>default.htm</welcome-file>
+    		<welcome-file>default.jsp</welcome-file>
+  	</welcome-file-list>
  	<servlet>
 		<servlet-name>ServletPrototype</servlet-name>
 		<servlet-class>servlet.ServletPrototype</servlet-class>
 	</servlet>
-
 	<servlet-mapping>
 		<servlet-name>ServletPrototype</servlet-name>
 		<url-pattern>action</url-pattern>

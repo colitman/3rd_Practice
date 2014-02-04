@@ -6,22 +6,21 @@ import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 @Table(name="REGION")
-public class Region {
+public class Region implements OracleEntity {
 
-	@Column(name="PARENT_ID")
+	@Column(name="PARENT_ID", nullable=false)
 	private int parentID;
 	@Id
     	@GeneratedValue(generator="increment")
     	@GenericGenerator(name="increment", strategy = "increment")
-    	@Column(name="ID")
+    	@Column(name="ID", nullable=false)
 	private int id;
-	@Column(name="NAME")
+	@Column(name="NAME", nullable=false)
 	private String name;
-	@Column(name="POPULATION")
+	@Column(name="POPULATION", nullable=true)
 	private Integer population;
-	@Column(name="SQUARE")
+	@Column(name="SQUARE", nullable=true)
 	private Integer square;
-	//private Set<City> cities;
 
 	public Region() {
 
@@ -66,14 +65,4 @@ public class Region {
 	public int getSquare() {
 		return square;
 	}
-
-	/*
-	public void setCities(Set<City> cities) {
-		this.cities = cities;
-	}
-	
-	public Set<City> getCities() {
-		return cities;
-	}
-	*/
 }

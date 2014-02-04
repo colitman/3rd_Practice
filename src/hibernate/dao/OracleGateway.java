@@ -6,6 +6,7 @@ import java.sql.*;
 import java.util.*;
 import java.lang.reflect.*;
 import org.hibernate.*;
+import org.hibernate.criterion.*;
 import org.apache.log4j.*;
 import org.springframework.stereotype.Service;
 
@@ -67,6 +68,20 @@ public class OracleGateway<T> implements Gateway<T> {
  		finally {
 			closeSession();
 		}
+		return entities;
+	}
+
+	public Collection<T> getAllBy(Class childClass, OracleEntity parent) throws SQLException {
+		logger.info("Getting collection of entity where parent id = " + parent.getParentID());
+		
+		List<T> entities = new ArrayList<T>();
+		try {
+			setSession();
+			entities = session.createCriteria(childClass).add(Expression.eq("parent_id", parent.getParentID())).list();
+		}
+		finally {
+			closeSession();
+		} 
 		return entities;
 	}
 

@@ -34,6 +34,7 @@ public class HibernateUtil {
 			return conf.buildSessionFactory(builder.buildServiceRegistry());
 		}
 		catch (Exception e) {
+			e.printStackTrace();
 			logger.error("Critical error was occured");
 		}
 		return null;

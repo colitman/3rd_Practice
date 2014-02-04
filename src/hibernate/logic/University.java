@@ -5,20 +5,20 @@ import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 @Table(name="UNIVERSITY")
-public class University {
+public class University implements OracleEntity {
 
-	@Column(name="PARENT_ID")
+	@Column(name="PARENT_ID", nullable=false)
 	private int parentID;
 	@Id
     	@GeneratedValue(generator="increment")
     	@GenericGenerator(name="increment", strategy = "increment")
-    	@Column(name="ID")
+    	@Column(name="ID", nullable=false)
 	private int id;
-	@Column(name="NAME")
+	@Column(name="NAME", nullable=false)
 	private String name;
-	@Column(name="DEPS_COUNT")
+	@Column(name="DEPS_COUNT", nullable=true)
 	private Integer departamentsCount;	
-	@Column(name="WWW")
+	@Column(name="WWW", nullable=true)
 	private String www;
 
 	public University() {
