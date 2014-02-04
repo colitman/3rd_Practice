@@ -103,7 +103,7 @@ public class ShowServlet extends HttpServlet {
 
 	private Gateway getGateway() {
 		logger.info("Getting gateway");
-		ApplicationContext context = new ClassPathXmlApplicationContext("res/beans.xml");
+		ApplicationContext context = new FileSystemXmlApplicationContext("C:/Workspace/LAB3/Mego_Portal_XD/res/beans.xml");
 		return (Gateway) context.getBean("oracleGateway");
 	}
 }

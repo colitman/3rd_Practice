@@ -18,31 +18,24 @@ public class ShowAllCountry extends GatewayAction {
 
 	public void perform(HttpServletRequest request, HttpServletResponse response) throws ActionException {
 		try {
-			DOMConfigurator.configure("log4j.xml");
+			DOMConfigurator.configure("C:/Workspace/LAB3/Mego_Portal_XD/res/log4j.xml");
 			logger.info("Logger installed");
 			logger.info("Prepare to show all countries");
-	
+
 			Gateway<Country> gateway = getGateway();
-			Collection<Country> countries = gateway.getAll(Country.class);
-
-			logger.info("Get all countries");		
-
-			request.setAttribute("data", countries);
+			Collection<Country> data = gateway.getAll(Country.class);
 		
-			logger.info("Set all countries into session");
-			logger.info("Send redirect to showAll.jsp page");
+			logger.info("Get all countries");
+
+			request.setAttribute("data", data);
+	
+			logger.info("Set countries into request attributes");
+			logger.info("Send forward to country/showAll.jsp page");
 
 			request.getRequestDispatcher("country/showAll.jsp").forward(request, response);
 		}
 		catch (Exception e) {
-			try {	
-				logger.error("Error  occured", e);
-				logger.info("Send redirect to error page");
-				//response.sendRedirect("/WebPrototype/error.jsp?message=" + e.getMessage());
-			}
-			catch (Exception ex) {
-				logger.error("Critical error was occured", ex);
-			}
+			logger.error("Error  occured in ShowAllCountry action", e);
 		}
 	}
 }

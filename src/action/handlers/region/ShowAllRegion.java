@@ -11,7 +11,7 @@ import hibernate.dao.*;
 import hibernate.logic.*;
 import java.util.Collection;
 
-public class ShowAllRegion implements HttpAction {
+public class ShowAllRegion extends GatewayAction {
 	
 	private static final Logger logger = Logger.getLogger("logger");	
 
@@ -19,9 +19,12 @@ public class ShowAllRegion implements HttpAction {
 		try {
 			logger.info("Prepare to show all regions");
 
-			ApplicationContext context = new FileSystemXmlApplicationContext("C:/Workspace/LAB3/Mego_Portal_XD/res/beans.xml");
-			Gateway<Region> gateway = (Gateway<Region>) context.getBean("oracleGateway");
-			Collection<Region> regions = gateway.getAll(Region.class);
+			OracleEntity parent = (OracleEntity) request.getAttribute("parent");
+
+			logger.info("Get parent");
+
+			Gateway<Region> gateway = (Gateway<Region>) getGateway();
+			Collection<Region> regions = gateway.getAllBy(Region.class, parent);
 		
 			logger.info("Get all regions");		
 
@@ -30,17 +33,10 @@ public class ShowAllRegion implements HttpAction {
 			logger.info("Set all regions into session");
 			logger.info("Send redirect to showAllRegion page");	
 
-			response.sendRedirect("/WebPrototype/region/showAll.jsp");
+			request.getRequestDispatcher("region/showAll.jsp");
 		}
 		catch (Exception e) {
-			try {
-				logger.warn("Error was occured");
-				logger.info("Send redirect to error page");
-				response.sendRedirect("/WebPrototype/error.jsp?message=" + e.getMessage());
-			}
-			catch (Exception ex) {
-				logger.error("Critical error was occured");
-			}
+			logger.error("Error occured in ShowAllRegion action", e);
 		}
 	}
 }

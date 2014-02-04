@@ -1,3 +1,5 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
@@ -13,7 +15,6 @@ $(function() {
 <div id="header"></div><hr>
 <h1>All Counties</h1>
 <div id="content">
-<%@page language="java" import="java.util.*, hibernate.logic.*" %>
 	<div id="toolbar">
 		<script type="text/javascript">
 			$("#toolbar").load("toolbar.html");
@@ -25,16 +26,17 @@ $(function() {
 				<tr>
 				<th class="thin">v</th><th>Name</th><th>Description</th>
 				</tr>
-				<% 
-					List<Country> data = (List<Country>) request.getAttribute("data");
-					for (Country c : data) {
-				%>
+				<c:forEach var="item" items="${param.data}">
+				<c:url var="url" value="/WebPrototype/action">
+					<c:param name="code" value="showAllRegionInCountry" />
+					<c:param name="parent" value="${item}" />
+				</c:url>
 				<tr>
 					<td class="thin"><input type="checkbox"></td>
-					<td><a class="generated-data" href="action?code=showAllRegionInCountry&parent_id=<%=c.getID() %>"><%=c.getName()%></a></td>
-					<td>bla bla bla</td>					
+					<td><a class="generated-data" href="${url}">${item.name}</a></td>
+					<td>Language : ${item.language} Capital: ${item.capital} Population: ${item.population} Timezone: ${item.timezone}</td>					
 				</tr>
-				<%	} %>
+				</c:forEach>
 			</table>
 		</div>
 

@@ -19,7 +19,7 @@ public class ServletPrototype extends HttpServlet {
 			ActionFactory.getInstance().build(code).perform(request, responce);
 		}
 		catch (Exception e) {
-			logger.error("Critical error was occured");
+			logger.error("Error occured in ServletPrototype", e);
 		}
 	}
 }

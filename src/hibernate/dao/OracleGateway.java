@@ -19,7 +19,7 @@ public class OracleGateway<T> implements Gateway<T> {
 	@Override
 	public void add(T entity) throws SQLException {
 		try {
-			logger.info("Adding some entity...");
+			logger.info("Adding some entity");
 			
 			setSession();
 			beginTransaction();
@@ -33,7 +33,7 @@ public class OracleGateway<T> implements Gateway<T> {
 
 	public void modify(int id, T entity) throws SQLException {
 		try {
-			logger.info("Modifing some entity...");
+			logger.info("Modifing some entity");
 	
 			setSession();
 			beginTransaction();
@@ -45,7 +45,7 @@ public class OracleGateway<T> implements Gateway<T> {
 		}
 	}
 	public T get(int id) throws SQLException {
-		logger.info("Getting some entity...");
+		logger.info("Getting some entity");
 
 		T entity = null;
 		try {
@@ -58,7 +58,7 @@ public class OracleGateway<T> implements Gateway<T> {
 		return entity;
 	}
 	public Collection<T> getAll(Class className) throws SQLException {
-		logger.info("Getting collection of entity...");
+		logger.info("Getting collection of entity");
 
 		List<T> entities = new ArrayList<T>();
 		try {
@@ -72,12 +72,12 @@ public class OracleGateway<T> implements Gateway<T> {
 	}
 
 	public Collection<T> getAllBy(Class childClass, OracleEntity parent) throws SQLException {
-		logger.info("Getting collection of entity where parent id = " + parent.getParentID());
+		logger.info("Getting collection of entity where parent id = " + parent.getID());
 		
 		List<T> entities = new ArrayList<T>();
 		try {
 			setSession();
-			entities = session.createCriteria(childClass).add(Expression.eq("parent_id", parent.getParentID())).list();
+			entities = session.createCriteria(childClass).add(Expression.eq("parent_id", parent.getID())).list();
 		}
 		finally {
 			closeSession();
@@ -87,7 +87,7 @@ public class OracleGateway<T> implements Gateway<T> {
 
 	public void remove(T entity) throws SQLException {
 		try {
-			logger.info("Removing some entity...");
+			logger.info("Removing some entity");
 		
 			setSession();
 			beginTransaction();
@@ -100,24 +100,24 @@ public class OracleGateway<T> implements Gateway<T> {
 	}
 
 	private void setSession() {
-		logger.info("Setting session...");
+		logger.info("Setting session");
 		session = HibernateUtil.getSessionFactory().openSession();
 	}
 
 	private void closeSession() {
-		logger.info("Closing session...");
+		logger.info("Closing session");
 		if (session != null && session.isOpen()) {
 			session.close();
 		}
 	}
 
 	private void  beginTransaction() {
-		logger.info("Starting transaction...");
+		logger.info("Starting transaction");
 		session.beginTransaction();
 	}
 
 	private void commit() {
-		logger.info("Commiting...");
+		logger.info("Commiting");
 		session.getTransaction().commit();
 	}
 }
