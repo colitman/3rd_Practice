@@ -2,23 +2,18 @@
 <%@ page isELIgnored="false" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-<script type="text/javascript">
-$(function() {
-	$("head").load("/WebPrototype/meta.html");
-});
-</script>
-<title>Lab 8 - Countries</title>
+<c:import url="/meta.html"/>
+<title>Lab 8 - Cities</title>
 </head>
 <body>
 
-<div id="header"></div><hr>
-<h1>All Counties</h1>
+<div id="header">
+	<c:import url="/header.html"/>
+</div><hr>
+<h1>All Cities</h1>
 <div id="content">
 	<div id="toolbar">
-		<script type="text/javascript">
-			$("#toolbar").load("toolbar.html");
-		</script>
+		<c:import url="/toolbar.html"/>
 	</div>
 	<div id="main-info">
 		<div id="children-list">
@@ -45,13 +40,9 @@ $(function() {
 	</div>
 </div>
 
-<hr><div id="footer"></div>
-<script type="text/javascript">
-	$(function() {
-		$("#header").load("header.html");
-		$("#footer").load("footer.html");
-	});
-</script>
+<hr><div id="footer">
+	<c:import url="/footer.html"/>
+</div>
 
 </body>
 </html>
