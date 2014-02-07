@@ -71,13 +71,13 @@ public class OracleGateway<T> implements Gateway<T> {
 		return entities;
 	}
 
-	public Collection<T> getAllBy(Class childClass, OracleEntity parent) throws SQLException {
-		logger.info("Getting collection of entity where parent id = " + parent.getID());
+	public Collection<T> getAllBy(Class childClass, int parentID) throws SQLException {
+		logger.info("Getting collection of entity where parent id = " + parentID);
 		
 		List<T> entities = new ArrayList<T>();
 		try {
 			setSession();
-			entities = session.createCriteria(childClass).add(Expression.eq("parent_id", parent.getID())).list();
+			entities = session.createCriteria(childClass).add(Expression.eq("parentID", parentID)).list();
 		}
 		finally {
 			closeSession();

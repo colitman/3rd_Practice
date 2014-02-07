@@ -19,12 +19,12 @@ public class ShowAllRegion extends GatewayAction {
 		try {
 			logger.info("Prepare to show all regions");
 
-			OracleEntity parent = (OracleEntity) request.getAttribute("parent");
+			Integer parentID = (Integer) request.getAttribute("parent_id");
 
-			logger.info("Get parent");
+			logger.info("Get parent id: " + parentID);
 
 			Gateway<Region> gateway = (Gateway<Region>) getGateway();
-			Collection<Region> regions = gateway.getAllBy(Region.class, parent);
+			Collection<Region> regions = gateway.getAllBy(Region.class, parentID);
 		
 			logger.info("Get all regions");		
 
@@ -33,7 +33,7 @@ public class ShowAllRegion extends GatewayAction {
 			logger.info("Set all regions into session");
 			logger.info("Send redirect to showAllRegion page");	
 
-			request.getRequestDispatcher("region/showAll.jsp");
+			request.getRequestDispatcher("region/showAll.jsp").forward(request, response);
 		}
 		catch (Exception e) {
 			logger.error("Error occured in ShowAllRegion action", e);

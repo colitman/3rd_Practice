@@ -16,7 +16,7 @@ public class University implements OracleEntity {
 	private int id;
 	@Column(name="NAME", nullable=false)
 	private String name;
-	@Column(name="DEPS_COUNT", nullable=true)
+	@Column(name="DEPTS_COUNT", nullable=true)
 	private Integer departamentsCount;	
 	@Column(name="WWW", nullable=true)
 	private String www;

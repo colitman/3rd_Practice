@@ -1,189 +1,348 @@
-2014-02-03 16:26:30,483 INFO t (self-tuning)'    logger - Logger installed
-2014-02-03 16:26:30,483 INFO t (self-tuning)'    logger - Logger installed
-2014-02-03 16:26:30,493 INFO t (self-tuning)'    logger - Prepare to show all countries
-2014-02-03 16:26:30,493 INFO t (self-tuning)'    logger - Prepare to show all countries
-2014-02-03 16:26:37,674 INFO t (self-tuning)'    logger - Getting collection of entity...
-2014-02-03 16:26:37,674 INFO t (self-tuning)'    logger - Getting collection of entity...
-2014-02-03 16:26:37,684 INFO t (self-tuning)'    logger - Setting session...
-2014-02-03 16:26:37,684 INFO t (self-tuning)'    logger - Setting session...
-2014-02-03 16:26:37,724 INFO t (self-tuning)'    logger - Getting SessionFactory...
-2014-02-03 16:26:37,724 INFO t (self-tuning)'    logger - Getting SessionFactory...
-2014-02-03 16:26:37,734 INFO t (self-tuning)'    logger - Initializing SessionFactory...
-2014-02-03 16:26:37,734 INFO t (self-tuning)'    logger - Initializing SessionFactory...
-2014-02-03 16:26:38,805 INFO t (self-tuning)'on.Version - HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
-2014-02-03 16:26:39,256 INFO t (self-tuning)'te.Version - HHH000412: Hibernate Core {4.2.5.Final}
-2014-02-03 16:26:39,466 INFO t (self-tuning)'nvironment - HHH000206: hibernate.properties not found
-2014-02-03 16:26:39,576 INFO t (self-tuning)'nvironment - HHH000021: Bytecode provider name : javassist
-2014-02-03 16:26:40,337 INFO t (self-tuning)'figuration - HHH000042: Configuring from file: hibernate.cfg.xml
-2014-02-03 16:26:40,568 WARN t (self-tuning)'tyResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
-2014-02-03 16:26:40,898 INFO t (self-tuning)'figuration - HHH000041: Configured SessionFactory: null
-2014-02-03 16:26:42,305 INFO t (self-tuning)'oviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
-2014-02-03 16:27:07,492 INFO t (self-tuning)'oviderImpl - HHH000115: Hibernate connection pool size: 10
-2014-02-03 16:27:07,492 INFO t (self-tuning)'oviderImpl - HHH000006: Autocommit mode: false
-2014-02-03 16:27:07,492 INFO t (self-tuning)'oviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:xe]
-2014-02-03 16:27:07,512 INFO t (self-tuning)'oviderImpl - HHH000046: Connection properties: {user=admin, password=****}
-2014-02-03 16:27:18,698 INFO t (self-tuning)'ct.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
-2014-02-03 16:27:22,123 INFO t (self-tuning)'yInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
-2014-02-03 16:27:22,203 INFO t (self-tuning)'torFactory - HHH000397: Using ASTQueryTranslatorFactory
-2014-02-03 16:27:28,367 INFO t (self-tuning)'    logger - Closing session...
-2014-02-03 16:27:28,367 INFO t (self-tuning)'    logger - Closing session...
-2014-02-03 16:27:28,378 INFO t (self-tuning)'    logger - Get all countries
-2014-02-03 16:27:28,378 INFO t (self-tuning)'    logger - Get all countries
-2014-02-03 16:27:28,378 INFO t (self-tuning)'    logger - Set all countries into session
-2014-02-03 16:27:28,378 INFO t (self-tuning)'    logger - Set all countries into session
-2014-02-03 16:27:28,378 INFO t (self-tuning)'    logger - Send redirect to </WebPrototype/country/showAll.jsp> page
-2014-02-03 16:27:28,378 INFO t (self-tuning)'    logger - Send redirect to </WebPrototype/country/showAll.jsp> page
-2014-02-03 16:27:29,469 WARN t (self-tuning)'    logger - Error was occured
-2014-02-03 16:27:29,469 WARN t (self-tuning)'    logger - Error was occured
-2014-02-03 16:27:29,469 INFO t (self-tuning)'    logger - Send redirect to error page
-2014-02-03 16:27:29,469 INFO t (self-tuning)'    logger - Send redirect to error page
-2014-02-03 16:28:44,276 INFO t (self-tuning)'    logger - Logger installed
-2014-02-03 16:28:44,276 INFO t (self-tuning)'    logger - Logger installed
-2014-02-03 16:28:44,276 INFO t (self-tuning)'    logger - Prepare to show all countries
-2014-02-03 16:28:44,276 INFO t (self-tuning)'    logger - Prepare to show all countries
-2014-02-03 16:28:45,421 INFO t (self-tuning)'    logger - Getting collection of entity...
-2014-02-03 16:28:45,421 INFO t (self-tuning)'    logger - Getting collection of entity...
-2014-02-03 16:28:45,421 INFO t (self-tuning)'    logger - Setting session...
-2014-02-03 16:28:45,421 INFO t (self-tuning)'    logger - Setting session...
-2014-02-03 16:28:45,421 INFO t (self-tuning)'    logger - Getting SessionFactory...
-2014-02-03 16:28:45,421 INFO t (self-tuning)'    logger - Getting SessionFactory...
-2014-02-03 16:28:45,421 INFO t (self-tuning)'    logger - Initializing SessionFactory...
-2014-02-03 16:28:45,421 INFO t (self-tuning)'    logger - Initializing SessionFactory...
-2014-02-03 16:28:45,902 INFO t (self-tuning)'on.Version - HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
-2014-02-03 16:28:45,941 INFO t (self-tuning)'te.Version - HHH000412: Hibernate Core {4.2.5.Final}
-2014-02-03 16:28:45,979 INFO t (self-tuning)'nvironment - HHH000206: hibernate.properties not found
-2014-02-03 16:28:45,979 INFO t (self-tuning)'nvironment - HHH000021: Bytecode provider name : javassist
-2014-02-03 16:28:46,197 INFO t (self-tuning)'figuration - HHH000042: Configuring from file: hibernate.cfg.xml
-2014-02-03 16:28:46,353 WARN t (self-tuning)'tyResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
-2014-02-03 16:28:46,682 INFO t (self-tuning)'figuration - HHH000041: Configured SessionFactory: null
-2014-02-03 16:28:47,063 INFO t (self-tuning)'oviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
-2014-02-03 16:28:47,063 INFO t (self-tuning)'oviderImpl - HHH000115: Hibernate connection pool size: 10
-2014-02-03 16:28:47,063 INFO t (self-tuning)'oviderImpl - HHH000006: Autocommit mode: false
-2014-02-03 16:28:47,063 INFO t (self-tuning)'oviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:xe]
-2014-02-03 16:28:47,063 INFO t (self-tuning)'oviderImpl - HHH000046: Connection properties: {user=admin, password=****}
-2014-02-03 16:28:50,596 INFO t (self-tuning)'ct.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
-2014-02-03 16:28:51,704 INFO t (self-tuning)'yInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
-2014-02-03 16:28:51,816 INFO t (self-tuning)'torFactory - HHH000397: Using ASTQueryTranslatorFactory
-2014-02-03 16:28:53,323 INFO t (self-tuning)'    logger - Closing session...
-2014-02-03 16:28:53,323 INFO t (self-tuning)'    logger - Closing session...
-2014-02-03 16:28:53,340 INFO t (self-tuning)'    logger - Get all countries
-2014-02-03 16:28:53,340 INFO t (self-tuning)'    logger - Get all countries
-2014-02-03 16:28:53,340 INFO t (self-tuning)'    logger - Set all countries into session
-2014-02-03 16:28:53,340 INFO t (self-tuning)'    logger - Set all countries into session
-2014-02-03 16:28:53,340 INFO t (self-tuning)'    logger - Send redirect to </WebPrototype/country/showAll.jsp> page
-2014-02-03 16:28:53,340 INFO t (self-tuning)'    logger - Send redirect to </WebPrototype/country/showAll.jsp> page
-2014-02-03 16:29:03,575 WARN t (self-tuning)'    logger - Error was occured
-2014-02-03 16:29:03,575 WARN t (self-tuning)'    logger - Error was occured
-2014-02-03 16:29:03,575 INFO t (self-tuning)'    logger - Send redirect to error page
-2014-02-03 16:29:03,575 INFO t (self-tuning)'    logger - Send redirect to error page
-2014-02-03 16:44:20,728 INFO t (self-tuning)'    logger - Building HttpAction...
-2014-02-03 16:44:20,728 INFO t (self-tuning)'    logger - Building HttpAction...
-2014-02-03 16:44:20,748 INFO t (self-tuning)'    logger - Code: showAllCountry
-2014-02-03 16:44:20,748 INFO t (self-tuning)'    logger - Code: showAllCountry
-2014-02-03 16:44:20,758 INFO t (self-tuning)'    logger - Getting ActionFactory...
-2014-02-03 16:44:20,758 INFO t (self-tuning)'    logger - Getting ActionFactory...
-2014-02-03 16:44:20,758 INFO t (self-tuning)'    logger - Building HttpAction...
-2014-02-03 16:44:20,758 INFO t (self-tuning)'    logger - Building HttpAction...
-2014-02-03 16:44:21,759 INFO t (self-tuning)'    logger - Logger installed
-2014-02-03 16:44:21,759 INFO t (self-tuning)'    logger - Logger installed
-2014-02-03 16:44:21,759 INFO t (self-tuning)'    logger - Prepare to show all countries
-2014-02-03 16:44:21,759 INFO t (self-tuning)'    logger - Prepare to show all countries
-2014-02-03 16:44:22,350 INFO t (self-tuning)'    logger - Getting collection of entity...
-2014-02-03 16:44:22,350 INFO t (self-tuning)'    logger - Getting collection of entity...
-2014-02-03 16:44:22,350 INFO t (self-tuning)'    logger - Setting session...
-2014-02-03 16:44:22,350 INFO t (self-tuning)'    logger - Setting session...
-2014-02-03 16:44:22,360 INFO t (self-tuning)'    logger - Getting SessionFactory...
-2014-02-03 16:44:22,360 INFO t (self-tuning)'    logger - Getting SessionFactory...
-2014-02-03 16:44:23,031 INFO t (self-tuning)'    logger - Closing session...
-2014-02-03 16:44:23,031 INFO t (self-tuning)'    logger - Closing session...
-2014-02-03 16:44:23,031 INFO t (self-tuning)'    logger - Get all countries
-2014-02-03 16:44:23,031 INFO t (self-tuning)'    logger - Get all countries
-2014-02-03 16:44:23,041 INFO t (self-tuning)'    logger - Set all countries into session
-2014-02-03 16:44:23,041 INFO t (self-tuning)'    logger - Set all countries into session
-2014-02-03 16:44:23,041 INFO t (self-tuning)'    logger - Send redirect to </WebPrototype/country/showAll.jsp> page
-2014-02-03 16:44:23,041 INFO t (self-tuning)'    logger - Send redirect to </WebPrototype/country/showAll.jsp> page
-2014-02-03 16:44:23,251 WARN t (self-tuning)'    logger - Error was occured
-2014-02-03 16:44:23,251 WARN t (self-tuning)'    logger - Error was occured
-2014-02-03 16:44:23,251 INFO t (self-tuning)'    logger - Send redirect to error page
-2014-02-03 16:44:23,251 INFO t (self-tuning)'    logger - Send redirect to error page
-2014-02-03 18:25:07,538 INFO t (self-tuning)'    logger - Logger installed
-2014-02-03 18:25:07,538 INFO t (self-tuning)'    logger - Logger installed
-2014-02-03 18:25:07,562 INFO t (self-tuning)'    logger - Prepare to show all countries
-2014-02-03 18:25:07,562 INFO t (self-tuning)'    logger - Prepare to show all countries
-2014-02-03 18:25:11,415 INFO t (self-tuning)'    logger - Getting collection of entity...
-2014-02-03 18:25:11,415 INFO t (self-tuning)'    logger - Getting collection of entity...
-2014-02-03 18:25:11,415 INFO t (self-tuning)'    logger - Setting session...
-2014-02-03 18:25:11,415 INFO t (self-tuning)'    logger - Setting session...
-2014-02-03 18:25:11,437 INFO t (self-tuning)'    logger - Getting SessionFactory...
-2014-02-03 18:25:11,437 INFO t (self-tuning)'    logger - Getting SessionFactory...
-2014-02-03 18:25:11,437 INFO t (self-tuning)'    logger - Initializing SessionFactory...
-2014-02-03 18:25:11,437 INFO t (self-tuning)'    logger - Initializing SessionFactory...
-2014-02-03 18:25:13,014 INFO t (self-tuning)'on.Version - HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
-2014-02-03 18:25:13,123 INFO t (self-tuning)'te.Version - HHH000412: Hibernate Core {4.2.5.Final}
-2014-02-03 18:25:13,167 INFO t (self-tuning)'nvironment - HHH000206: hibernate.properties not found
-2014-02-03 18:25:13,200 INFO t (self-tuning)'nvironment - HHH000021: Bytecode provider name : javassist
-2014-02-03 18:25:14,098 INFO t (self-tuning)'figuration - HHH000042: Configuring from file: hibernate.cfg.xml
-2014-02-03 18:25:14,930 WARN t (self-tuning)'tyResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
-2014-02-03 18:25:15,532 INFO t (self-tuning)'figuration - HHH000041: Configured SessionFactory: null
-2014-02-03 18:25:16,474 INFO t (self-tuning)'oviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
-2014-02-03 18:25:17,624 INFO t (self-tuning)'oviderImpl - HHH000115: Hibernate connection pool size: 10
-2014-02-03 18:25:17,624 INFO t (self-tuning)'oviderImpl - HHH000006: Autocommit mode: false
-2014-02-03 18:25:17,624 INFO t (self-tuning)'oviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:xe]
-2014-02-03 18:25:17,668 INFO t (self-tuning)'oviderImpl - HHH000046: Connection properties: {user=admin, password=****}
-2014-02-03 18:25:22,108 INFO t (self-tuning)'ct.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
-2014-02-03 18:25:23,527 INFO t (self-tuning)'yInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
-2014-02-03 18:25:23,616 INFO t (self-tuning)'torFactory - HHH000397: Using ASTQueryTranslatorFactory
-2014-02-03 18:25:27,371 INFO t (self-tuning)'    logger - Closing session...
-2014-02-03 18:25:27,371 INFO t (self-tuning)'    logger - Closing session...
-2014-02-03 18:25:27,391 INFO t (self-tuning)'    logger - Get all countries
-2014-02-03 18:25:27,391 INFO t (self-tuning)'    logger - Get all countries
-2014-02-03 18:25:27,391 INFO t (self-tuning)'    logger - Set all countries into session
-2014-02-03 18:25:27,391 INFO t (self-tuning)'    logger - Set all countries into session
-2014-02-03 18:25:27,391 INFO t (self-tuning)'    logger - Send redirect to </WebPrototype/country/showAll.jsp> page
-2014-02-03 18:25:27,391 INFO t (self-tuning)'    logger - Send redirect to </WebPrototype/country/showAll.jsp> page
-2014-02-03 18:25:27,470 WARN t (self-tuning)'    logger - Error was occured
-2014-02-03 18:25:27,470 WARN t (self-tuning)'    logger - Error was occured
-2014-02-03 18:25:27,470 INFO t (self-tuning)'    logger - Send redirect to error page
-2014-02-03 18:25:27,470 INFO t (self-tuning)'    logger - Send redirect to error page
-2014-02-03 18:38:40,654 INFO t (self-tuning)'    logger - Logger installed
-2014-02-03 18:38:40,654 INFO t (self-tuning)'    logger - Logger installed
-2014-02-03 18:38:40,654 INFO t (self-tuning)'    logger - Prepare to show all countries
-2014-02-03 18:38:40,654 INFO t (self-tuning)'    logger - Prepare to show all countries
-2014-02-03 18:38:41,265 INFO t (self-tuning)'    logger - Getting collection of entity...
-2014-02-03 18:38:41,265 INFO t (self-tuning)'    logger - Getting collection of entity...
-2014-02-03 18:38:41,275 INFO t (self-tuning)'    logger - Setting session...
-2014-02-03 18:38:41,275 INFO t (self-tuning)'    logger - Setting session...
-2014-02-03 18:38:41,275 INFO t (self-tuning)'    logger - Getting SessionFactory...
-2014-02-03 18:38:41,275 INFO t (self-tuning)'    logger - Getting SessionFactory...
-2014-02-03 18:38:41,275 INFO t (self-tuning)'    logger - Initializing SessionFactory...
-2014-02-03 18:38:41,275 INFO t (self-tuning)'    logger - Initializing SessionFactory...
-2014-02-03 18:38:41,926 INFO t (self-tuning)'on.Version - HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
-2014-02-03 18:38:41,956 INFO t (self-tuning)'te.Version - HHH000412: Hibernate Core {4.2.5.Final}
-2014-02-03 18:38:41,976 INFO t (self-tuning)'nvironment - HHH000206: hibernate.properties not found
-2014-02-03 18:38:41,976 INFO t (self-tuning)'nvironment - HHH000021: Bytecode provider name : javassist
-2014-02-03 18:38:42,056 INFO t (self-tuning)'figuration - HHH000042: Configuring from file: hibernate.cfg.xml
-2014-02-03 18:38:42,156 WARN t (self-tuning)'tyResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
-2014-02-03 18:38:42,236 INFO t (self-tuning)'figuration - HHH000041: Configured SessionFactory: null
-2014-02-03 18:38:42,407 INFO t (self-tuning)'oviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
-2014-02-03 18:38:42,407 INFO t (self-tuning)'oviderImpl - HHH000115: Hibernate connection pool size: 10
-2014-02-03 18:38:42,407 INFO t (self-tuning)'oviderImpl - HHH000006: Autocommit mode: false
-2014-02-03 18:38:42,407 INFO t (self-tuning)'oviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:xe]
-2014-02-03 18:38:42,407 INFO t (self-tuning)'oviderImpl - HHH000046: Connection properties: {user=admin, password=****}
-2014-02-03 18:38:43,138 INFO t (self-tuning)'ct.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
-2014-02-03 18:38:43,728 INFO t (self-tuning)'yInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
-2014-02-03 18:38:43,759 INFO t (self-tuning)'torFactory - HHH000397: Using ASTQueryTranslatorFactory
-2014-02-03 18:38:44,780 INFO t (self-tuning)'    logger - Closing session...
-2014-02-03 18:38:44,780 INFO t (self-tuning)'    logger - Closing session...
-2014-02-03 18:38:44,790 INFO t (self-tuning)'    logger - Get all countries
-2014-02-03 18:38:44,790 INFO t (self-tuning)'    logger - Get all countries
-2014-02-03 18:38:44,790 INFO t (self-tuning)'    logger - Set all countries into session
-2014-02-03 18:38:44,790 INFO t (self-tuning)'    logger - Set all countries into session
-2014-02-03 18:38:44,790 INFO t (self-tuning)'    logger - Send redirect to </WebPrototype/country/showAll.jsp> page
-2014-02-03 18:38:44,790 INFO t (self-tuning)'    logger - Send redirect to </WebPrototype/country/showAll.jsp> page
-2014-02-03 18:38:46,733 ERRORt (self-tuning)'    logger - Error  occured
+2014-02-07 10:57:04,459 INFO fault (self-tuning)'              logger - Logger installed
+2014-02-07 10:57:04,459 INFO fault (self-tuning)'              logger - Prepare to show all countries
+2014-02-07 10:57:04,459 INFO fault (self-tuning)'              logger - Getting gateway
+2014-02-07 10:57:06,782 INFO fault (self-tuning)'              logger - Getting collection of entity
+2014-02-07 10:57:06,782 INFO fault (self-tuning)'              logger - Setting session
+2014-02-07 10:57:06,782 INFO fault (self-tuning)'              logger - Getting SessionFactory...
+2014-02-07 10:57:06,782 INFO fault (self-tuning)'              logger - Initializing SessionFactory...
+2014-02-07 10:57:20,142 INFO fault (self-tuning)'              logger - Closing session
+2014-02-07 10:57:20,152 ERRORfault (self-tuning)'              logger - Error  occured in ShowAllCountry action
+org.hibernate.exception.GenericJDBCException: Could not open connection
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:54)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:125)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:110)
+	at org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.obtainConnection(LogicalConnectionImpl.java:221)
+	at org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.getConnection(LogicalConnectionImpl.java:157)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl.connection(StatementPreparerImpl.java:56)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$5.doPrepare(StatementPreparerImpl.java:161)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$StatementPreparationTemplate.prepareStatement(StatementPreparerImpl.java:182)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl.prepareQueryStatement(StatementPreparerImpl.java:159)
+	at org.hibernate.loader.Loader.prepareQueryStatement(Loader.java:1859)
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:1836)
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:1816)
+	at org.hibernate.loader.Loader.doQuery(Loader.java:900)
+	at org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Loader.java:342)
+	at org.hibernate.loader.Loader.doList(Loader.java:2526)
+	at org.hibernate.loader.Loader.doList(Loader.java:2512)
+	at org.hibernate.loader.Loader.listIgnoreQueryCache(Loader.java:2342)
+	at org.hibernate.loader.Loader.list(Loader.java:2337)
+	at org.hibernate.loader.criteria.CriteriaLoader.list(CriteriaLoader.java:124)
+	at org.hibernate.internal.SessionImpl.list(SessionImpl.java:1662)
+	at org.hibernate.internal.CriteriaImpl.list(CriteriaImpl.java:374)
+	at hibernate.dao.OracleGateway.getAll(OracleGateway.java:66)
+	at action.handlers.country.ShowAllCountry.perform(ShowAllCountry.java:26)
+	at servlet.ServletPrototype.service(ServletPrototype.java:19)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:844)
+	at weblogic.servlet.internal.StubSecurityHelper$ServletServiceAction.run(StubSecurityHelper.java:280)
+	at weblogic.servlet.internal.StubSecurityHelper$ServletServiceAction.run(StubSecurityHelper.java:254)
+	at weblogic.servlet.internal.StubSecurityHelper.invokeServlet(StubSecurityHelper.java:136)
+	at weblogic.servlet.internal.ServletStubImpl.execute(ServletStubImpl.java:341)
+	at weblogic.servlet.internal.ServletStubImpl.execute(ServletStubImpl.java:238)
+	at weblogic.servlet.internal.WebAppServletContext$ServletInvocationAction.wrapRun(WebAppServletContext.java:3363)
+	at weblogic.servlet.internal.WebAppServletContext$ServletInvocationAction.run(WebAppServletContext.java:3333)
+	at weblogic.security.acl.internal.AuthenticatedSubject.doAs(AuthenticatedSubject.java:321)
+	at weblogic.security.service.SecurityManager.runAs(SecurityManager.java:120)
+	at weblogic.servlet.provider.WlsSubjectHandle.run(WlsSubjectHandle.java:57)
+	at weblogic.servlet.internal.WebAppServletContext.doSecuredExecute(WebAppServletContext.java:2220)
+	at weblogic.servlet.internal.WebAppServletContext.securedExecute(WebAppServletContext.java:2146)
+	at weblogic.servlet.internal.WebAppServletContext.execute(WebAppServletContext.java:2124)
+	at weblogic.servlet.internal.ServletRequestImpl.run(ServletRequestImpl.java:1564)
+	at weblogic.servlet.provider.ContainerSupportProviderImpl$WlsRequestExecutor.run(ContainerSupportProviderImpl.java:254)
+	at weblogic.work.ExecuteThread.execute(ExecuteThread.java:295)
+	at weblogic.work.ExecuteThread.run(ExecuteThread.java:254)
+Caused by: java.sql.SQLException: Listener refused the connection with the following error:
+ORA-12505, TNS:listener does not currently know of SID given in connect descriptor
+ 
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:465)
+	at oracle.jdbc.driver.PhysicalConnection.<init>(PhysicalConnection.java:546)
+	at oracle.jdbc.driver.T4CConnection.<init>(T4CConnection.java:232)
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:32)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:521)
+	at org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl.getConnection(DriverManagerConnectionProviderImpl.java:204)
+	at org.hibernate.internal.AbstractSessionImpl$NonContextualJdbcConnectionAccess.obtainConnection(AbstractSessionImpl.java:292)
+	at org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.obtainConnection(LogicalConnectionImpl.java:214)
+	... 38 more
+Caused by: oracle.net.ns.NetException: Listener refused the connection with the following error:
+ORA-12505, TNS:listener does not currently know of SID given in connect descriptor
+ 
+	at oracle.net.ns.NSProtocol.connect(NSProtocol.java:395)
+	at oracle.jdbc.driver.T4CConnection.connect(T4CConnection.java:1109)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:316)
+	... 45 more
+2014-02-07 10:57:31,598 INFO fault (self-tuning)'              logger - Building HttpAction
+2014-02-07 10:57:31,628 INFO fault (self-tuning)'              logger - Code: showAllCountry
+2014-02-07 10:57:31,638 INFO fault (self-tuning)'              logger - Getting ActionFactory...
+2014-02-07 10:57:31,638 INFO fault (self-tuning)'              logger - Building HttpAction...
+2014-02-07 10:57:31,728 INFO fault (self-tuning)'              logger - Logger installed
+2014-02-07 10:57:31,728 INFO fault (self-tuning)'              logger - Prepare to show all countries
+2014-02-07 10:57:31,728 INFO fault (self-tuning)'              logger - Getting gateway
+2014-02-07 10:57:31,879 INFO fault (self-tuning)'              logger - Getting collection of entity
+2014-02-07 10:57:31,879 INFO fault (self-tuning)'              logger - Setting session
+2014-02-07 10:57:31,889 INFO fault (self-tuning)'              logger - Getting SessionFactory...
+2014-02-07 10:57:31,929 INFO fault (self-tuning)'              logger - Closing session
+2014-02-07 10:57:31,929 ERRORfault (self-tuning)'              logger - Error  occured in ShowAllCountry action
+org.hibernate.exception.GenericJDBCException: Could not open connection
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:54)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:125)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:110)
+	at org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.obtainConnection(LogicalConnectionImpl.java:221)
+	at org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.getConnection(LogicalConnectionImpl.java:157)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl.connection(StatementPreparerImpl.java:56)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$5.doPrepare(StatementPreparerImpl.java:161)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$StatementPreparationTemplate.prepareStatement(StatementPreparerImpl.java:182)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl.prepareQueryStatement(StatementPreparerImpl.java:159)
+	at org.hibernate.loader.Loader.prepareQueryStatement(Loader.java:1859)
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:1836)
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:1816)
+	at org.hibernate.loader.Loader.doQuery(Loader.java:900)
+	at org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Loader.java:342)
+	at org.hibernate.loader.Loader.doList(Loader.java:2526)
+	at org.hibernate.loader.Loader.doList(Loader.java:2512)
+	at org.hibernate.loader.Loader.listIgnoreQueryCache(Loader.java:2342)
+	at org.hibernate.loader.Loader.list(Loader.java:2337)
+	at org.hibernate.loader.criteria.CriteriaLoader.list(CriteriaLoader.java:124)
+	at org.hibernate.internal.SessionImpl.list(SessionImpl.java:1662)
+	at org.hibernate.internal.CriteriaImpl.list(CriteriaImpl.java:374)
+	at hibernate.dao.OracleGateway.getAll(OracleGateway.java:66)
+	at action.handlers.country.ShowAllCountry.perform(ShowAllCountry.java:26)
+	at servlet.ServletPrototype.service(ServletPrototype.java:19)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:844)
+	at weblogic.servlet.internal.StubSecurityHelper$ServletServiceAction.run(StubSecurityHelper.java:280)
+	at weblogic.servlet.internal.StubSecurityHelper$ServletServiceAction.run(StubSecurityHelper.java:254)
+	at weblogic.servlet.internal.StubSecurityHelper.invokeServlet(StubSecurityHelper.java:136)
+	at weblogic.servlet.internal.ServletStubImpl.execute(ServletStubImpl.java:341)
+	at weblogic.servlet.internal.ServletStubImpl.execute(ServletStubImpl.java:238)
+	at weblogic.servlet.internal.WebAppServletContext$ServletInvocationAction.wrapRun(WebAppServletContext.java:3363)
+	at weblogic.servlet.internal.WebAppServletContext$ServletInvocationAction.run(WebAppServletContext.java:3333)
+	at weblogic.security.acl.internal.AuthenticatedSubject.doAs(AuthenticatedSubject.java:321)
+	at weblogic.security.service.SecurityManager.runAs(SecurityManager.java:120)
+	at weblogic.servlet.provider.WlsSubjectHandle.run(WlsSubjectHandle.java:57)
+	at weblogic.servlet.internal.WebAppServletContext.doSecuredExecute(WebAppServletContext.java:2220)
+	at weblogic.servlet.internal.WebAppServletContext.securedExecute(WebAppServletContext.java:2146)
+	at weblogic.servlet.internal.WebAppServletContext.execute(WebAppServletContext.java:2124)
+	at weblogic.servlet.internal.ServletRequestImpl.run(ServletRequestImpl.java:1564)
+	at weblogic.servlet.provider.ContainerSupportProviderImpl$WlsRequestExecutor.run(ContainerSupportProviderImpl.java:254)
+	at weblogic.work.ExecuteThread.execute(ExecuteThread.java:295)
+	at weblogic.work.ExecuteThread.run(ExecuteThread.java:254)
+Caused by: java.sql.SQLException: Listener refused the connection with the following error:
+ORA-12505, TNS:listener does not currently know of SID given in connect descriptor
+ 
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:465)
+	at oracle.jdbc.driver.PhysicalConnection.<init>(PhysicalConnection.java:546)
+	at oracle.jdbc.driver.T4CConnection.<init>(T4CConnection.java:232)
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:32)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:521)
+	at org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl.getConnection(DriverManagerConnectionProviderImpl.java:204)
+	at org.hibernate.internal.AbstractSessionImpl$NonContextualJdbcConnectionAccess.obtainConnection(AbstractSessionImpl.java:292)
+	at org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.obtainConnection(LogicalConnectionImpl.java:214)
+	... 38 more
+Caused by: oracle.net.ns.NetException: Listener refused the connection with the following error:
+ORA-12505, TNS:listener does not currently know of SID given in connect descriptor
+ 
+	at oracle.net.ns.NSProtocol.connect(NSProtocol.java:395)
+	at oracle.jdbc.driver.T4CConnection.connect(T4CConnection.java:1109)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:316)
+	... 45 more
+2014-02-07 10:59:19,523 INFO fault (self-tuning)'              logger - Building HttpAction
+2014-02-07 10:59:19,553 INFO fault (self-tuning)'              logger - Code: showAllCountry
+2014-02-07 10:59:19,553 INFO fault (self-tuning)'              logger - Getting ActionFactory...
+2014-02-07 10:59:19,553 INFO fault (self-tuning)'              logger - Building HttpAction...
+2014-02-07 10:59:19,874 INFO fault (self-tuning)'              logger - Logger installed
+2014-02-07 10:59:19,984 INFO fault (self-tuning)'              logger - Prepare to show all countries
+2014-02-07 10:59:19,984 INFO fault (self-tuning)'              logger - Getting gateway
+2014-02-07 10:59:20,365 INFO fault (self-tuning)'              logger - Getting collection of entity
+2014-02-07 10:59:20,395 INFO fault (self-tuning)'              logger - Setting session
+2014-02-07 10:59:20,395 INFO fault (self-tuning)'              logger - Getting SessionFactory...
+2014-02-07 10:59:23,379 INFO fault (self-tuning)'              logger - Closing session
+2014-02-07 10:59:23,379 INFO fault (self-tuning)'              logger - Get all countries
+2014-02-07 10:59:23,379 INFO fault (self-tuning)'              logger - Set countries into request attributes
+2014-02-07 10:59:23,379 INFO fault (self-tuning)'              logger - Send forward to country/showAll.jsp page
+2014-02-07 11:00:13,771 INFO fault (self-tuning)'              logger - Building HttpAction
+2014-02-07 11:00:13,821 INFO fault (self-tuning)'              logger - Code: showAllCountry
+2014-02-07 11:00:13,821 INFO fault (self-tuning)'              logger - Getting ActionFactory...
+2014-02-07 11:00:13,831 INFO fault (self-tuning)'              logger - Building HttpAction...
+2014-02-07 11:00:13,881 INFO fault (self-tuning)'              logger - Logger installed
+2014-02-07 11:00:13,881 INFO fault (self-tuning)'              logger - Prepare to show all countries
+2014-02-07 11:00:13,891 INFO fault (self-tuning)'              logger - Getting gateway
+2014-02-07 11:00:13,952 INFO fault (self-tuning)'              logger - Getting collection of entity
+2014-02-07 11:00:13,952 INFO fault (self-tuning)'              logger - Setting session
+2014-02-07 11:00:13,952 INFO fault (self-tuning)'              logger - Getting SessionFactory...
+2014-02-07 11:00:13,972 INFO fault (self-tuning)'              logger - Closing session
+2014-02-07 11:00:13,972 INFO fault (self-tuning)'              logger - Get all countries
+2014-02-07 11:00:13,982 INFO fault (self-tuning)'              logger - Set countries into request attributes
+2014-02-07 11:00:13,982 INFO fault (self-tuning)'              logger - Send forward to country/showAll.jsp page
+2014-02-07 11:11:02,674 INFO fault (self-tuning)'              logger - Logger installed
+2014-02-07 11:11:02,714 INFO fault (self-tuning)'              logger - Prepare to show all countries
+2014-02-07 11:11:02,714 INFO fault (self-tuning)'              logger - Getting gateway
+2014-02-07 11:11:03,636 INFO fault (self-tuning)'              logger - Getting collection of entity
+2014-02-07 11:11:03,636 INFO fault (self-tuning)'              logger - Setting session
+2014-02-07 11:11:03,646 INFO fault (self-tuning)'              logger - Getting SessionFactory...
+2014-02-07 11:11:03,666 INFO fault (self-tuning)'              logger - Initializing SessionFactory...
+2014-02-07 11:11:11,998 INFO fault (self-tuning)'              logger - Closing session
+2014-02-07 11:11:12,008 INFO fault (self-tuning)'              logger - Get all countries
+2014-02-07 11:11:12,008 INFO fault (self-tuning)'              logger - Set countries into request attributes
+2014-02-07 11:11:12,008 INFO fault (self-tuning)'              logger - Send forward to country/showAll.jsp page
+2014-02-07 11:11:35,051 INFO fault (self-tuning)'              logger - Building HttpAction
+2014-02-07 11:11:35,071 INFO fault (self-tuning)'              logger - Code: showAllRegionInCountry
+2014-02-07 11:11:35,071 INFO fault (self-tuning)'              logger - Getting ActionFactory
+2014-02-07 11:11:35,071 INFO fault (self-tuning)'              logger - Building HttpAction
+2014-02-07 11:11:35,071 INFO fault (self-tuning)'              logger - Prepare to show all regions
+2014-02-07 11:11:35,071 INFO fault (self-tuning)'              logger - Get parent id: null
+2014-02-07 11:11:35,071 INFO fault (self-tuning)'              logger - Getting gateway
+2014-02-07 11:11:35,221 ERRORfault (self-tuning)'              logger - Error  occured in ShowAllRegionInCountry action
 java.lang.NullPointerException
-	at hibernate.logic.Country.getTimezone(Country.java:77)
-	at jsp_servlet.__showall._jspService(__showall.java:113)
+	at action.handlers.region.ShowAllRegionInCountry.perform(ShowAllRegionInCountry.java:27)
+	at servlet.ServletPrototype.service(ServletPrototype.java:19)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:844)
+	at weblogic.servlet.internal.StubSecurityHelper$ServletServiceAction.run(StubSecurityHelper.java:280)
+	at weblogic.servlet.internal.StubSecurityHelper$ServletServiceAction.run(StubSecurityHelper.java:254)
+	at weblogic.servlet.internal.StubSecurityHelper.invokeServlet(StubSecurityHelper.java:136)
+	at weblogic.servlet.internal.ServletStubImpl.execute(ServletStubImpl.java:341)
+	at weblogic.servlet.internal.ServletStubImpl.execute(ServletStubImpl.java:238)
+	at weblogic.servlet.internal.WebAppServletContext$ServletInvocationAction.wrapRun(WebAppServletContext.java:3363)
+	at weblogic.servlet.internal.WebAppServletContext$ServletInvocationAction.run(WebAppServletContext.java:3333)
+	at weblogic.security.acl.internal.AuthenticatedSubject.doAs(AuthenticatedSubject.java:321)
+	at weblogic.security.service.SecurityManager.runAs(SecurityManager.java:120)
+	at weblogic.servlet.provider.WlsSubjectHandle.run(WlsSubjectHandle.java:57)
+	at weblogic.servlet.internal.WebAppServletContext.doSecuredExecute(WebAppServletContext.java:2220)
+	at weblogic.servlet.internal.WebAppServletContext.securedExecute(WebAppServletContext.java:2146)
+	at weblogic.servlet.internal.WebAppServletContext.execute(WebAppServletContext.java:2124)
+	at weblogic.servlet.internal.ServletRequestImpl.run(ServletRequestImpl.java:1564)
+	at weblogic.servlet.provider.ContainerSupportProviderImpl$WlsRequestExecutor.run(ContainerSupportProviderImpl.java:254)
+	at weblogic.work.ExecuteThread.execute(ExecuteThread.java:295)
+	at weblogic.work.ExecuteThread.run(ExecuteThread.java:254)
+2014-02-07 11:20:29,870 INFO fault (self-tuning)'              logger - Logger installed
+2014-02-07 11:20:29,870 INFO fault (self-tuning)'              logger - Prepare to show all countries
+2014-02-07 11:20:29,870 INFO fault (self-tuning)'              logger - Getting gateway
+2014-02-07 11:20:29,910 INFO fault (self-tuning)'              logger - Getting collection of entity
+2014-02-07 11:20:29,910 INFO fault (self-tuning)'              logger - Setting session
+2014-02-07 11:20:29,910 INFO fault (self-tuning)'              logger - Getting SessionFactory...
+2014-02-07 11:20:30,150 INFO fault (self-tuning)'              logger - Closing session
+2014-02-07 11:20:30,150 INFO fault (self-tuning)'              logger - Get all countries
+2014-02-07 11:20:30,150 INFO fault (self-tuning)'              logger - Set countries into request attributes
+2014-02-07 11:20:30,150 INFO fault (self-tuning)'              logger - Send forward to country/showAll.jsp page
+2014-02-07 11:20:41,146 INFO fault (self-tuning)'              logger - Building HttpAction
+2014-02-07 11:20:41,156 INFO fault (self-tuning)'              logger - Code: showAllRegionInCountry
+2014-02-07 11:20:41,156 INFO fault (self-tuning)'              logger - Getting ActionFactory
+2014-02-07 11:20:41,156 INFO fault (self-tuning)'              logger - Building HttpAction
+2014-02-07 11:20:41,156 INFO fault (self-tuning)'              logger - Prepare to show all regions
+2014-02-07 11:20:41,156 INFO fault (self-tuning)'              logger - Get parent id: 2
+2014-02-07 11:20:41,156 INFO fault (self-tuning)'              logger - Getting gateway
+2014-02-07 11:20:41,206 INFO fault (self-tuning)'              logger - Getting collection of entity where parent id = 2
+2014-02-07 11:20:41,206 INFO fault (self-tuning)'              logger - Setting session
+2014-02-07 11:20:41,206 INFO fault (self-tuning)'              logger - Getting SessionFactory...
+2014-02-07 11:20:41,206 INFO fault (self-tuning)'              logger - Closing session
+2014-02-07 11:20:41,216 ERRORfault (self-tuning)'              logger - Error  occured in ShowAllRegionInCountry action
+org.hibernate.QueryException: could not resolve property: parent_id of: hibernate.logic.Region
+	at org.hibernate.persister.entity.AbstractPropertyMapping.propertyException(AbstractPropertyMapping.java:83)
+	at org.hibernate.persister.entity.AbstractPropertyMapping.toType(AbstractPropertyMapping.java:77)
+	at org.hibernate.persister.entity.AbstractEntityPersister.getSubclassPropertyTableNumber(AbstractEntityPersister.java:1985)
+	at org.hibernate.persister.entity.BasicEntityPropertyMapping.toColumns(BasicEntityPropertyMapping.java:61)
+	at org.hibernate.persister.entity.AbstractEntityPersister.toColumns(AbstractEntityPersister.java:1960)
+	at org.hibernate.loader.criteria.CriteriaQueryTranslator.getColumns(CriteriaQueryTranslator.java:523)
+	at org.hibernate.loader.criteria.CriteriaQueryTranslator.findColumns(CriteriaQueryTranslator.java:538)
+	at org.hibernate.criterion.SimpleExpression.toSqlString(SimpleExpression.java:66)
+	at org.hibernate.loader.criteria.CriteriaQueryTranslator.getWhereCondition(CriteriaQueryTranslator.java:419)
+	at org.hibernate.loader.criteria.CriteriaJoinWalker.<init>(CriteriaJoinWalker.java:123)
+	at org.hibernate.loader.criteria.CriteriaJoinWalker.<init>(CriteriaJoinWalker.java:92)
+	at org.hibernate.loader.criteria.CriteriaLoader.<init>(CriteriaLoader.java:95)
+	at org.hibernate.internal.SessionImpl.list(SessionImpl.java:1643)
+	at org.hibernate.internal.CriteriaImpl.list(CriteriaImpl.java:374)
+	at hibernate.dao.OracleGateway.getAllBy(OracleGateway.java:80)
+	at action.handlers.region.ShowAllRegionInCountry.perform(ShowAllRegionInCountry.java:27)
+	at servlet.ServletPrototype.service(ServletPrototype.java:19)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:844)
+	at weblogic.servlet.internal.StubSecurityHelper$ServletServiceAction.run(StubSecurityHelper.java:280)
+	at weblogic.servlet.internal.StubSecurityHelper$ServletServiceAction.run(StubSecurityHelper.java:254)
+	at weblogic.servlet.internal.StubSecurityHelper.invokeServlet(StubSecurityHelper.java:136)
+	at weblogic.servlet.internal.ServletStubImpl.execute(ServletStubImpl.java:341)
+	at weblogic.servlet.internal.ServletStubImpl.execute(ServletStubImpl.java:238)
+	at weblogic.servlet.internal.WebAppServletContext$ServletInvocationAction.wrapRun(WebAppServletContext.java:3363)
+	at weblogic.servlet.internal.WebAppServletContext$ServletInvocationAction.run(WebAppServletContext.java:3333)
+	at weblogic.security.acl.internal.AuthenticatedSubject.doAs(AuthenticatedSubject.java:321)
+	at weblogic.security.service.SecurityManager.runAs(SecurityManager.java:120)
+	at weblogic.servlet.provider.WlsSubjectHandle.run(WlsSubjectHandle.java:57)
+	at weblogic.servlet.internal.WebAppServletContext.doSecuredExecute(WebAppServletContext.java:2220)
+	at weblogic.servlet.internal.WebAppServletContext.securedExecute(WebAppServletContext.java:2146)
+	at weblogic.servlet.internal.WebAppServletContext.execute(WebAppServletContext.java:2124)
+	at weblogic.servlet.internal.ServletRequestImpl.run(ServletRequestImpl.java:1564)
+	at weblogic.servlet.provider.ContainerSupportProviderImpl$WlsRequestExecutor.run(ContainerSupportProviderImpl.java:254)
+	at weblogic.work.ExecuteThread.execute(ExecuteThread.java:295)
+	at weblogic.work.ExecuteThread.run(ExecuteThread.java:254)
+2014-02-07 11:24:29,515 INFO fault (self-tuning)'              logger - Logger installed
+2014-02-07 11:24:29,525 INFO fault (self-tuning)'              logger - Prepare to show all countries
+2014-02-07 11:24:29,525 INFO fault (self-tuning)'              logger - Getting gateway
+2014-02-07 11:24:30,276 INFO fault (self-tuning)'              logger - Getting collection of entity
+2014-02-07 11:24:30,276 INFO fault (self-tuning)'              logger - Setting session
+2014-02-07 11:24:30,276 INFO fault (self-tuning)'              logger - Getting SessionFactory...
+2014-02-07 11:24:30,276 INFO fault (self-tuning)'              logger - Initializing SessionFactory...
+2014-02-07 11:24:33,200 INFO fault (self-tuning)'              logger - Closing session
+2014-02-07 11:24:33,210 INFO fault (self-tuning)'              logger - Get all countries
+2014-02-07 11:24:33,210 INFO fault (self-tuning)'              logger - Set countries into request attributes
+2014-02-07 11:24:33,220 INFO fault (self-tuning)'              logger - Send forward to country/showAll.jsp page
+2014-02-07 11:24:37,476 INFO fault (self-tuning)'              logger - Building HttpAction
+2014-02-07 11:24:37,496 INFO fault (self-tuning)'              logger - Code: showAllRegionInCountry
+2014-02-07 11:24:37,496 INFO fault (self-tuning)'              logger - Getting ActionFactory
+2014-02-07 11:24:37,496 INFO fault (self-tuning)'              logger - Building HttpAction
+2014-02-07 11:24:37,496 INFO fault (self-tuning)'              logger - Prepare to show all regions
+2014-02-07 11:24:37,496 INFO fault (self-tuning)'              logger - Get parent id: 2
+2014-02-07 11:24:37,496 INFO fault (self-tuning)'              logger - Getting gateway
+2014-02-07 11:24:37,616 INFO fault (self-tuning)'              logger - Getting collection of entity where parent id = 2
+2014-02-07 11:24:37,616 INFO fault (self-tuning)'              logger - Setting session
+2014-02-07 11:24:37,616 INFO fault (self-tuning)'              logger - Getting SessionFactory...
+2014-02-07 11:24:38,958 INFO fault (self-tuning)'              logger - Closing session
+2014-02-07 11:24:38,958 INFO fault (self-tuning)'              logger - Get all regions
+2014-02-07 11:24:38,968 INFO fault (self-tuning)'              logger - Set regions into request attributes
+2014-02-07 11:24:38,968 INFO fault (self-tuning)'              logger - Send forward to region/showAllInCountry.jsp page
+2014-02-07 11:28:33,045 INFO fault (self-tuning)'              logger - Logger installed
+2014-02-07 11:28:33,045 INFO fault (self-tuning)'              logger - Prepare to show all countries
+2014-02-07 11:28:33,045 INFO fault (self-tuning)'              logger - Getting gateway
+2014-02-07 11:28:35,208 INFO fault (self-tuning)'              logger - Getting collection of entity
+2014-02-07 11:28:35,208 INFO fault (self-tuning)'              logger - Setting session
+2014-02-07 11:28:35,208 INFO fault (self-tuning)'              logger - Getting SessionFactory...
+2014-02-07 11:28:35,208 INFO fault (self-tuning)'              logger - Initializing SessionFactory...
+2014-02-07 11:28:42,458 INFO fault (self-tuning)'              logger - Closing session
+2014-02-07 11:28:42,478 INFO fault (self-tuning)'              logger - Get all countries
+2014-02-07 11:28:42,478 INFO fault (self-tuning)'              logger - Set countries into request attributes
+2014-02-07 11:28:42,478 INFO fault (self-tuning)'              logger - Send forward to country/showAll.jsp page
+2014-02-07 11:28:46,414 INFO fault (self-tuning)'              logger - Building HttpAction
+2014-02-07 11:28:46,414 INFO fault (self-tuning)'              logger - Code: showAllRegionInCountry
+2014-02-07 11:28:46,414 INFO fault (self-tuning)'              logger - Getting ActionFactory
+2014-02-07 11:28:46,414 INFO fault (self-tuning)'              logger - Building HttpAction
+2014-02-07 11:28:46,424 INFO fault (self-tuning)'              logger - Prepare to show all regions
+2014-02-07 11:28:46,424 INFO fault (self-tuning)'              logger - Get parent id: 2
+2014-02-07 11:28:46,424 INFO fault (self-tuning)'              logger - Getting gateway
+2014-02-07 11:28:46,504 INFO fault (self-tuning)'              logger - Getting collection of entity where parent id = 2
+2014-02-07 11:28:46,504 INFO fault (self-tuning)'              logger - Setting session
+2014-02-07 11:28:46,504 INFO fault (self-tuning)'              logger - Getting SessionFactory...
+2014-02-07 11:28:46,564 INFO fault (self-tuning)'              logger - Closing session
+2014-02-07 11:28:46,564 INFO fault (self-tuning)'              logger - Get all regions
+2014-02-07 11:28:46,564 INFO fault (self-tuning)'              logger - Set regions into request attributes
+2014-02-07 11:28:46,564 INFO fault (self-tuning)'              logger - Send forward to region/showAllInCountry.jsp page
+2014-02-07 11:28:54,155 INFO fault (self-tuning)'              logger - Building HttpAction
+2014-02-07 11:28:54,155 INFO fault (self-tuning)'              logger - Code: showAllCityInRegion
+2014-02-07 11:28:54,155 INFO fault (self-tuning)'              logger - Getting ActionFactory
+2014-02-07 11:28:54,155 INFO fault (self-tuning)'              logger - Building HttpAction
+2014-02-07 11:28:54,155 INFO fault (self-tuning)'              logger - Prepare to show all cities
+2014-02-07 11:28:54,155 INFO fault (self-tuning)'              logger - Get parent id: 4
+2014-02-07 11:28:54,155 INFO fault (self-tuning)'              logger - Getting gateway
+2014-02-07 11:28:54,295 INFO fault (self-tuning)'              logger - Getting collection of entity where parent id = 4
+2014-02-07 11:28:54,295 INFO fault (self-tuning)'              logger - Setting session
+2014-02-07 11:28:54,295 INFO fault (self-tuning)'              logger - Getting SessionFactory...
+2014-02-07 11:28:54,616 INFO fault (self-tuning)'              logger - Closing session
+2014-02-07 11:28:54,616 INFO fault (self-tuning)'              logger - Get all cities
+2014-02-07 11:28:54,616 INFO fault (self-tuning)'              logger - Set cities into request attributes
+2014-02-07 11:28:54,616 INFO fault (self-tuning)'              logger - Send forward to city/showAllInRegion.jsp page
+2014-02-07 11:28:56,388 ERRORfault (self-tuning)'              logger - Error  occured in ShowAllRegionInRegion action
+javax.el.ELException: java.lang.NullPointerException
+	at javax.el.BeanELResolver.getValue(BeanELResolver.java:310)
+	at javax.el.CompositeELResolver.getValue(CompositeELResolver.java:188)
+	at com.sun.el.parser.AstValue.getValue(AstValue.java:138)
+	at com.sun.el.parser.AstValue.getValue(AstValue.java:183)
+	at com.sun.el.ValueExpressionImpl.getValue(ValueExpressionImpl.java:224)
+	at weblogic.servlet.jsp.ELHelper.evaluate(ELHelper.java:32)
+	at jsp_servlet._city.__showallinregion._jsp__tag0(__showallinregion.java:146)
+	at jsp_servlet._city.__showallinregion._jspService(__showallinregion.java:100)
 	at weblogic.servlet.jsp.JspBase.service(JspBase.java:34)
 	at weblogic.servlet.internal.StubSecurityHelper$ServletServiceAction.run(StubSecurityHelper.java:280)
 	at weblogic.servlet.internal.StubSecurityHelper$ServletServiceAction.run(StubSecurityHelper.java:254)
@@ -194,7 +353,7 @@ java.lang.NullPointerException
 	at weblogic.servlet.internal.ServletStubImpl.execute(ServletStubImpl.java:238)
 	at weblogic.servlet.internal.RequestDispatcherImpl.invokeServlet(RequestDispatcherImpl.java:576)
 	at weblogic.servlet.internal.RequestDispatcherImpl.forward(RequestDispatcherImpl.java:272)
-	at action.handlers.country.ShowAllCountry.perform(ShowAllCountry.java:36)
+	at action.handlers.city.ShowAllCityInRegion.perform(ShowAllCityInRegion.java:36)
 	at servlet.ServletPrototype.service(ServletPrototype.java:19)
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:844)
 	at weblogic.servlet.internal.StubSecurityHelper$ServletServiceAction.run(StubSecurityHelper.java:280)
@@ -214,21 +373,46 @@ java.lang.NullPointerException
 	at weblogic.servlet.provider.ContainerSupportProviderImpl$WlsRequestExecutor.run(ContainerSupportProviderImpl.java:254)
 	at weblogic.work.ExecuteThread.execute(ExecuteThread.java:295)
 	at weblogic.work.ExecuteThread.run(ExecuteThread.java:254)
-2014-02-03 18:38:46,733 ERRORt (self-tuning)'    logger - Error  occured
-java.lang.NullPointerException
-	at hibernate.logic.Country.getTimezone(Country.java:77)
-	at jsp_servlet.__showall._jspService(__showall.java:113)
-	at weblogic.servlet.jsp.JspBase.service(JspBase.java:34)
-	at weblogic.servlet.internal.StubSecurityHelper$ServletServiceAction.run(StubSecurityHelper.java:280)
-	at weblogic.servlet.internal.StubSecurityHelper$ServletServiceAction.run(StubSecurityHelper.java:254)
-	at weblogic.servlet.internal.StubSecurityHelper.invokeServlet(StubSecurityHelper.java:136)
-	at weblogic.servlet.internal.ServletStubImpl.execute(ServletStubImpl.java:341)
-	at weblogic.servlet.internal.ServletStubImpl.onAddToMapException(ServletStubImpl.java:478)
-	at weblogic.servlet.internal.ServletStubImpl.execute(ServletStubImpl.java:367)
-	at weblogic.servlet.internal.ServletStubImpl.execute(ServletStubImpl.java:238)
-	at weblogic.servlet.internal.RequestDispatcherImpl.invokeServlet(RequestDispatcherImpl.java:576)
-	at weblogic.servlet.internal.RequestDispatcherImpl.forward(RequestDispatcherImpl.java:272)
-	at action.handlers.country.ShowAllCountry.perform(ShowAllCountry.java:36)
+Caused by: java.lang.NullPointerException
+	at hibernate.logic.City.getPopulation(City.java:58)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at javax.el.BeanELResolver.getValue(BeanELResolver.java:305)
+	... 37 more
+2014-02-07 11:29:01,335 INFO fault (self-tuning)'              logger - Building HttpAction
+2014-02-07 11:29:01,335 INFO fault (self-tuning)'              logger - Code: showAllUniversityInCity
+2014-02-07 11:29:01,335 INFO fault (self-tuning)'              logger - Getting ActionFactory
+2014-02-07 11:29:01,335 INFO fault (self-tuning)'              logger - Building HttpAction
+2014-02-07 11:29:01,335 INFO fault (self-tuning)'              logger - Prepare to show all universities
+2014-02-07 11:29:01,335 INFO fault (self-tuning)'              logger - Get parent id: 8
+2014-02-07 11:29:01,365 INFO fault (self-tuning)'              logger - Getting gateway
+2014-02-07 11:29:01,566 INFO fault (self-tuning)'              logger - Getting collection of entity where parent id = 8
+2014-02-07 11:29:01,566 INFO fault (self-tuning)'              logger - Setting session
+2014-02-07 11:29:01,566 INFO fault (self-tuning)'              logger - Getting SessionFactory...
+2014-02-07 11:29:03,679 INFO fault (self-tuning)'              logger - Closing session
+2014-02-07 11:29:03,679 ERRORfault (self-tuning)'              logger - Error  occured in ShowAllUniversityInCity action
+org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+	at org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:82)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:49)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:125)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:110)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.extract(ResultSetReturnImpl.java:61)
+	at org.hibernate.loader.Loader.getResultSet(Loader.java:2040)
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:1837)
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:1816)
+	at org.hibernate.loader.Loader.doQuery(Loader.java:900)
+	at org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Loader.java:342)
+	at org.hibernate.loader.Loader.doList(Loader.java:2526)
+	at org.hibernate.loader.Loader.doList(Loader.java:2512)
+	at org.hibernate.loader.Loader.listIgnoreQueryCache(Loader.java:2342)
+	at org.hibernate.loader.Loader.list(Loader.java:2337)
+	at org.hibernate.loader.criteria.CriteriaLoader.list(CriteriaLoader.java:124)
+	at org.hibernate.internal.SessionImpl.list(SessionImpl.java:1662)
+	at org.hibernate.internal.CriteriaImpl.list(CriteriaImpl.java:374)
+	at hibernate.dao.OracleGateway.getAllBy(OracleGateway.java:80)
+	at action.handlers.university.ShowAllUniversityInCity.perform(ShowAllUniversityInCity.java:27)
 	at servlet.ServletPrototype.service(ServletPrototype.java:19)
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:844)
 	at weblogic.servlet.internal.StubSecurityHelper$ServletServiceAction.run(StubSecurityHelper.java:280)
@@ -248,653 +432,20 @@ java.lang.NullPointerException
 	at weblogic.servlet.provider.ContainerSupportProviderImpl$WlsRequestExecutor.run(ContainerSupportProviderImpl.java:254)
 	at weblogic.work.ExecuteThread.execute(ExecuteThread.java:295)
 	at weblogic.work.ExecuteThread.run(ExecuteThread.java:254)
-2014-02-03 18:38:46,793 INFO t (self-tuning)'    logger - Send redirect to error page
-2014-02-03 18:38:46,793 INFO t (self-tuning)'    logger - Send redirect to error page
-2014-02-03 18:48:50,531 INFO t (self-tuning)'    logger - Building HttpAction
-2014-02-03 18:48:50,531 INFO t (self-tuning)'    logger - Building HttpAction
-2014-02-03 18:48:50,561 INFO t (self-tuning)'    logger - Code: showAllCountry
-2014-02-03 18:48:50,561 INFO t (self-tuning)'    logger - Code: showAllCountry
-2014-02-03 18:48:50,561 INFO t (self-tuning)'    logger - Getting ActionFactory...
-2014-02-03 18:48:50,561 INFO t (self-tuning)'    logger - Getting ActionFactory...
-2014-02-03 18:48:50,561 INFO t (self-tuning)'    logger - Building HttpAction...
-2014-02-03 18:48:50,561 INFO t (self-tuning)'    logger - Building HttpAction...
-2014-02-03 18:48:51,462 INFO t (self-tuning)'    logger - Logger installed
-2014-02-03 18:48:51,462 INFO t (self-tuning)'    logger - Logger installed
-2014-02-03 18:48:51,462 INFO t (self-tuning)'    logger - Prepare to show all countries
-2014-02-03 18:48:51,462 INFO t (self-tuning)'    logger - Prepare to show all countries
-2014-02-03 18:48:53,395 INFO t (self-tuning)'    logger - Getting collection of entity...
-2014-02-03 18:48:53,395 INFO t (self-tuning)'    logger - Getting collection of entity...
-2014-02-03 18:48:53,395 INFO t (self-tuning)'    logger - Setting session...
-2014-02-03 18:48:53,395 INFO t (self-tuning)'    logger - Setting session...
-2014-02-03 18:48:53,395 INFO t (self-tuning)'    logger - Getting SessionFactory...
-2014-02-03 18:48:53,395 INFO t (self-tuning)'    logger - Getting SessionFactory...
-2014-02-03 18:48:53,645 INFO t (self-tuning)'    logger - Closing session...
-2014-02-03 18:48:53,645 INFO t (self-tuning)'    logger - Closing session...
-2014-02-03 18:48:53,655 INFO t (self-tuning)'    logger - Get all countries
-2014-02-03 18:48:53,655 INFO t (self-tuning)'    logger - Get all countries
-2014-02-03 18:48:53,655 INFO t (self-tuning)'    logger - Set all countries into session
-2014-02-03 18:48:53,655 INFO t (self-tuning)'    logger - Set all countries into session
-2014-02-03 18:48:53,655 INFO t (self-tuning)'    logger - Send redirect to </WebPrototype/country/showAll.jsp> page
-2014-02-03 18:48:53,655 INFO t (self-tuning)'    logger - Send redirect to </WebPrototype/country/showAll.jsp> page
-2014-02-03 18:48:53,846 INFO t (self-tuning)'    logger - Redirect sended
-2014-02-03 18:48:53,846 INFO t (self-tuning)'    logger - Redirect sended
-2014-02-04 16:45:24,593 INFO t (self-tuning)'    logger - Logger installed
-2014-02-04 16:45:24,593 INFO t (self-tuning)'    logger - Logger installed
-2014-02-04 16:45:24,623 INFO t (self-tuning)'    logger - Prepare to show all countries
-2014-02-04 16:45:24,623 INFO t (self-tuning)'    logger - Prepare to show all countries
-2014-02-04 16:45:24,623 INFO t (self-tuning)'    logger - Getting gateway
-2014-02-04 16:45:24,623 INFO t (self-tuning)'    logger - Getting gateway
-2014-02-04 16:45:25,274 INFO t (self-tuning)'    logger - Getting collection of entity
-2014-02-04 16:45:25,274 INFO t (self-tuning)'    logger - Getting collection of entity
-2014-02-04 16:45:25,284 INFO t (self-tuning)'    logger - Setting session
-2014-02-04 16:45:25,284 INFO t (self-tuning)'    logger - Setting session
-2014-02-04 16:45:25,284 INFO t (self-tuning)'    logger - Getting SessionFactory...
-2014-02-04 16:45:25,284 INFO t (self-tuning)'    logger - Getting SessionFactory...
-2014-02-04 16:45:25,284 INFO t (self-tuning)'    logger - Initializing SessionFactory...
-2014-02-04 16:45:25,284 INFO t (self-tuning)'    logger - Initializing SessionFactory...
-2014-02-04 16:45:25,764 INFO t (self-tuning)'on.Version - HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
-2014-02-04 16:45:25,784 INFO t (self-tuning)'te.Version - HHH000412: Hibernate Core {4.2.5.Final}
-2014-02-04 16:45:25,794 INFO t (self-tuning)'nvironment - HHH000206: hibernate.properties not found
-2014-02-04 16:45:25,794 INFO t (self-tuning)'nvironment - HHH000021: Bytecode provider name : javassist
-2014-02-04 16:45:25,874 INFO t (self-tuning)'figuration - HHH000042: Configuring from file: hibernate.cfg.xml
-2014-02-04 16:45:26,015 WARN t (self-tuning)'tyResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
-2014-02-04 16:45:26,085 INFO t (self-tuning)'figuration - HHH000041: Configured SessionFactory: null
-2014-02-04 16:45:26,255 INFO t (self-tuning)'oviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
-2014-02-04 16:45:26,255 INFO t (self-tuning)'oviderImpl - HHH000115: Hibernate connection pool size: 10
-2014-02-04 16:45:26,255 INFO t (self-tuning)'oviderImpl - HHH000006: Autocommit mode: false
-2014-02-04 16:45:26,255 INFO t (self-tuning)'oviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:xe]
-2014-02-04 16:45:26,255 INFO t (self-tuning)'oviderImpl - HHH000046: Connection properties: {user=admin, password=****}
-2014-02-04 16:45:26,525 INFO t (self-tuning)'ct.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
-2014-02-04 16:45:26,916 INFO t (self-tuning)'yInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
-2014-02-04 16:45:26,956 INFO t (self-tuning)'torFactory - HHH000397: Using ASTQueryTranslatorFactory
-2014-02-04 16:45:27,937 INFO t (self-tuning)'    logger - Closing session
-2014-02-04 16:45:27,937 INFO t (self-tuning)'    logger - Closing session
-2014-02-04 16:45:27,937 INFO t (self-tuning)'    logger - Get all countries
-2014-02-04 16:45:27,937 INFO t (self-tuning)'    logger - Get all countries
-2014-02-04 16:45:27,937 INFO t (self-tuning)'    logger - Set countries into request attributes
-2014-02-04 16:45:27,937 INFO t (self-tuning)'    logger - Set countries into request attributes
-2014-02-04 16:45:27,937 INFO t (self-tuning)'    logger - Send forward to country/showAll.jsp page
-2014-02-04 16:45:27,937 INFO t (self-tuning)'    logger - Send forward to country/showAll.jsp page
-2014-02-04 16:46:38,869 INFO t (self-tuning)'    logger - Building HttpAction
-2014-02-04 16:46:38,869 INFO t (self-tuning)'    logger - Building HttpAction
-2014-02-04 16:46:38,869 INFO t (self-tuning)'    logger - Code: showAllCountry
-2014-02-04 16:46:38,869 INFO t (self-tuning)'    logger - Code: showAllCountry
-2014-02-04 16:46:38,869 INFO t (self-tuning)'    logger - Getting ActionFactory...
-2014-02-04 16:46:38,869 INFO t (self-tuning)'    logger - Getting ActionFactory...
-2014-02-04 16:46:38,869 INFO t (self-tuning)'    logger - Building HttpAction...
-2014-02-04 16:46:38,869 INFO t (self-tuning)'    logger - Building HttpAction...
-2014-02-04 16:46:38,899 INFO t (self-tuning)'    logger - Logger installed
-2014-02-04 16:46:38,899 INFO t (self-tuning)'    logger - Prepare to show all countries
-2014-02-04 16:46:38,899 INFO t (self-tuning)'    logger - Getting gateway
-2014-02-04 16:46:38,960 INFO t (self-tuning)'    logger - Getting collection of entity
-2014-02-04 16:46:38,960 INFO t (self-tuning)'    logger - Setting session
-2014-02-04 16:46:38,960 INFO t (self-tuning)'    logger - Getting SessionFactory...
-2014-02-04 16:46:38,960 INFO t (self-tuning)'    logger - Closing session
-2014-02-04 16:46:38,960 INFO t (self-tuning)'    logger - Get all countries
-2014-02-04 16:46:38,960 INFO t (self-tuning)'    logger - Set countries into request attributes
-2014-02-04 16:46:38,960 INFO t (self-tuning)'    logger - Send forward to country/showAll.jsp page
-2014-02-04 16:46:44,568 INFO t (self-tuning)'    logger - Building HttpAction
-2014-02-04 16:46:44,568 INFO t (self-tuning)'    logger - Code: showAllCountry
-2014-02-04 16:46:44,568 INFO t (self-tuning)'    logger - Getting ActionFactory...
-2014-02-04 16:46:44,578 INFO t (self-tuning)'    logger - Building HttpAction...
-2014-02-04 16:46:44,588 INFO t (self-tuning)'    logger - Logger installed
-2014-02-04 16:46:44,588 INFO t (self-tuning)'    logger - Prepare to show all countries
-2014-02-04 16:46:44,618 INFO t (self-tuning)'    logger - Getting gateway
-2014-02-04 16:46:44,668 INFO t (self-tuning)'    logger - Getting collection of entity
-2014-02-04 16:46:44,668 INFO t (self-tuning)'    logger - Setting session
-2014-02-04 16:46:44,668 INFO t (self-tuning)'    logger - Getting SessionFactory...
-2014-02-04 16:46:44,678 INFO t (self-tuning)'    logger - Closing session
-2014-02-04 16:46:44,678 INFO t (self-tuning)'    logger - Get all countries
-2014-02-04 16:46:44,678 INFO t (self-tuning)'    logger - Set countries into request attributes
-2014-02-04 16:46:44,678 INFO t (self-tuning)'    logger - Send forward to country/showAll.jsp page
-2014-02-04 16:48:33,584 INFO t (self-tuning)'    logger - Building HttpAction
-2014-02-04 16:48:33,594 INFO t (self-tuning)'    logger - Code: showAllCountry
-2014-02-04 16:48:33,594 INFO t (self-tuning)'    logger - Getting ActionFactory...
-2014-02-04 16:48:33,594 INFO t (self-tuning)'    logger - Building HttpAction...
-2014-02-04 16:48:33,634 INFO t (self-tuning)'                          logger - Logger installed
-2014-02-04 16:48:33,634 INFO t (self-tuning)'                          logger - Prepare to show all countries
-2014-02-04 16:48:33,634 INFO t (self-tuning)'                          logger - Getting gateway
-2014-02-04 16:48:33,715 INFO t (self-tuning)'                          logger - Getting collection of entity
-2014-02-04 16:48:33,715 INFO t (self-tuning)'                          logger - Setting session
-2014-02-04 16:48:33,715 INFO t (self-tuning)'                          logger - Getting SessionFactory...
-2014-02-04 16:48:33,715 INFO t (self-tuning)'                          logger - Closing session
-2014-02-04 16:48:33,725 INFO t (self-tuning)'                          logger - Get all countries
-2014-02-04 16:48:33,725 INFO t (self-tuning)'                          logger - Set countries into request attributes
-2014-02-04 16:48:33,725 INFO t (self-tuning)'                          logger - Send forward to country/showAll.jsp page
-2014-02-04 16:49:54,220 INFO t (self-tuning)'                          logger - Building HttpAction
-2014-02-04 16:49:54,220 INFO t (self-tuning)'                          logger - Code: showAllCountry
-2014-02-04 16:49:54,220 INFO t (self-tuning)'                          logger - Getting ActionFactory...
-2014-02-04 16:49:54,220 INFO t (self-tuning)'                          logger - Building HttpAction...
-2014-02-04 16:49:54,260 INFO fault (self-tuning)'              logger - Logger installed
-2014-02-04 16:49:54,260 INFO fault (self-tuning)'              logger - Prepare to show all countries
-2014-02-04 16:49:54,260 INFO fault (self-tuning)'              logger - Getting gateway
-2014-02-04 16:49:54,391 INFO fault (self-tuning)'              logger - Getting collection of entity
-2014-02-04 16:49:54,391 INFO fault (self-tuning)'              logger - Setting session
-2014-02-04 16:49:54,391 INFO fault (self-tuning)'              logger - Getting SessionFactory...
-2014-02-04 16:49:54,401 INFO fault (self-tuning)'              logger - Closing session
-2014-02-04 16:49:54,401 INFO fault (self-tuning)'              logger - Get all countries
-2014-02-04 16:49:54,401 INFO fault (self-tuning)'              logger - Set countries into request attributes
-2014-02-04 16:49:54,401 INFO fault (self-tuning)'              logger - Send forward to country/showAll.jsp page
-2014-02-04 17:14:44,423 INFO fault (self-tuning)'              logger - Logger installed
-2014-02-04 17:14:44,423 INFO fault (self-tuning)'              logger - Prepare to show all countries
-2014-02-04 17:14:44,423 INFO fault (self-tuning)'              logger - Getting gateway
-2014-02-04 17:14:47,367 INFO fault (self-tuning)'              logger - Getting collection of entity
-2014-02-04 17:14:47,367 INFO fault (self-tuning)'              logger - Setting session
-2014-02-04 17:14:47,377 INFO fault (self-tuning)'              logger - Getting SessionFactory...
-2014-02-04 17:14:47,377 INFO fault (self-tuning)'              logger - Initializing SessionFactory...
-2014-02-04 17:14:59,074 INFO fault (self-tuning)'              logger - Closing session
-2014-02-04 17:14:59,104 INFO fault (self-tuning)'              logger - Get all countries
-2014-02-04 17:14:59,104 INFO fault (self-tuning)'              logger - Set countries into request attributes
-2014-02-04 17:14:59,104 INFO fault (self-tuning)'              logger - Send forward to country/showAll.jsp page
-2014-02-04 17:19:17,776 INFO fault (self-tuning)'              logger - Logger installed
-2014-02-04 17:19:17,776 INFO fault (self-tuning)'              logger - Prepare to show all countries
-2014-02-04 17:19:17,776 INFO fault (self-tuning)'              logger - Getting gateway
-2014-02-04 17:19:18,697 INFO fault (self-tuning)'              logger - Getting collection of entity
-2014-02-04 17:19:18,697 INFO fault (self-tuning)'              logger - Setting session
-2014-02-04 17:19:18,697 INFO fault (self-tuning)'              logger - Getting SessionFactory...
-2014-02-04 17:19:18,697 INFO fault (self-tuning)'              logger - Initializing SessionFactory...
-2014-02-04 17:19:22,142 INFO fault (self-tuning)'              logger - Closing session
-2014-02-04 17:19:22,162 INFO fault (self-tuning)'              logger - Get all countries
-2014-02-04 17:19:22,162 INFO fault (self-tuning)'              logger - Set countries into request attributes
-2014-02-04 17:19:22,162 INFO fault (self-tuning)'              logger - Send forward to country/showAll.jsp page
-2014-02-04 18:26:47,319 INFO fault (self-tuning)'              logger - Logger installed
-2014-02-04 18:26:47,319 INFO fault (self-tuning)'              logger - Prepare to show all countries
-2014-02-04 18:26:47,319 INFO fault (self-tuning)'              logger - Getting gateway
-2014-02-04 18:26:47,860 INFO fault (self-tuning)'              logger - Getting collection of entity
-2014-02-04 18:26:47,860 INFO fault (self-tuning)'              logger - Setting session
-2014-02-04 18:26:47,890 INFO fault (self-tuning)'              logger - Getting SessionFactory...
-2014-02-04 18:26:47,890 INFO fault (self-tuning)'              logger - Initializing SessionFactory...
-2014-02-04 18:26:56,152 INFO fault (self-tuning)'              logger - Closing session
-2014-02-04 18:26:56,162 INFO fault (self-tuning)'              logger - Get all countries
-2014-02-04 18:26:56,162 INFO fault (self-tuning)'              logger - Set countries into request attributes
-2014-02-04 18:26:56,162 INFO fault (self-tuning)'              logger - Send forward to country/showAll.jsp page
-2014-02-04 18:29:41,610 INFO fault (self-tuning)'              logger - Logger installed
-2014-02-04 18:29:41,610 INFO fault (self-tuning)'              logger - Prepare to show all countries
-2014-02-04 18:29:41,610 INFO fault (self-tuning)'              logger - Getting gateway
-2014-02-04 18:29:42,241 INFO fault (self-tuning)'              logger - Getting collection of entity
-2014-02-04 18:29:42,241 INFO fault (self-tuning)'              logger - Setting session
-2014-02-04 18:29:42,241 INFO fault (self-tuning)'              logger - Getting SessionFactory...
-2014-02-04 18:29:42,241 INFO fault (self-tuning)'              logger - Initializing SessionFactory...
-2014-02-04 18:29:54,558 INFO fault (self-tuning)'              logger - Closing session
-2014-02-04 18:29:54,578 INFO fault (self-tuning)'              logger - Get all countries
-2014-02-04 18:29:54,578 INFO fault (self-tuning)'              logger - Set countries into request attributes
-2014-02-04 18:29:54,578 INFO fault (self-tuning)'              logger - Send forward to country/showAll.jsp page
-2014-02-04 18:32:04,345 INFO fault (self-tuning)'              logger - Logger installed
-2014-02-04 18:32:04,355 INFO fault (self-tuning)'              logger - Prepare to show all countries
-2014-02-04 18:32:04,355 INFO fault (self-tuning)'              logger - Getting gateway
-2014-02-04 18:32:06,318 INFO fault (self-tuning)'              logger - Getting collection of entity
-2014-02-04 18:32:06,318 INFO fault (self-tuning)'              logger - Setting session
-2014-02-04 18:32:06,318 INFO fault (self-tuning)'              logger - Getting SessionFactory...
-2014-02-04 18:32:06,318 INFO fault (self-tuning)'              logger - Initializing SessionFactory...
-2014-02-04 18:35:56,028 INFO fault (self-tuning)'              logger - Building HttpAction
-2014-02-04 18:35:56,158 INFO fault (self-tuning)'              logger - Code: showAllCountry
-2014-02-04 18:35:56,158 INFO fault (self-tuning)'              logger - Getting ActionFactory...
-2014-02-04 18:35:56,158 INFO fault (self-tuning)'              logger - Building HttpAction...
-2014-02-04 18:35:56,809 INFO fault (self-tuning)'              logger - Building HttpAction
-2014-02-04 18:35:56,829 INFO fault (self-tuning)'              logger - Code: showAllCountry
-2014-02-04 18:35:56,829 INFO fault (self-tuning)'              logger - Getting ActionFactory...
-2014-02-04 18:35:56,909 INFO fault (self-tuning)'              logger - Building HttpAction...
-2014-02-04 18:36:02,247 INFO fault (self-tuning)'              logger - Logger installed
-2014-02-04 18:36:02,367 INFO fault (self-tuning)'              logger - Prepare to show all countries
-2014-02-04 18:36:02,367 INFO fault (self-tuning)'              logger - Getting gateway
-2014-02-04 18:36:02,377 INFO fault (self-tuning)'              logger - Logger installed
-2014-02-04 18:36:02,377 INFO fault (self-tuning)'              logger - Prepare to show all countries
-2014-02-04 18:36:02,377 INFO fault (self-tuning)'              logger - Getting gateway
-2014-02-04 18:36:13,103 INFO fault (self-tuning)'              logger - Getting collection of entity
-2014-02-04 18:36:13,113 INFO fault (self-tuning)'              logger - Setting session
-2014-02-04 18:36:13,113 INFO fault (self-tuning)'              logger - Getting SessionFactory...
-2014-02-04 18:36:13,153 INFO fault (self-tuning)'              logger - Initializing SessionFactory...
-2014-02-04 18:36:13,603 INFO fault (self-tuning)'              logger - Getting collection of entity
-2014-02-04 18:36:14,074 INFO fault (self-tuning)'              logger - Setting session
-2014-02-04 18:36:14,074 INFO fault (self-tuning)'              logger - Getting SessionFactory...
-2014-02-04 18:36:14,074 INFO fault (self-tuning)'              logger - Initializing SessionFactory...
-2014-02-04 18:37:04,246 INFO fault (self-tuning)'              logger - Closing session
-2014-02-04 18:37:04,246 INFO fault (self-tuning)'              logger - Closing session
-2014-02-04 18:37:04,266 INFO fault (self-tuning)'              logger - Get all countries
-2014-02-04 18:37:04,276 INFO fault (self-tuning)'              logger - Set countries into request attributes
-2014-02-04 18:37:04,276 INFO fault (self-tuning)'              logger - Send forward to country/showAll.jsp page
-2014-02-04 18:37:04,276 INFO fault (self-tuning)'              logger - Get all countries
-2014-02-04 18:37:04,286 INFO fault (self-tuning)'              logger - Set countries into request attributes
-2014-02-04 18:37:04,286 INFO fault (self-tuning)'              logger - Send forward to country/showAll.jsp page
-2014-02-04 18:37:04,246 INFO fault (self-tuning)'              logger - Closing session
-2014-02-04 18:37:04,286 INFO fault (self-tuning)'              logger - Get all countries
-2014-02-04 18:37:04,296 INFO fault (self-tuning)'              logger - Set countries into request attributes
-2014-02-04 18:37:04,296 INFO fault (self-tuning)'              logger - Send forward to country/showAll.jsp page
-2014-02-04 18:37:19,408 ERRORfault (self-tuning)'              logger - Error  occured in ShowAllCountry action
-java.lang.NullPointerException
-	at weblogic.servlet.jsp.JspStub$1.run(JspStub.java:89)
-	at java.security.AccessController.doPrivileged(Native Method)
-	at weblogic.servlet.jsp.JspStub.getNewClassLoader(JspStub.java:84)
-	at weblogic.servlet.jsp.JspStub.prepareServlet(JspStub.java:219)
-	at weblogic.servlet.jsp.JspStub.prepareServlet(JspStub.java:200)
-	at weblogic.servlet.internal.ServletStubImpl.getServlet(ServletStubImpl.java:403)
-	at weblogic.servlet.internal.ServletStubImpl.execute(ServletStubImpl.java:295)
-	at weblogic.servlet.internal.ServletStubImpl.onAddToMapException(ServletStubImpl.java:478)
-	at weblogic.servlet.internal.ServletStubImpl.execute(ServletStubImpl.java:367)
-	at weblogic.servlet.internal.ServletStubImpl.execute(ServletStubImpl.java:238)
-	at weblogic.servlet.internal.RequestDispatcherImpl.invokeServlet(RequestDispatcherImpl.java:576)
-	at weblogic.servlet.internal.RequestDispatcherImpl.forward(RequestDispatcherImpl.java:272)
-	at action.handlers.country.ShowAllCountry.perform(ShowAllCountry.java:35)
-	at servlet.ServletPrototype.service(ServletPrototype.java:19)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:844)
-	at weblogic.servlet.internal.StubSecurityHelper$ServletServiceAction.run(StubSecurityHelper.java:280)
-	at weblogic.servlet.internal.StubSecurityHelper$ServletServiceAction.run(StubSecurityHelper.java:254)
-	at weblogic.servlet.internal.StubSecurityHelper.invokeServlet(StubSecurityHelper.java:136)
-	at weblogic.servlet.internal.ServletStubImpl.execute(ServletStubImpl.java:341)
-	at weblogic.servlet.internal.ServletStubImpl.execute(ServletStubImpl.java:238)
-	at weblogic.servlet.internal.WebAppServletContext$ServletInvocationAction.wrapRun(WebAppServletContext.java:3363)
-	at weblogic.servlet.internal.WebAppServletContext$ServletInvocationAction.run(WebAppServletContext.java:3333)
-	at weblogic.security.acl.internal.AuthenticatedSubject.doAs(AuthenticatedSubject.java:321)
-	at weblogic.security.service.SecurityManager.runAs(SecurityManager.java:120)
-	at weblogic.servlet.provider.WlsSubjectHandle.run(WlsSubjectHandle.java:57)
-	at weblogic.servlet.internal.WebAppServletContext.doSecuredExecute(WebAppServletContext.java:2220)
-	at weblogic.servlet.internal.WebAppServletContext.securedExecute(WebAppServletContext.java:2146)
-	at weblogic.servlet.internal.WebAppServletContext.execute(WebAppServletContext.java:2124)
-	at weblogic.servlet.internal.ServletRequestImpl.run(ServletRequestImpl.java:1564)
-	at weblogic.servlet.provider.ContainerSupportProviderImpl$WlsRequestExecutor.run(ContainerSupportProviderImpl.java:254)
-	at weblogic.work.ExecuteThread.execute(ExecuteThread.java:295)
-	at weblogic.work.ExecuteThread.run(ExecuteThread.java:254)
-2014-02-04 18:37:19,478 ERRORfault (self-tuning)'              logger - Error  occured in ShowAllCountry action
-java.lang.NullPointerException
-	at weblogic.servlet.jsp.TagFileHelper.checkReloadTimeout(TagFileHelper.java:68)
-	at weblogic.servlet.jsp.TagFileHelper.reloadIfNecessary(TagFileHelper.java:56)
-	at weblogic.servlet.jsp.JspStub.prepareServlet(JspStub.java:265)
-	at weblogic.servlet.jsp.JspStub.prepareServlet(JspStub.java:200)
-	at weblogic.servlet.internal.ServletStubImpl.getServlet(ServletStubImpl.java:403)
-	at weblogic.servlet.internal.ServletStubImpl.execute(ServletStubImpl.java:295)
-	at weblogic.servlet.internal.ServletStubImpl.onAddToMapException(ServletStubImpl.java:478)
-	at weblogic.servlet.internal.ServletStubImpl.execute(ServletStubImpl.java:367)
-	at weblogic.servlet.internal.ServletStubImpl.execute(ServletStubImpl.java:238)
-	at weblogic.servlet.internal.RequestDispatcherImpl.invokeServlet(RequestDispatcherImpl.java:576)
-	at weblogic.servlet.internal.RequestDispatcherImpl.forward(RequestDispatcherImpl.java:272)
-	at action.handlers.country.ShowAllCountry.perform(ShowAllCountry.java:35)
-	at servlet.ServletPrototype.service(ServletPrototype.java:19)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:844)
-	at weblogic.servlet.internal.StubSecurityHelper$ServletServiceAction.run(StubSecurityHelper.java:280)
-	at weblogic.servlet.internal.StubSecurityHelper$ServletServiceAction.run(StubSecurityHelper.java:254)
-	at weblogic.servlet.internal.StubSecurityHelper.invokeServlet(StubSecurityHelper.java:136)
-	at weblogic.servlet.internal.ServletStubImpl.execute(ServletStubImpl.java:341)
-	at weblogic.servlet.internal.ServletStubImpl.execute(ServletStubImpl.java:238)
-	at weblogic.servlet.internal.WebAppServletContext$ServletInvocationAction.wrapRun(WebAppServletContext.java:3363)
-	at weblogic.servlet.internal.WebAppServletContext$ServletInvocationAction.run(WebAppServletContext.java:3333)
-	at weblogic.security.acl.internal.AuthenticatedSubject.doAs(AuthenticatedSubject.java:321)
-	at weblogic.security.service.SecurityManager.runAs(SecurityManager.java:120)
-	at weblogic.servlet.provider.WlsSubjectHandle.run(WlsSubjectHandle.java:57)
-	at weblogic.servlet.internal.WebAppServletContext.doSecuredExecute(WebAppServletContext.java:2220)
-	at weblogic.servlet.internal.WebAppServletContext.securedExecute(WebAppServletContext.java:2146)
-	at weblogic.servlet.internal.WebAppServletContext.execute(WebAppServletContext.java:2124)
-	at weblogic.servlet.internal.ServletRequestImpl.run(ServletRequestImpl.java:1564)
-	at weblogic.servlet.provider.ContainerSupportProviderImpl$WlsRequestExecutor.run(ContainerSupportProviderImpl.java:254)
-	at weblogic.work.ExecuteThread.execute(ExecuteThread.java:295)
-	at weblogic.work.ExecuteThread.run(ExecuteThread.java:254)
-2014-02-04 19:11:55,121 INFO fault (self-tuning)'              logger - Logger installed
-2014-02-04 19:11:55,151 INFO fault (self-tuning)'              logger - Prepare to show all countries
-2014-02-04 19:11:55,151 INFO fault (self-tuning)'              logger - Getting gateway
-2014-02-04 19:11:57,495 INFO fault (self-tuning)'              logger - Getting collection of entity
-2014-02-04 19:11:57,495 INFO fault (self-tuning)'              logger - Setting session
-2014-02-04 19:11:57,495 INFO fault (self-tuning)'              logger - Getting SessionFactory...
-2014-02-04 19:11:57,495 INFO fault (self-tuning)'              logger - Initializing SessionFactory...
-2014-02-04 19:12:15,461 INFO fault (self-tuning)'              logger - Closing session
-2014-02-04 19:12:15,471 INFO fault (self-tuning)'              logger - Get all countries
-2014-02-04 19:12:15,471 INFO fault (self-tuning)'              logger - Set countries into request attributes
-2014-02-04 19:12:15,481 INFO fault (self-tuning)'              logger - Send forward to country/showAll.jsp page
-2014-02-04 19:16:36,196 INFO fault (self-tuning)'              logger - Logger installed
-2014-02-04 19:16:36,206 INFO fault (self-tuning)'              logger - Prepare to show all countries
-2014-02-04 19:16:36,206 INFO fault (self-tuning)'              logger - Getting gateway
-2014-02-04 19:16:36,847 INFO fault (self-tuning)'              logger - Getting collection of entity
-2014-02-04 19:16:36,847 INFO fault (self-tuning)'              logger - Setting session
-2014-02-04 19:16:36,847 INFO fault (self-tuning)'              logger - Getting SessionFactory...
-2014-02-04 19:16:36,847 INFO fault (self-tuning)'              logger - Initializing SessionFactory...
-2014-02-04 19:16:45,399 INFO fault (self-tuning)'              logger - Closing session
-2014-02-04 19:16:45,399 INFO fault (self-tuning)'              logger - Get all countries
-2014-02-04 19:16:45,399 INFO fault (self-tuning)'              logger - Set countries into request attributes
-2014-02-04 19:16:45,399 INFO fault (self-tuning)'              logger - Send forward to country/showAll.jsp page
-2014-02-04 19:19:25,539 INFO fault (self-tuning)'              logger - Logger installed
-2014-02-04 19:19:25,539 INFO fault (self-tuning)'              logger - Prepare to show all countries
-2014-02-04 19:19:25,539 INFO fault (self-tuning)'              logger - Getting gateway
-2014-02-04 19:19:26,160 INFO fault (self-tuning)'              logger - Getting collection of entity
-2014-02-04 19:19:26,160 INFO fault (self-tuning)'              logger - Setting session
-2014-02-04 19:19:26,160 INFO fault (self-tuning)'              logger - Getting SessionFactory...
-2014-02-04 19:19:26,160 INFO fault (self-tuning)'              logger - Initializing SessionFactory...
-2014-02-04 19:19:29,114 INFO fault (self-tuning)'              logger - Closing session
-2014-02-04 19:19:29,114 INFO fault (self-tuning)'              logger - Get all countries
-2014-02-04 19:19:29,124 INFO fault (self-tuning)'              logger - Set countries into request attributes
-2014-02-04 19:19:29,124 INFO fault (self-tuning)'              logger - Send forward to country/showAll.jsp page
-2014-02-04 19:19:29,715 ERRORfault (self-tuning)'              logger - Error  occured in ShowAllCountry action
-javax.servlet.ServletException: weblogic.servlet.jsp.CompilationException: Failed to compile JSP /country/showAll.jsp
-showAll.jsp:37:42: The required attribute "value" is missing.
-					<td><a class="generated-data" href=<c:out value=url/>${item.name}</a></td>
-                                                                            ^---^
-showAll.jsp:37:48: Specify a value for this attribute.
-					<td><a class="generated-data" href=<c:out value=url/>${item.name}</a></td>
-                                                                                  ^---^
-showAll.jsp:37:54: This attribute is not recognized.
-					<td><a class="generated-data" href=<c:out value=url/>${item.name}</a></td>
-                                                                                        ^-^
+Caused by: java.sql.SQLSyntaxErrorException: ORA-00904: "THIS_"."DEPS_COUNT": invalid identifier
 
-	at weblogic.servlet.internal.ServletStubImpl.execute(ServletStubImpl.java:301)
-	at weblogic.servlet.internal.ServletStubImpl.onAddToMapException(ServletStubImpl.java:478)
-	at weblogic.servlet.internal.ServletStubImpl.execute(ServletStubImpl.java:367)
-	at weblogic.servlet.internal.ServletStubImpl.execute(ServletStubImpl.java:238)
-	at weblogic.servlet.internal.RequestDispatcherImpl.invokeServlet(RequestDispatcherImpl.java:576)
-	at weblogic.servlet.internal.RequestDispatcherImpl.forward(RequestDispatcherImpl.java:272)
-	at action.handlers.country.ShowAllCountry.perform(ShowAllCountry.java:35)
-	at servlet.ServletPrototype.service(ServletPrototype.java:19)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:844)
-	at weblogic.servlet.internal.StubSecurityHelper$ServletServiceAction.run(StubSecurityHelper.java:280)
-	at weblogic.servlet.internal.StubSecurityHelper$ServletServiceAction.run(StubSecurityHelper.java:254)
-	at weblogic.servlet.internal.StubSecurityHelper.invokeServlet(StubSecurityHelper.java:136)
-	at weblogic.servlet.internal.ServletStubImpl.execute(ServletStubImpl.java:341)
-	at weblogic.servlet.internal.ServletStubImpl.execute(ServletStubImpl.java:238)
-	at weblogic.servlet.internal.WebAppServletContext$ServletInvocationAction.wrapRun(WebAppServletContext.java:3363)
-	at weblogic.servlet.internal.WebAppServletContext$ServletInvocationAction.run(WebAppServletContext.java:3333)
-	at weblogic.security.acl.internal.AuthenticatedSubject.doAs(AuthenticatedSubject.java:321)
-	at weblogic.security.service.SecurityManager.runAs(SecurityManager.java:120)
-	at weblogic.servlet.provider.WlsSubjectHandle.run(WlsSubjectHandle.java:57)
-	at weblogic.servlet.internal.WebAppServletContext.doSecuredExecute(WebAppServletContext.java:2220)
-	at weblogic.servlet.internal.WebAppServletContext.securedExecute(WebAppServletContext.java:2146)
-	at weblogic.servlet.internal.WebAppServletContext.execute(WebAppServletContext.java:2124)
-	at weblogic.servlet.internal.ServletRequestImpl.run(ServletRequestImpl.java:1564)
-	at weblogic.servlet.provider.ContainerSupportProviderImpl$WlsRequestExecutor.run(ContainerSupportProviderImpl.java:254)
-	at weblogic.work.ExecuteThread.execute(ExecuteThread.java:295)
-	at weblogic.work.ExecuteThread.run(ExecuteThread.java:254)
-Caused by: weblogic.servlet.jsp.CompilationException: Failed to compile JSP /country/showAll.jsp
-showAll.jsp:37:42: The required attribute "value" is missing.
-					<td><a class="generated-data" href=<c:out value=url/>${item.name}</a></td>
-                                                                            ^---^
-showAll.jsp:37:48: Specify a value for this attribute.
-					<td><a class="generated-data" href=<c:out value=url/>${item.name}</a></td>
-                                                                                  ^---^
-showAll.jsp:37:54: This attribute is not recognized.
-					<td><a class="generated-data" href=<c:out value=url/>${item.name}</a></td>
-                                                                                        ^-^
-
-	at weblogic.servlet.jsp.JavelinxJSPStub.reportCompilationErrorIfNeccessary(JavelinxJSPStub.java:243)
-	at weblogic.servlet.jsp.JavelinxJSPStub.compilePage0(JavelinxJSPStub.java:179)
-	at weblogic.servlet.jsp.JavelinxJSPStub.access$000(JavelinxJSPStub.java:50)
-	at weblogic.servlet.jsp.JavelinxJSPStub$1.run(JavelinxJSPStub.java:108)
-	at java.security.AccessController.doPrivileged(Native Method)
-	at weblogic.servlet.jsp.JavelinxJSPStub.compilePage(JavelinxJSPStub.java:105)
-	at weblogic.servlet.jsp.JspStub.prepareServlet(JspStub.java:247)
-	at weblogic.servlet.jsp.JspStub.prepareServlet(JspStub.java:200)
-	at weblogic.servlet.internal.ServletStubImpl.getServlet(ServletStubImpl.java:403)
-	at weblogic.servlet.internal.ServletStubImpl.execute(ServletStubImpl.java:295)
-	... 25 more
-2014-02-04 19:20:43,611 INFO fault (self-tuning)'              logger - Logger installed
-2014-02-04 19:20:43,611 INFO fault (self-tuning)'              logger - Prepare to show all countries
-2014-02-04 19:20:43,611 INFO fault (self-tuning)'              logger - Getting gateway
-2014-02-04 19:20:44,222 INFO fault (self-tuning)'              logger - Getting collection of entity
-2014-02-04 19:20:44,222 INFO fault (self-tuning)'              logger - Setting session
-2014-02-04 19:20:44,232 INFO fault (self-tuning)'              logger - Getting SessionFactory...
-2014-02-04 19:20:44,232 INFO fault (self-tuning)'              logger - Initializing SessionFactory...
-2014-02-04 19:20:47,096 INFO fault (self-tuning)'              logger - Closing session
-2014-02-04 19:20:47,106 INFO fault (self-tuning)'              logger - Get all countries
-2014-02-04 19:20:47,106 INFO fault (self-tuning)'              logger - Set countries into request attributes
-2014-02-04 19:20:47,106 INFO fault (self-tuning)'              logger - Send forward to country/showAll.jsp page
-2014-02-04 19:22:20,080 INFO fault (self-tuning)'              logger - Logger installed
-2014-02-04 19:22:20,090 INFO fault (self-tuning)'              logger - Prepare to show all countries
-2014-02-04 19:22:20,090 INFO fault (self-tuning)'              logger - Getting gateway
-2014-02-04 19:22:20,741 INFO fault (self-tuning)'              logger - Getting collection of entity
-2014-02-04 19:22:20,741 INFO fault (self-tuning)'              logger - Setting session
-2014-02-04 19:22:20,751 INFO fault (self-tuning)'              logger - Getting SessionFactory...
-2014-02-04 19:22:20,751 INFO fault (self-tuning)'              logger - Initializing SessionFactory...
-2014-02-04 19:22:24,306 INFO fault (self-tuning)'              logger - Closing session
-2014-02-04 19:22:24,316 INFO fault (self-tuning)'              logger - Get all countries
-2014-02-04 19:22:24,326 INFO fault (self-tuning)'              logger - Set countries into request attributes
-2014-02-04 19:22:24,326 INFO fault (self-tuning)'              logger - Send forward to country/showAll.jsp page
-2014-02-04 19:22:24,637 ERRORfault (self-tuning)'              logger - Error  occured in ShowAllCountry action
-javax.servlet.ServletException: weblogic.servlet.jsp.CompilationException: Failed to compile JSP /country/showAll.jsp
-showAll.jsp:37:42: No end tag found.
-					<td><a class="generated-data" href=<c:out value="${url}">${item.name}</a></td>
-                                                                            ^---^
-showAll.jsp:37:42: No end tag found.
-					<td><a class="generated-data" href=<c:out value="${url}">${item.name}</a></td>
-                                                                            ^---^
-
-	at weblogic.servlet.internal.ServletStubImpl.execute(ServletStubImpl.java:301)
-	at weblogic.servlet.internal.ServletStubImpl.onAddToMapException(ServletStubImpl.java:478)
-	at weblogic.servlet.internal.ServletStubImpl.execute(ServletStubImpl.java:367)
-	at weblogic.servlet.internal.ServletStubImpl.execute(ServletStubImpl.java:238)
-	at weblogic.servlet.internal.RequestDispatcherImpl.invokeServlet(RequestDispatcherImpl.java:576)
-	at weblogic.servlet.internal.RequestDispatcherImpl.forward(RequestDispatcherImpl.java:272)
-	at action.handlers.country.ShowAllCountry.perform(ShowAllCountry.java:35)
-	at servlet.ServletPrototype.service(ServletPrototype.java:19)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:844)
-	at weblogic.servlet.internal.StubSecurityHelper$ServletServiceAction.run(StubSecurityHelper.java:280)
-	at weblogic.servlet.internal.StubSecurityHelper$ServletServiceAction.run(StubSecurityHelper.java:254)
-	at weblogic.servlet.internal.StubSecurityHelper.invokeServlet(StubSecurityHelper.java:136)
-	at weblogic.servlet.internal.ServletStubImpl.execute(ServletStubImpl.java:341)
-	at weblogic.servlet.internal.ServletStubImpl.execute(ServletStubImpl.java:238)
-	at weblogic.servlet.internal.WebAppServletContext$ServletInvocationAction.wrapRun(WebAppServletContext.java:3363)
-	at weblogic.servlet.internal.WebAppServletContext$ServletInvocationAction.run(WebAppServletContext.java:3333)
-	at weblogic.security.acl.internal.AuthenticatedSubject.doAs(AuthenticatedSubject.java:321)
-	at weblogic.security.service.SecurityManager.runAs(SecurityManager.java:120)
-	at weblogic.servlet.provider.WlsSubjectHandle.run(WlsSubjectHandle.java:57)
-	at weblogic.servlet.internal.WebAppServletContext.doSecuredExecute(WebAppServletContext.java:2220)
-	at weblogic.servlet.internal.WebAppServletContext.securedExecute(WebAppServletContext.java:2146)
-	at weblogic.servlet.internal.WebAppServletContext.execute(WebAppServletContext.java:2124)
-	at weblogic.servlet.internal.ServletRequestImpl.run(ServletRequestImpl.java:1564)
-	at weblogic.servlet.provider.ContainerSupportProviderImpl$WlsRequestExecutor.run(ContainerSupportProviderImpl.java:254)
-	at weblogic.work.ExecuteThread.execute(ExecuteThread.java:295)
-	at weblogic.work.ExecuteThread.run(ExecuteThread.java:254)
-Caused by: weblogic.servlet.jsp.CompilationException: Failed to compile JSP /country/showAll.jsp
-showAll.jsp:37:42: No end tag found.
-					<td><a class="generated-data" href=<c:out value="${url}">${item.name}</a></td>
-                                                                            ^---^
-showAll.jsp:37:42: No end tag found.
-					<td><a class="generated-data" href=<c:out value="${url}">${item.name}</a></td>
-                                                                            ^---^
-
-	at weblogic.servlet.jsp.JavelinxJSPStub.reportCompilationErrorIfNeccessary(JavelinxJSPStub.java:243)
-	at weblogic.servlet.jsp.JavelinxJSPStub.compilePage0(JavelinxJSPStub.java:179)
-	at weblogic.servlet.jsp.JavelinxJSPStub.access$000(JavelinxJSPStub.java:50)
-	at weblogic.servlet.jsp.JavelinxJSPStub$1.run(JavelinxJSPStub.java:108)
-	at java.security.AccessController.doPrivileged(Native Method)
-	at weblogic.servlet.jsp.JavelinxJSPStub.compilePage(JavelinxJSPStub.java:105)
-	at weblogic.servlet.jsp.JspStub.prepareServlet(JspStub.java:247)
-	at weblogic.servlet.jsp.JspStub.prepareServlet(JspStub.java:200)
-	at weblogic.servlet.internal.ServletStubImpl.getServlet(ServletStubImpl.java:403)
-	at weblogic.servlet.internal.ServletStubImpl.execute(ServletStubImpl.java:295)
-	... 25 more
-2014-02-04 19:23:48,377 INFO fault (self-tuning)'              logger - Logger installed
-2014-02-04 19:23:48,387 INFO fault (self-tuning)'              logger - Prepare to show all countries
-2014-02-04 19:23:48,387 INFO fault (self-tuning)'              logger - Getting gateway
-2014-02-04 19:23:48,978 INFO fault (self-tuning)'              logger - Getting collection of entity
-2014-02-04 19:23:48,978 INFO fault (self-tuning)'              logger - Setting session
-2014-02-04 19:23:48,978 INFO fault (self-tuning)'              logger - Getting SessionFactory...
-2014-02-04 19:23:48,978 INFO fault (self-tuning)'              logger - Initializing SessionFactory...
-2014-02-04 19:23:51,872 INFO fault (self-tuning)'              logger - Closing session
-2014-02-04 19:23:51,882 INFO fault (self-tuning)'              logger - Get all countries
-2014-02-04 19:23:51,882 INFO fault (self-tuning)'              logger - Set countries into request attributes
-2014-02-04 19:23:51,882 INFO fault (self-tuning)'              logger - Send forward to country/showAll.jsp page
-2014-02-04 19:26:23,210 INFO fault (self-tuning)'              logger - Logger installed
-2014-02-04 19:26:23,220 INFO fault (self-tuning)'              logger - Prepare to show all countries
-2014-02-04 19:26:23,220 INFO fault (self-tuning)'              logger - Getting gateway
-2014-02-04 19:26:23,811 INFO fault (self-tuning)'              logger - Getting collection of entity
-2014-02-04 19:26:23,821 INFO fault (self-tuning)'              logger - Setting session
-2014-02-04 19:26:23,821 INFO fault (self-tuning)'              logger - Getting SessionFactory...
-2014-02-04 19:26:23,821 INFO fault (self-tuning)'              logger - Initializing SessionFactory...
-2014-02-04 19:26:26,585 INFO fault (self-tuning)'              logger - Closing session
-2014-02-04 19:26:26,595 INFO fault (self-tuning)'              logger - Get all countries
-2014-02-04 19:26:26,595 INFO fault (self-tuning)'              logger - Set countries into request attributes
-2014-02-04 19:26:26,595 INFO fault (self-tuning)'              logger - Send forward to country/showAll.jsp page
-2014-02-04 19:35:57,280 INFO fault (self-tuning)'              logger - Logger installed
-2014-02-04 19:35:57,280 INFO fault (self-tuning)'              logger - Prepare to show all countries
-2014-02-04 19:35:57,280 INFO fault (self-tuning)'              logger - Getting gateway
-2014-02-04 19:35:57,701 INFO fault (self-tuning)'              logger - Getting collection of entity
-2014-02-04 19:35:57,711 INFO fault (self-tuning)'              logger - Setting session
-2014-02-04 19:35:57,711 INFO fault (self-tuning)'              logger - Getting SessionFactory...
-2014-02-04 19:35:57,711 INFO fault (self-tuning)'              logger - Initializing SessionFactory...
-2014-02-04 19:36:02,287 INFO fault (self-tuning)'              logger - Closing session
-2014-02-04 19:36:02,287 INFO fault (self-tuning)'              logger - Get all countries
-2014-02-04 19:36:02,287 INFO fault (self-tuning)'              logger - Set countries into request attributes
-2014-02-04 19:36:02,297 INFO fault (self-tuning)'              logger - Send forward to country/showAll.jsp page
-2014-02-04 19:37:54,719 INFO fault (self-tuning)'              logger - Logger installed
-2014-02-04 19:37:54,729 INFO fault (self-tuning)'              logger - Prepare to show all countries
-2014-02-04 19:37:54,729 INFO fault (self-tuning)'              logger - Getting gateway
-2014-02-04 19:37:55,220 INFO fault (self-tuning)'              logger - Getting collection of entity
-2014-02-04 19:37:55,220 INFO fault (self-tuning)'              logger - Setting session
-2014-02-04 19:37:55,220 INFO fault (self-tuning)'              logger - Getting SessionFactory...
-2014-02-04 19:37:55,220 INFO fault (self-tuning)'              logger - Initializing SessionFactory...
-2014-02-04 19:37:57,914 INFO fault (self-tuning)'              logger - Closing session
-2014-02-04 19:37:57,924 INFO fault (self-tuning)'              logger - Get all countries
-2014-02-04 19:37:57,924 INFO fault (self-tuning)'              logger - Set countries into request attributes
-2014-02-04 19:37:57,924 INFO fault (self-tuning)'              logger - Send forward to country/showAll.jsp page
-2014-02-04 19:37:58,515 ERRORfault (self-tuning)'              logger - Error  occured in ShowAllCountry action
-javax.servlet.ServletException: weblogic.servlet.jsp.CompilationException: Failed to compile JSP /country/showAll.jsp
-showAll.jsp:37:42: The required attribute "value" is missing.
-					<td><a class="generated-data" href=<c:out value=${url}/>>${item.name}</a></td>
-                                                                            ^---^
-showAll.jsp:37:48: Specify a value for this attribute.
-					<td><a class="generated-data" href=<c:out value=${url}/>>${item.name}</a></td>
-                                                                                  ^---^
-showAll.jsp:37:56: This attribute is not recognized.
-					<td><a class="generated-data" href=<c:out value=${url}/>>${item.name}</a></td>
-                                                                                          ^-^
-
-	at weblogic.servlet.internal.ServletStubImpl.execute(ServletStubImpl.java:301)
-	at weblogic.servlet.internal.ServletStubImpl.onAddToMapException(ServletStubImpl.java:478)
-	at weblogic.servlet.internal.ServletStubImpl.execute(ServletStubImpl.java:367)
-	at weblogic.servlet.internal.ServletStubImpl.execute(ServletStubImpl.java:238)
-	at weblogic.servlet.internal.RequestDispatcherImpl.invokeServlet(RequestDispatcherImpl.java:576)
-	at weblogic.servlet.internal.RequestDispatcherImpl.forward(RequestDispatcherImpl.java:272)
-	at action.handlers.country.ShowAllCountry.perform(ShowAllCountry.java:35)
-	at servlet.ServletPrototype.service(ServletPrototype.java:19)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:844)
-	at weblogic.servlet.internal.StubSecurityHelper$ServletServiceAction.run(StubSecurityHelper.java:280)
-	at weblogic.servlet.internal.StubSecurityHelper$ServletServiceAction.run(StubSecurityHelper.java:254)
-	at weblogic.servlet.internal.StubSecurityHelper.invokeServlet(StubSecurityHelper.java:136)
-	at weblogic.servlet.internal.ServletStubImpl.execute(ServletStubImpl.java:341)
-	at weblogic.servlet.internal.ServletStubImpl.execute(ServletStubImpl.java:238)
-	at weblogic.servlet.internal.WebAppServletContext$ServletInvocationAction.wrapRun(WebAppServletContext.java:3363)
-	at weblogic.servlet.internal.WebAppServletContext$ServletInvocationAction.run(WebAppServletContext.java:3333)
-	at weblogic.security.acl.internal.AuthenticatedSubject.doAs(AuthenticatedSubject.java:321)
-	at weblogic.security.service.SecurityManager.runAs(SecurityManager.java:120)
-	at weblogic.servlet.provider.WlsSubjectHandle.run(WlsSubjectHandle.java:57)
-	at weblogic.servlet.internal.WebAppServletContext.doSecuredExecute(WebAppServletContext.java:2220)
-	at weblogic.servlet.internal.WebAppServletContext.securedExecute(WebAppServletContext.java:2146)
-	at weblogic.servlet.internal.WebAppServletContext.execute(WebAppServletContext.java:2124)
-	at weblogic.servlet.internal.ServletRequestImpl.run(ServletRequestImpl.java:1564)
-	at weblogic.servlet.provider.ContainerSupportProviderImpl$WlsRequestExecutor.run(ContainerSupportProviderImpl.java:254)
-	at weblogic.work.ExecuteThread.execute(ExecuteThread.java:295)
-	at weblogic.work.ExecuteThread.run(ExecuteThread.java:254)
-Caused by: weblogic.servlet.jsp.CompilationException: Failed to compile JSP /country/showAll.jsp
-showAll.jsp:37:42: The required attribute "value" is missing.
-					<td><a class="generated-data" href=<c:out value=${url}/>>${item.name}</a></td>
-                                                                            ^---^
-showAll.jsp:37:48: Specify a value for this attribute.
-					<td><a class="generated-data" href=<c:out value=${url}/>>${item.name}</a></td>
-                                                                                  ^---^
-showAll.jsp:37:56: This attribute is not recognized.
-					<td><a class="generated-data" href=<c:out value=${url}/>>${item.name}</a></td>
-                                                                                          ^-^
-
-	at weblogic.servlet.jsp.JavelinxJSPStub.reportCompilationErrorIfNeccessary(JavelinxJSPStub.java:243)
-	at weblogic.servlet.jsp.JavelinxJSPStub.compilePage0(JavelinxJSPStub.java:179)
-	at weblogic.servlet.jsp.JavelinxJSPStub.access$000(JavelinxJSPStub.java:50)
-	at weblogic.servlet.jsp.JavelinxJSPStub$1.run(JavelinxJSPStub.java:108)
-	at java.security.AccessController.doPrivileged(Native Method)
-	at weblogic.servlet.jsp.JavelinxJSPStub.compilePage(JavelinxJSPStub.java:105)
-	at weblogic.servlet.jsp.JspStub.prepareServlet(JspStub.java:247)
-	at weblogic.servlet.jsp.JspStub.prepareServlet(JspStub.java:200)
-	at weblogic.servlet.internal.ServletStubImpl.getServlet(ServletStubImpl.java:403)
-	at weblogic.servlet.internal.ServletStubImpl.execute(ServletStubImpl.java:295)
-	... 25 more
-2014-02-04 19:42:33,530 INFO fault (self-tuning)'              logger - Logger installed
-2014-02-04 19:42:33,530 INFO fault (self-tuning)'              logger - Prepare to show all countries
-2014-02-04 19:42:33,530 INFO fault (self-tuning)'              logger - Getting gateway
-2014-02-04 19:42:34,081 INFO fault (self-tuning)'              logger - Getting collection of entity
-2014-02-04 19:42:34,081 INFO fault (self-tuning)'              logger - Setting session
-2014-02-04 19:42:34,081 INFO fault (self-tuning)'              logger - Getting SessionFactory...
-2014-02-04 19:42:34,081 INFO fault (self-tuning)'              logger - Initializing SessionFactory...
-2014-02-04 19:42:36,915 INFO fault (self-tuning)'              logger - Closing session
-2014-02-04 19:42:36,925 INFO fault (self-tuning)'              logger - Get all countries
-2014-02-04 19:42:36,925 INFO fault (self-tuning)'              logger - Set countries into request attributes
-2014-02-04 19:42:36,925 INFO fault (self-tuning)'              logger - Send forward to country/showAll.jsp page
-2014-02-04 19:48:10,364 INFO fault (self-tuning)'              logger - Logger installed
-2014-02-04 19:48:10,374 INFO fault (self-tuning)'              logger - Prepare to show all countries
-2014-02-04 19:48:10,374 INFO fault (self-tuning)'              logger - Getting gateway
-2014-02-04 19:48:10,995 INFO fault (self-tuning)'              logger - Getting collection of entity
-2014-02-04 19:48:10,995 INFO fault (self-tuning)'              logger - Setting session
-2014-02-04 19:48:10,995 INFO fault (self-tuning)'              logger - Getting SessionFactory...
-2014-02-04 19:48:10,995 INFO fault (self-tuning)'              logger - Initializing SessionFactory...
-2014-02-04 19:48:14,620 INFO fault (self-tuning)'              logger - Closing session
-2014-02-04 19:48:14,630 INFO fault (self-tuning)'              logger - Get all countries
-2014-02-04 19:48:14,630 INFO fault (self-tuning)'              logger - Set countries into request attributes
-2014-02-04 19:48:14,630 INFO fault (self-tuning)'              logger - Send forward to country/showAll.jsp page
-2014-02-04 19:48:15,161 ERRORfault (self-tuning)'              logger - Error  occured in ShowAllCountry action
-javax.servlet.ServletException: weblogic.servlet.jsp.CompilationException: Failed to compile JSP /country/showAll.jsp
-showAll.jsp:30:6: This tag is not recognized.
-				<c:useBean id="data" class="java.util.Collection" value="${param.data}"/>
-                                 ^-------^
-showAll.jsp:30:6: This tag is not recognized.
-				<c:useBean id="data" class="java.util.Collection" value="${param.data}"/>
-                                 ^-------^
-
-	at weblogic.servlet.internal.ServletStubImpl.execute(ServletStubImpl.java:301)
-	at weblogic.servlet.internal.ServletStubImpl.onAddToMapException(ServletStubImpl.java:478)
-	at weblogic.servlet.internal.ServletStubImpl.execute(ServletStubImpl.java:367)
-	at weblogic.servlet.internal.ServletStubImpl.execute(ServletStubImpl.java:238)
-	at weblogic.servlet.internal.RequestDispatcherImpl.invokeServlet(RequestDispatcherImpl.java:576)
-	at weblogic.servlet.internal.RequestDispatcherImpl.forward(RequestDispatcherImpl.java:272)
-	at action.handlers.country.ShowAllCountry.perform(ShowAllCountry.java:35)
-	at servlet.ServletPrototype.service(ServletPrototype.java:19)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:844)
-	at weblogic.servlet.internal.StubSecurityHelper$ServletServiceAction.run(StubSecurityHelper.java:280)
-	at weblogic.servlet.internal.StubSecurityHelper$ServletServiceAction.run(StubSecurityHelper.java:254)
-	at weblogic.servlet.internal.StubSecurityHelper.invokeServlet(StubSecurityHelper.java:136)
-	at weblogic.servlet.internal.ServletStubImpl.execute(ServletStubImpl.java:341)
-	at weblogic.servlet.internal.ServletStubImpl.execute(ServletStubImpl.java:238)
-	at weblogic.servlet.internal.WebAppServletContext$ServletInvocationAction.wrapRun(WebAppServletContext.java:3363)
-	at weblogic.servlet.internal.WebAppServletContext$ServletInvocationAction.run(WebAppServletContext.java:3333)
-	at weblogic.security.acl.internal.AuthenticatedSubject.doAs(AuthenticatedSubject.java:321)
-	at weblogic.security.service.SecurityManager.runAs(SecurityManager.java:120)
-	at weblogic.servlet.provider.WlsSubjectHandle.run(WlsSubjectHandle.java:57)
-	at weblogic.servlet.internal.WebAppServletContext.doSecuredExecute(WebAppServletContext.java:2220)
-	at weblogic.servlet.internal.WebAppServletContext.securedExecute(WebAppServletContext.java:2146)
-	at weblogic.servlet.internal.WebAppServletContext.execute(WebAppServletContext.java:2124)
-	at weblogic.servlet.internal.ServletRequestImpl.run(ServletRequestImpl.java:1564)
-	at weblogic.servlet.provider.ContainerSupportProviderImpl$WlsRequestExecutor.run(ContainerSupportProviderImpl.java:254)
-	at weblogic.work.ExecuteThread.execute(ExecuteThread.java:295)
-	at weblogic.work.ExecuteThread.run(ExecuteThread.java:254)
-Caused by: weblogic.servlet.jsp.CompilationException: Failed to compile JSP /country/showAll.jsp
-showAll.jsp:30:6: This tag is not recognized.
-				<c:useBean id="data" class="java.util.Collection" value="${param.data}"/>
-                                 ^-------^
-showAll.jsp:30:6: This tag is not recognized.
-				<c:useBean id="data" class="java.util.Collection" value="${param.data}"/>
-                                 ^-------^
-
-	at weblogic.servlet.jsp.JavelinxJSPStub.reportCompilationErrorIfNeccessary(JavelinxJSPStub.java:243)
-	at weblogic.servlet.jsp.JavelinxJSPStub.compilePage0(JavelinxJSPStub.java:179)
-	at weblogic.servlet.jsp.JavelinxJSPStub.access$000(JavelinxJSPStub.java:50)
-	at weblogic.servlet.jsp.JavelinxJSPStub$1.run(JavelinxJSPStub.java:108)
-	at java.security.AccessController.doPrivileged(Native Method)
-	at weblogic.servlet.jsp.JavelinxJSPStub.compilePage(JavelinxJSPStub.java:105)
-	at weblogic.servlet.jsp.JspStub.prepareServlet(JspStub.java:247)
-	at weblogic.servlet.jsp.JspStub.prepareServlet(JspStub.java:200)
-	at weblogic.servlet.internal.ServletStubImpl.getServlet(ServletStubImpl.java:403)
-	at weblogic.servlet.internal.ServletStubImpl.execute(ServletStubImpl.java:295)
-	... 25 more
-2014-02-04 19:59:48,338 INFO fault (self-tuning)'              logger - Logger installed
-2014-02-04 19:59:48,358 INFO fault (self-tuning)'              logger - Prepare to show all countries
-2014-02-04 19:59:48,358 INFO fault (self-tuning)'              logger - Getting gateway
-2014-02-04 19:59:49,780 INFO fault (self-tuning)'              logger - Getting collection of entity
-2014-02-04 19:59:49,780 INFO fault (self-tuning)'              logger - Setting session
-2014-02-04 19:59:49,780 INFO fault (self-tuning)'              logger - Getting SessionFactory...
-2014-02-04 19:59:49,780 INFO fault (self-tuning)'              logger - Initializing SessionFactory...
-2014-02-04 20:02:43,630 INFO fault (self-tuning)'              logger - Closing session
-2014-02-04 20:02:43,630 INFO fault (self-tuning)'              logger - Get all countries
-2014-02-04 20:02:43,640 INFO fault (self-tuning)'              logger - Set countries into request attributes
-2014-02-04 20:02:43,640 INFO fault (self-tuning)'              logger - Send forward to country/showAll.jsp page
-2014-02-04 20:06:18,549 INFO fault (self-tuning)'              logger - Logger installed
-2014-02-04 20:06:18,559 INFO fault (self-tuning)'              logger - Prepare to show all countries
-2014-02-04 20:06:18,559 INFO fault (self-tuning)'              logger - Getting gateway
-2014-02-04 20:06:19,621 INFO fault (self-tuning)'              logger - Getting collection of entity
-2014-02-04 20:06:19,621 INFO fault (self-tuning)'              logger - Setting session
-2014-02-04 20:06:19,621 INFO fault (self-tuning)'              logger - Getting SessionFactory...
-2014-02-04 20:06:19,621 INFO fault (self-tuning)'              logger - Initializing SessionFactory...
-2014-02-04 20:06:53,730 INFO fault (self-tuning)'              logger - Closing session
-2014-02-04 20:06:53,730 INFO fault (self-tuning)'              logger - Get all countries
-2014-02-04 20:06:53,750 INFO fault (self-tuning)'              logger - Set countries into request attributes
-2014-02-04 20:06:53,760 INFO fault (self-tuning)'              logger - Send forward to country/showAll.jsp page
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:445)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:396)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:879)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:450)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:192)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:531)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:207)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForDescribe(T4CPreparedStatement.java:884)
+	at oracle.jdbc.driver.OracleStatement.executeMaybeDescribe(OracleStatement.java:1167)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1289)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3594)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeQuery(OraclePreparedStatement.java:3638)
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeQuery(OraclePreparedStatementWrapper.java:1495)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.extract(ResultSetReturnImpl.java:56)
+	... 33 more

@@ -10,6 +10,6 @@ public interface Gateway<T> {
 	public void modify(int id, T entity) throws SQLException;
 	public T get(int id) throws SQLException;
 	public Collection<T> getAll(Class className) throws SQLException;
-	public Collection<T> getAllBy(Class className, OracleEntity parent) throws SQLException;
+	public Collection<T> getAllBy(Class className, int parentID) throws SQLException;
 	public void remove(T entity) throws SQLException;
 }

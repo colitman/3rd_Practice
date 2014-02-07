@@ -12,21 +12,21 @@ public class ActionFactory {
 	private ActionFactory() {}
 	
 	public static ActionFactory getInstance() {
-		logger.info("Getting ActionFactory...");
+		logger.info("Getting ActionFactory");
 		return instance;
 	}
 	
 	public HttpAction build(String actionName) throws WrongCommandException, InstantiationException, IllegalAccessException {
-		logger.info("Building HttpAction...");
+		logger.info("Building HttpAction");
 		if (!actions.keySet().contains(actionName)) {
-			logger.error("Error: wrong command");
+			logger.error("Error in ActionFactory: wrong command");
 			throw new WrongCommandException();
 		}
 		return actions.get(actionName).newInstance();
 	}
 
 	private static Map<String, Class<? extends HttpAction>> getActions() {
-		logger.info("Initializing ActionFactory...");
+		logger.info("Initializing ActionFactory");
 
 		Map<String, Class<? extends HttpAction>> map = new HashMap<String, Class<? extends HttpAction>>();
 		
