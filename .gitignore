@@ -1,3 +1,6 @@
 .metadata
 RemoteSystemsTempFiles
 Servers
+*.classpath
+*.project
+TUI/.settings/
