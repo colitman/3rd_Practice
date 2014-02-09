@@ -1,4 +1,4 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+﻿<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page isELIgnored="false" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
@@ -10,7 +10,7 @@
 <div id="header">
 	<c:import url="/header.html"/>
 </div><hr>
-<h1>All Counties</h1>
+<h1>All Countries</h1>
 <div id="content">
 	<div id="toolbar">
 		<c:import url="/toolbar.html"/>
@@ -35,12 +35,52 @@
 			</table>
 		</div>
 
-		<div id="params">
+		<div class="addNew" id="addNewCountry">
+			<form id="newCountry" action="action?code=newCountry" method="POST">
+				<table class="noborder">
+					<tr>
+						<td>Name:</td>
+						<td>
+							<input name="name" type="text" />
+						</td>
+					</tr>
+					<tr>
+						<td>Language:</td>
+						<td>
+							<input name="lang" type="text" />
+						</td>
+					</tr>
+					<tr>
+						<td>Capital:</td>
+						<td>
+							<input name="capital" type="text" />
+						</td>
+					</tr>
+					<tr>
+						<td>Population:</td>
+						<td>
+							<input name="popu" type="text" />
+						</td>
+					</tr>
+					<tr>
+						<td>Timezone:</td>
+						<td>
+							<input name="tz" type="text" />
+						</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>
+							<input value="Add new country" type="submit" />
+						</td>
+					</tr>
+				</table>
+			</form>		
 		</div>
 	</div>
 </div>
 
-<hr><div id="footer">
+<hr style="clear: both;"><div id="footer">
 	<c:import url="/footer.html"/>
 </div>
 

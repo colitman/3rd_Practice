@@ -1,4 +1,4 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+﻿<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page isELIgnored="false" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
@@ -12,6 +12,14 @@
 </div><hr>
 <h1>All Cities</h1>
 <div id="content">
+	<div id="paramsCurrent">
+		<form class="editRegion" action="action?code=editRegion&id=000000" method="POST">
+			<span class="paramTitle">Name: </span>Имя региона<br>
+			<span class="paramTitle">Population: </span>Население региона<br>
+			<span class="paramTitle">Square: </span>Площадь региона<br>
+			<input type="submit" value="Edit">
+		</form>
+	</div>
 	<div id="toolbar">
 		<c:import url="/toolbar.html"/>
 	</div>
@@ -35,12 +43,40 @@
 			</table>
 		</div>
 
-		<div id="params">
+		<div class= "addNew" id="addNewCity">
+			<form id="newCity" action="action?code=newCity" method="POST">
+				<table class="noborder">
+					<tr>
+						<td>Name:</td>
+						<td>
+							<input name="name" type="text" />
+						</td>
+					</tr>
+					<tr>
+						<td>Population:</td>
+						<td>
+							<input name="popu" type="text" />
+						</td>
+					</tr>
+					<tr>
+						<td>Square:</td>
+						<td>
+							<input name="sq" type="text" />
+						</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>
+							<input value="Add new city" type="submit" />
+						</td>
+					</tr>
+				</table>
+			</form>		
 		</div>
 	</div>
 </div>
 
-<hr><div id="footer">
+<hr style="clear: both;"><div id="footer">
 	<c:import url="/footer.html"/>
 </div>
 

@@ -1,4 +1,4 @@
-#header {
+﻿#header {
 	height: 50px;
 }
 
@@ -7,9 +7,6 @@ body {
 	background-color: #CCE5FF;
 	font-family: verdana, helvetica,arial,sans-serif;
 	font-size: 11px;
-	width: 990px;
-	min-width: 990px;
-	margin: auto;
 }
 
 a:link {font-weight: bold; color: #0066CC; text-decoration: none;}
@@ -26,9 +23,25 @@ table {
 	border-collapse: collapse;
 }
 
+#children-list {
+	width: 50%;
+	float: left;
+}
+
+.addNew {
+	float: left;
+}
+
+.paramTitle {
+	font-weight: bold;
+}
+
 .normal, .normal td, .normal th {
 	border: thin solid #999999;
-	width: 50%;
+}
+
+.noborder, .noborder td, .noborder th {
+	border: none;
 }
 
 .thin {
