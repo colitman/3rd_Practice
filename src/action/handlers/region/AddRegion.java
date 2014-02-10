@@ -33,7 +33,7 @@ public class AddRegion implements HttpAction {
 			logger.info("Region was successfully added");			
 			logger.info("Send redirect to showAllRegion page");
 
-			response.sendRedirect("/WebPrototype/action?code=showAllRegionInCountry");
+			response.sendRedirect("/WebPrototype/action?code=showAllRegionInCountry&parent_id=" + request.getParameter("parent_id"));
 		}
 		catch (Exception e) {
 			logger.error("Error occured in AddRegion action", e);

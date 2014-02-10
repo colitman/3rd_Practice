@@ -13,7 +13,7 @@
 </div><hr>
 <h1>All Universities</h1>
 <div id="content">
-	div id="paramsCurrent">
+	<div id="paramsCurrent">
 		<form class="editCity" action="action?code=modifyCity&id=${parent_id}" method="POST">
 			<span class="paramTitle">Name: </span>${parent.name}<br>
 			<span class="paramTitle">Population: </span>${parent.population}<br>
@@ -45,7 +45,7 @@
 		</div>
 
 		<div class= "addNew" id="addNewUniversity">
-			<form id="newUni" action="action?code=addUniversity">
+			<form id="newUni" action="action?code=addUniversity&parent_id=${parent.ID}" method="POST">
 				<table class="noborder">
 					<tr>
 						<td>Name:</td>

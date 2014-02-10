@@ -45,7 +45,7 @@
 		</div>
 
 		<div class= "addNew" id="addNewCity">
-			<form id="newCity" action="action?code=addCity" method="POST">
+			<form id="newCity" action="action?code=addCity&parent_id=${parent.ID}" method="POST">
 				<table class="noborder">
 					<tr>
 						<td>Name:</td>

@@ -23,14 +23,23 @@ public class ShowAllUniversityInCity implements HttpAction {
 
 			logger.info("Get parent id: " + parentID);
 
-			Gateway<Country> gateway = GatewayResolver.getGateway();
-			Collection<Country> data = gateway.getAllBy(University.class, parentID);
+			Gateway<City> parentGateway = GatewayResolver.getGateway();
+			City parent = parentGateway.get(City.class, parentID);
+
+			logger.info("Get parent object");
+
+			Gateway<University> gateway = GatewayResolver.getGateway();
+			Collection<University> data = gateway.getAllBy(University.class, parentID);
 		
 			logger.info("Get all universities");
 
 			request.setAttribute("data", data);
 	
 			logger.info("Set universities into request attributes");
+
+			request.setAttribute("parent", parent);
+
+			logger.info("Set parent object into request attributes");
 			logger.info("Send forward to university/showAllInCity.jsp page");
 
 			request.getRequestDispatcher("university/showAllInCity.jsp").forward(request, response);

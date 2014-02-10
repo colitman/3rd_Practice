@@ -33,7 +33,7 @@ public class AddUniversity implements HttpAction {
 			logger.info("University was successfully added");			
 			logger.info("Send redirect to showAllUniversity page");
 
-			response.sendRedirect("/WebPrototype/action?code=showAllUniversityInCity");
+			response.sendRedirect("/WebPrototype/action?code=showAllUniversityInCity&parent_id=" + request.getParameter("parent_id"));
 		}
 		catch (Exception e) {
 			logger.warn("Error occured in AddUniversity action", e);

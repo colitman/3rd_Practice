@@ -31,7 +31,7 @@ public class AddCity implements HttpAction {
 	
 			logger.info("City was successfully added");			
 			logger.info("Send redirect to showAllCity page");
-			response.sendRedirect("/WebPrototype/action?code=showAllCityInRegion");
+			response.sendRedirect("/WebPrototype/action?code=showAllCityInRegion&parent_id=" + request.getParameter("parent_id"));
 		}
 		catch (Exception e) {
 			logger.error("Error occured in AddCity action", e);

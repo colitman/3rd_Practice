@@ -23,14 +23,23 @@ public class ShowAllCityInRegion implements HttpAction {
 
 			logger.info("Get parent id: " + parentID);
 
-			Gateway<Country> gateway = GatewayResolver.getGateway();
-			Collection<Country> data = gateway.getAllBy(City.class, parentID);
+			Gateway<Region> parentGateway = GatewayResolver.getGateway();
+			Region parent = parentGateway.get(Region.class, parentID);
+
+			logger.info("Get parent object");
+
+			Gateway<City> gateway = GatewayResolver.getGateway();
+			Collection<City> data = gateway.getAllBy(City.class, parentID);
 		
 			logger.info("Get all cities");
 
 			request.setAttribute("data", data);
 	
 			logger.info("Set cities into request attributes");
+
+			request.setAttribute("parent", parent);
+
+			logger.info("Set parent object into request attributes");
 			logger.info("Send forward to city/showAllInRegion.jsp page");
 
 			request.getRequestDispatcher("city/showAllInRegion.jsp").forward(request, response);
