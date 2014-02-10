@@ -11,6 +11,7 @@ Literature:
 - Spring Framework: http://ru.wikibooks.org/wiki/Spring_Framework
 - Установка Oracle 10g XE в Windows 7 x64: http://habrahabr.ru/sandbox/26348/
 - Draw Class Diagram: http://yuml.me/diagram/scruffy/class/draw
+- Проблемы с логированием: http://blog.vityuk.com/2009/02/blog-post.html
 
 Possible problems:
 - Не найден файл конфигурации Hibernate:
