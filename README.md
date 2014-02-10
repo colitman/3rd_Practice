@@ -14,6 +14,7 @@ Literature:
 - Композиция vs наследование : 
      - http://www.codeart.ru/2010/08/03/nasledovanie-protiv-kompozicii-chto-predpochtitelnee
      - http://habrahabr.ru/post/177447
+- Git close issue via commit: https://help.github.com/articles/closing-issues-via-commit-messages
 
 Possible problems:
 - Не найден файл конфигурации Hibernate:
