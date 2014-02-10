@@ -10,7 +10,7 @@ import org.apache.log4j.*;
 import hibernate.dao.*;
 import hibernate.logic.*;
 
-public class ShowOneCountry extends GatewayAction {
+public class ShowOneCountry implements HttpAction {
 	
 	private static final Logger logger = Logger.getLogger("logger");	
 
@@ -18,7 +18,7 @@ public class ShowOneCountry extends GatewayAction {
 		try {
 			logger.info("Prepare to show country");
 
-			Gateway<Country> gateway = getGateway();
+			Gateway<Country> gateway = GatewayResolver.getGateway();
 			int id = Integer.valueOf(request.getParameter("id"));
 			Country country = null;
 	

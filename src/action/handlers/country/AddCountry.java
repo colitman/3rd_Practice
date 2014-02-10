@@ -8,7 +8,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import org.apache.log4j.*;
 
-public class AddCountry extends GatewayAction {
+public class AddCountry implements HttpAction {
 	
 	private static final Logger logger = Logger.getLogger("logger");
 
@@ -30,7 +30,7 @@ public class AddCountry extends GatewayAction {
 			logger.info("Population: " + request.getParameter("population"));
 			logger.info("Timezone: " + request.getParameter("timezone"));
 
-			getGateway().add(country);
+			GatewayResolver.getGateway().add(country);
 			
 			logger.info("Country was successfully added");			
 			logger.info("Send redirect to showAllCountry page");

@@ -8,7 +8,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import org.apache.log4j.*;
 
-public class RemoveCountry extends GatewayAction {
+public class RemoveCountry implements HttpAction {
 		
 	private static final Logger logger = Logger.getLogger("logger");		
 
@@ -18,7 +18,7 @@ public class RemoveCountry extends GatewayAction {
 			logger.info("Removing country id: " + request.getParameter("id"));
 
 			int id = Integer.valueOf(request.getParameter("id"));
-			Gateway<Country> gateway = getGateway();
+			Gateway<Country> gateway = GatewayResolver.getGateway();
 			Country country = gateway.get(Country.class, id);
 			gateway.remove(country);
 

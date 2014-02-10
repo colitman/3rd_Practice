@@ -8,7 +8,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import org.apache.log4j.*;
 
-public class AddUniversity extends GatewayAction {
+public class AddUniversity implements HttpAction {
 
 	private static final Logger logger = Logger.getLogger("logger");	
 	
@@ -28,7 +28,7 @@ public class AddUniversity extends GatewayAction {
 			logger.info("WWW: " + request.getParameter("www"));
 			logger.info("ParentID: " + request.getParameter("parent_id"));
 
-			getGateway().add(university);
+			GatewayResolver.getGateway().add(university);
 		
 			logger.info("University was successfully added");			
 			logger.info("Send redirect to showAllUniversity page");

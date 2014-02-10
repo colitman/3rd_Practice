@@ -12,7 +12,7 @@ import hibernate.dao.*;
 import hibernate.logic.*;
 import java.util.Collection;
 
-public class ShowAllCountry extends GatewayAction {
+public class ShowAllCountry implements HttpAction {
 	
 	private static final Logger logger = Logger.getLogger("logger");	
 
@@ -22,7 +22,7 @@ public class ShowAllCountry extends GatewayAction {
 			logger.info("Logger installed");
 			logger.info("Prepare to show all countries");
 
-			Gateway<Country> gateway = getGateway();
+			Gateway<Country> gateway = GatewayResolver.getGateway();
 			Collection<Country> data = gateway.getAll(Country.class);
 		
 			logger.info("Get all countries");

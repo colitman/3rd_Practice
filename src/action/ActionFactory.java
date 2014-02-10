@@ -30,8 +30,6 @@ public class ActionFactory {
 
 		Map<String, Class<? extends HttpAction>> map = new HashMap<String, Class<? extends HttpAction>>();
 		
-		map.put("homepage", action.handlers.homepage.GoHomePageAction.class);
-		
 		map.put("addCountry", action.handlers.country.AddCountry.class);
 		map.put("modifyCountry", action.handlers.country.ModifyCountry.class);
 		map.put("removeCountry", action.handlers.country.RemoveCountry.class);

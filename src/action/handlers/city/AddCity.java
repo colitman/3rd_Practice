@@ -8,7 +8,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import org.apache.log4j.*;
 
-public class AddCity extends GatewayAction {
+public class AddCity implements HttpAction {
 	
 	private static final Logger logger = Logger.getLogger("logger");
 
@@ -27,7 +27,7 @@ public class AddCity extends GatewayAction {
 			logger.info("Square: " + request.getParameter("square"));
 			logger.info("ParentID: " + request.getParameter("parent_id"));
 				
-			getGateway().add(city);
+			GatewayResolver.getGateway().add(city);
 	
 			logger.info("City was successfully added");			
 			logger.info("Send redirect to showAllCity page");

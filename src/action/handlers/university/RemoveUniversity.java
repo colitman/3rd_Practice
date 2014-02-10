@@ -8,7 +8,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import org.apache.log4j.*;
 
-public class RemoveUniversity extends GatewayAction {
+public class RemoveUniversity implements HttpAction {
 	
 	private static final Logger logger = Logger.getLogger("logger");	
 
@@ -18,7 +18,7 @@ public class RemoveUniversity extends GatewayAction {
 			logger.info("Removing university id: " + request.getParameter("id"));
 		
 			int id = Integer.valueOf(request.getParameter("id"));
-			Gateway gateway = getGateway();
+			Gateway gateway = GatewayResolver.getGateway();
 			University university = (University) gateway.get(University.class, id);
 			gateway.remove(university);
 				

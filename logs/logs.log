@@ -82,3 +82,19 @@ java.lang.NullPointerException
 2014-02-10 18:19:53,792 INFO fault (self-tuning)'              logger - Get all countries
 2014-02-10 18:19:53,792 INFO fault (self-tuning)'              logger - Set countries into request attributes
 2014-02-10 18:19:53,802 INFO fault (self-tuning)'              logger - Send forward to country/showAll.jsp page
+2014-02-10 18:51:11,071 INFO fault (self-tuning)'              logger - Building HttpAction
+2014-02-10 18:51:11,091 INFO fault (self-tuning)'              logger - Code: showAllCountry
+2014-02-10 18:51:11,091 INFO fault (self-tuning)'              logger - Initializing ActionFactory
+2014-02-10 18:51:11,261 INFO fault (self-tuning)'              logger - Getting ActionFactory
+2014-02-10 18:51:11,261 INFO fault (self-tuning)'              logger - Building HttpAction
+2014-02-10 18:51:11,322 INFO fault (self-tuning)'              logger - Logger installed
+2014-02-10 18:51:11,322 INFO fault (self-tuning)'              logger - Prepare to show all countries
+2014-02-10 18:51:11,332 INFO fault (self-tuning)'              logger - Getting gateway
+2014-02-10 18:51:12,563 INFO fault (self-tuning)'              logger - Getting collection of entity
+2014-02-10 18:51:12,573 INFO fault (self-tuning)'              logger - Setting session
+2014-02-10 18:51:12,573 INFO fault (self-tuning)'              logger - Getting SessionFactory
+2014-02-10 18:51:12,573 INFO fault (self-tuning)'              logger - Initializing SessionFactory
+2014-02-10 18:51:19,463 INFO fault (self-tuning)'              logger - Closing session
+2014-02-10 18:51:19,463 INFO fault (self-tuning)'              logger - Get all countries
+2014-02-10 18:51:19,463 INFO fault (self-tuning)'              logger - Set countries into request attributes
+2014-02-10 18:51:19,483 INFO fault (self-tuning)'              logger - Send forward to country/showAll.jsp page

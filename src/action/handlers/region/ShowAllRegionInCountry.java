@@ -11,7 +11,7 @@ import hibernate.dao.*;
 import hibernate.logic.*;
 import java.util.Collection;
 
-public class ShowAllRegionInCountry extends GatewayAction {
+public class ShowAllRegionInCountry implements HttpAction {
 	
 	private static final Logger logger = Logger.getLogger("logger");	
 
@@ -23,12 +23,12 @@ public class ShowAllRegionInCountry extends GatewayAction {
 
 			logger.info("Get parent id: " + parentID);
 
-			Gateway<Country> countryGateway = getGateway();
+			Gateway<Country> countryGateway = GatewayResolver.getGateway();
 			Country parent = countryGateway.get(Country.class, parentID);
 
 			logger.info("Get parent object");
 
-			Gateway<Region> regionGateway = getGateway();
+			Gateway<Region> regionGateway = GatewayResolver.getGateway();
 			Collection<Region> data = regionGateway.getAllBy(Region.class, parentID);
 		
 			logger.info("Get all regions");

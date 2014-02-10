@@ -8,7 +8,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import org.apache.log4j.*;
 
-public class ModifyCity extends GatewayAction {
+public class ModifyCity implements HttpAction {
 
 	private static final Logger logger = Logger.getLogger("logger");	
 
@@ -29,7 +29,7 @@ public class ModifyCity extends GatewayAction {
 			logger.info("Square: " + request.getParameter("square"));
 			logger.info("ParentID: " + request.getParameter("parent_id"));
 
-			getGateway().modify(id, city);
+			GatewayResolver.getGateway().modify(id, city);
 			
 			logger.info("City was successfully modified");			
 			logger.info("Send redirect to showAllCity page");

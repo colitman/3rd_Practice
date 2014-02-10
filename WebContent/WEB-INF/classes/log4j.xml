@@ -6,7 +6,7 @@
 	<appender name="base" class="org.apache.log4j.RollingFileAppender">
 		<param name="Threshold" value="INFO"/>
         	<param name="File" value="C:/Workspace/LAB3/Mego_Portal_XD/logs/logs.log"/>
-        	<param name="MaxFileSize" value="100KB"/>
+        	<param name="MaxFileSize" value="100MB"/>
         	<param name="MaxBackupIndex" value="100"/>
         	<param name="Encoding" value="UTF-8"/>
         	<layout class="org.apache.log4j.EnhancedPatternLayout">

@@ -8,7 +8,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import org.apache.log4j.*;
 
-public class ModifyCountry extends GatewayAction {
+public class ModifyCountry implements HttpAction {
 	
 	private static final Logger logger = Logger.getLogger("logger");	
 
@@ -32,7 +32,7 @@ public class ModifyCountry extends GatewayAction {
 			logger.info("Population: " + request.getParameter("population"));
 			logger.info("Timezone: " + request.getParameter("timezone"));
 
-			getGateway().modify(id, country);
+			GatewayResolver.getGateway().modify(id, country);
 
 			logger.info("Country was successfully modified");			
 			logger.info("Send redirect to showAllCountry page");

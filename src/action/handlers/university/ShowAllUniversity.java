@@ -11,7 +11,7 @@ import hibernate.dao.*;
 import hibernate.logic.*;
 import java.util.Collection;
 
-public class ShowAllUniversity extends GatewayAction {
+public class ShowAllUniversity implements HttpAction {
 
 	private static final Logger logger = Logger.getLogger("logger");	
 	
@@ -19,7 +19,7 @@ public class ShowAllUniversity extends GatewayAction {
 		try {
 			logger.info("Prepare to show all universities");
 
-			Gateway<University> gateway = getGateway();
+			Gateway<University> gateway = GatewayResolver.getGateway();
 			Collection<University> universities = gateway.getAll(University.class);
 	
 			logger.info("Get all universities");	
