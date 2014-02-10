@@ -5,7 +5,7 @@ import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 @Table(name="UNIVERSITY")
-public class University implements OracleEntity {
+public class University {
 
 	@Column(name="PARENT_ID", nullable=false)
 	private int parentID;

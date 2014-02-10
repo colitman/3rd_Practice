@@ -37,14 +37,7 @@ public class ModifyRegion extends GatewayAction {
 			response.sendRedirect("/WebPrototype/region/showAll.jsp?success=true");
 		}
 		catch (Exception e) {
-			try {
-				logger.warn("Error was occured");
-				logger.info("Send redirect to error page");
-				response.sendRedirect("/WebPrototype/error.jsp?message=" + e.getMessage());
-			}
-			catch (Exception ex) {
-				logger.error("Critical error was occured");
-			}
+			logger.error("Error occured in ModifyRegion action", e);
 		}
 	}
 }

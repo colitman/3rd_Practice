@@ -11,7 +11,7 @@ import hibernate.dao.*;
 import hibernate.logic.*;
 import java.util.Collection;
 
-public class ShowAllUniversity implements HttpAction {
+public class ShowAllUniversity extends GatewayAction {
 
 	private static final Logger logger = Logger.getLogger("logger");	
 	
@@ -19,8 +19,7 @@ public class ShowAllUniversity implements HttpAction {
 		try {
 			logger.info("Prepare to show all universities");
 
-			ApplicationContext context = new FileSystemXmlApplicationContext("C:/Workspace/LAB3/Mego_Portal_XD/res/beans.xml");
-			Gateway<University> gateway = (Gateway<University>) context.getBean("oracleGateway");
+			Gateway<University> gateway = getGateway();
 			Collection<University> universities = gateway.getAll(University.class);
 	
 			logger.info("Get all universities");	
@@ -33,14 +32,7 @@ public class ShowAllUniversity implements HttpAction {
 			response.sendRedirect("/WebPrototype/university/showAll.jsp");
 		}
 		catch (Exception e) {
-			try {
-				logger.warn("Error was occured");
-				logger.info("Send redirect to error page");
-				response.sendRedirect("/WebPrototype/error.jsp?message=" + e.getMessage());
-			}
-			catch (Exception ex) {
-				logger.error("Critical error was occured");
-			}
+			logger.error("Error occured in ShowAllCountry action", e);
 		}	
 	}
 }

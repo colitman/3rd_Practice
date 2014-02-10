@@ -10,7 +10,7 @@ import org.apache.log4j.*;
 import hibernate.dao.*;
 import hibernate.logic.*;
 
-public class ShowOneCity implements HttpAction {
+public class ShowOneCity extends GatewayAction {
 	
 	private static final Logger logger = Logger.getLogger("logger");	
 
@@ -18,8 +18,7 @@ public class ShowOneCity implements HttpAction {
 		try {
 			logger.info("Prepare to show city");
 
-			ApplicationContext context = new FileSystemXmlApplicationContext("C:/Workspace/LAB3/Mego_Portal_XD/res/beans.xml");
-			Gateway<City> gateway = (Gateway) context.getBean("oracleGateway");
+			Gateway<City> gateway = getGateway();
 			int id = Integer.valueOf(request.getParameter("id"));
 			City city = null;
 
@@ -37,14 +36,7 @@ public class ShowOneCity implements HttpAction {
 			response.sendRedirect("/WebPrototype/city/showOne.jsp?id=" + id);
 		}
 		catch (Exception e) {
-			try {
-				logger.warn("Error was occured");
-				logger.info("Send redirect to error page");
-				response.sendRedirect("/WebPrototype/error.jsp");
-			}
-			catch (Exception ex) {
-				logger.error("Critical error was occured");
-			}
+			logger.error("Error occured in ShowOneCity action", e);
 		}
 	}
 }

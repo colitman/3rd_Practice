@@ -17,7 +17,7 @@ public class HibernateUtil {
 	private static SessionFactory sessionFactory;
 
 	public static SessionFactory getSessionFactory() {
-		logger.info("Getting SessionFactory...");
+		logger.info("Getting SessionFactory");
 		if (sessionFactory == null) {
 			sessionFactory = newSessionFactory();
 		}
@@ -26,16 +26,15 @@ public class HibernateUtil {
 
 	private static SessionFactory newSessionFactory() { 
 		try {	
-			logger.info("Initializing SessionFactory...");
+			logger.info("Initializing SessionFactory");
 
 			Locale.setDefault(Locale.ENGLISH);
-			Configuration conf = new Configuration().configure(new File("C:/Workspace/LAB3/Mego_Portal_XD/res/hibernate.cfg.xml"));
+			Configuration conf = new Configuration().configure(new File("hibernate.cfg.xml"));
 			ServiceRegistryBuilder builder = new ServiceRegistryBuilder().applySettings(conf.getProperties());
 			return conf.buildSessionFactory(builder.buildServiceRegistry());
 		}
 		catch (Exception e) {
-			e.printStackTrace();
-			logger.error("Critical error was occured");
+			logger.error("Error occured in HibernateUtil", e);
 		}
 		return null;
 	}

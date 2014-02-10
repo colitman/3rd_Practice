@@ -6,7 +6,7 @@ import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 @Table(name="REGION")
-public class Region implements OracleEntity {
+public class Region {
 
 	@Column(name="PARENT_ID", nullable=false)
 	private int parentID;

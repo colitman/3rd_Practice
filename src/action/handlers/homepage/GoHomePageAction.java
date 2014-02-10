@@ -15,14 +15,7 @@ public class GoHomePageAction implements HttpAction {
 			response.sendRedirect("/WebPrototype/index.jsp");
 		}
 		catch (Exception e) {
-			try {
-				logger.warn("Error was occured");
-				logger.info("Send redirect to error page");
-				response.sendRedirect("/WebPrototype/error.jsp?message=" + e.getMessage());
-			}
-			catch (Exception ex) {
-				logger.error("Critical error was occured");
-			}
+			logger.error("Error occured in GoHomePage action", e);
 		}
 	}
 }

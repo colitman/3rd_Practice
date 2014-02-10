@@ -28,14 +28,7 @@ public class RemoveUniversity extends GatewayAction {
 			response.sendRedirect("/WebPrototype/university/showAll?success=true");
 		}
 		catch (Exception e) {
-			try {
-				logger.warn("Error was occured");
-				logger.info("Send redirect to error page");
-				response.sendRedirect("/WebPrototype/error.jsp?message=" + e.getMessage());
-			}
-			catch (Exception ex) {
-				logger.error("Critical error was occured");
-			}
+			logger.error("Error occured in RemoveUniversity action", e);
 		}
 	}
 }

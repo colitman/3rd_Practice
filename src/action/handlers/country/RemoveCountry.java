@@ -28,14 +28,7 @@ public class RemoveCountry extends GatewayAction {
 			response.sendRedirect("/WebPrototype/country/showAll.jsp?success=true");
 		}
 		catch (Exception e) {
-			try {
-				logger.warn("Error was occured");
-				logger.info("Send redirect to error page");
-				response.sendRedirect("/WebPrototype/error.jsp?message=" + e.getMessage());
-			}
-			catch (Exception ex) {
-				logger.error("Critical error was occured");
-			}
+			logger.error("Error occured in RemoveCountry action", e);
 		}
 	}
 }

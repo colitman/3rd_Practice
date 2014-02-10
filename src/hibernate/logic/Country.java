@@ -6,7 +6,7 @@ import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 @Table(name="COUNTRY")
-public class Country implements OracleEntity {
+public class Country {
 
 	@Id
     	@GeneratedValue(generator="increment")
@@ -74,10 +74,5 @@ public class Country implements OracleEntity {
 
 	public int getTimezone() {
 		return timezone;
-	}
-
-	@Override
-	public int getParentID() {
-		return -1;
 	}
 }

@@ -10,7 +10,7 @@ import org.apache.log4j.*;
 import hibernate.dao.*;
 import hibernate.logic.*;
 
-public class ShowOneCountry implements HttpAction {
+public class ShowOneCountry extends GatewayAction {
 	
 	private static final Logger logger = Logger.getLogger("logger");	
 
@@ -18,8 +18,7 @@ public class ShowOneCountry implements HttpAction {
 		try {
 			logger.info("Prepare to show country");
 
-			ApplicationContext context = new FileSystemXmlApplicationContext("C:/Workspace/LAB3/Mego_Portal_XD/res/beans.xml");
-			Gateway<Country> gateway = (Gateway) context.getBean("oracleGateway");
+			Gateway<Country> gateway = getGateway();
 			int id = Integer.valueOf(request.getParameter("id"));
 			Country country = null;
 	
@@ -38,14 +37,7 @@ public class ShowOneCountry implements HttpAction {
 			response.sendRedirect("/WebPrototype/country/showOne.jsp?id=" + id);
 		}
 		catch (Exception e) {
-			try {
-				logger.warn("Error was occured");
-				logger.info("Send redirect to error page");
-				response.sendRedirect("/WebPrototype/error.jsp?message=" + e.getMessage());
-			}
-			catch (Exception ex) {
-				logger.error("Critical error was occured");
-			}
+			logger.error("Error occured in ShowOneCountry action", e);
 		}
 	}
 }
