@@ -29,7 +29,7 @@ public class HibernateUtil {
 			logger.info("Initializing SessionFactory");
 
 			Locale.setDefault(Locale.ENGLISH);
-			Configuration conf = new Configuration().configure(new File("hibernate.cfg.xml"));
+			Configuration conf = new Configuration().configure("hibernate.cfg.xml");
 			ServiceRegistryBuilder builder = new ServiceRegistryBuilder().applySettings(conf.getProperties());
 			return conf.buildSessionFactory(builder.buildServiceRegistry());
 		}
