@@ -23,14 +23,23 @@ public class ShowAllRegionInCountry extends GatewayAction {
 
 			logger.info("Get parent id: " + parentID);
 
-			Gateway<Country> gateway = getGateway();
-			Collection<Country> data = gateway.getAllBy(Region.class, parentID);
+			Gateway<Country> countryGateway = getGateway();
+			Country parent = countryGateway.get(Country.class, parentID);
+
+			logger.info("Get parent object");
+
+			Gateway<Region> regionGateway = getGateway();
+			Collection<Region> data = regionGateway.getAllBy(Region.class, parentID);
 		
 			logger.info("Get all regions");
 
 			request.setAttribute("data", data);
 	
 			logger.info("Set regions into request attributes");
+
+			request.setAttribute("parent", parent);
+
+			logger.info("Set parent object into request attributes");
 			logger.info("Send forward to region/showAllInCountry.jsp page");
 
 			request.getRequestDispatcher("region/showAllInCountry.jsp").forward(request, response);

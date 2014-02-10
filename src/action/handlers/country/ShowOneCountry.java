@@ -21,7 +21,7 @@ public class ShowOneCountry implements HttpAction {
 			ApplicationContext context = new FileSystemXmlApplicationContext("C:/Workspace/LAB3/Mego_Portal_XD/res/beans.xml");
 			Gateway<Country> gateway = (Gateway) context.getBean("oracleGateway");
 			int id = Integer.valueOf(request.getParameter("id"));
-			Country country = gateway.get(id);
+			Country country = null;
 	
 			logger.info("Country properties: ");
 			logger.info("Name: " + country.getName());

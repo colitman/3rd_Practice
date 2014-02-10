@@ -33,17 +33,10 @@ public class AddUniversity extends GatewayAction {
 			logger.info("University was successfully added");			
 			logger.info("Send redirect to showAllUniversity page");
 
-			response.sendRedirect("/WebPrototype/university/showAll.jsp?success=true");
+			response.sendRedirect("/WebPrototype/action?code=showAllUniversityInCity");
 		}
 		catch (Exception e) {
-			try {
-				logger.warn("Error was occured");
-				logger.info("Send redirect to error page");
-				response.sendRedirect("/WebPrototype/error.jsp?message=" + e.getMessage());
-			}
-			catch (Exception ex) {
-				logger.error("Critical error was occured");
-			}
+			logger.warn("Error occured in AddUniversity action", e);
 		}
 	}
 }

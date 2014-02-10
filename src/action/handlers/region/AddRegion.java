@@ -33,17 +33,10 @@ public class AddRegion extends GatewayAction {
 			logger.info("Region was successfully added");			
 			logger.info("Send redirect to showAllRegion page");
 
-			response.sendRedirect("/WebPrototype/region/showAll.jsp?success=true");
+			response.sendRedirect("/WebPrototype/action?code=showAllRegionInCountry");
 		}
 		catch (Exception e) {
-			try {
-				logger.warn("Error was occured");
-				logger.info("Send redirect to error page");
-				response.sendRedirect("/WebPrototype/error.jsp?message=" + e.getMessage());
-			}
-			catch (Exception ex) {
-				logger.error("Critical error was occured");
-			}
+			logger.error("Error occured in AddRegion action", e);
 		}
 	}
 }

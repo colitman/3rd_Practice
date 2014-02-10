@@ -1,7 +1,8 @@
-﻿<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page isELIgnored="false" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
+<head>
 <c:import url="/meta.html"/>
 <title>Lab 8 - Universities</title>
 </head>
@@ -13,10 +14,10 @@
 <h1>All Universities</h1>
 <div id="content">
 	div id="paramsCurrent">
-		<form class="editCity" action="action?code=editCity&id=000000" method="POST">
-			<span class="paramTitle">Name: </span>Имя города<br>
-			<span class="paramTitle">Population: </span>Население города<br>
-			<span class="paramTitle">Square: </span>Площадь города<br>
+		<form class="editCity" action="action?code=modifyCity&id=${parent_id}" method="POST">
+			<span class="paramTitle">Name: </span>${parent.name}<br>
+			<span class="paramTitle">Population: </span>${parent.population}<br>
+			<span class="paramTitle">Square: </span>${parent.square}<br>
 			<input type="submit" value="Edit">
 		</form>
 	</div>
@@ -44,7 +45,7 @@
 		</div>
 
 		<div class= "addNew" id="addNewUniversity">
-			<form id="newUni" action="action?code=newUni">
+			<form id="newUni" action="action?code=addUniversity">
 				<table class="noborder">
 					<tr>
 						<td>Name:</td>
@@ -55,7 +56,7 @@
 					<tr>
 						<td>Amount of Depts:</td>
 						<td>
-							<input name="depts" type="text" />
+							<input name="departs_count" type="text" />
 						</td>
 					</tr>
 					<tr>

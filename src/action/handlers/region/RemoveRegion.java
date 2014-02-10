@@ -19,7 +19,7 @@ public class RemoveRegion extends GatewayAction {
 
 			Gateway gateway = getGateway();
 			int id = Integer.valueOf(request.getParameter("id"));
-			Region region = (Region) gateway.get(id);
+			Region region = (Region) gateway.get(Region.class, id);
 			gateway.remove(region);
 	
 			logger.info("Region was successfully removed");			

@@ -21,7 +21,7 @@ public class ShowOneRegion implements HttpAction {
 			ApplicationContext context = new FileSystemXmlApplicationContext("C:/Workspace/LAB3/Mego_Portal_XD/res/beans.xml");
 			Gateway<Region> gateway = (Gateway) context.getBean("oracleGateway");
 			int id = Integer.valueOf(request.getParameter("id"));
-			Region region = gateway.get(id);
+			Region region = null;
 	
 			logger.info("Region properties: ");
 			logger.info("Name: " + region.getName());

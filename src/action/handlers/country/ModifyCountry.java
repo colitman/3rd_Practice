@@ -17,6 +17,7 @@ public class ModifyCountry extends GatewayAction {
 			logger.info("Prepare to modify country");
 
 			int id = Integer.valueOf(request.getParameter("id"));
+
 			Country country = new Country();
 			country.setName(request.getParameter("name"));
 			country.setLanguage(request.getParameter("language"));
@@ -36,17 +37,10 @@ public class ModifyCountry extends GatewayAction {
 			logger.info("Country was successfully modified");			
 			logger.info("Send redirect to showAllCountry page");
 		
-			response.sendRedirect("/WebPrototype/country/showAll.jsp?success=true");
+			response.sendRedirect("/WebPrototype/action?code=showAllCountry");
 		}
 		catch (Exception e) {
-			try {
-				logger.warn("Error was occured");
-				logger.info("Send redirect to error page");
-				response.sendRedirect("/WebPrototype/error.jsp?message=" + e.getMessage());
-			}
-			catch (Exception ex) {
-				logger.error("Critical error was occured");
-			}
+			logger.error("Error occured in ModifyCountry action", e);
 		}
 	}
 }

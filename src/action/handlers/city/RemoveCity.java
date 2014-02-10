@@ -19,7 +19,7 @@ public class RemoveCity extends GatewayAction {
 
 			int id = Integer.valueOf(request.getParameter("id"));
 			Gateway gateway = getGateway();
-			City city = (City) gateway.get(id);
+			City city = (City) gateway.get(City.class, id);
 			getGateway().remove(city);
 
 			logger.info("City was successfully removed");			

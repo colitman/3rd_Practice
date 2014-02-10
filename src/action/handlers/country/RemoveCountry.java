@@ -19,7 +19,7 @@ public class RemoveCountry extends GatewayAction {
 
 			int id = Integer.valueOf(request.getParameter("id"));
 			Gateway<Country> gateway = getGateway();
-			Country country = (Country) gateway.get(id);
+			Country country = gateway.get(Country.class, id);
 			gateway.remove(country);
 
 			logger.info("Country was successfully removed");			

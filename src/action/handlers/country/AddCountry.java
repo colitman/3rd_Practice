@@ -35,17 +35,10 @@ public class AddCountry extends GatewayAction {
 			logger.info("Country was successfully added");			
 			logger.info("Send redirect to showAllCountry page");
 
-			response.sendRedirect("/WebPrototype/country/showAll.jsp?success=true");
+			response.sendRedirect("/WebPrototype/action?code=showAllCountry");
 		} 	
 		catch (Exception e) {
-			try {
-				logger.warn("Error was occured");
-				logger.info("Send redirect to error page");
-				response.sendRedirect("/WebPrototype/error.jsp?message=" + e.getMessage());
-			}
-			catch (Exception ex) {
-				logger.error("Critical error was occured");
-			}
+			logger.error("Error occured in AddCountry action", e);
 		}	
 	}
 }

@@ -9,6 +9,7 @@ import org.hibernate.*;
 import org.hibernate.criterion.*;
 import org.apache.log4j.*;
 import org.springframework.stereotype.Service;
+import java.lang.InstantiationException;
 
 @Service
 public class OracleGateway<T> implements Gateway<T> {
@@ -44,13 +45,17 @@ public class OracleGateway<T> implements Gateway<T> {
 			closeSession();
 		}
 	}
-	public T get(int id) throws SQLException {
+	public T get(Class className, int id) throws SQLException {
 		logger.info("Getting some entity");
 
 		T entity = null;
 		try {
+			entity = (T) className.newInstance();
 			setSession();
 			session.load(entity, id);
+		}
+		catch (Exception e) {
+			logger.error("Exception occured in OracleGateway", e);
 		}
  		finally {
 			closeSession();

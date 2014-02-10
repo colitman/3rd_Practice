@@ -1,7 +1,8 @@
-﻿<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page isELIgnored="false" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
+<head>
 <c:import url="/meta.html"/>
 <title>Lab 8 - Cities</title>
 </head>
@@ -13,10 +14,10 @@
 <h1>All Cities</h1>
 <div id="content">
 	<div id="paramsCurrent">
-		<form class="editRegion" action="action?code=editRegion&id=000000" method="POST">
-			<span class="paramTitle">Name: </span>Имя региона<br>
-			<span class="paramTitle">Population: </span>Население региона<br>
-			<span class="paramTitle">Square: </span>Площадь региона<br>
+		<form class="editRegion" action="action?code=modifyRegion&id=${parent_id}" method="POST">
+			<span class="paramTitle">Name: </span>${parent.name}<br>
+			<span class="paramTitle">Population: </span>${parent.population}<br>
+			<span class="paramTitle">Square: </span>${parent.square}<br>
 			<input type="submit" value="Edit">
 		</form>
 	</div>
@@ -44,7 +45,7 @@
 		</div>
 
 		<div class= "addNew" id="addNewCity">
-			<form id="newCity" action="action?code=newCity" method="POST">
+			<form id="newCity" action="action?code=addCity" method="POST">
 				<table class="noborder">
 					<tr>
 						<td>Name:</td>
@@ -55,13 +56,13 @@
 					<tr>
 						<td>Population:</td>
 						<td>
-							<input name="popu" type="text" />
+							<input name="population" type="text" />
 						</td>
 					</tr>
 					<tr>
 						<td>Square:</td>
 						<td>
-							<input name="sq" type="text" />
+							<input name="square" type="text" />
 						</td>
 					</tr>
 					<tr>

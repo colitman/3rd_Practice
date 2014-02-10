@@ -21,7 +21,7 @@ public class ShowOneCity implements HttpAction {
 			ApplicationContext context = new FileSystemXmlApplicationContext("C:/Workspace/LAB3/Mego_Portal_XD/res/beans.xml");
 			Gateway<City> gateway = (Gateway) context.getBean("oracleGateway");
 			int id = Integer.valueOf(request.getParameter("id"));
-			City city = gateway.get(id);
+			City city = null;
 
 			logger.info("City properties: ");
 			logger.info("Name: " + city.getName());

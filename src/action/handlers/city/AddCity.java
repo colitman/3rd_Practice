@@ -31,17 +31,10 @@ public class AddCity extends GatewayAction {
 	
 			logger.info("City was successfully added");			
 			logger.info("Send redirect to showAllCity page");
-			response.sendRedirect("/WebPrototype/city/showAll.jsp?success=true");
+			response.sendRedirect("/WebPrototype/action?code=showAllCityInRegion");
 		}
 		catch (Exception e) {
-			try {
-				logger.warn("Error was occured");
-				logger.info("Send redirect to error page");
-				response.sendRedirect("/WebPrototype/error.jsp?message=" + e.getMessage());
-			}
-			catch (Exception ex) {
-				logger.error("Critical error was occured");
-			}
+			logger.error("Error occured in AddCity action", e);
 		}
 	}
 }

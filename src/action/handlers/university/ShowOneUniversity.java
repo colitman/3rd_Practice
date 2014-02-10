@@ -21,7 +21,7 @@ public class ShowOneUniversity implements HttpAction {
 			ApplicationContext context = new FileSystemXmlApplicationContext("C:/Workspace/LAB3/Mego_Portal_XD/res/beans.xml");
 			Gateway<University> gateway = (Gateway) context.getBean("oracleGateway");
 			int id = Integer.valueOf(request.getParameter("id"));
-			University university = gateway.get(id);
+			University university = null;
 	
 			logger.info("University properties: ");
 			logger.info("Name: " + university.getName());

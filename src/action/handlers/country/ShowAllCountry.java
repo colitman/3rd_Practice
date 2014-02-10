@@ -18,7 +18,7 @@ public class ShowAllCountry extends GatewayAction {
 
 	public void perform(HttpServletRequest request, HttpServletResponse response) throws ActionException {
 		try {
-			DOMConfigurator.configure("C:/Workspace/LAB3/Mego_Portal_XD/res/log4j.xml");
+			DOMConfigurator.configure("log4j.xml");
 			logger.info("Logger installed");
 			logger.info("Prepare to show all countries");
 

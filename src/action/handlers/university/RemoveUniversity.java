@@ -19,7 +19,7 @@ public class RemoveUniversity extends GatewayAction {
 		
 			int id = Integer.valueOf(request.getParameter("id"));
 			Gateway gateway = getGateway();
-			University university = (University) gateway.get(id);
+			University university = (University) gateway.get(University.class, id);
 			gateway.remove(university);
 				
 			logger.info("University was successfully removed");			

@@ -1,7 +1,8 @@
-﻿<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page isELIgnored="false" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
+<head>
 <c:import url="/meta.html"/>
 <title>Lab 8 - Countries</title>
 </head>
@@ -36,7 +37,7 @@
 		</div>
 
 		<div class="addNew" id="addNewCountry">
-			<form id="newCountry" action="action?code=newCountry" method="POST">
+			<form id="newCountry" action="action?code=addCountry" method="POST">
 				<table class="noborder">
 					<tr>
 						<td>Name:</td>
@@ -47,7 +48,7 @@
 					<tr>
 						<td>Language:</td>
 						<td>
-							<input name="lang" type="text" />
+							<input name="language" type="text" />
 						</td>
 					</tr>
 					<tr>
@@ -59,13 +60,13 @@
 					<tr>
 						<td>Population:</td>
 						<td>
-							<input name="popu" type="text" />
+							<input name="population" type="text" />
 						</td>
 					</tr>
 					<tr>
 						<td>Timezone:</td>
 						<td>
-							<input name="tz" type="text" />
+							<input name="timezone" type="text" />
 						</td>
 					</tr>
 					<tr>
