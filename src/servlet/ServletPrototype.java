@@ -7,7 +7,7 @@ import org.apache.log4j.*;
 
 public class ServletPrototype extends HttpServlet {
 	
-	private static final Logger logger = Logger.getLogger("logger");	
+	private static final Logger logger = Logger.getLogger(ServletPrototype.class);	
 
 	@Override
 	public void service(HttpServletRequest request, HttpServletResponse responce) {

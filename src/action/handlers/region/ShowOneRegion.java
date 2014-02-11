@@ -12,7 +12,7 @@ import hibernate.logic.*;
 
 public class ShowOneRegion implements HttpAction {
 	
-	private static final Logger logger = Logger.getLogger("logger");	
+	private static final Logger logger = Logger.getLogger(ShowOneRegion.class);	
 
 	public void perform(HttpServletRequest request, HttpServletResponse response) throws ActionException {
 		try {

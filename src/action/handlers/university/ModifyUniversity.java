@@ -10,7 +10,7 @@ import org.apache.log4j.*;
 
 public class ModifyUniversity implements HttpAction {
 
-	private static final Logger logger = Logger.getLogger("logger");	
+	private static final Logger logger = Logger.getLogger(ModifyUniversity.class);	
 	
 	public void perform(HttpServletRequest request, HttpServletResponse response) throws ActionException {
 		try {

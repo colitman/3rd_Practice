@@ -13,7 +13,7 @@ import java.util.Collection;
 
 public class ShowAllCityInRegion implements HttpAction {
 	
-	private static final Logger logger = Logger.getLogger("logger");	
+	private static final Logger logger = Logger.getLogger(ShowAllCityInRegion.class);	
 
 	public void perform(HttpServletRequest request, HttpServletResponse response) throws ActionException {
 		try {

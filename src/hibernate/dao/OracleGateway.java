@@ -14,7 +14,7 @@ import java.lang.InstantiationException;
 @Service
 public class OracleGateway<T> implements Gateway<T> {
 	
-	private static final Logger logger = Logger.getLogger("logger");	
+	private static final Logger logger = Logger.getLogger(OracleGateway.class);	
 	private Session session;
 
 	@Override

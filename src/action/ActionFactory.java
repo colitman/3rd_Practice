@@ -5,7 +5,7 @@ import org.apache.log4j.*;
 
 public class ActionFactory {
 	
-	private static final Logger logger = Logger.getLogger("logger");	
+	private static final Logger logger = Logger.getLogger(ActionFactory.class);	
 	private static ActionFactory instance = new ActionFactory();	
 	private static Map<String, Class<? extends HttpAction>> actions = getActions();
 

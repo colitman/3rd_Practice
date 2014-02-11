@@ -8,7 +8,7 @@ import org.apache.log4j.*;
 
 public class GatewayResolver {
 
-	private static final Logger logger = Logger.getLogger("logger");
+	private static final Logger logger = Logger.getLogger(GatewayResolver.class);
 
 	public static Gateway getGateway() {
 		logger.info("Getting gateway");

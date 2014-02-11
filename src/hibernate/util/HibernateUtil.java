@@ -13,7 +13,7 @@ import java.io.File;
 
 public class HibernateUtil {
 	
-	private static final Logger logger = Logger.getLogger("logger");	
+	private static final Logger logger = Logger.getLogger(HibernateUtil.class);	
 	private static SessionFactory sessionFactory;
 
 	public static SessionFactory getSessionFactory() {
