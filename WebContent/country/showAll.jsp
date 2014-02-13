@@ -71,7 +71,9 @@
 							</td>
 						</tr>
 						<tr>
-							<td><input value="Add" type="submit" /></td>
+							<td>
+								<a href="javascript:document.getElementById('newContry').submit()">Add</a>
+							</td>
 							<td>
 								<a href="javascript:hidePopUp()">Cancel</a>
 							</td>
