@@ -36,7 +36,7 @@
 			</table>
 		</div>
 
-		<div class="addNew popUpWrapper" id="addNewCountry newItemPopup">
+		<div class="addNew popUpWrapper" id="newItemPopup">
 			<div class="popUpContent">
 				<form id="newCountry" action="action?code=addCountry" method="POST">
 					<table class="noborder">
@@ -73,7 +73,7 @@
 						<tr>
 							<td><input value="Add" type="submit" /></td>
 							<td>
-								<button onclick="javascript:hidePopUp()">Cancel</button>
+								<a href="javascript:hidePopUp()">Cancel</a>
 							</td>
 						</tr>
 					</table>
