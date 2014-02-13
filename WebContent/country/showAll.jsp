@@ -72,7 +72,7 @@
 						</tr>
 						<tr>
 							<td>
-								<a href="javascript:document.getElementById('newContry').submit()">Add</a>
+								<a href="javascript:document.getElementById('newCountry').submit()">Add</a>
 							</td>
 							<td>
 								<a href="javascript:hidePopUp()">Cancel</a>
