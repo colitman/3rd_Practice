@@ -14,16 +14,7 @@
 <h1>All Countries</h1>
 <div id="content">
 	<div id="toolbar">
-		<table id="buttons">
-			<tr>
-				<td class="tb-button">
-					<a href="javascript:showPopUp()">Add new</a>
-				</td>
-				<td class="tb-button">
-					<a href="#">Remove</a>
-				</td>
-			</tr>
-		</table>
+		<c:import url="/toolbar.html"/>
 	</div>
 	<div id="main-info">
 		<div id="children-list">
@@ -83,7 +74,7 @@
 							<tr>
 								<td><input value="Add" type="submit" /></td>
 								<td>
-									<button onclick="hidePopUp();">Cancel</button>
+									<button onclick="javascript:hidePopUp()">Cancel</button>
 								</td>
 							</tr>
 						</table>
