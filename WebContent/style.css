@@ -33,20 +33,18 @@ table {
 }
 
 .popUpWrapper {
-	width:100%;
-    min-height:100%;
-    background-color: #B2B2B2;
-    overflow:hidden;
-    position:fixed;
-    top:0px;
+	min-height:100%;
+    	background-color: #B2B2B2;
+    	overflow:hidden;
+    	top:0px;
 }
 
 .popUpWrapper .popUpContent {
 	margin:40px auto 0px auto;
-    width: auto;
-    height: auto;
-    padding:10px;
-    background-color: #CCE5FF;
+   	width: auto;
+    	height: auto;
+    	padding:10px;
+    	background-color: #CCE5FF;
 }
 
 .paramTitle {
@@ -118,4 +116,30 @@ img#start-button:hover {
 
 #footer span.name {
 	font-weight: bolder;
+}
+#modal {
+position: fixed;
+left: -2%;
+top: -2%;
+height: 102%;
+width: 102%;
+background: #000;
+opacity: 0.7;
+display: none;
+z-index: 10000;
+}
+#modal_open {
+position: fixed;
+left: 50%;
+top: 50%;
+padding: 10px;
+border: 5px solid rgba(0,0,0,0.3);
+background: #fff;
+color: black;
+font-size: 16px;
+display: none;
+width: auto;
+height: auto;
+z-index: 100000;
+border-radius: 6px;
 }

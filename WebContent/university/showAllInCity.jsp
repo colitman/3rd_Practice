@@ -44,35 +44,40 @@
 			</table>
 		</div>
 
-		<div class= "addNew" id="addNewUniversity">
-			<form id="newUni" action="action?code=addUniversity&parent_id=${parent.ID}" method="POST">
-				<table class="noborder">
-					<tr>
-						<td>Name:</td>
-						<td>
-							<input name="name" type="text" />
-						</td>
-					</tr>
-					<tr>
-						<td>Amount of Depts:</td>
-						<td>
-							<input name="departs_count" type="text" />
-						</td>
-					</tr>
-					<tr>
-						<td>WWW:</td>
-						<td>
-							<input name="www" type="text" />
-						</td>
-					</tr>
-					<tr>
-						<td></td>
-						<td>
-							<input value="Add new University" type="submit" />
-						</td>
-					</tr>
-				</table>
-			</form>		
+		<div onclick="close_modal();" id="modal"></div><div id="modal_open"></div>
+		<div class="addNew popUpWrapper" id="newItemPopup">
+			<div class="popUpContent">
+				<form id="newUni" action="action?code=addUniversity&parent_id=${parent.ID}" method="POST">
+					<table class="noborder">
+						<tr>
+							<td>Name:</td>
+							<td>
+								<input name="name" type="text" />
+							</td>
+						</tr>
+						<tr>
+							<td>Amount of Depts:</td>
+							<td>
+								<input name="departs_count" type="text" />
+							</td>
+						</tr>
+						<tr>
+							<td>WWW:</td>
+							<td>
+								<input name="www" type="text" />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<a href="javascript:document.getElementById('newUni').submit()">Add</a>
+							</td>
+							<td>
+								<a href="javascript:close_modal();">Cancel</a>
+							</td>
+						</tr>
+					</table>
+				</form>		
+			</div>
 		</div>
 	</div>
 </div>

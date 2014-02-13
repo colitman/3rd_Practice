@@ -44,35 +44,40 @@
 			</table>
 		</div>
 
-		<div class= "addNew" id="addNewCity">
-			<form id="newCity" action="action?code=addCity&parent_id=${parent.ID}" method="POST">
-				<table class="noborder">
-					<tr>
-						<td>Name:</td>
-						<td>
-							<input name="name" type="text" />
-						</td>
-					</tr>
-					<tr>
-						<td>Population:</td>
-						<td>
-							<input name="population" type="text" />
-						</td>
-					</tr>
-					<tr>
-						<td>Square:</td>
-						<td>
-							<input name="square" type="text" />
-						</td>
-					</tr>
-					<tr>
-						<td></td>
-						<td>
-							<input value="Add new city" type="submit" />
-						</td>
-					</tr>
-				</table>
-			</form>		
+		<div onclick="close_modal();" id="modal"></div><div id="modal_open"></div>
+		<div class="addNew popUpWrapper" id="newItemPopup">
+			<div class="popUpContent">
+				<form id="newCity" action="action?code=addCity&parent_id=${parent.ID}" method="POST">
+					<table class="noborder">
+						<tr>
+							<td>Name:</td>
+							<td>
+								<input name="name" type="text" />
+							</td>
+						</tr>
+						<tr>
+							<td>Population:</td>
+							<td>
+								<input name="population" type="text" />
+							</td>
+						</tr>
+						<tr>
+							<td>Square:</td>
+							<td>
+								<input name="square" type="text" />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<a href="javascript:document.getElementById('newCity').submit()">Add</a>
+							</td>
+							<td>
+								<a href="javascript:close_modal()">Cancel</a>
+							</td>
+						</tr>
+					</table>
+				</form>	
+			</div>	
 		</div>
 	</div>
 </div>

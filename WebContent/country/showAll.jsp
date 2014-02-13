@@ -36,6 +36,7 @@
 			</table>
 		</div>
 
+		<div onclick="close_modal();" id="modal"></div><div id="modal_open"></div>
 		<div class="addNew popUpWrapper" id="newItemPopup">
 			<div class="popUpContent">
 				<form id="newCountry" action="action?code=addCountry" method="POST">
@@ -75,7 +76,7 @@
 								<a href="javascript:document.getElementById('newCountry').submit()">Add</a>
 							</td>
 							<td>
-								<a href="javascript:hidePopUp()">Cancel</a>
+								<a href="javascript:close_modal()">Cancel</a>
 							</td>
 						</tr>
 					</table>
