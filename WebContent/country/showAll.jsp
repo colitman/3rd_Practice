@@ -28,7 +28,7 @@
 						<c:param name="parent_id" value="${item.ID}" />
 					</c:url>
 					<tr>
-						<td class="thin"><input type="checkbox"></td>
+						<td class="thin"><input type="checkbox" id="${item.ID}" class="personalCheckbox"></td>
 						<td><a class="generated-data" href="${url}">${item.name}</a></td>
 						<td>Language : ${item.language}, Capital: ${item.capital}, Population: ${item.population}, Timezone: ${item.timezone}</td>					
 					</tr>
@@ -36,47 +36,51 @@
 			</table>
 		</div>
 
-		<div class="addNew" id="addNewCountry">
-			<form id="newCountry" action="action?code=addCountry" method="POST">
-				<table class="noborder">
-					<tr>
-						<td>Name:</td>
-						<td>
-							<input name="name" type="text" />
-						</td>
-					</tr>
-					<tr>
-						<td>Language:</td>
-						<td>
-							<input name="language" type="text" />
-						</td>
-					</tr>
-					<tr>
-						<td>Capital:</td>
-						<td>
-							<input name="capital" type="text" />
-						</td>
-					</tr>
-					<tr>
-						<td>Population:</td>
-						<td>
-							<input name="population" type="text" />
-						</td>
-					</tr>
-					<tr>
-						<td>Timezone:</td>
-						<td>
-							<input name="timezone" type="text" />
-						</td>
-					</tr>
-					<tr>
-						<td></td>
-						<td>
-							<input value="Add new country" type="submit" />
-						</td>
-					</tr>
-				</table>
-			</form>		
+		<div class="addNew popUp" id="addNewCountry">
+			<div class="popUpWrapper" id="newItemPopup">
+				<div class="popUpContent">
+					<form id="newCountry" action="action?code=addCountry" method="POST">
+						<table class="noborder">
+							<tr>
+								<td>Name:</td>
+								<td>
+									<input name="name" type="text" />
+								</td>
+							</tr>
+							<tr>
+								<td>Language:</td>
+								<td>
+									<input name="language" type="text" />
+								</td>
+							</tr>
+							<tr>
+								<td>Capital:</td>
+								<td>
+									<input name="capital" type="text" />
+								</td>
+							</tr>
+							<tr>
+								<td>Population:</td>
+								<td>
+									<input name="population" type="text" />
+								</td>
+							</tr>
+							<tr>
+								<td>Timezone:</td>
+								<td>
+									<input name="timezone" type="text" />
+								</td>
+							</tr>
+							<tr>
+								<td><input value="Add" type="submit" /></td>
+								<td>
+									<button onclick="hidePopUp();">Cancel</button>
+								</td>
+							</tr>
+						</table>
+					</form>		
+				</div>
+			</div>
 		</div>
 	</div>
 </div>

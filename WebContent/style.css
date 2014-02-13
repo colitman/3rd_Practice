@@ -32,6 +32,23 @@ table {
 	float: left;
 }
 
+.popUpWrapper {
+	width:100%;
+    min-height:100%;
+    background-color: #B2B2B2;
+    overflow:hidden;
+    position:fixed;
+    top:0px;
+}
+
+.popUpWrapper .popUpContent {
+	margin:40px auto 0px auto;
+    width: auto;
+    height: auto;
+    padding:10px;
+    background-color: #CCE5FF;
+}
+
 .paramTitle {
 	font-weight: bold;
 }
