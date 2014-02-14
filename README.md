@@ -15,7 +15,10 @@ Literature:
      - http://www.codeart.ru/2010/08/03/nasledovanie-protiv-kompozicii-chto-predpochtitelnee
      - http://habrahabr.ru/post/177447
 - Git close issue via commit: https://help.github.com/articles/closing-issues-via-commit-messages
-
+- Использование log4j:
+     - http://www.skipy.ru/useful/logging.html
+     - http://www.quizful.net/post/log4j-quickstart
+     
 Possible problems:
 - Не найден файл конфигурации Hibernate:
      - Issue #13 - https://github.com/colitman/nc.edu.group8.lb3/issues/13
