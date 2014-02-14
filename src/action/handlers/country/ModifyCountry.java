@@ -25,12 +25,14 @@ public class ModifyCountry implements HttpAction {
 			country.setPopulation(Integer.valueOf(request.getParameter("population")));
 			country.setTimezone(Integer.valueOf(request.getParameter("timezone")));
 
-			logger.info("New country properties: ");
-			logger.info("Name: " + request.getParameter("name"));
-			logger.info("Language: " + request.getParameter("language"));
-			logger.info("Capital: " + request.getParameter("capital"));
-			logger.info("Population: " + request.getParameter("population"));
-			logger.info("Timezone: " + request.getParameter("timezone"));
+			if (logger.isInfoEnabled()) {
+				logger.info("New country properties: ");
+				logger.info("Name: " + request.getParameter("name"));
+				logger.info("Language: " + request.getParameter("language"));
+				logger.info("Capital: " + request.getParameter("capital"));
+				logger.info("Population: " + request.getParameter("population"));
+				logger.info("Timezone: " + request.getParameter("timezone"));
+			}
 
 			GatewayResolver.getGateway().modify(id, country);
 

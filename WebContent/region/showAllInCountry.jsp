@@ -81,6 +81,53 @@
 				</form>		
 			</div>
 		</div>
+
+		<div class="addNew popUpWrapper" id="editItemPopup">
+			<div class="popUpContent">
+				<form id="editCountry" action="action?code=modifyCountry&id=${parent.ID}" method="POST">
+					<table class="noborder">
+						<tr>
+							<td>Name:</td>
+							<td>
+								<input name="name" type="text" value=${parent.name} />
+							</td>
+						</tr>
+						<tr>
+							<td>Language:</td>
+							<td>
+								<input name="language" type="text" value=${parent.language}/>
+							</td>
+						</tr>
+						<tr>
+							<td>Capital:</td>
+							<td>
+								<input name="capital" type="text" value=${parent.capital}/>
+							</td>
+						</tr>
+						<tr>
+							<td>Population:</td>
+							<td>
+								<input name="population" type="text" value=${parent.population}/>
+							</td>
+						</tr>
+						<tr>
+							<td>Timezone:</td>
+							<td>
+								<input name="timezone" type="text" value=${parent.timezone}/>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<a href="javascript:document.getElementById('editCountry').submit()">Add</a>
+							</td>
+							<td>
+								<a href="javascript:close_modal()">Cancel</a>
+							</td>
+						</tr>
+					</table>
+				</form>		
+			</div>
+		</div>
 	</div>
 </div>
 

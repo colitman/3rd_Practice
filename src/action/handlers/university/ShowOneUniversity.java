@@ -22,11 +22,13 @@ public class ShowOneUniversity implements HttpAction {
 			int id = Integer.valueOf(request.getParameter("id"));
 			University university = null;
 	
-			logger.info("University properties: ");
-			logger.info("Name: " + university.getName());
-			logger.info("DepartamentsCount: " + university.getDepartamentsCount());
-			logger.info("WWW: " + university.getWWW());
-			logger.info("ParentID: " + university.getParentID());	
+			if (logger.isInfoEnabled()) {
+				logger.info("University properties: ");
+				logger.info("Name: " + university.getName());
+				logger.info("DepartamentsCount: " + university.getDepartamentsCount());
+				logger.info("WWW: " + university.getWWW());
+				logger.info("ParentID: " + university.getParentID());	
+			}
 
 			request.getSession().setAttribute("university", university);
 

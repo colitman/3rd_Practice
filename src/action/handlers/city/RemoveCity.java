@@ -14,9 +14,11 @@ public class RemoveCity implements HttpAction {
 
 	public void perform(HttpServletRequest request, HttpServletResponse response) throws ActionException {
 		try {
-			logger.info("Prepare to remove city");
-			logger.info("Removing city id: " + request.getParameter("id"));
-
+			if (logger.isInfoEnabled()) {				
+				logger.info("Prepare to remove city");
+				logger.info("Removing city id: " + request.getParameter("id"));
+			}
+	
 			int id = Integer.valueOf(request.getParameter("id"));
 			Gateway gateway = GatewayResolver.getGateway();
 			City city = (City) gateway.get(City.class, id);

@@ -14,9 +14,11 @@ public class RemoveUniversity implements HttpAction {
 
 	public void perform(HttpServletRequest request, HttpServletResponse response) throws ActionException {
 		try {
-			logger.info("Prepare to remove university");
-			logger.info("Removing university id: " + request.getParameter("id"));
-		
+			if (logger.isInfoEnabled()) {
+				logger.info("Prepare to remove university");
+				logger.info("Removing university id: " + request.getParameter("id"));
+			}
+
 			int id = Integer.valueOf(request.getParameter("id"));
 			Gateway gateway = GatewayResolver.getGateway();
 			University university = (University) gateway.get(University.class, id);

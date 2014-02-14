@@ -23,11 +23,13 @@ public class ModifyUniversity implements HttpAction {
 			university.setWWW(request.getParameter("www"));
 			university.setParentID(Integer.valueOf(request.getParameter("parent_id")));	
 		
-			logger.info("New university properties: ");
-			logger.info("Name: " + request.getParameter("name"));
-			logger.info("DepartamentsCount: " + request.getParameter("departs_count"));
-			logger.info("WWW: " + request.getParameter("www"));
-			logger.info("ParentID: " + request.getParameter("parent_id"));
+			if (logger.isInfoEnabled()) {
+				logger.info("New university properties: ");
+				logger.info("Name: " + request.getParameter("name"));
+				logger.info("DepartamentsCount: " + request.getParameter("departs_count"));
+				logger.info("WWW: " + request.getParameter("www"));
+				logger.info("ParentID: " + request.getParameter("parent_id"));
+			}
 
 			GatewayResolver.getGateway().modify(id, university);
 

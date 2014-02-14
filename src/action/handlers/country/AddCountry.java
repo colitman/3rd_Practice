@@ -22,13 +22,15 @@ public class AddCountry implements HttpAction {
 			country.setCapital(request.getParameter("capital"));
 			country.setPopulation(Integer.valueOf(request.getParameter("population")));
 			country.setTimezone(Integer.valueOf(request.getParameter("timezone")));
-		
-			logger.info("Country properties: ");
-			logger.info("Name: " + request.getParameter("name"));
-			logger.info("Language: " + request.getParameter("language"));
-			logger.info("Capital: " + request.getParameter("capital"));
-			logger.info("Population: " + request.getParameter("population"));
-			logger.info("Timezone: " + request.getParameter("timezone"));
+
+			if (logger.isInfoEnabled()) {		
+				logger.info("Country properties: ");
+				logger.info("Name: " + request.getParameter("name"));
+				logger.info("Language: " + request.getParameter("language"));
+				logger.info("Capital: " + request.getParameter("capital"));
+				logger.info("Population: " + request.getParameter("population"));
+				logger.info("Timezone: " + request.getParameter("timezone"));
+			}
 
 			GatewayResolver.getGateway().add(country);
 			

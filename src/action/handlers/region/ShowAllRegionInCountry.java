@@ -21,7 +21,9 @@ public class ShowAllRegionInCountry implements HttpAction {
 
 			int parentID = Integer.valueOf(request.getParameter("parent_id"));
 
-			logger.info("Get parent id: " + parentID);
+			if (logger.isInfoEnabled()) {
+				logger.info("Get parent id: " + parentID);
+			}
 
 			Gateway<Country> countryGateway = GatewayResolver.getGateway();
 			Country parent = countryGateway.get(Country.class, parentID);

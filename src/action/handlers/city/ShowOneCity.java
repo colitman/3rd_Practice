@@ -22,11 +22,13 @@ public class ShowOneCity implements HttpAction {
 			int id = Integer.valueOf(request.getParameter("id"));
 			City city = null;
 
-			logger.info("City properties: ");
-			logger.info("Name: " + city.getName());
-			logger.info("Population: " + city.getPopulation());
-			logger.info("Square: " + city.getSquare());
-			logger.info("ParentID: " + city.getParentID());	
+			if (logger.isInfoEnabled()) {
+				logger.info("City properties: ");
+				logger.info("Name: " + city.getName());
+				logger.info("Population: " + city.getPopulation());
+				logger.info("Square: " + city.getSquare());
+				logger.info("ParentID: " + city.getParentID());	
+			}
 
 			request.getSession().setAttribute("city", city);
 

@@ -23,11 +23,13 @@ public class ModifyRegion implements HttpAction {
 			region.setSquare(Integer.valueOf(request.getParameter("square")));
 			region.setParentID(Integer.valueOf(request.getParameter("parent_id")));			
 
-			logger.info("New region properties: ");
-			logger.info("Name: " + request.getParameter("name"));
-			logger.info("Population: " + request.getParameter("population"));
-			logger.info("Square: " + request.getParameter("square"));
-			logger.info("ParentID: " + request.getParameter("parent_id"));
+			if (logger.isInfoEnabled()) {
+				logger.info("New region properties: ");
+				logger.info("Name: " + request.getParameter("name"));
+				logger.info("Population: " + request.getParameter("population"));
+				logger.info("Square: " + request.getParameter("square"));
+				logger.info("ParentID: " + request.getParameter("parent_id"));
+			}
 
 			GatewayResolver.getGateway().modify(id, region);
 

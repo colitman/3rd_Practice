@@ -14,8 +14,10 @@ public class RemoveCountry implements HttpAction {
 
 	public void perform(HttpServletRequest request, HttpServletResponse response) throws ActionException {
 		try {
-			logger.info("Prepare to remove country");
-			logger.info("Removing country id: " + request.getParameter("id"));
+			if (logger.isInfoEnabled()) {			
+				logger.info("Prepare to remove country");
+				logger.info("Removing country id: " + request.getParameter("id"));
+			}
 
 			int id = Integer.valueOf(request.getParameter("id"));
 			Gateway<Country> gateway = GatewayResolver.getGateway();

@@ -19,9 +19,7 @@ public class OracleGateway<T> implements Gateway<T> {
 
 	@Override
 	public void add(T entity) throws SQLException {
-		try {
-			logger.info("Adding some entity");
-			
+		try {	
 			setSession();
 			beginTransaction();
 			session.save(entity);
@@ -34,8 +32,6 @@ public class OracleGateway<T> implements Gateway<T> {
 
 	public void modify(int id, T entity) throws SQLException {
 		try {
-			logger.info("Modifing some entity");
-	
 			setSession();
 			beginTransaction();
 			session.update(entity);
@@ -46,8 +42,6 @@ public class OracleGateway<T> implements Gateway<T> {
 		}
 	}
 	public T get(Class className, int id) throws SQLException {
-		logger.info("Getting some entity");
-
 		T entity = null;
 		try {
 			entity = (T) className.newInstance();
@@ -63,8 +57,6 @@ public class OracleGateway<T> implements Gateway<T> {
 		return entity;
 	}
 	public Collection<T> getAll(Class className) throws SQLException {
-		logger.info("Getting collection of entity");
-
 		List<T> entities = new ArrayList<T>();
 		try {
 			setSession();
@@ -77,8 +69,6 @@ public class OracleGateway<T> implements Gateway<T> {
 	}
 
 	public Collection<T> getAllBy(Class childClass, int parentID) throws SQLException {
-		logger.info("Getting collection of entity where parent id = " + parentID);
-		
 		List<T> entities = new ArrayList<T>();
 		try {
 			setSession();
@@ -92,8 +82,6 @@ public class OracleGateway<T> implements Gateway<T> {
 
 	public void remove(T entity) throws SQLException {
 		try {
-			logger.info("Removing some entity");
-		
 			setSession();
 			beginTransaction();
 			session.delete(entity);

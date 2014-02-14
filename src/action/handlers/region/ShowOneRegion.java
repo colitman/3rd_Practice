@@ -22,11 +22,13 @@ public class ShowOneRegion implements HttpAction {
 			int id = Integer.valueOf(request.getParameter("id"));
 			Region region = null;
 	
-			logger.info("Region properties: ");
-			logger.info("Name: " + region.getName());
-			logger.info("Population: " + region.getPopulation());
-			logger.info("Square: " + region.getSquare());
-			logger.info("ParentID: " + region.getParentID());	
+			if (logger.isInfoEnabled()) {
+				logger.info("Region properties: ");
+				logger.info("Name: " + region.getName());
+				logger.info("Population: " + region.getPopulation());
+				logger.info("Square: " + region.getSquare());
+				logger.info("ParentID: " + region.getParentID());
+			}	
 
 			request.getSession().setAttribute("region", region);
 	

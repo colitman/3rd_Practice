@@ -20,8 +20,10 @@ public class ShowAllCityInRegion implements HttpAction {
 			logger.info("Prepare to show all cities");
 
 			int parentID = Integer.valueOf(request.getParameter("parent_id"));
-
-			logger.info("Get parent id: " + parentID);
+			
+			if (logger.isInfoEnabled()) {
+				logger.info("Get parent id: " + parentID);
+			}
 
 			Gateway<Region> parentGateway = GatewayResolver.getGateway();
 			Region parent = parentGateway.get(Region.class, parentID);

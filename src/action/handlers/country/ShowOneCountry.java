@@ -22,12 +22,14 @@ public class ShowOneCountry implements HttpAction {
 			int id = Integer.valueOf(request.getParameter("id"));
 			Country country = null;
 	
-			logger.info("Country properties: ");
-			logger.info("Name: " + country.getName());
-			logger.info("Language: " + country.getLanguage());
-			logger.info("Capital: " + country.getCapital());
-			logger.info("Population: " + country.getPopulation());
-			logger.info("Timezone: " + country.getTimezone());
+			if (logger.isInfoEnabled()) {
+				logger.info("Country properties: ");
+				logger.info("Name: " + country.getName());
+				logger.info("Language: " + country.getLanguage());
+				logger.info("Capital: " + country.getCapital());
+				logger.info("Population: " + country.getPopulation());
+				logger.info("Timezone: " + country.getTimezone());
+			}
 
 			request.getSession().setAttribute("country", country);
 

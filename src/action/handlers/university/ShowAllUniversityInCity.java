@@ -21,7 +21,9 @@ public class ShowAllUniversityInCity implements HttpAction {
 
 			int parentID = Integer.valueOf(request.getParameter("parent_id"));
 
-			logger.info("Get parent id: " + parentID);
+			if (logger.isInfoEnabled()) {
+				logger.info("Get parent id: " + parentID);
+			}
 
 			Gateway<City> parentGateway = GatewayResolver.getGateway();
 			City parent = parentGateway.get(City.class, parentID);

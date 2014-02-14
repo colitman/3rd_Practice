@@ -23,11 +23,13 @@ public class ModifyCity implements HttpAction {
 			city.setSquare(Integer.valueOf(request.getParameter("square")));
 			city.setParentID(Integer.valueOf(request.getParameter("parent_id")));
 
-			logger.info("New city properties: ");
-			logger.info("Name: " + request.getParameter("name"));
-			logger.info("Population: " + request.getParameter("population"));
-			logger.info("Square: " + request.getParameter("square"));
-			logger.info("ParentID: " + request.getParameter("parent_id"));
+			if (logger.isInfoEnabled()) {
+				logger.info("New city properties: ");
+				logger.info("Name: " + request.getParameter("name"));
+				logger.info("Population: " + request.getParameter("population"));
+				logger.info("Square: " + request.getParameter("square"));
+				logger.info("ParentID: " + request.getParameter("parent_id"));
+			}
 
 			GatewayResolver.getGateway().modify(id, city);
 			

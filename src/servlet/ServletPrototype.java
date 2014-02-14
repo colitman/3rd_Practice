@@ -12,8 +12,10 @@ public class ServletPrototype extends HttpServlet {
 	@Override
 	public void service(HttpServletRequest request, HttpServletResponse responce) {
 		try {
-			logger.info("Building HttpAction");
-			logger.info("Code: " + request.getParameter("code"));
+			if (logger.isInfoEnabled()) {
+				logger.info("Building HttpAction");
+				logger.info("Code: " + request.getParameter("code"));
+			}
 
 			String code = request.getParameter("code");
 			ActionFactory.getInstance().build(code).perform(request, responce);
