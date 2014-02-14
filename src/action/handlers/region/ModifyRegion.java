@@ -17,7 +17,13 @@ public class ModifyRegion implements HttpAction {
 			logger.info("Prepare to modify region");
 
 			int id = Integer.valueOf(request.getParameter("id"));
+
+			if (logger.isInfoEnabled()) {
+				logger.info("Get region id: " + id);
+			}
+
 			Region region = new Region();
+			region.setID(id);
 			region.setName(request.getParameter("name"));
 			region.setPopulation(Integer.valueOf(request.getParameter("population")));
 			region.setSquare(Integer.valueOf(request.getParameter("square")));
@@ -31,12 +37,13 @@ public class ModifyRegion implements HttpAction {
 				logger.info("ParentID: " + request.getParameter("parent_id"));
 			}
 
-			GatewayResolver.getGateway().modify(id, region);
+			Gateway<Region> gateway = GatewayResolver.getGateway();
+			gateway.modify(region);
 
 			logger.info("Region was successfully modified");			
-			logger.info("Send redirect to showAllRegion page");
+			logger.info("Send redirect to city/showAllInRegion page");
 
-			response.sendRedirect("/WebPrototype/region/showAll.jsp?success=true");
+			response.sendRedirect("/WebPrototype/action?code=showAllCityInRegion&parent_id=" + id);
 		}
 		catch (Exception e) {
 			logger.error("Error occured in ModifyRegion action", e);

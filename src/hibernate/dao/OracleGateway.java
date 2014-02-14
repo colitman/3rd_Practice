@@ -30,7 +30,7 @@ public class OracleGateway<T> implements Gateway<T> {
 		}
 	}
 
-	public void modify(int id, T entity) throws SQLException {
+	public void modify(T entity) throws SQLException {
 		try {
 			setSession();
 			beginTransaction();

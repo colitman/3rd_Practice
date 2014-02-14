@@ -32,7 +32,7 @@
 				</tr>
 				<c:forEach var="item" items="${data}">
 					<c:url var="url" value="action">
-						<c:param name="code" value="showOneCountry" />
+						<c:param name="code" value="showOneUniversity" />
 						<c:param name="parent_id" value="${item.ID}" />
 					</c:url>
 					<tr>
@@ -73,6 +73,41 @@
 							</td>
 							<td>
 								<a href="javascript:close_modal();">Cancel</a>
+							</td>
+						</tr>
+					</table>
+				</form>		
+			</div>
+		</div>
+
+		<div class="addNew popUpWrapper" id="editItemPopup">
+			<div class="popUpContent">
+				<form id="editCity" action="action?code=modifyCity&id=${parent.ID}&parent_id=${parent.parentID}" method="POST">
+					<table class="noborder">
+						<tr>
+							<td>Name:</td>
+							<td>
+								<input name="name" type="text" value="${parent.name}" />
+							</td>
+						</tr>
+						<tr>
+							<td>Population:</td>
+							<td>
+								<input name="population" type="text" value="${parent.population}" />
+							</td>
+						</tr>
+						<tr>
+							<td>Square:</td>
+							<td>
+								<input name="square" type="text" value="${parent.square}" />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<a href="javascript:document.getElementById('editCity').submit()">Modify</a>
+							</td>
+							<td>
+								<a href="javascript:close_modal()">Cancel</a>
 							</td>
 						</tr>
 					</table>

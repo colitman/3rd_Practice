@@ -79,6 +79,41 @@
 				</form>	
 			</div>	
 		</div>
+
+		<div class="addNew popUpWrapper" id="editItemPopup">
+			<div class="popUpContent">
+				<form id="editRegion" action="action?code=modifyRegion&id=${parent.ID}&parent_id=${parent.parentID}" method="POST">
+					<table class="noborder">
+						<tr>
+							<td>Name:</td>
+							<td>
+								<input name="name" type="text" value="${parent.name}" />
+							</td>
+						</tr>
+						<tr>
+							<td>Population:</td>
+							<td>
+								<input name="population" type="text" value="${parent.population}" />
+							</td>
+						</tr>
+						<tr>
+							<td>Square:</td>
+							<td>
+								<input name="square" type="text" value="${parent.square}" />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<a href="javascript:document.getElementById('editRegion').submit()">Modify</a>
+							</td>
+							<td>
+								<a href="javascript:close_modal()">Cancel</a>
+							</td>
+						</tr>
+					</table>
+				</form>		
+			</div>
+		</div>
 	</div>
 </div>
 

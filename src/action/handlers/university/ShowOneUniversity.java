@@ -18,9 +18,10 @@ public class ShowOneUniversity implements HttpAction {
 		try {
 			logger.info("Prepare to show university");
 
+			int id = Integer.valueOf(request.getParameter("parent_id"));
+
 			Gateway<University> gateway = GatewayResolver.getGateway();
-			int id = Integer.valueOf(request.getParameter("id"));
-			University university = null;
+			University university = gateway.get(University.class, id);
 	
 			if (logger.isInfoEnabled()) {
 				logger.info("University properties: ");
@@ -30,12 +31,12 @@ public class ShowOneUniversity implements HttpAction {
 				logger.info("ParentID: " + university.getParentID());	
 			}
 
-			request.getSession().setAttribute("university", university);
+			request.setAttribute("parent", university);
 
 			logger.info("Set university into session");
 			logger.info("Send redirect to showAllUniversity page");	
 
-			response.sendRedirect("/WebPrototype/university/showOne.jsp?id=" + id);
+			request.getRequestDispatcher("university/showOne.jsp").forward(request, response);
 		}
 		catch (Exception e) {
 			logger.error("Error occured in ShowOneUniversity action", e);

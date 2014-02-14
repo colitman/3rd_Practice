@@ -17,7 +17,13 @@ public class ModifyUniversity implements HttpAction {
 			logger.info("Prepare to modify university");
 
 			int id = Integer.valueOf(request.getParameter("id"));
+			
+			if (logger.isInfoEnabled()) {
+				logger.info("Get region id: " + id);
+			}
+
 			University university = new University();
+			university.setID(id);
 			university.setName(request.getParameter("name"));
 			university.setDepartamentsCount(Integer.valueOf(request.getParameter("departs_count")));
 			university.setWWW(request.getParameter("www"));
@@ -31,12 +37,12 @@ public class ModifyUniversity implements HttpAction {
 				logger.info("ParentID: " + request.getParameter("parent_id"));
 			}
 
-			GatewayResolver.getGateway().modify(id, university);
+			GatewayResolver.getGateway().modify(university);
 
 			logger.info("University was successfully modified");			
-			logger.info("Send redirect to showAllUniversity page");
+			logger.info("Send redirect to university/showOne page");
 
-			response.sendRedirect("/WebPrototype/university/showAll.jsp?success=true");
+			response.sendRedirect("/WebPrototype/action?code=showOneUniversity&parent_id=" + university.getID());
 		}
 		catch (Exception e) {
 			logger.error("Error occured in ModifyUniversity action", e);

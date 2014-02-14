@@ -23,6 +23,7 @@ public class ModifyCountry implements HttpAction {
 			}
 
 			Country country = new Country();
+			country.setID(id);
 			country.setName(request.getParameter("name"));
 			country.setLanguage(request.getParameter("language"));
 			country.setCapital(request.getParameter("capital"));
@@ -39,12 +40,12 @@ public class ModifyCountry implements HttpAction {
 			}
 
 			Gateway<Country> gateway = GatewayResolver.getGateway();
-			gateway.modify(id, country);
+			gateway.modify(country);
 
 			logger.info("Country was successfully modified");			
-			logger.info("Send redirect to showAllCountry page");
+			logger.info("Send redirect to region/showAllInCountry page");
 		
-			response.sendRedirect("/WebPrototype/action?code=showAllCountry");
+			response.sendRedirect("/WebPrototype/action?code=showAllRegionInCountry&parent_id=" + id);
 		}
 		catch (Exception e) {
 			logger.error("Error occured in ModifyCountry action", e);

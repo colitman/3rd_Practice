@@ -17,7 +17,13 @@ public class ModifyCity implements HttpAction {
 			logger.info("Prepare to modify city");
 
 			int id = Integer.valueOf(request.getParameter("id"));
+
+			if (logger.isInfoEnabled()) {
+				logger.info("Get region id: " + id);
+			}
+
 			City city = new City();
+			city.setID(id);
 			city.setName(request.getParameter("name"));
 			city.setPopulation(Integer.valueOf(request.getParameter("population")));
 			city.setSquare(Integer.valueOf(request.getParameter("square")));
@@ -31,12 +37,12 @@ public class ModifyCity implements HttpAction {
 				logger.info("ParentID: " + request.getParameter("parent_id"));
 			}
 
-			GatewayResolver.getGateway().modify(id, city);
+			GatewayResolver.getGateway().modify(city);
 			
 			logger.info("City was successfully modified");			
-			logger.info("Send redirect to showAllCity page");
+			logger.info("Send redirect to university/showAllCity page");
 
-			response.sendRedirect("/WebPrototype/city/showAll.jsp?success=true");
+			response.sendRedirect("/WebPrototype/action?code=showAllUniversityInCity&parent_id=" + id);
 		}
 		catch (Exception e) {
 			logger.error("Error occured in ModifyCity action", e);

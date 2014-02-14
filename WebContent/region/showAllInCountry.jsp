@@ -118,7 +118,7 @@
 						</tr>
 						<tr>
 							<td>
-								<a href="javascript:document.getElementById('editCountry').submit()">Add</a>
+								<a href="javascript:document.getElementById('editCountry').submit()">Modify</a>
 							</td>
 							<td>
 								<a href="javascript:close_modal()">Cancel</a>
