@@ -18,6 +18,7 @@ Literature:
 - Использование log4j:
      - http://www.skipy.ru/useful/logging.html
      - http://www.quizful.net/post/log4j-quickstart
+     
 Possible problems:
 - Не найден файл конфигурации Hibernate:
      - Issue #13 - https://github.com/colitman/nc.edu.group8.lb3/issues/13
