@@ -18,6 +18,10 @@ public class ModifyCountry implements HttpAction {
 
 			int id = Integer.valueOf(request.getParameter("id"));
 
+			if (logger.isInfoEnabled()) {
+				logger.info("Get country id: " + id);
+			}
+
 			Country country = new Country();
 			country.setName(request.getParameter("name"));
 			country.setLanguage(request.getParameter("language"));
@@ -34,7 +38,8 @@ public class ModifyCountry implements HttpAction {
 				logger.info("Timezone: " + request.getParameter("timezone"));
 			}
 
-			GatewayResolver.getGateway().modify(id, country);
+			Gateway<Country> gateway = GatewayResolver.getGateway();
+			gateway.modify(id, country);
 
 			logger.info("Country was successfully modified");			
 			logger.info("Send redirect to showAllCountry page");

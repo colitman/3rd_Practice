@@ -95,25 +95,25 @@
 						<tr>
 							<td>Language:</td>
 							<td>
-								<input name="language" type="text" value=${parent.language}/>
+								<input name="language" type="text" value=${parent.language} />
 							</td>
 						</tr>
 						<tr>
 							<td>Capital:</td>
 							<td>
-								<input name="capital" type="text" value=${parent.capital}/>
+								<input name="capital" type="text" value=${parent.capital} />
 							</td>
 						</tr>
 						<tr>
 							<td>Population:</td>
 							<td>
-								<input name="population" type="text" value=${parent.population}/>
+								<input name="population" type="text" value=${parent.population} />
 							</td>
 						</tr>
 						<tr>
 							<td>Timezone:</td>
 							<td>
-								<input name="timezone" type="text" value=${parent.timezone}/>
+								<input name="timezone" type="text" value=${parent.timezone} />
 							</td>
 						</tr>
 						<tr>
