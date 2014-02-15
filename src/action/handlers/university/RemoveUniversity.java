@@ -19,6 +19,12 @@ public class RemoveUniversity implements HttpAction {
 				logger.info("Removing university id: " + request.getParameter("id"));
 			}
 
+			int parentID = Integer.valueOf(request.getParameter("parent_id"));
+	
+			if (logger.isInfoEnabled()) {
+				logger.info("Get parent id: " + parentID);
+			}
+
 			int id = Integer.valueOf(request.getParameter("id"));
 			Gateway gateway = GatewayResolver.getGateway();
 			University university = (University) gateway.get(University.class, id);
@@ -27,7 +33,7 @@ public class RemoveUniversity implements HttpAction {
 			logger.info("University was successfully removed");			
 			logger.info("Send redirect to showAllUniversity page");
 
-			response.sendRedirect("/WebPrototype/university/showAll?success=true");
+			response.sendRedirect("/WebPrototype/action?code=showAllUniversityInCity&parent_id=" + parentID);
 		}
 		catch (Exception e) {
 			logger.error("Error occured in RemoveUniversity action", e);

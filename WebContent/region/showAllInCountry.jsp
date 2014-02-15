@@ -30,7 +30,7 @@
 		<div id="children-list">
 			<table class="normal">
 				<tr>
-					<th class="thin">v</th><th>Name</th><th>Description</th>
+					<th class="thin">v</th><th>Name</th><th>Description</th><th></th>
 				</tr>
 				<c:forEach var="item" items="${data}">
 					<c:url var="url" value="action">
@@ -38,9 +38,10 @@
 						<c:param name="parent_id" value="${item.ID}" />
 					</c:url>
 					<tr>
-						<td class="thin"><input type="checkbox"></td>
+						<td class="thin"><input type="checkbox" name="checked" value="${item.ID}" class="personalCheckbox"></td>
 						<td><a class="generated-data" href="${url}">${item.name}</a></td>
-						<td>Population: ${item.population}, Square: ${item.square}</td>					
+						<td>Population: ${item.population}, Square: ${item.square}</td>
+						<td><a class="generated-data" href="action?code=removeRegion&id=${item.ID}&parent_id=${item.parentID}">delete</a></td>					
 					</tr>
 				</c:forEach>
 			</table>

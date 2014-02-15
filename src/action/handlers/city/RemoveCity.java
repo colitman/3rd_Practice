@@ -19,6 +19,12 @@ public class RemoveCity implements HttpAction {
 				logger.info("Removing city id: " + request.getParameter("id"));
 			}
 	
+			int parentID = Integer.valueOf(request.getParameter("parent_id"));
+	
+			if (logger.isInfoEnabled()) {
+				logger.info("Get parent id: " + parentID);
+			}
+
 			int id = Integer.valueOf(request.getParameter("id"));
 			Gateway gateway = GatewayResolver.getGateway();
 			City city = (City) gateway.get(City.class, id);
@@ -27,7 +33,7 @@ public class RemoveCity implements HttpAction {
 			logger.info("City was successfully removed");			
 			logger.info("Send redirect to showAllCity page");
 
-			response.sendRedirect("/WebPrototype/city/showAll.jsp?success=true");
+			response.sendRedirect("/WebPrototype/action?code=showAllCityInRegion&parent_id=" + parentID);
 		}
 		catch (Exception e) {
 			logger.error("Error occured in RemoveCity action", e);

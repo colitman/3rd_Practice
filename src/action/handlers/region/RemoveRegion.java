@@ -19,6 +19,12 @@ public class RemoveRegion implements HttpAction {
 				logger.info("Removing region id: " + request.getParameter("id"));
 			}
 
+			int parentID = Integer.valueOf(request.getParameter("parent_id"));
+	
+			if (logger.isInfoEnabled()) {
+				logger.info("Get parent id: " + parentID);
+			}
+
 			Gateway gateway = GatewayResolver.getGateway();
 			int id = Integer.valueOf(request.getParameter("id"));
 			Region region = (Region) gateway.get(Region.class, id);
@@ -27,7 +33,7 @@ public class RemoveRegion implements HttpAction {
 			logger.info("Region was successfully removed");			
 			logger.info("Send redirect to showAllRegion page");
 
-			response.sendRedirect("/WebPrototype/region/showAll.jsp?success=true");
+			response.sendRedirect("/WebPrototype/action?code=showAllRegionInCountry&parent_id=" + parentID);
 		}	
 		catch (Exception e) {
 			logger.error("Error occured in RemoveRegion action", e);

@@ -25,9 +25,9 @@ public class RemoveCountry implements HttpAction {
 			gateway.remove(country);
 
 			logger.info("Country was successfully removed");			
-			logger.info("Send redirect to showAllCountry page");
+			logger.info("Send redirect to country/showAllCountry page");
 
-			response.sendRedirect("/WebPrototype/country/showAll.jsp?success=true");
+			response.sendRedirect("/WebPrototype/action?code=showAllCountry");
 		}
 		catch (Exception e) {
 			logger.error("Error occured in RemoveCountry action", e);
