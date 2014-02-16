@@ -1,5 +1,6 @@
 package action.handlers.university;
 
+import logger.*;
 import action.*;
 import hibernate.dao.*;
 import hibernate.logic.*;
@@ -22,14 +23,13 @@ public class AddUniversity implements HttpAction {
 			university.setWWW(request.getParameter("www"));
 			university.setParentID(Integer.valueOf(request.getParameter("parent_id")));
 		
-			if (logger.isInfoEnabled()) {
-				logger.info("University properties: ");
-				logger.info("Name: " + request.getParameter("name"));
-				logger.info("DepartamentsCount: " + request.getParameter("departs_count"));
-				logger.info("WWW: " + request.getParameter("www"));
-				logger.info("ParentID: " + request.getParameter("parent_id"));
-			}
-
+			logger.info("University properties: ");
+		
+			LoggerUtils.info(logger, "Name:", request.getParameter("name"));
+			LoggerUtils.info(logger, "DepartamentsCount:", request.getParameter("departs_count"));
+			LoggerUtils.info(logger, "WWW:", request.getParameter("www"));
+			LoggerUtils.info(logger, "ParentID:", request.getParameter("parent_id"));
+	
 			GatewayResolver.getGateway().add(university);
 		
 			logger.info("University was successfully added");			

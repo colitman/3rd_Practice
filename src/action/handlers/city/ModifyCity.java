@@ -1,5 +1,6 @@
 package action.handlers.city;
 
+import logger.*;
 import action.*;
 import hibernate.dao.*;
 import hibernate.logic.*;
@@ -18,10 +19,8 @@ public class ModifyCity implements HttpAction {
 
 			int id = Integer.valueOf(request.getParameter("id"));
 
-			if (logger.isInfoEnabled()) {
-				logger.info("Get region id: " + id);
-			}
-
+			LoggerUtils.info(logger, "Get region id:", request.getParameter("id"));
+		
 			City city = new City();
 			city.setID(id);
 			city.setName(request.getParameter("name"));
@@ -29,14 +28,13 @@ public class ModifyCity implements HttpAction {
 			city.setSquare(Integer.valueOf(request.getParameter("square")));
 			city.setParentID(Integer.valueOf(request.getParameter("parent_id")));
 
-			if (logger.isInfoEnabled()) {
-				logger.info("New city properties: ");
-				logger.info("Name: " + request.getParameter("name"));
-				logger.info("Population: " + request.getParameter("population"));
-				logger.info("Square: " + request.getParameter("square"));
-				logger.info("ParentID: " + request.getParameter("parent_id"));
-			}
-
+			logger.info("New city properties: ");
+			
+			LoggerUtils.info(logger, "Name:", request.getParameter("name"));
+			LoggerUtils.info(logger, "Population:", request.getParameter("population"));
+			LoggerUtils.info(logger, "Square:", request.getParameter("square"));
+			LoggerUtils.info(logger, "ParentID:", request.getParameter("parent_id"));
+		
 			GatewayResolver.getGateway().modify(city);
 			
 			logger.info("City was successfully modified");			

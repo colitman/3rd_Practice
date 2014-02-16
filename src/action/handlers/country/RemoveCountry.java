@@ -1,5 +1,6 @@
 package action.handlers.country;
 
+import logger.*;
 import action.*;
 import hibernate.dao.*;
 import hibernate.logic.*;
@@ -13,12 +14,11 @@ public class RemoveCountry implements HttpAction {
 	private static final Logger logger = Logger.getLogger(RemoveCountry.class);		
 
 	public void perform(HttpServletRequest request, HttpServletResponse response) throws ActionException {
-		try {
-			if (logger.isInfoEnabled()) {			
-				logger.info("Prepare to remove country");
-				logger.info("Removing country id: " + request.getParameter("id"));
-			}
-
+		try {		
+			logger.info("Prepare to remove country");
+			
+			LoggerUtils.info(logger, "Removing country id:", request.getParameter("id"));
+			
 			int id = Integer.valueOf(request.getParameter("id"));
 			Gateway<Country> gateway = GatewayResolver.getGateway();
 			Country country = gateway.get(Country.class, id);

@@ -1,5 +1,6 @@
 package action.handlers.region;
 
+import logger.*;
 import action.*;
 import hibernate.dao.*;
 import hibernate.logic.*;
@@ -14,17 +15,14 @@ public class RemoveRegion implements HttpAction {
 
 	public void perform(HttpServletRequest request, HttpServletResponse response) throws ActionException {
 		try {
-			if (logger.isInfoEnabled()) {
-				logger.info("Prepare to remove region");
-				logger.info("Removing region id: " + request.getParameter("id"));
-			}
-
+			logger.info("Prepare to remove region");
+			
+			LoggerUtils.info(logger, "Removing region id:", request.getParameter("id"));
+			
 			int parentID = Integer.valueOf(request.getParameter("parent_id"));
 	
-			if (logger.isInfoEnabled()) {
-				logger.info("Get parent id: " + parentID);
-			}
-
+			LoggerUtils.info(logger, "Get parent id:", request.getParameter("parent_id"));
+	
 			Gateway gateway = GatewayResolver.getGateway();
 			int id = Integer.valueOf(request.getParameter("id"));
 			Region region = (Region) gateway.get(Region.class, id);

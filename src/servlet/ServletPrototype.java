@@ -1,5 +1,6 @@
 package servlet;
 
+import logger.*;
 import action.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -12,11 +13,10 @@ public class ServletPrototype extends HttpServlet {
 	@Override
 	public void service(HttpServletRequest request, HttpServletResponse responce) {
 		try {
-			if (logger.isInfoEnabled()) {
-				logger.info("Building HttpAction");
-				logger.info("Code: " + request.getParameter("code"));
-			}
-
+			logger.info("Building HttpAction");
+			
+			LoggerUtils.info(logger, "Code:", request.getParameter("code"));
+			
 			String code = request.getParameter("code");
 			ActionFactory.getInstance().build(code).perform(request, responce);
 		}

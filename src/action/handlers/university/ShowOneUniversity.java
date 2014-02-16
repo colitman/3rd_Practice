@@ -1,5 +1,6 @@
 package action.handlers.university;
 
+import logger.*;
 import action.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -23,14 +24,13 @@ public class ShowOneUniversity implements HttpAction {
 			Gateway<University> gateway = GatewayResolver.getGateway();
 			University university = gateway.get(University.class, id);
 	
-			if (logger.isInfoEnabled()) {
-				logger.info("University properties: ");
-				logger.info("Name: " + university.getName());
-				logger.info("DepartamentsCount: " + university.getDepartamentsCount());
-				logger.info("WWW: " + university.getWWW());
-				logger.info("ParentID: " + university.getParentID());	
-			}
-
+			logger.info("University properties: ");
+	
+			LoggerUtils.info(logger, "Name:", university.getName());
+			LoggerUtils.info(logger, "DepartamentsCount:", String.valueOf(university.getDepartamentsCount()));
+			LoggerUtils.info(logger, "WWW:", university.getWWW());
+			LoggerUtils.info(logger, "ParentID:", String.valueOf(university.getParentID()));	
+	
 			request.setAttribute("parent", university);
 
 			logger.info("Set university into session");

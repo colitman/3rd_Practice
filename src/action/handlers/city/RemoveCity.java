@@ -1,5 +1,6 @@
 package action.handlers.city;
 
+import logger.*;
 import action.*;
 import hibernate.dao.*;
 import hibernate.logic.*;
@@ -13,17 +14,15 @@ public class RemoveCity implements HttpAction {
 	private static final Logger logger = Logger.getLogger(RemoveCity.class);	
 
 	public void perform(HttpServletRequest request, HttpServletResponse response) throws ActionException {
-		try {
-			if (logger.isInfoEnabled()) {				
-				logger.info("Prepare to remove city");
-				logger.info("Removing city id: " + request.getParameter("id"));
-			}
-	
+		try {			
+			logger.info("Prepare to remove city");
+			
+			LoggerUtils.info(logger, "Removing city id:", request.getParameter("id"));
+				
 			int parentID = Integer.valueOf(request.getParameter("parent_id"));
 	
-			if (logger.isInfoEnabled()) {
-				logger.info("Get parent id: " + parentID);
-			}
+			LoggerUtils.info(logger, "Get parent id:", request.getParameter("parent_id"));
+
 
 			int id = Integer.valueOf(request.getParameter("id"));
 			Gateway gateway = GatewayResolver.getGateway();

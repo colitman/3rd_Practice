@@ -1,5 +1,6 @@
 package action.handlers.city;
 
+import logger.*;
 import action.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -21,9 +22,7 @@ public class ShowAllCityInRegion implements HttpAction {
 
 			int parentID = Integer.valueOf(request.getParameter("parent_id"));
 			
-			if (logger.isInfoEnabled()) {
-				logger.info("Get parent id: " + parentID);
-			}
+			LoggerUtils.info(logger, "Get parent id:", request.getParameter("parent_id"));
 
 			Gateway<Region> parentGateway = GatewayResolver.getGateway();
 			Region parent = parentGateway.get(Region.class, parentID);

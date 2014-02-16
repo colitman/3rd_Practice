@@ -1,5 +1,6 @@
 package action.handlers.university;
 
+import logger.*;
 import action.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -21,9 +22,7 @@ public class ShowAllUniversityInCity implements HttpAction {
 
 			int parentID = Integer.valueOf(request.getParameter("parent_id"));
 
-			if (logger.isInfoEnabled()) {
-				logger.info("Get parent id: " + parentID);
-			}
+			LoggerUtils.info(logger, "Get parent id:", request.getParameter("parent_id"));
 
 			Gateway<City> parentGateway = GatewayResolver.getGateway();
 			City parent = parentGateway.get(City.class, parentID);

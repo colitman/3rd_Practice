@@ -1,5 +1,6 @@
 package action.handlers.country;
 
+import logger.*;
 import action.*;
 import hibernate.dao.*;
 import hibernate.logic.*;
@@ -23,14 +24,13 @@ public class AddCountry implements HttpAction {
 			country.setPopulation(Integer.valueOf(request.getParameter("population")));
 			country.setTimezone(Integer.valueOf(request.getParameter("timezone")));
 
-			if (logger.isInfoEnabled()) {		
-				logger.info("Country properties: ");
-				logger.info("Name: " + request.getParameter("name"));
-				logger.info("Language: " + request.getParameter("language"));
-				logger.info("Capital: " + request.getParameter("capital"));
-				logger.info("Population: " + request.getParameter("population"));
-				logger.info("Timezone: " + request.getParameter("timezone"));
-			}
+			logger.info("Country properties: ");
+
+			LoggerUtils.info(logger, "Name:", request.getParameter("name"));
+			LoggerUtils.info(logger, "Language:", request.getParameter("language"));
+			LoggerUtils.info(logger, "Capital:", request.getParameter("capital"));
+			LoggerUtils.info(logger, "Population:", request.getParameter("population"));
+			LoggerUtils.info(logger, "Timezone:", request.getParameter("timezone"));
 
 			GatewayResolver.getGateway().add(country);
 			

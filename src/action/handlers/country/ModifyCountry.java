@@ -1,5 +1,6 @@
 package action.handlers.country;
 
+import logger.*;
 import action.*;
 import hibernate.dao.*;
 import hibernate.logic.*;
@@ -18,9 +19,7 @@ public class ModifyCountry implements HttpAction {
 
 			int id = Integer.valueOf(request.getParameter("id"));
 
-			if (logger.isInfoEnabled()) {
-				logger.info("Get country id: " + id);
-			}
+			LoggerUtils.info(logger, "Get country id:", request.getParameter("id"));
 
 			Country country = new Country();
 			country.setID(id);
@@ -30,14 +29,13 @@ public class ModifyCountry implements HttpAction {
 			country.setPopulation(Integer.valueOf(request.getParameter("population")));
 			country.setTimezone(Integer.valueOf(request.getParameter("timezone")));
 
-			if (logger.isInfoEnabled()) {
-				logger.info("New country properties: ");
-				logger.info("Name: " + request.getParameter("name"));
-				logger.info("Language: " + request.getParameter("language"));
-				logger.info("Capital: " + request.getParameter("capital"));
-				logger.info("Population: " + request.getParameter("population"));
-				logger.info("Timezone: " + request.getParameter("timezone"));
-			}
+			logger.info("New country properties: ");
+			
+			LoggerUtils.info(logger, "Name:", request.getParameter("name"));
+			LoggerUtils.info(logger, "Language:", request.getParameter("language"));
+			LoggerUtils.info(logger, "Capital:", request.getParameter("capital"));
+			LoggerUtils.info(logger, "Population:", request.getParameter("population"));
+			LoggerUtils.info(logger, "Timezone:", request.getParameter("timezone"));
 
 			Gateway<Country> gateway = GatewayResolver.getGateway();
 			gateway.modify(country);

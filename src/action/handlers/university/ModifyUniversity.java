@@ -1,5 +1,6 @@
 package action.handlers.university;
 
+import logger.*;
 import action.*;
 import hibernate.dao.*;
 import hibernate.logic.*;
@@ -18,10 +19,8 @@ public class ModifyUniversity implements HttpAction {
 
 			int id = Integer.valueOf(request.getParameter("id"));
 			
-			if (logger.isInfoEnabled()) {
-				logger.info("Get region id: " + id);
-			}
-
+			LoggerUtils.info(logger, "Get region id:", request.getParameter("id"));
+			
 			University university = new University();
 			university.setID(id);
 			university.setName(request.getParameter("name"));
@@ -29,14 +28,13 @@ public class ModifyUniversity implements HttpAction {
 			university.setWWW(request.getParameter("www"));
 			university.setParentID(Integer.valueOf(request.getParameter("parent_id")));	
 		
-			if (logger.isInfoEnabled()) {
-				logger.info("New university properties: ");
-				logger.info("Name: " + request.getParameter("name"));
-				logger.info("DepartamentsCount: " + request.getParameter("departs_count"));
-				logger.info("WWW: " + request.getParameter("www"));
-				logger.info("ParentID: " + request.getParameter("parent_id"));
-			}
-
+			logger.info("New university properties: ");
+		
+			LoggerUtils.info(logger, "Name:", request.getParameter("name"));
+			LoggerUtils.info(logger, "DepartamentsCount:", request.getParameter("departs_count"));
+			LoggerUtils.info(logger, "WWW:", request.getParameter("www"));
+			LoggerUtils.info(logger, "ParentID:", request.getParameter("parent_id"));
+		
 			GatewayResolver.getGateway().modify(university);
 
 			logger.info("University was successfully modified");			
