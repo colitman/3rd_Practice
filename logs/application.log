@@ -1,0 +1,446 @@
+2014-02-20 15:43:56,418 INFO                 action.ActionFactory - Initializing ActionFactory
+2014-02-20 15:43:56,458 INFO                 action.ActionFactory - Getting ActionFactory
+2014-02-20 15:43:56,458 INFO                 action.ActionFactory - Getting ActionFactory
+2014-02-20 15:43:56,458 INFO                 action.ActionFactory - Building HttpAction
+2014-02-20 15:43:56,468 INFO         action.handlers.city.AddCity - Prepare to add city
+2014-02-20 15:43:56,468 ERROR        action.handlers.city.AddCity - Error occured in AddCity action
+java.lang.NullPointerException
+	at action.handlers.city.AddCity.perform(AddCity.java:20)
+	at action.handlers.city.AddCityTest.nullTest(AddCityTest.java:23)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.junit.internal.runners.TestMethodRunner.executeMethodBody(TestMethodRunner.java:99)
+	at org.junit.internal.runners.TestMethodRunner.runUnprotected(TestMethodRunner.java:81)
+	at org.junit.internal.runners.BeforeAndAfterRunner.runProtected(BeforeAndAfterRunner.java:34)
+	at org.junit.internal.runners.TestMethodRunner.runMethod(TestMethodRunner.java:75)
+	at org.junit.internal.runners.TestMethodRunner.run(TestMethodRunner.java:45)
+	at org.junit.internal.runners.TestClassMethodsRunner.invokeTestMethod(TestClassMethodsRunner.java:71)
+	at org.junit.internal.runners.TestClassMethodsRunner.run(TestClassMethodsRunner.java:35)
+	at org.junit.internal.runners.TestClassRunner$1.runUnprotected(TestClassRunner.java:42)
+	at org.junit.internal.runners.BeforeAndAfterRunner.runProtected(BeforeAndAfterRunner.java:34)
+	at org.junit.internal.runners.TestClassRunner.run(TestClassRunner.java:52)
+	at org.junit.internal.runners.CompositeRunner.run(CompositeRunner.java:29)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:121)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:100)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:91)
+	at org.junit.runner.JUnitCore.runMain(JUnitCore.java:75)
+	at org.junit.runner.JUnitCore.main(JUnitCore.java:42)
+2014-02-20 15:46:39,813 INFO                 action.ActionFactory - Initializing ActionFactory
+2014-02-20 15:46:39,853 INFO                 action.ActionFactory - Getting ActionFactory
+2014-02-20 15:46:39,853 INFO                 action.ActionFactory - Getting ActionFactory
+2014-02-20 15:46:39,853 INFO                 action.ActionFactory - Building HttpAction
+2014-02-20 15:46:39,863 INFO         action.handlers.city.AddCity - Prepare to add city
+2014-02-20 15:46:39,863 ERROR        action.handlers.city.AddCity - Error occured in AddCity action
+java.lang.NullPointerException
+	at action.handlers.city.AddCity.perform(AddCity.java:20)
+	at action.handlers.city.AddCityTest.nullTest(AddCityTest.java:23)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.junit.internal.runners.TestMethodRunner.executeMethodBody(TestMethodRunner.java:99)
+	at org.junit.internal.runners.TestMethodRunner.runUnprotected(TestMethodRunner.java:81)
+	at org.junit.internal.runners.BeforeAndAfterRunner.runProtected(BeforeAndAfterRunner.java:34)
+	at org.junit.internal.runners.TestMethodRunner.runMethod(TestMethodRunner.java:75)
+	at org.junit.internal.runners.TestMethodRunner.run(TestMethodRunner.java:45)
+	at org.junit.internal.runners.TestClassMethodsRunner.invokeTestMethod(TestClassMethodsRunner.java:71)
+	at org.junit.internal.runners.TestClassMethodsRunner.run(TestClassMethodsRunner.java:35)
+	at org.junit.internal.runners.TestClassRunner$1.runUnprotected(TestClassRunner.java:42)
+	at org.junit.internal.runners.BeforeAndAfterRunner.runProtected(BeforeAndAfterRunner.java:34)
+	at org.junit.internal.runners.TestClassRunner.run(TestClassRunner.java:52)
+	at org.junit.internal.runners.CompositeRunner.run(CompositeRunner.java:29)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:121)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:100)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:91)
+	at org.junit.runner.JUnitCore.runMain(JUnitCore.java:75)
+	at org.junit.runner.JUnitCore.main(JUnitCore.java:42)
+2014-02-20 15:48:01,220 INFO                 action.ActionFactory - Initializing ActionFactory
+2014-02-20 15:48:01,250 INFO                 action.ActionFactory - Getting ActionFactory
+2014-02-20 15:48:01,250 INFO                 action.ActionFactory - Building HttpAction
+2014-02-20 15:48:01,260 INFO         action.handlers.city.AddCity - Prepare to add city
+2014-02-20 15:48:01,260 ERROR        action.handlers.city.AddCity - Error occured in AddCity action
+java.lang.NullPointerException
+	at action.handlers.city.AddCity.perform(AddCity.java:20)
+	at action.handlers.city.AddCityTest.nullTest(AddCityTest.java:11)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.junit.internal.runners.TestMethodRunner.executeMethodBody(TestMethodRunner.java:99)
+	at org.junit.internal.runners.TestMethodRunner.runUnprotected(TestMethodRunner.java:81)
+	at org.junit.internal.runners.BeforeAndAfterRunner.runProtected(BeforeAndAfterRunner.java:34)
+	at org.junit.internal.runners.TestMethodRunner.runMethod(TestMethodRunner.java:75)
+	at org.junit.internal.runners.TestMethodRunner.run(TestMethodRunner.java:45)
+	at org.junit.internal.runners.TestClassMethodsRunner.invokeTestMethod(TestClassMethodsRunner.java:71)
+	at org.junit.internal.runners.TestClassMethodsRunner.run(TestClassMethodsRunner.java:35)
+	at org.junit.internal.runners.TestClassRunner$1.runUnprotected(TestClassRunner.java:42)
+	at org.junit.internal.runners.BeforeAndAfterRunner.runProtected(BeforeAndAfterRunner.java:34)
+	at org.junit.internal.runners.TestClassRunner.run(TestClassRunner.java:52)
+	at org.junit.internal.runners.CompositeRunner.run(CompositeRunner.java:29)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:121)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:100)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:91)
+	at org.junit.runner.JUnitCore.runMain(JUnitCore.java:75)
+	at org.junit.runner.JUnitCore.main(JUnitCore.java:42)
+2014-02-20 15:49:49,876 INFO                 action.ActionFactory - Initializing ActionFactory
+2014-02-20 15:49:49,916 INFO                 action.ActionFactory - Getting ActionFactory
+2014-02-20 15:49:49,916 INFO                 action.ActionFactory - Building HttpAction
+2014-02-20 20:16:43,117 INFO                 action.ActionFactory - Initializing ActionFactory
+2014-02-20 20:16:43,147 INFO                 action.ActionFactory - Getting ActionFactory
+2014-02-20 20:16:43,147 INFO                 action.ActionFactory - Building HttpAction
+2014-02-20 20:17:07,672 INFO                 action.ActionFactory - Initializing ActionFactory
+2014-02-20 20:17:07,702 INFO                 action.ActionFactory - Getting ActionFactory
+2014-02-20 20:17:07,702 INFO                 action.ActionFactory - Building HttpAction
+2014-02-20 20:24:59,321 INFO                 action.ActionFactory - Initializing ActionFactory
+2014-02-20 20:24:59,351 INFO                 action.ActionFactory - Getting ActionFactory
+2014-02-20 20:24:59,351 INFO                 action.ActionFactory - Building HttpAction
+2014-02-20 20:28:09,284 INFO                 action.ActionFactory - Initializing ActionFactory
+2014-02-20 20:28:09,324 INFO                 action.ActionFactory - Getting ActionFactory
+2014-02-20 20:28:09,324 INFO                 action.ActionFactory - Building HttpAction
+2014-02-21 10:34:24,663 INFO                 action.ActionFactory - Initializing ActionFactory
+2014-02-21 10:34:24,703 INFO                 action.ActionFactory - Getting ActionFactory
+2014-02-21 10:34:24,703 INFO                 action.ActionFactory - Building HttpAction
+2014-02-21 10:34:40,516 INFO                 action.ActionFactory - Initializing ActionFactory
+2014-02-21 10:34:40,546 INFO                 action.ActionFactory - Getting ActionFactory
+2014-02-21 10:34:40,546 INFO                 action.ActionFactory - Building HttpAction
+2014-02-21 10:34:47,566 INFO                 action.ActionFactory - Initializing ActionFactory
+2014-02-21 10:34:47,596 INFO                 action.ActionFactory - Getting ActionFactory
+2014-02-21 10:34:47,596 INFO                 action.ActionFactory - Building HttpAction
+2014-02-21 10:35:06,083 INFO                 action.ActionFactory - Initializing ActionFactory
+2014-02-21 10:35:06,123 INFO                 action.ActionFactory - Getting ActionFactory
+2014-02-21 10:35:06,123 INFO                 action.ActionFactory - Building HttpAction
+2014-02-21 10:36:08,483 INFO                 action.ActionFactory - Initializing ActionFactory
+2014-02-21 10:36:08,503 INFO                 action.ActionFactory - Getting ActionFactory
+2014-02-21 10:36:08,503 INFO                 action.ActionFactory - Building HttpAction
+2014-02-21 10:36:08,533 INFO                 action.ActionFactory - Getting ActionFactory
+2014-02-21 10:36:08,533 INFO                 action.ActionFactory - Building HttpAction
+2014-02-21 10:36:08,533 INFO         action.handlers.city.AddCity - Prepare to add city
+2014-02-21 10:36:08,543 INFO         action.handlers.city.AddCity - City properties: 
+2014-02-21 10:36:08,543 INFO         action.handlers.city.AddCity - Name: skeleton 
+2014-02-21 10:36:08,543 INFO         action.handlers.city.AddCity - Population: 1000 
+2014-02-21 10:36:08,543 INFO         action.handlers.city.AddCity - Square: 0 
+2014-02-21 10:36:08,543 INFO         action.handlers.city.AddCity - ParentID: 3 
+2014-02-21 10:36:08,543 INFO               action.GatewayResolver - Getting gateway
+2014-02-21 10:36:08,543 INFO         action.handlers.city.AddCity - City was successfully added
+2014-02-21 10:36:08,553 INFO         action.handlers.city.AddCity - Send redirect to showAllCity page
+2014-02-21 10:37:26,535 INFO                 action.ActionFactory - Initializing ActionFactory
+2014-02-21 10:37:26,565 INFO                 action.ActionFactory - Getting ActionFactory
+2014-02-21 10:37:26,565 INFO                 action.ActionFactory - Building HttpAction
+2014-02-21 10:37:26,595 INFO                 action.ActionFactory - Getting ActionFactory
+2014-02-21 10:37:26,595 INFO                 action.ActionFactory - Building HttpAction
+2014-02-21 10:37:26,595 INFO         action.handlers.city.AddCity - Prepare to add city
+2014-02-21 10:37:26,605 INFO         action.handlers.city.AddCity - City properties: 
+2014-02-21 10:37:26,605 INFO         action.handlers.city.AddCity - Name: skeleton 
+2014-02-21 10:37:26,605 INFO         action.handlers.city.AddCity - Population: 1000 
+2014-02-21 10:37:26,605 INFO         action.handlers.city.AddCity - Square: 0 
+2014-02-21 10:37:26,605 INFO         action.handlers.city.AddCity - ParentID: 3 
+2014-02-21 10:37:26,605 INFO               action.GatewayResolver - Getting gateway
+2014-02-21 10:37:26,615 INFO         action.handlers.city.AddCity - City was successfully added
+2014-02-21 10:37:26,615 INFO         action.handlers.city.AddCity - Send redirect to showAllCity page
+2014-02-21 10:37:31,522 INFO                 action.ActionFactory - Initializing ActionFactory
+2014-02-21 10:37:31,552 INFO                 action.ActionFactory - Getting ActionFactory
+2014-02-21 10:37:31,552 INFO                 action.ActionFactory - Building HttpAction
+2014-02-21 10:37:31,582 INFO                 action.ActionFactory - Getting ActionFactory
+2014-02-21 10:37:31,582 INFO                 action.ActionFactory - Building HttpAction
+2014-02-21 10:37:31,582 INFO         action.handlers.city.AddCity - Prepare to add city
+2014-02-21 10:37:31,592 INFO         action.handlers.city.AddCity - City properties: 
+2014-02-21 10:37:31,592 INFO         action.handlers.city.AddCity - Name: skeleton 
+2014-02-21 10:37:31,592 INFO         action.handlers.city.AddCity - Population: 1000 
+2014-02-21 10:37:31,592 INFO         action.handlers.city.AddCity - Square: 0 
+2014-02-21 10:37:31,592 INFO         action.handlers.city.AddCity - ParentID: 3 
+2014-02-21 10:37:31,592 INFO               action.GatewayResolver - Getting gateway
+2014-02-21 10:37:31,592 INFO         action.handlers.city.AddCity - City was successfully added
+2014-02-21 10:37:31,592 INFO         action.handlers.city.AddCity - Send redirect to showAllCity page
+2014-02-21 10:37:31,602 INFO                 action.ActionFactory - Getting ActionFactory
+2014-02-21 10:37:31,602 INFO                 action.ActionFactory - Building HttpAction
+2014-02-21 10:37:31,602 INFO         action.handlers.city.AddCity - Prepare to add city
+2014-02-21 10:37:31,602 INFO         action.handlers.city.AddCity - City properties: 
+2014-02-21 10:37:31,602 INFO         action.handlers.city.AddCity - Name: skeleton 
+2014-02-21 10:37:31,612 INFO         action.handlers.city.AddCity - Population: 1000 
+2014-02-21 10:37:31,612 INFO         action.handlers.city.AddCity - Square: 0 
+2014-02-21 10:37:31,612 INFO         action.handlers.city.AddCity - ParentID: 3 
+2014-02-21 10:37:31,612 INFO               action.GatewayResolver - Getting gateway
+2014-02-21 10:37:31,612 INFO         action.handlers.city.AddCity - City was successfully added
+2014-02-21 10:37:31,612 INFO         action.handlers.city.AddCity - Send redirect to showAllCity page
+2014-02-21 11:00:43,824 INFO                 action.ActionFactory - Initializing ActionFactory
+2014-02-21 11:00:43,854 INFO                 action.ActionFactory - Getting ActionFactory
+2014-02-21 11:00:43,854 INFO                 action.ActionFactory - Building HttpAction
+2014-02-21 11:00:43,854 INFO         action.handlers.city.AddCity - Prepare to add city
+2014-02-21 11:00:43,854 ERROR        action.handlers.city.AddCity - Error occured in AddCity action
+java.lang.NumberFormatException: For input string: "ZZZ"
+	at java.lang.NumberFormatException.forInputString(Unknown Source)
+	at java.lang.Integer.parseInt(Unknown Source)
+	at java.lang.Integer.valueOf(Unknown Source)
+	at action.handlers.city.AddCity.perform(AddCity.java:25)
+	at action.handlers.city.AddCityTest.perform(AddCityTest.java:73)
+	at action.handlers.city.AddCityTest.invalidArgumentsTest(AddCityTest.java:38)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.junit.internal.runners.TestMethodRunner.executeMethodBody(TestMethodRunner.java:99)
+	at org.junit.internal.runners.TestMethodRunner.runUnprotected(TestMethodRunner.java:81)
+	at org.junit.internal.runners.BeforeAndAfterRunner.runProtected(BeforeAndAfterRunner.java:34)
+	at org.junit.internal.runners.TestMethodRunner.runMethod(TestMethodRunner.java:75)
+	at org.junit.internal.runners.TestMethodRunner.run(TestMethodRunner.java:45)
+	at org.junit.internal.runners.TestClassMethodsRunner.invokeTestMethod(TestClassMethodsRunner.java:71)
+	at org.junit.internal.runners.TestClassMethodsRunner.run(TestClassMethodsRunner.java:35)
+	at org.junit.internal.runners.TestClassRunner$1.runUnprotected(TestClassRunner.java:42)
+	at org.junit.internal.runners.BeforeAndAfterRunner.runProtected(BeforeAndAfterRunner.java:34)
+	at org.junit.internal.runners.TestClassRunner.run(TestClassRunner.java:52)
+	at org.junit.internal.runners.CompositeRunner.run(CompositeRunner.java:29)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:121)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:100)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:91)
+	at org.junit.runner.JUnitCore.runMain(JUnitCore.java:75)
+	at org.junit.runner.JUnitCore.main(JUnitCore.java:42)
+2014-02-21 11:00:44,165 INFO                 action.ActionFactory - Getting ActionFactory
+2014-02-21 11:00:44,175 INFO                 action.ActionFactory - Building HttpAction
+2014-02-21 11:00:44,175 INFO                 action.ActionFactory - Getting ActionFactory
+2014-02-21 11:00:44,185 INFO                 action.ActionFactory - Building HttpAction
+2014-02-21 11:00:44,195 INFO         action.handlers.city.AddCity - Prepare to add city
+2014-02-21 11:00:44,195 INFO         action.handlers.city.AddCity - City properties: 
+2014-02-21 11:00:44,195 INFO         action.handlers.city.AddCity - Name: skeleton 
+2014-02-21 11:00:44,195 INFO         action.handlers.city.AddCity - Population: 1000 
+2014-02-21 11:00:44,205 INFO         action.handlers.city.AddCity - Square: 0 
+2014-02-21 11:00:44,205 INFO         action.handlers.city.AddCity - ParentID: 3 
+2014-02-21 11:00:44,205 INFO               action.GatewayResolver - Getting gateway
+2014-02-21 11:00:44,205 INFO         action.handlers.city.AddCity - City was successfully added
+2014-02-21 11:00:44,205 INFO         action.handlers.city.AddCity - Send redirect to showAllCity page
+2014-02-21 11:00:44,205 INFO                 action.ActionFactory - Getting ActionFactory
+2014-02-21 11:00:44,205 INFO                 action.ActionFactory - Building HttpAction
+2014-02-21 11:00:44,215 INFO         action.handlers.city.AddCity - Prepare to add city
+2014-02-21 11:00:44,215 INFO         action.handlers.city.AddCity - City properties: 
+2014-02-21 11:00:44,215 INFO         action.handlers.city.AddCity - Name: skeleton 
+2014-02-21 11:00:44,215 INFO         action.handlers.city.AddCity - Population: 1000 
+2014-02-21 11:00:44,215 INFO         action.handlers.city.AddCity - Square: 0 
+2014-02-21 11:00:44,215 INFO         action.handlers.city.AddCity - ParentID: 3 
+2014-02-21 11:00:44,225 INFO               action.GatewayResolver - Getting gateway
+2014-02-21 11:00:44,225 INFO         action.handlers.city.AddCity - City was successfully added
+2014-02-21 11:00:44,225 INFO         action.handlers.city.AddCity - Send redirect to showAllCity page
+2014-02-21 11:01:33,766 INFO                 action.ActionFactory - Initializing ActionFactory
+2014-02-21 11:01:33,786 INFO                 action.ActionFactory - Getting ActionFactory
+2014-02-21 11:01:33,786 INFO                 action.ActionFactory - Building HttpAction
+2014-02-21 11:01:33,786 INFO         action.handlers.city.AddCity - Prepare to add city
+2014-02-21 11:01:33,796 ERROR        action.handlers.city.AddCity - Error occured in AddCity action
+java.lang.NumberFormatException: For input string: "ZZZ"
+	at java.lang.NumberFormatException.forInputString(Unknown Source)
+	at java.lang.Integer.parseInt(Unknown Source)
+	at java.lang.Integer.valueOf(Unknown Source)
+	at action.handlers.city.AddCity.perform(AddCity.java:25)
+	at action.handlers.city.AddCityTest.perform(AddCityTest.java:73)
+	at action.handlers.city.AddCityTest.invalidArgumentsTest(AddCityTest.java:38)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.junit.internal.runners.TestMethodRunner.executeMethodBody(TestMethodRunner.java:99)
+	at org.junit.internal.runners.TestMethodRunner.runUnprotected(TestMethodRunner.java:81)
+	at org.junit.internal.runners.BeforeAndAfterRunner.runProtected(BeforeAndAfterRunner.java:34)
+	at org.junit.internal.runners.TestMethodRunner.runMethod(TestMethodRunner.java:75)
+	at org.junit.internal.runners.TestMethodRunner.run(TestMethodRunner.java:45)
+	at org.junit.internal.runners.TestClassMethodsRunner.invokeTestMethod(TestClassMethodsRunner.java:71)
+	at org.junit.internal.runners.TestClassMethodsRunner.run(TestClassMethodsRunner.java:35)
+	at org.junit.internal.runners.TestClassRunner$1.runUnprotected(TestClassRunner.java:42)
+	at org.junit.internal.runners.BeforeAndAfterRunner.runProtected(BeforeAndAfterRunner.java:34)
+	at org.junit.internal.runners.TestClassRunner.run(TestClassRunner.java:52)
+	at org.junit.internal.runners.CompositeRunner.run(CompositeRunner.java:29)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:121)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:100)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:91)
+	at org.junit.runner.JUnitCore.runMain(JUnitCore.java:75)
+	at org.junit.runner.JUnitCore.main(JUnitCore.java:42)
+2014-02-21 11:01:33,826 INFO                 action.ActionFactory - Getting ActionFactory
+2014-02-21 11:01:33,826 INFO                 action.ActionFactory - Building HttpAction
+2014-02-21 11:01:33,836 INFO                 action.ActionFactory - Getting ActionFactory
+2014-02-21 11:01:33,836 INFO                 action.ActionFactory - Building HttpAction
+2014-02-21 11:01:33,836 INFO         action.handlers.city.AddCity - Prepare to add city
+2014-02-21 11:01:33,836 INFO         action.handlers.city.AddCity - City properties: 
+2014-02-21 11:01:33,836 INFO         action.handlers.city.AddCity - Name: skeleton 
+2014-02-21 11:01:33,836 INFO         action.handlers.city.AddCity - Population: 1000 
+2014-02-21 11:01:33,836 INFO         action.handlers.city.AddCity - Square: 0 
+2014-02-21 11:01:33,836 INFO         action.handlers.city.AddCity - ParentID: 3 
+2014-02-21 11:01:33,836 INFO               action.GatewayResolver - Getting gateway
+2014-02-21 11:01:33,846 INFO         action.handlers.city.AddCity - City was successfully added
+2014-02-21 11:01:33,846 INFO         action.handlers.city.AddCity - Send redirect to showAllCity page
+2014-02-21 11:01:33,846 INFO                 action.ActionFactory - Getting ActionFactory
+2014-02-21 11:01:33,846 INFO                 action.ActionFactory - Building HttpAction
+2014-02-21 11:01:33,846 INFO         action.handlers.city.AddCity - Prepare to add city
+2014-02-21 11:01:33,846 INFO         action.handlers.city.AddCity - City properties: 
+2014-02-21 11:01:33,846 INFO         action.handlers.city.AddCity - Name: skeleton 
+2014-02-21 11:01:33,846 INFO         action.handlers.city.AddCity - Population: 1000 
+2014-02-21 11:01:33,856 INFO         action.handlers.city.AddCity - Square: 0 
+2014-02-21 11:01:33,856 INFO         action.handlers.city.AddCity - ParentID: 3 
+2014-02-21 11:01:33,856 INFO               action.GatewayResolver - Getting gateway
+2014-02-21 11:01:33,856 INFO         action.handlers.city.AddCity - City was successfully added
+2014-02-21 11:01:33,856 INFO         action.handlers.city.AddCity - Send redirect to showAllCity page
+2014-02-21 11:04:00,146 INFO                 action.ActionFactory - Initializing ActionFactory
+2014-02-21 11:04:00,176 INFO                 action.ActionFactory - Getting ActionFactory
+2014-02-21 11:04:00,176 INFO                 action.ActionFactory - Building HttpAction
+2014-02-21 11:04:00,176 INFO         action.handlers.city.AddCity - Prepare to add city
+2014-02-21 11:04:00,176 ERROR        action.handlers.city.AddCity - Error occured in AddCity action
+java.lang.NumberFormatException: For input string: "ZZZ"
+	at java.lang.NumberFormatException.forInputString(Unknown Source)
+	at java.lang.Integer.parseInt(Unknown Source)
+	at java.lang.Integer.valueOf(Unknown Source)
+	at action.handlers.city.AddCity.perform(AddCity.java:25)
+	at action.handlers.city.AddCityTest.perform(AddCityTest.java:73)
+	at action.handlers.city.AddCityTest.invalidArgumentsTest(AddCityTest.java:38)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.junit.internal.runners.TestMethodRunner.executeMethodBody(TestMethodRunner.java:99)
+	at org.junit.internal.runners.TestMethodRunner.runUnprotected(TestMethodRunner.java:81)
+	at org.junit.internal.runners.BeforeAndAfterRunner.runProtected(BeforeAndAfterRunner.java:34)
+	at org.junit.internal.runners.TestMethodRunner.runMethod(TestMethodRunner.java:75)
+	at org.junit.internal.runners.TestMethodRunner.run(TestMethodRunner.java:45)
+	at org.junit.internal.runners.TestClassMethodsRunner.invokeTestMethod(TestClassMethodsRunner.java:71)
+	at org.junit.internal.runners.TestClassMethodsRunner.run(TestClassMethodsRunner.java:35)
+	at org.junit.internal.runners.TestClassRunner$1.runUnprotected(TestClassRunner.java:42)
+	at org.junit.internal.runners.BeforeAndAfterRunner.runProtected(BeforeAndAfterRunner.java:34)
+	at org.junit.internal.runners.TestClassRunner.run(TestClassRunner.java:52)
+	at org.junit.internal.runners.CompositeRunner.run(CompositeRunner.java:29)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:121)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:100)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:91)
+	at org.junit.runner.JUnitCore.runMain(JUnitCore.java:75)
+	at org.junit.runner.JUnitCore.main(JUnitCore.java:42)
+2014-02-21 11:04:00,206 INFO                 action.ActionFactory - Getting ActionFactory
+2014-02-21 11:04:00,206 INFO                 action.ActionFactory - Building HttpAction
+2014-02-21 11:04:00,216 INFO                 action.ActionFactory - Getting ActionFactory
+2014-02-21 11:04:00,227 INFO                 action.ActionFactory - Building HttpAction
+2014-02-21 11:04:00,227 INFO         action.handlers.city.AddCity - Prepare to add city
+2014-02-21 11:04:00,227 INFO         action.handlers.city.AddCity - City properties: 
+2014-02-21 11:04:00,227 INFO         action.handlers.city.AddCity - Name: skeleton 
+2014-02-21 11:04:00,227 INFO         action.handlers.city.AddCity - Population: 1000 
+2014-02-21 11:04:00,227 INFO         action.handlers.city.AddCity - Square: 0 
+2014-02-21 11:04:00,227 INFO         action.handlers.city.AddCity - ParentID: 3 
+2014-02-21 11:04:00,227 INFO               action.GatewayResolver - Getting gateway
+2014-02-21 11:04:00,227 INFO         action.handlers.city.AddCity - City was successfully added
+2014-02-21 11:04:00,237 INFO         action.handlers.city.AddCity - Send redirect to showAllCity page
+2014-02-21 11:04:00,237 INFO                 action.ActionFactory - Getting ActionFactory
+2014-02-21 11:04:00,237 INFO                 action.ActionFactory - Building HttpAction
+2014-02-21 11:04:00,237 INFO         action.handlers.city.AddCity - Prepare to add city
+2014-02-21 11:04:00,237 INFO         action.handlers.city.AddCity - City properties: 
+2014-02-21 11:04:00,237 INFO         action.handlers.city.AddCity - Name: skeleton 
+2014-02-21 11:04:00,237 INFO         action.handlers.city.AddCity - Population: 1000 
+2014-02-21 11:04:00,247 INFO         action.handlers.city.AddCity - Square: 0 
+2014-02-21 11:04:00,247 INFO         action.handlers.city.AddCity - ParentID: 3 
+2014-02-21 11:04:00,247 INFO               action.GatewayResolver - Getting gateway
+2014-02-21 11:04:00,247 INFO         action.handlers.city.AddCity - City was successfully added
+2014-02-21 11:04:00,247 INFO         action.handlers.city.AddCity - Send redirect to showAllCity page
+2014-02-21 11:08:56,593 INFO                 action.ActionFactory - Initializing ActionFactory
+2014-02-21 11:08:56,623 INFO                 action.ActionFactory - Getting ActionFactory
+2014-02-21 11:08:56,623 INFO                 action.ActionFactory - Building HttpAction
+2014-02-21 11:08:56,623 INFO         action.handlers.city.AddCity - Prepare to add city
+2014-02-21 11:08:56,623 ERROR        action.handlers.city.AddCity - Error occured in AddCity action
+java.lang.NumberFormatException: For input string: "ZZZ"
+	at java.lang.NumberFormatException.forInputString(Unknown Source)
+	at java.lang.Integer.parseInt(Unknown Source)
+	at java.lang.Integer.valueOf(Unknown Source)
+	at action.handlers.city.AddCity.perform(AddCity.java:26)
+	at action.handlers.city.AddCityTest.perform(AddCityTest.java:73)
+	at action.handlers.city.AddCityTest.invalidArgumentsTest(AddCityTest.java:38)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.junit.internal.runners.TestMethodRunner.executeMethodBody(TestMethodRunner.java:99)
+	at org.junit.internal.runners.TestMethodRunner.runUnprotected(TestMethodRunner.java:81)
+	at org.junit.internal.runners.BeforeAndAfterRunner.runProtected(BeforeAndAfterRunner.java:34)
+	at org.junit.internal.runners.TestMethodRunner.runMethod(TestMethodRunner.java:75)
+	at org.junit.internal.runners.TestMethodRunner.run(TestMethodRunner.java:45)
+	at org.junit.internal.runners.TestClassMethodsRunner.invokeTestMethod(TestClassMethodsRunner.java:71)
+	at org.junit.internal.runners.TestClassMethodsRunner.run(TestClassMethodsRunner.java:35)
+	at org.junit.internal.runners.TestClassRunner$1.runUnprotected(TestClassRunner.java:42)
+	at org.junit.internal.runners.BeforeAndAfterRunner.runProtected(BeforeAndAfterRunner.java:34)
+	at org.junit.internal.runners.TestClassRunner.run(TestClassRunner.java:52)
+	at org.junit.internal.runners.CompositeRunner.run(CompositeRunner.java:29)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:121)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:100)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:91)
+	at org.junit.runner.JUnitCore.runMain(JUnitCore.java:75)
+	at org.junit.runner.JUnitCore.main(JUnitCore.java:42)
+2014-02-21 11:08:56,663 INFO                 action.ActionFactory - Getting ActionFactory
+2014-02-21 11:08:56,663 INFO                 action.ActionFactory - Building HttpAction
+2014-02-21 11:08:56,663 INFO                 action.ActionFactory - Getting ActionFactory
+2014-02-21 11:08:56,663 INFO                 action.ActionFactory - Building HttpAction
+2014-02-21 11:08:56,673 INFO         action.handlers.city.AddCity - Prepare to add city
+2014-02-21 11:08:56,673 INFO         action.handlers.city.AddCity - City properties: 
+2014-02-21 11:08:56,673 INFO         action.handlers.city.AddCity - Name: skeleton 
+2014-02-21 11:08:56,673 INFO         action.handlers.city.AddCity - Population: 1000 
+2014-02-21 11:08:56,673 INFO         action.handlers.city.AddCity - Square: 0 
+2014-02-21 11:08:56,683 INFO         action.handlers.city.AddCity - ParentID: 3 
+2014-02-21 11:08:56,683 INFO               action.GatewayResolver - Getting gateway
+2014-02-21 11:08:56,683 INFO         action.handlers.city.AddCity - City was successfully added
+2014-02-21 11:08:56,683 INFO         action.handlers.city.AddCity - Send redirect to showAllCity page
+2014-02-21 11:08:56,683 INFO                 action.ActionFactory - Getting ActionFactory
+2014-02-21 11:08:56,683 INFO                 action.ActionFactory - Building HttpAction
+2014-02-21 11:08:56,683 INFO         action.handlers.city.AddCity - Prepare to add city
+2014-02-21 11:08:56,683 INFO         action.handlers.city.AddCity - City properties: 
+2014-02-21 11:08:56,693 INFO         action.handlers.city.AddCity - Name: skeleton 
+2014-02-21 11:08:56,693 INFO         action.handlers.city.AddCity - Population: 1000 
+2014-02-21 11:08:56,693 INFO         action.handlers.city.AddCity - Square: 0 
+2014-02-21 11:08:56,693 INFO         action.handlers.city.AddCity - ParentID: 3 
+2014-02-21 11:08:56,693 INFO               action.GatewayResolver - Getting gateway
+2014-02-21 11:08:56,693 INFO         action.handlers.city.AddCity - City was successfully added
+2014-02-21 11:08:56,693 INFO         action.handlers.city.AddCity - Send redirect to showAllCity page
+2014-02-21 11:11:18,346 INFO                 action.ActionFactory - Initializing ActionFactory
+2014-02-21 11:11:18,377 INFO                 action.ActionFactory - Getting ActionFactory
+2014-02-21 11:11:18,377 INFO                 action.ActionFactory - Building HttpAction
+2014-02-21 11:11:18,377 INFO         action.handlers.city.AddCity - Prepare to add city
+2014-02-21 11:11:18,377 ERROR        action.handlers.city.AddCity - Error occured in AddCity action
+java.lang.NumberFormatException: For input string: "ZZZ"
+	at java.lang.NumberFormatException.forInputString(Unknown Source)
+	at java.lang.Integer.parseInt(Unknown Source)
+	at java.lang.Integer.valueOf(Unknown Source)
+	at action.handlers.city.AddCity.perform(AddCity.java:26)
+	at action.handlers.city.AddCityTest.perform(AddCityTest.java:73)
+	at action.handlers.city.AddCityTest.invalidArgumentsTest(AddCityTest.java:38)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.junit.internal.runners.TestMethodRunner.executeMethodBody(TestMethodRunner.java:99)
+	at org.junit.internal.runners.TestMethodRunner.runUnprotected(TestMethodRunner.java:81)
+	at org.junit.internal.runners.BeforeAndAfterRunner.runProtected(BeforeAndAfterRunner.java:34)
+	at org.junit.internal.runners.TestMethodRunner.runMethod(TestMethodRunner.java:75)
+	at org.junit.internal.runners.TestMethodRunner.run(TestMethodRunner.java:45)
+	at org.junit.internal.runners.TestClassMethodsRunner.invokeTestMethod(TestClassMethodsRunner.java:71)
+	at org.junit.internal.runners.TestClassMethodsRunner.run(TestClassMethodsRunner.java:35)
+	at org.junit.internal.runners.TestClassRunner$1.runUnprotected(TestClassRunner.java:42)
+	at org.junit.internal.runners.BeforeAndAfterRunner.runProtected(BeforeAndAfterRunner.java:34)
+	at org.junit.internal.runners.TestClassRunner.run(TestClassRunner.java:52)
+	at org.junit.internal.runners.CompositeRunner.run(CompositeRunner.java:29)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:121)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:100)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:91)
+	at org.junit.runner.JUnitCore.runMain(JUnitCore.java:75)
+	at org.junit.runner.JUnitCore.main(JUnitCore.java:42)
+2014-02-21 11:11:18,407 INFO                 action.ActionFactory - Getting ActionFactory
+2014-02-21 11:11:18,417 INFO                 action.ActionFactory - Building HttpAction
+2014-02-21 11:11:18,417 INFO                 action.ActionFactory - Getting ActionFactory
+2014-02-21 11:11:18,417 INFO                 action.ActionFactory - Building HttpAction
+2014-02-21 11:11:18,417 INFO         action.handlers.city.AddCity - Prepare to add city
+2014-02-21 11:11:18,417 INFO         action.handlers.city.AddCity - City properties: 
+2014-02-21 11:11:18,427 INFO         action.handlers.city.AddCity - Name: skeleton 
+2014-02-21 11:11:18,427 INFO         action.handlers.city.AddCity - Population: 1000 
+2014-02-21 11:11:18,427 INFO         action.handlers.city.AddCity - Square: 0 
+2014-02-21 11:11:18,427 INFO         action.handlers.city.AddCity - ParentID: 3 
+2014-02-21 11:11:18,427 INFO               action.GatewayResolver - Getting gateway
+2014-02-21 11:11:18,427 INFO         action.handlers.city.AddCity - City was successfully added
+2014-02-21 11:11:18,427 INFO         action.handlers.city.AddCity - Send redirect to showAllCity page
+2014-02-21 11:11:18,437 INFO                 action.ActionFactory - Getting ActionFactory
+2014-02-21 11:11:18,437 INFO                 action.ActionFactory - Building HttpAction
+2014-02-21 11:11:18,437 INFO         action.handlers.city.AddCity - Prepare to add city
+2014-02-21 11:11:18,437 INFO         action.handlers.city.AddCity - City properties: 
+2014-02-21 11:11:18,437 INFO         action.handlers.city.AddCity - Name: skeleton 
+2014-02-21 11:11:18,447 INFO         action.handlers.city.AddCity - Population: 1000 
+2014-02-21 11:11:18,447 INFO         action.handlers.city.AddCity - Square: 0 
+2014-02-21 11:11:18,447 INFO         action.handlers.city.AddCity - ParentID: 3 
+2014-02-21 11:11:18,447 INFO               action.GatewayResolver - Getting gateway
+2014-02-21 11:11:18,447 INFO         action.handlers.city.AddCity - City was successfully added
+2014-02-21 11:11:18,447 INFO         action.handlers.city.AddCity - Send redirect to showAllCity page

@@ -1,0 +1,2 @@
+java -classpath classes/;WebContent/WEB-INF/lib/junit-4.0.jar;WebContent/WEB-INF/lib/log4j-1.2.16.jar;WebContent/WEB-INF/classes/;WebContent/WEB-INF/lib/spring-2.5.6.jar org.junit.runner.JUnitCore action.handlers.city.AddCityTest
+@pause

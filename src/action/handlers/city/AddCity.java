@@ -14,9 +14,14 @@ public class AddCity implements HttpAction {
 	private static final Logger logger = Logger.getLogger(AddCity.class);
 
 	public void perform(HttpServletRequest request, HttpServletResponse response) throws ActionException {
+		if (request == null || response == null) {
+			throw new NullPointerException();
+		}
+
 		try {
 			logger.info("Prepare to add city");
 			City city = new City();
+
 			city.setName(request.getParameter("name"));
 			city.setPopulation(Integer.valueOf(request.getParameter("population")));
 			city.setSquare(Integer.valueOf(request.getParameter("square")));
@@ -29,7 +34,6 @@ public class AddCity implements HttpAction {
 			LoggerUtils.info(logger, "Square:", request.getParameter("square"));
 			LoggerUtils.info(logger, "ParentID:", request.getParameter("parent_id"));
 	
-		
 			GatewayResolver.getGateway().add(city);
 	
 			logger.info("City was successfully added");			
@@ -38,6 +42,7 @@ public class AddCity implements HttpAction {
 		}
 		catch (Exception e) {
 			logger.error("Error occured in AddCity action", e);
+			throw new ActionException(e);
 		}
 	}
 }

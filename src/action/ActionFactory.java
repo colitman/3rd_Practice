@@ -16,13 +16,18 @@ public class ActionFactory {
 		return instance;
 	}
 	
-	public HttpAction build(String actionName) throws WrongCommandException, InstantiationException, IllegalAccessException {
-		logger.info("Building HttpAction");
-		if (!actions.keySet().contains(actionName)) {
-			logger.error("Error in ActionFactory: wrong command");
-			throw new WrongCommandException();
+	public HttpAction build(String actionName) throws WrongCommandException {
+		try {
+			logger.info("Building HttpAction");
+			if (!actions.keySet().contains(actionName)) {
+				logger.error("Error in ActionFactory: wrong command");
+				throw new WrongCommandException();
+			}
+			return actions.get(actionName).newInstance();
 		}
-		return actions.get(actionName).newInstance();
+		catch (Exception e) {
+			throw new WrongCommandException(e);
+		}
 	}
 
 	private static Map<String, Class<? extends HttpAction>> getActions() {
