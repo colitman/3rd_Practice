@@ -15,6 +15,10 @@ public class GatewayResolver {
 		gateway = g;
 	}
 
+	public static void unsetGateway() {
+		gateway = null;
+	}
+
 	public static Gateway getGateway() {
 		logger.info("Getting gateway");
 		if (gateway != null) {
