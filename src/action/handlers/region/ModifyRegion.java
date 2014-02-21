@@ -13,7 +13,7 @@ public class ModifyRegion implements HttpAction {
 	
 	private static final Logger logger = Logger.getLogger(ModifyRegion.class);	
 
-	public void perform(HttpServletRequest request, HttpServletResponse response) throws ActionException {
+	public String perform(HttpServletRequest request, HttpServletResponse response) throws ActionException {
 		try {
 			logger.info("Prepare to modify region");
 
@@ -41,10 +41,11 @@ public class ModifyRegion implements HttpAction {
 			logger.info("Region was successfully modified");			
 			logger.info("Send redirect to city/showAllInRegion page");
 
-			response.sendRedirect("/WebPrototype/action?code=showAllCityInRegion&parent_id=" + id);
+			return "action?code=showAllCityInRegion&parent_id=" + id;
 		}
 		catch (Exception e) {
 			logger.error("Error occured in ModifyRegion action", e);
 		}
+		return null;
 	}
 }

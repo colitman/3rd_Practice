@@ -16,7 +16,7 @@ public class ShowAllRegionInCountry implements HttpAction {
 	
 	private static final Logger logger = Logger.getLogger(ShowAllRegionInCountry.class);	
 
-	public void perform(HttpServletRequest request, HttpServletResponse response) throws ActionException {
+	public String perform(HttpServletRequest request, HttpServletResponse response) throws ActionException {
 		try {
 			logger.info("Prepare to show all regions");
 
@@ -43,10 +43,11 @@ public class ShowAllRegionInCountry implements HttpAction {
 			logger.info("Set parent object into request attributes");
 			logger.info("Send forward to region/showAllInCountry.jsp page");
 
-			request.getRequestDispatcher("region/showAllInCountry.jsp").forward(request, response);
+			return "region/showAllInCountry.jsp";
 		}
 		catch (Exception e) {
 			logger.error("Error  occured in ShowAllRegionInCountry action", e);
 		}
+		return null;
 	}
 }

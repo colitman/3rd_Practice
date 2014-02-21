@@ -13,7 +13,7 @@ public class AddCountry implements HttpAction {
 	
 	private static final Logger logger = Logger.getLogger(AddCountry.class);
 
-	public void perform(HttpServletRequest request, HttpServletResponse response) throws ActionException {
+	public String perform(HttpServletRequest request, HttpServletResponse response) throws ActionException {
 		try {
 			logger.info("Prepare to add country");
 
@@ -35,12 +35,13 @@ public class AddCountry implements HttpAction {
 			GatewayResolver.getGateway().add(country);
 			
 			logger.info("Country was successfully added");			
-			logger.info("Send redirect to showAllCountry page");
+			logger.info("Send forward to showAllCountry page");
 
-			response.sendRedirect("/WebPrototype/action?code=showAllCountry");
+			return "action?code=showAllCountry";
 		} 	
 		catch (Exception e) {
 			logger.error("Error occured in AddCountry action", e);
 		}	
+		return null;
 	}
 }

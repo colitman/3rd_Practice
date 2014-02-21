@@ -13,7 +13,7 @@ public class ModifyCity implements HttpAction {
 
 	private static final Logger logger = Logger.getLogger(ModifyCity.class);	
 
-	public void perform(HttpServletRequest request, HttpServletResponse response) throws ActionException {
+	public String perform(HttpServletRequest request, HttpServletResponse response) throws ActionException {
 		try {
 			logger.info("Prepare to modify city");
 
@@ -38,12 +38,13 @@ public class ModifyCity implements HttpAction {
 			GatewayResolver.getGateway().modify(city);
 			
 			logger.info("City was successfully modified");			
-			logger.info("Send redirect to university/showAllCity page");
+			logger.info("Send forward to showAllUniversityInCity page");
 
-			response.sendRedirect("/WebPrototype/action?code=showAllUniversityInCity&parent_id=" + id);
+			return "action?code=showAllUniversityInCity&parent_id=" + id;
 		}
 		catch (Exception e) {
 			logger.error("Error occured in ModifyCity action", e);
 		}
+		return null;
 	}
 }

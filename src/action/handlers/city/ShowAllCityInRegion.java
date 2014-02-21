@@ -16,7 +16,7 @@ public class ShowAllCityInRegion implements HttpAction {
 	
 	private static final Logger logger = Logger.getLogger(ShowAllCityInRegion.class);	
 
-	public void perform(HttpServletRequest request, HttpServletResponse response) throws ActionException {
+	public String perform(HttpServletRequest request, HttpServletResponse response) throws ActionException {
 		try {
 			logger.info("Prepare to show all cities");
 
@@ -43,10 +43,11 @@ public class ShowAllCityInRegion implements HttpAction {
 			logger.info("Set parent object into request attributes");
 			logger.info("Send forward to city/showAllInRegion.jsp page");
 
-			request.getRequestDispatcher("city/showAllInRegion.jsp").forward(request, response);
+			return "city/showAllInRegion.jsp";
 		}
 		catch (Exception e) {
 			logger.error("Error  occured in ShowAllRegionInRegion action", e);
 		}
+		return null;
 	}
 }

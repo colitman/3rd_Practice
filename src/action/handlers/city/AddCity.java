@@ -13,7 +13,7 @@ public class AddCity implements HttpAction {
 	
 	private static final Logger logger = Logger.getLogger(AddCity.class);
 
-	public void perform(HttpServletRequest request, HttpServletResponse response) throws ActionException {
+	public String perform(HttpServletRequest request, HttpServletResponse response) throws ActionException {
 		if (request == null || response == null) {
 			throw new NullPointerException();
 		}
@@ -37,8 +37,9 @@ public class AddCity implements HttpAction {
 			GatewayResolver.getGateway().add(city);
 	
 			logger.info("City was successfully added");			
-			logger.info("Send redirect to showAllCity page");
-			response.sendRedirect("/WebPrototype/action?code=showAllCityInRegion&parent_id=" + request.getParameter("parent_id"));
+			logger.info("Send forward to showAllCity page");
+
+			return "action?code=showAllCityInRegion&parent_id=" + request.getParameter("parent_id");
 		}
 		catch (Exception e) {
 			logger.error("Error occured in AddCity action", e);

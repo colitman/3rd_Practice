@@ -16,7 +16,7 @@ public class ShowAllUniversityInCity implements HttpAction {
 	
 	private static final Logger logger = Logger.getLogger(ShowAllUniversityInCity.class);	
 
-	public void perform(HttpServletRequest request, HttpServletResponse response) throws ActionException {
+	public String perform(HttpServletRequest request, HttpServletResponse response) throws ActionException {
 		try {
 			logger.info("Prepare to show all universities");
 
@@ -43,10 +43,11 @@ public class ShowAllUniversityInCity implements HttpAction {
 			logger.info("Set parent object into request attributes");
 			logger.info("Send forward to university/showAllInCity.jsp page");
 
-			request.getRequestDispatcher("university/showAllInCity.jsp").forward(request, response);
+			return "university/showAllInCity.jsp";
 		}
 		catch (Exception e) {
 			logger.error("Error  occured in ShowAllUniversityInCity action", e);
 		}
+		return null;
 	}
 }

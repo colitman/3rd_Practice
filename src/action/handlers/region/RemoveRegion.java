@@ -13,7 +13,7 @@ public class RemoveRegion implements HttpAction {
 	
 	private static final Logger logger = Logger.getLogger(RemoveRegion.class);		
 
-	public void perform(HttpServletRequest request, HttpServletResponse response) throws ActionException {
+	public String perform(HttpServletRequest request, HttpServletResponse response) throws ActionException {
 		try {
 			logger.info("Prepare to remove region");
 			
@@ -31,10 +31,11 @@ public class RemoveRegion implements HttpAction {
 			logger.info("Region was successfully removed");			
 			logger.info("Send redirect to showAllRegion page");
 
-			response.sendRedirect("/WebPrototype/action?code=showAllRegionInCountry&parent_id=" + parentID);
+			return "action?code=showAllRegionInCountry&parent_id=" + parentID;
 		}	
 		catch (Exception e) {
 			logger.error("Error occured in RemoveRegion action", e);
 		}
+		return null;
 	}
 }

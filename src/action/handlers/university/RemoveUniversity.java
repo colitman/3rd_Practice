@@ -13,7 +13,7 @@ public class RemoveUniversity implements HttpAction {
 	
 	private static final Logger logger = Logger.getLogger(RemoveUniversity.class);	
 
-	public void perform(HttpServletRequest request, HttpServletResponse response) throws ActionException {
+	public String perform(HttpServletRequest request, HttpServletResponse response) throws ActionException {
 		try {
 			logger.info("Prepare to remove university");
 			
@@ -31,10 +31,11 @@ public class RemoveUniversity implements HttpAction {
 			logger.info("University was successfully removed");			
 			logger.info("Send redirect to showAllUniversity page");
 
-			response.sendRedirect("/WebPrototype/action?code=showAllUniversityInCity&parent_id=" + parentID);
+			return "action?code=showAllUniversityInCity&parent_id=" + parentID;
 		}
 		catch (Exception e) {
 			logger.error("Error occured in RemoveUniversity action", e);
 		}
+		return null;
 	}
 }

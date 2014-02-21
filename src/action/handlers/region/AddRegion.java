@@ -13,7 +13,7 @@ public class AddRegion implements HttpAction {
 	
 	private static final Logger logger = Logger.getLogger(AddRegion.class);	
 
-	public void perform(HttpServletRequest request, HttpServletResponse response) throws ActionException {
+	public String perform(HttpServletRequest request, HttpServletResponse response) throws ActionException {
 		try {
 			logger.info("Prepare to add region");
 
@@ -35,10 +35,11 @@ public class AddRegion implements HttpAction {
 			logger.info("Region was successfully added");			
 			logger.info("Send redirect to showAllRegion page");
 
-			response.sendRedirect("/WebPrototype/action?code=showAllRegionInCountry&parent_id=" + request.getParameter("parent_id"));
+			return "action?code=showAllRegionInCountry&parent_id=" + request.getParameter("parent_id");
 		}
 		catch (Exception e) {
 			logger.error("Error occured in AddRegion action", e);
 		}
+		return null;
 	}
 }

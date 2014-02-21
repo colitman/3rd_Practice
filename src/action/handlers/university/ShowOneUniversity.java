@@ -15,7 +15,7 @@ public class ShowOneUniversity implements HttpAction {
 
 	private static final Logger logger = Logger.getLogger(ShowOneUniversity.class);	
 	
-	public void perform(HttpServletRequest request, HttpServletResponse response) throws ActionException {
+	public String perform(HttpServletRequest request, HttpServletResponse response) throws ActionException {
 		try {
 			logger.info("Prepare to show university");
 
@@ -36,10 +36,11 @@ public class ShowOneUniversity implements HttpAction {
 			logger.info("Set university into session");
 			logger.info("Send redirect to showAllUniversity page");	
 
-			request.getRequestDispatcher("university/showOne.jsp").forward(request, response);
+			return "university/showOne.jsp";
 		}
 		catch (Exception e) {
 			logger.error("Error occured in ShowOneUniversity action", e);
 		}
+		return null;
 	}
 }

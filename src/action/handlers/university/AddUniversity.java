@@ -13,7 +13,7 @@ public class AddUniversity implements HttpAction {
 
 	private static final Logger logger = Logger.getLogger(AddUniversity.class);	
 	
-	public void perform(HttpServletRequest request, HttpServletResponse response) throws ActionException {
+	public String perform(HttpServletRequest request, HttpServletResponse response) throws ActionException {
 		try {
 			logger.info("Prepare to add university");
 
@@ -35,10 +35,11 @@ public class AddUniversity implements HttpAction {
 			logger.info("University was successfully added");			
 			logger.info("Send redirect to showAllUniversity page");
 
-			response.sendRedirect("/WebPrototype/action?code=showAllUniversityInCity&parent_id=" + request.getParameter("parent_id"));
+			return "action?code=showAllUniversityInCity&parent_id=" + request.getParameter("parent_id");
 		}
 		catch (Exception e) {
 			logger.warn("Error occured in AddUniversity action", e);
 		}
+		return null;
 	}
 }

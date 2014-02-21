@@ -13,7 +13,7 @@ public class ModifyCountry implements HttpAction {
 	
 	private static final Logger logger = Logger.getLogger(ModifyCountry.class);	
 
-	public void perform(HttpServletRequest request, HttpServletResponse response) throws ActionException {
+	public String perform(HttpServletRequest request, HttpServletResponse response) throws ActionException {
 		try {
 			logger.info("Prepare to modify country");
 
@@ -43,10 +43,11 @@ public class ModifyCountry implements HttpAction {
 			logger.info("Country was successfully modified");			
 			logger.info("Send redirect to region/showAllInCountry page");
 		
-			response.sendRedirect("/WebPrototype/action?code=showAllRegionInCountry&parent_id=" + id);
+			return "action?code=showAllRegionInCountry&parent_id=" + id;
 		}
 		catch (Exception e) {
 			logger.error("Error occured in ModifyCountry action", e);
 		}
+		return null;
 	}
 }

@@ -13,7 +13,7 @@ public class RemoveCountry implements HttpAction {
 		
 	private static final Logger logger = Logger.getLogger(RemoveCountry.class);		
 
-	public void perform(HttpServletRequest request, HttpServletResponse response) throws ActionException {
+	public String perform(HttpServletRequest request, HttpServletResponse response) throws ActionException {
 		try {		
 			logger.info("Prepare to remove country");
 			
@@ -27,10 +27,11 @@ public class RemoveCountry implements HttpAction {
 			logger.info("Country was successfully removed");			
 			logger.info("Send redirect to country/showAllCountry page");
 
-			response.sendRedirect("/WebPrototype/action?code=showAllCountry");
+			return "action?code=showAllCountry";
 		}
 		catch (Exception e) {
 			logger.error("Error occured in RemoveCountry action", e);
 		}
+		return null;
 	}
 }

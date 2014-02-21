@@ -13,7 +13,7 @@ public class RemoveCity implements HttpAction {
 	
 	private static final Logger logger = Logger.getLogger(RemoveCity.class);	
 
-	public void perform(HttpServletRequest request, HttpServletResponse response) throws ActionException {
+	public String perform(HttpServletRequest request, HttpServletResponse response) throws ActionException {
 		try {			
 			logger.info("Prepare to remove city");
 			
@@ -30,12 +30,13 @@ public class RemoveCity implements HttpAction {
 			GatewayResolver.getGateway().remove(city);
 
 			logger.info("City was successfully removed");			
-			logger.info("Send redirect to showAllCity page");
+			logger.info("Send forward to showAllCity page");
 
-			response.sendRedirect("/WebPrototype/action?code=showAllCityInRegion&parent_id=" + parentID);
+			return "action?code=showAllCityInRegion&parent_id=" + parentID;
 		}
 		catch (Exception e) {
 			logger.error("Error occured in RemoveCity action", e);
 		}
+		return null;
 	}
 }

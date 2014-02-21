@@ -16,7 +16,7 @@ public class ShowAllCountry implements HttpAction {
 	
 	private static final Logger logger = Logger.getLogger(ShowAllCountry.class);	
 
-	public void perform(HttpServletRequest request, HttpServletResponse response) throws ActionException {
+	public String perform(HttpServletRequest request, HttpServletResponse response) throws ActionException {
 		try {
 			DOMConfigurator.configure("log4j.xml");
 			logger.info("Logger installed");
@@ -32,10 +32,11 @@ public class ShowAllCountry implements HttpAction {
 			logger.info("Set countries into request attributes");
 			logger.info("Send forward to country/showAll.jsp page");
 
-			request.getRequestDispatcher("country/showAll.jsp").forward(request, response);
+			return "country/showAll.jsp";
 		}
 		catch (Exception e) {
 			logger.error("Error  occured in ShowAllCountry action", e);
 		}
+		return null;
 	}
 }
