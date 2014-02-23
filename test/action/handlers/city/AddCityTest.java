@@ -4,6 +4,7 @@ import org.junit.*;
 import action.*;
 import hibernate.logic.*;
 import util.*;
+import util.gateway.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 
@@ -16,7 +17,7 @@ public class AddCityTest extends Assert {
 
 	@Test(expected = ActionException.class)
 	public void actionExceptionTest() throws Exception {
-		ListGateway gateway = new ListGateway();
+		CityListGateway gateway = new CityListGateway();
 	
 		GatewayResolver.setGateway(gateway);
 
@@ -39,7 +40,7 @@ public class AddCityTest extends Assert {
 
 	@Test
 	public void logicTest() throws Exception {
-		ListGateway gateway = new ListGateway();
+		CityListGateway gateway = new CityListGateway();
 
 		GatewayResolver.setGateway(gateway);
 
@@ -66,5 +67,31 @@ public class AddCityTest extends Assert {
 		Utils.perform("addCity", request, response);
 
 		assertEquals(2, gateway.size());
+	}
+
+	@Test
+	public void forwardTest() throws Exception {
+		CityListGateway gateway = new CityListGateway();
+
+		GatewayResolver.setGateway(gateway);
+
+		HttpServletRequest request = new ServletRequestSkeleton() {
+			@Override
+			public String getParameter(String name) {
+				switch (name) {
+					case "name" : return "skeleton";
+					case "population" : return "1000";
+					case "square" : return "0";
+					case "parent_id" : return "3";
+				}
+				return null;
+			}
+		};
+		
+		String url = Utils.perform("addCity", request, new ServletResponseSkeleton());
+		
+		if (!url.contains("showAllCity")) {
+			fail("forward must contains <showAllCity>"); 
+		}
 	}
 }

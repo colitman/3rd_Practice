@@ -14,6 +14,9 @@ public class RemoveUniversity implements HttpAction {
 	private static final Logger logger = Logger.getLogger(RemoveUniversity.class);	
 
 	public String perform(HttpServletRequest request, HttpServletResponse response) throws ActionException {
+		if (request == null || response == null) {
+			throw new NullPointerException();
+		}
 		try {
 			logger.info("Prepare to remove university");
 			
@@ -35,7 +38,7 @@ public class RemoveUniversity implements HttpAction {
 		}
 		catch (Exception e) {
 			logger.error("Error occured in RemoveUniversity action", e);
+			throw new ActionException(e);
 		}
-		return null;
 	}
 }

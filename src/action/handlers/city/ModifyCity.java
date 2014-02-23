@@ -14,6 +14,9 @@ public class ModifyCity implements HttpAction {
 	private static final Logger logger = Logger.getLogger(ModifyCity.class);	
 
 	public String perform(HttpServletRequest request, HttpServletResponse response) throws ActionException {
+		if (request == null || response == null) {
+			throw new NullPointerException();
+		}
 		try {
 			logger.info("Prepare to modify city");
 
@@ -44,7 +47,7 @@ public class ModifyCity implements HttpAction {
 		}
 		catch (Exception e) {
 			logger.error("Error occured in ModifyCity action", e);
+			throw new ActionException(e);
 		}
-		return null;
 	}
 }

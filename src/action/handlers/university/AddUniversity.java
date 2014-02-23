@@ -14,6 +14,9 @@ public class AddUniversity implements HttpAction {
 	private static final Logger logger = Logger.getLogger(AddUniversity.class);	
 	
 	public String perform(HttpServletRequest request, HttpServletResponse response) throws ActionException {
+		if (request == null || response == null) {
+			throw new NullPointerException();
+		}
 		try {
 			logger.info("Prepare to add university");
 
@@ -38,8 +41,8 @@ public class AddUniversity implements HttpAction {
 			return "action?code=showAllUniversityInCity&parent_id=" + request.getParameter("parent_id");
 		}
 		catch (Exception e) {
-			logger.warn("Error occured in AddUniversity action", e);
+			logger.error("Error occured in AddUniversity action", e);
+			throw new ActionException(e);
 		}
-		return null;
 	}
 }

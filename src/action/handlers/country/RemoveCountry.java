@@ -14,6 +14,9 @@ public class RemoveCountry implements HttpAction {
 	private static final Logger logger = Logger.getLogger(RemoveCountry.class);		
 
 	public String perform(HttpServletRequest request, HttpServletResponse response) throws ActionException {
+		if (request == null || response == null) {
+			throw new NullPointerException();
+		}
 		try {		
 			logger.info("Prepare to remove country");
 			
@@ -31,7 +34,7 @@ public class RemoveCountry implements HttpAction {
 		}
 		catch (Exception e) {
 			logger.error("Error occured in RemoveCountry action", e);
+			throw new ActionException(e);
 		}
-		return null;
 	}
 }

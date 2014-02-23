@@ -17,6 +17,9 @@ public class ShowAllCityInRegion implements HttpAction {
 	private static final Logger logger = Logger.getLogger(ShowAllCityInRegion.class);	
 
 	public String perform(HttpServletRequest request, HttpServletResponse response) throws ActionException {
+		if (request == null || response == null) {
+			throw new NullPointerException();
+		}
 		try {
 			logger.info("Prepare to show all cities");
 
@@ -46,8 +49,8 @@ public class ShowAllCityInRegion implements HttpAction {
 			return "city/showAllInRegion.jsp";
 		}
 		catch (Exception e) {
-			logger.error("Error  occured in ShowAllRegionInRegion action", e);
+			logger.error("Error  occured in ShowAllCityInRegion action", e);
+			throw new ActionException(e);
 		}
-		return null;
 	}
 }

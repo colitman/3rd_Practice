@@ -14,6 +14,9 @@ public class RemoveRegion implements HttpAction {
 	private static final Logger logger = Logger.getLogger(RemoveRegion.class);		
 
 	public String perform(HttpServletRequest request, HttpServletResponse response) throws ActionException {
+		if (request == null || response == null) {
+			throw new NullPointerException();
+		}
 		try {
 			logger.info("Prepare to remove region");
 			
@@ -35,7 +38,7 @@ public class RemoveRegion implements HttpAction {
 		}	
 		catch (Exception e) {
 			logger.error("Error occured in RemoveRegion action", e);
+			throw new ActionException(e);
 		}
-		return null;
 	}
 }

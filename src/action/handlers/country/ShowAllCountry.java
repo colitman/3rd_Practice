@@ -17,6 +17,9 @@ public class ShowAllCountry implements HttpAction {
 	private static final Logger logger = Logger.getLogger(ShowAllCountry.class);	
 
 	public String perform(HttpServletRequest request, HttpServletResponse response) throws ActionException {
+		if (request == null || response == null) {
+			throw new NullPointerException();
+		}
 		try {
 			DOMConfigurator.configure("log4j.xml");
 			logger.info("Logger installed");
@@ -36,7 +39,7 @@ public class ShowAllCountry implements HttpAction {
 		}
 		catch (Exception e) {
 			logger.error("Error  occured in ShowAllCountry action", e);
+			throw new ActionException(e);
 		}
-		return null;
 	}
 }

@@ -17,6 +17,9 @@ public class ShowAllRegionInCountry implements HttpAction {
 	private static final Logger logger = Logger.getLogger(ShowAllRegionInCountry.class);	
 
 	public String perform(HttpServletRequest request, HttpServletResponse response) throws ActionException {
+		if (request == null || response == null) {
+			throw new NullPointerException();
+		}
 		try {
 			logger.info("Prepare to show all regions");
 
@@ -47,7 +50,7 @@ public class ShowAllRegionInCountry implements HttpAction {
 		}
 		catch (Exception e) {
 			logger.error("Error  occured in ShowAllRegionInCountry action", e);
+			throw new ActionException(e);
 		}
-		return null;
 	}
 }

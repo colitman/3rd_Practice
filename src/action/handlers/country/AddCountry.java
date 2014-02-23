@@ -14,6 +14,9 @@ public class AddCountry implements HttpAction {
 	private static final Logger logger = Logger.getLogger(AddCountry.class);
 
 	public String perform(HttpServletRequest request, HttpServletResponse response) throws ActionException {
+		if (request == null || response == null) {
+			throw new NullPointerException();
+		}
 		try {
 			logger.info("Prepare to add country");
 
@@ -39,9 +42,9 @@ public class AddCountry implements HttpAction {
 
 			return "action?code=showAllCountry";
 		} 	
-		catch (Exception e) {
+		catch (Exception e) {	
 			logger.error("Error occured in AddCountry action", e);
-		}	
-		return null;
+			throw new ActionException(e);
+		}
 	}
 }

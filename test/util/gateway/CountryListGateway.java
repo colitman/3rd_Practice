@@ -1,32 +1,37 @@
-package util;
+package util.gateway;
 
 import java.util.*;
-import hibernate.dao.*;
 import java.sql.*;
+import hibernate.dao.*;
+import hibernate.logic.*;
 
-public class ListGateway<T> implements Gateway<T> {
-	
+public class CountryListGateway<T> implements Gateway<T> {
+ 
+	private static int index = 1;
 	private List<T> list = new ArrayList<T>();
 
 	public void add(T entity) throws SQLException {
+		((Country) entity).setID(index++);
+		System.out.println(((Country) entity).getID());
 		list.add(entity);
 	}
 
 	public void modify(T entity) throws SQLException {
-		if (!list.contains(entity)) {
-			list.add(entity);
+		int id = ((Country) entity).getID();
+		if (get(null, id) != null) {
+			remove(get(null, id));
+			add(entity);
 		} else {
-			list.remove(entity);
-			list.add(entity);
+			add(entity);
 		}
 	}	
 
 	public T get(Class<T> className, int id) throws SQLException {
-		//for (int i = 0;  i < size(); i++) {
-		//	if (className.cast(list.get(i)).getID() == id) {
-		//		return list.get(i);
-		//	}
-		//}
+		for (int i = 0;  i < size(); i++) {
+			if (((Country) list.get(i)).getID() == id) {
+				return list.get(i);
+			}
+		}
 		return null;
 	}
 
@@ -35,14 +40,7 @@ public class ListGateway<T> implements Gateway<T> {
 	}
 
 	public Collection<T> getAllBy(Class className, int parentID) throws SQLException {
-		//Collection<T> collection = new ArrayList<T>();
-		//for (int i = 0; i < size(); i++) {
-		//	if (list.get(i).getParentID() == parentID) {
-		//		collection.add(list.get(i));
-		//	}
-		//}
-		//return collection;
-		return null;
+		return getAll(className);
 	}
 
 	public void remove(T entity) throws SQLException {
