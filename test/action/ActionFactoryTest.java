@@ -8,14 +8,22 @@ public class ActionFactoryTest {
 	
 	private static Collection<String> actions;
 
-	@Test(expected = NullPointerException.class)
+	@Test(expected = WrongCommandException.class)
 	public void nullTest() throws Exception {
 		ActionFactory.getInstance().build(null);
 	}
 
 	@Test(expected = WrongCommandException.class)
 	public void wrongCommandTest() throws Exception {
-		ActionFactory.getInstance().build("zzzzzzzzzzzzzzzzzz");
+		try {
+			ActionFactory.getInstance().build("zzzzzzzzzzzzzzzzzz");
+		}
+		catch (WrongCommandException e) {
+			throw new WrongCommandException(e);
+		}
+		catch (Exception ex) {
+		
+		}
 	}
 
 	@Test

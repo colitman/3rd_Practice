@@ -19,9 +19,6 @@ public class ActionFactory {
 	}
 	
 	public HttpAction build(String actionName) throws WrongCommandException {
-		if (actionName == null) {
-			throw new NullPointerException("action command can't be null");
-		}
 		try {
 			logger.info("Building HttpAction");
 
