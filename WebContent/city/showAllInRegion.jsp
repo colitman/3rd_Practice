@@ -14,9 +14,9 @@
 <h1>All Cities</h1>
 <div id="content">
     <div id="navPath">
-        <a href="/WebPrototype/action?code=showAllCountry">Top</a> >
-        <a href="/WebPrototype/action?code=showAllRegionInCountry&parent_id=${country.ID}">${country.name}</a> >
-        <a href="/WebPrototype/action?code=showAllCityInRegion&parent_id=${parent.ID}">${parent.name}</a>
+        <a href="action?code=showAllCountry">Top</a> >
+        <a href="action?code=showAllRegionInCountry&parent_id=${country.ID}">${country.name}</a> >
+        <a href="action?code=showAllCityInRegion&parent_id=${parent.ID}">${parent.name}</a>
     </div>
 	<div id="paramsCurrent">
         <span class="paramTitle">Name: </span>${parent.name}<br>
