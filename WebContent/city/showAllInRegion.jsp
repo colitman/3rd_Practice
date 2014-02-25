@@ -49,24 +49,24 @@
 		<div onclick="close_modal();" id="modal"></div><div id="modal_open"></div>
 		<div class="addNew popUpWrapper" id="newItemPopup">
 			<div class="popUpContent">
-				<form id="newCity" action="action?code=addCity&parent_id=${parent.ID}" method="POST">
+				<form id="newCity" onsubmit="return validate_form(this);" action="action?code=addCity&parent_id=${parent.ID}" method="POST">
 					<table class="noborder">
 						<tr>
 							<td>Name:</td>
 							<td>
-								<input name="name" type="text" />
+								<input name="name" type="text" placeholder="Name" />
 							</td>
 						</tr>
 						<tr>
 							<td>Population:</td>
 							<td>
-								<input name="population" type="text" />
+								<input name="population" type="text" placeholder="Population" />
 							</td>
 						</tr>
 						<tr>
 							<td>Square:</td>
 							<td>
-								<input name="square" type="text" />
+								<input name="square" type="text" placeholder="Square" />
 							</td>
 						</tr>
 						<tr>

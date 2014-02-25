@@ -18,3 +18,15 @@ function open_modal(el,w,h) {
 	d('modal_open').style.display = 'block'; // Показать модальное окно
 	d('modal_open').innerHTML = document.getElementById(el).innerHTML; // Вывести в модальном окне содержимое элемента "el"
 }
+
+function validate_form(form) {
+	var childNodes = form.children;
+	for (var i = 0; i < childNodes.length - 1; i++) {
+		var value = childNodes[i].value;
+		if (value === "") {
+			alert("Fill in the " + childNodes[i].placeholder);
+			return false;
+		}
+	}	
+	return true;
+}
