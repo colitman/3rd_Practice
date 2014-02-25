@@ -1,0 +1,2 @@
+java -classpath classes/;WebContent/WEB-INF/lib/junit-4.0.jar;WebContent/WEB-INF/lib/log4j-1.2.16.jar;WebContent/WEB-INF/classes/;WebContent/WEB-INF/lib/spring-2.5.6.jar;WebContent/WEB-INF/lib/slf4j.jar;WebContent/WEB-INF/lib/hibernate-core-4.2.5.Final.jar;WebContent/WEB-INF/lib/dom4j-1.6.1.jar;WebContent/WEB-INF/lib/hibernate-commons-annotations-4.0.4.Final.jar;WebContent/WEB-INF/lib/jboss-logging-3.1.3.GA.jar;WebContent/WEB-INF/lib/jboss-transaction-api_1.2_spec-1.0.0.Final.jar org.junit.runner.JUnitCore action.AllTests
+@pause

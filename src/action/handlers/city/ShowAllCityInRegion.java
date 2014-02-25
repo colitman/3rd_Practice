@@ -29,11 +29,15 @@ public class ShowAllCityInRegion implements HttpAction {
 
 			Gateway<Region> parentGateway = GatewayResolver.getGateway();
 			Region parent = parentGateway.get(Region.class, parentID);
-            logger.info("Get parent object");
+            		logger.info("Get parent object");
             
-            Gateway<Country> countryGateway = GatewayResolver.getGateway();
-            Country country = countryGateway.get(Country.class, parent.getParentID());
-            logger.info("Get country object");
+			if (parent != null) {
+				GatewayResolver.unsetGateway();
+        	    		Gateway<Country> countryGateway = GatewayResolver.getGateway();
+            			Country country = countryGateway.get(Country.class, parent.getParentID());
+            			logger.info("Get country object");
+				request.setAttribute("country", country);
+			}
 
 			Gateway<City> gateway = GatewayResolver.getGateway();
 			Collection<City> data = gateway.getAllBy(City.class, parentID);
@@ -45,8 +49,7 @@ public class ShowAllCityInRegion implements HttpAction {
 			logger.info("Set cities into request attributes");
 
 			request.setAttribute("parent", parent);
-            request.setAttribute("country", country);
-
+            		
 			logger.info("Set parent object into request attributes");
 			logger.info("Send forward to city/showAllInRegion.jsp page");
 

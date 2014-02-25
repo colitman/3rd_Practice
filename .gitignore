@@ -4,3 +4,4 @@ Servers
 *.classpath
 *.project
 TUI/.settings/
+/classes

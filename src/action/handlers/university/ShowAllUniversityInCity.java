@@ -32,13 +32,19 @@ public class ShowAllUniversityInCity implements HttpAction {
 
 			logger.info("Get parent object");
             
-            Gateway<Region> regionGateway = GatewayResolver.getGateway();
-            Region region = regionGateway.get(Region.class, parent.getParentID());
-            logger.info("Get region object");
+			if (parent != null) {
+				GatewayResolver.unsetGateway();
+        	    		Gateway<Region> regionGateway = GatewayResolver.getGateway();
+            			Region region = regionGateway.get(Region.class, parent.getParentID());
+            			logger.info("Get region object");
             
-            Gateway<Country> countryGateway = GatewayResolver.getGateway();
-            Country country = countryGateway.get(Country.class, region.getParentID());
-            logger.info("Get country object");
+            			Gateway<Country> countryGateway = GatewayResolver.getGateway();
+            			Country country = countryGateway.get(Country.class, region.getParentID());
+            			logger.info("Get country object");
+
+				request.setAttribute("region", region);
+            			request.setAttribute("country", country);
+			}
 
 			Gateway<University> gateway = GatewayResolver.getGateway();
 			Collection<University> data = gateway.getAllBy(University.class, parentID);
@@ -50,9 +56,7 @@ public class ShowAllUniversityInCity implements HttpAction {
 			logger.info("Set universities into request attributes");
 
 			request.setAttribute("parent", parent);
-            request.setAttribute("region", region);
-            request.setAttribute("country", country);
-
+            		
 			logger.info("Set parent object into request attributes");
 			logger.info("Send forward to university/showAllInCity.jsp page");
 
