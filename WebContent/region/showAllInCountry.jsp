@@ -13,6 +13,10 @@
 </div><hr>
 <h1>All Regions</h1>
 <div id="content">
+    <div id="navPath">
+        <a href="/WebPrototype/action?code=showAllCountry">Top</a> >
+        <a href="/WebPrototype/action?code=showAllRegionInCountry&parent_id=${parent.ID}">${parent.name}</a>
+    </div>
 	<div id="paramsCurrent">
         <span class="paramTitle">Name: </span>${parent.name}<br>
         <span class="paramTitle">Language: </span>${parent.language}<br>

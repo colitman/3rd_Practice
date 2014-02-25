@@ -33,8 +33,20 @@ public class ShowOneUniversity implements HttpAction {
 			LoggerUtils.info(logger, "DepartamentsCount:", String.valueOf(university.getDepartamentsCount()));
 			LoggerUtils.info(logger, "WWW:", university.getWWW());
 			LoggerUtils.info(logger, "ParentID:", String.valueOf(university.getParentID()));	
+            
+            Gateway<City> cityGateway = GatewayResolver.getGateway();
+			City city = cityGateway.get(City.class, university.getParentID());
+            
+            Gateway<Region> regionGateway = GatewayResolver.getGateway();
+			Region region = regionGateway.get(Region.class, city.getParentID());
+            
+            Gateway<Country> countryGateway = GatewayResolver.getGateway();
+			Country country = countryGateway.get(Country.class, region.getParentID());
 	
 			request.setAttribute("parent", university);
+            request.setAttribute("city", city);
+            request.setAttribute("region", region);
+            request.setAttribute("country", country);
 
 			logger.info("Set university into session");
 			logger.info("Send forward to showAllUniversity page");	

@@ -13,6 +13,9 @@
 </div><hr>
 <h1>All Countries</h1>
 <div id="content">
+    <div id="navPath">
+        <a href="/WebPrototype/action?code=showAllCountry">Top</a>
+    </div>
 	<div id="toolbar">
 		<c:import url="/toolbar.html"/>
 	</div>
