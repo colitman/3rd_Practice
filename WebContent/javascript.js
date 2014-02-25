@@ -20,13 +20,13 @@ function open_modal(el,w,h) {
 }
 
 function validate_form(form) {
-	var childNodes = form.children;
-	for (var i = 0; i < childNodes.length - 1; i++) {
+	var childNodes = form.getElementsByTagName("input");
+	for (var i = 0; i < childNodes.length; i++) {
 		var value = childNodes[i].value;
 		if (value === "") {
-			alert("Fill in the " + childNodes[i].placeholder);
-			return false;
+			alert("Fill in the " + childNodes[i].name);
+			return;
 		}
 	}	
-	return true;
+	form.submit();
 }

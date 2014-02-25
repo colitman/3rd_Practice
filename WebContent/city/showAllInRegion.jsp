@@ -106,7 +106,7 @@
 						</tr>
 						<tr>
 							<td>
-								<a href="javascript:document.getElementById('editRegion').submit()">Modify</a>
+								<a href="javascript:validate_form(document.getElementById('editRegion'))">Modify</a>
 							</td>
 							<td>
 								<a href="javascript:close_modal()">Cancel</a>

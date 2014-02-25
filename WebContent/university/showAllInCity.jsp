@@ -72,7 +72,7 @@
 						</tr>
 						<tr>
 							<td>
-								<a href="javascript:document.getElementById('newUni').submit()">Add</a>
+								<a href="javascript:validate_form(document.getElementById('newUni'))">Add</a>
 							</td>
 							<td>
 								<a href="javascript:close_modal();">Cancel</a>
@@ -107,7 +107,7 @@
 						</tr>
 						<tr>
 							<td>
-								<a href="javascript:document.getElementById('editCity').submit()">Modify</a>
+								<a href="javascript:validate_form(document.getElementById('editCity'))">Modify</a>
 							</td>
 							<td>
 								<a href="javascript:close_modal()">Cancel</a>

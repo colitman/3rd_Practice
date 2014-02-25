@@ -76,7 +76,7 @@
 						</tr>
 						<tr>
 							<td>
-								<a href="javascript:document.getElementById('newCountry').submit()">Add</a>
+								<a href="javascript:validate_form(document.getElementById('newCountry'))">Add</a>
 							</td>
 							<td>
 								<a href="javascript:close_modal()">Cancel</a>
