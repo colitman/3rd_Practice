@@ -14,14 +14,11 @@
 <h1>All Regions</h1>
 <div id="content">
 	<div id="paramsCurrent">
-		<form class="editCountry" action="action?code=modifyCountry&id=${parent_id}" method="POST">
-			<span class="paramTitle">Name: </span>${parent.name}<br>
-			<span class="paramTitle">Language: </span>${parent.language}<br>
-			<span class="paramTitle">Capital: </span>${parent.capital}<br>
-			<span class="paramTitle">Population: </span>${parent.population}<br>
-			<span class="paramTitle">Timezone: </span>${parent.timezone}<br>
-			<input type="submit" value="Edit">
-		</form>
+        <span class="paramTitle">Name: </span>${parent.name}<br>
+        <span class="paramTitle">Language: </span>${parent.language}<br>
+        <span class="paramTitle">Capital: </span>${parent.capital}<br>
+        <span class="paramTitle">Population: </span>${parent.population}<br>
+        <span class="paramTitle">Timezone: </span>${parent.timezone}<br>
 	</div>
 	<div id="toolbar">
 		<c:import url="/toolbar.html"/>

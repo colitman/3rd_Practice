@@ -90,5 +90,9 @@
 	<c:import url="/footer.html"/>
 </div>
 
+<script>
+    document.getElementById("editParentButton").style.display = 'none';
+</script>
+
 </body>
 </html>

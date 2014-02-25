@@ -14,11 +14,9 @@
 <h1>All Universities</h1>
 <div id="content">
 	<div id="paramsCurrent">
-		<form class="addNew" action="#" method="POST">
-			<span class="paramTitle">Name: </span>${parent.name}<br>
-			<span class="paramTitle">Departaments count: </span>${parent.departamentsCount}<br>
-			<span class="paramTitle">WWW: </span>${parent.WWW}<br>
-		</form>
+        <span class="paramTitle">Name: </span>${parent.name}<br>
+        <span class="paramTitle">Departaments count: </span>${parent.departamentsCount}<br>
+        <span class="paramTitle">WWW: </span>${parent.WWW}<br>
 	</div>
 	<br><br><br><hr>
 	<div id="toolbar">
@@ -65,6 +63,10 @@
 <hr style="clear: both;"><div id="footer">
 	<c:import url="/footer.html"/>
 </div>
+
+<script>
+    document.getElementById("addNewButton").style.display = 'none';
+</script>
 
 </body>
 </html>

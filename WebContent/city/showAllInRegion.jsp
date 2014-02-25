@@ -14,12 +14,9 @@
 <h1>All Cities</h1>
 <div id="content">
 	<div id="paramsCurrent">
-		<form class="editRegion" action="action?code=modifyRegion&id=${parent_id}" method="POST">
-			<span class="paramTitle">Name: </span>${parent.name}<br>
-			<span class="paramTitle">Population: </span>${parent.population}<br>
-			<span class="paramTitle">Square: </span>${parent.square}<br>
-			<input type="submit" value="Edit">
-		</form>
+        <span class="paramTitle">Name: </span>${parent.name}<br>
+        <span class="paramTitle">Population: </span>${parent.population}<br>
+        <span class="paramTitle">Square: </span>${parent.square}<br>
 	</div>
 	<div id="toolbar">
 		<c:import url="/toolbar.html"/>
