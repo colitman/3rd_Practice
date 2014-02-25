@@ -49,7 +49,7 @@
 		<div onclick="close_modal();" id="modal"></div><div id="modal_open"></div>
 		<div class="addNew popUpWrapper" id="newItemPopup">
 			<div class="popUpContent">
-				<form id="newCity" onsubmit="return validate_form(this);" action="action?code=addCity&parent_id=${parent.ID}" method="POST">
+				<form id="newCity" action="action?code=addCity&parent_id=${parent.ID}" method="POST">
 					<table class="noborder">
 						<tr>
 							<td>Name:</td>
@@ -71,7 +71,7 @@
 						</tr>
 						<tr>
 							<td>
-								<a href="javascript:document.getElementById('newCity').submit()">Add</a>
+								<a href="javascript:validate_form(document.getElementById('newCity'))">Add</a>
 							</td>
 							<td>
 								<a href="javascript:close_modal()">Cancel</a>
