@@ -60,13 +60,13 @@
 						<tr>
 							<td>Population:</td>
 							<td>
-								<input name="population" type="text" placeholder="Population" />
+								<input class="numeric" name="population" type="text" placeholder="Population" />
 							</td>
 						</tr>
 						<tr>
 							<td>Square:</td>
 							<td>
-								<input name="square" type="text" placeholder="Square" />
+								<input class="numeric" name="square" type="text" placeholder="Square" />
 							</td>
 						</tr>
 						<tr>
@@ -95,13 +95,13 @@
 						<tr>
 							<td>Population:</td>
 							<td>
-								<input name="population" type="text" value="${parent.population}" />
+								<input class="numeric" name="population" type="text" value="${parent.population}" />
 							</td>
 						</tr>
 						<tr>
 							<td>Square:</td>
 							<td>
-								<input name="square" type="text" value="${parent.square}" />
+								<input class="numeric" name="square" type="text" value="${parent.square}" />
 							</td>
 						</tr>
 						<tr>

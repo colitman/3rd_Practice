@@ -61,13 +61,13 @@
 						<tr>
 							<td>Population:</td>
 							<td>
-								<input name="population" type="text" />
+								<input class="numeric" name="population" type="text" />
 							</td>
 						</tr>
 						<tr>
 							<td>Square:</td>
 							<td>
-								<input name="square" type="text" />
+								<input class="numeric" name="square" type="text" />
 							</td>
 						</tr>
 						<tr>
@@ -108,13 +108,13 @@
 						<tr>
 							<td>Population:</td>
 							<td>
-								<input name="population" type="text" value=${parent.population} />
+								<input class="numeric" name="population" type="text" value=${parent.population} />
 							</td>
 						</tr>
 						<tr>
 							<td>Timezone:</td>
 							<td>
-								<input name="timezone" type="text" value=${parent.timezone} />
+								<input class="numeric" name="timezone" type="text" value=${parent.timezone} />
 							</td>
 						</tr>
 						<tr>

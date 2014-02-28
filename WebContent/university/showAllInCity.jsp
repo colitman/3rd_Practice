@@ -61,7 +61,7 @@
 						<tr>
 							<td>Amount of Depts:</td>
 							<td>
-								<input name="departs_count" type="text" />
+								<input class="numeric" name="departs_count" type="text" />
 							</td>
 						</tr>
 						<tr>
@@ -96,13 +96,13 @@
 						<tr>
 							<td>Population:</td>
 							<td>
-								<input name="population" type="text" value="${parent.population}" />
+								<input class="numeric" name="population" type="text" value="${parent.population}" />
 							</td>
 						</tr>
 						<tr>
 							<td>Square:</td>
 							<td>
-								<input name="square" type="text" value="${parent.square}" />
+								<input class="numeric" name="square" type="text" value="${parent.square}" />
 							</td>
 						</tr>
 						<tr>

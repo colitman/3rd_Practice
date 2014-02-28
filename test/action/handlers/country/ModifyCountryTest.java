@@ -1,5 +1,6 @@
 package action.handlers.country;
 
+import static org.junit.Assert.*;
 import org.junit.*;
 import action.*;
 import hibernate.logic.*;
@@ -8,7 +9,7 @@ import util.gateway.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 
-public class ModifyCountryTest extends Assert {
+public class ModifyCountryTest {
 
 	@Test(expected = NullPointerException.class)
 	public void nullTest() throws Exception {

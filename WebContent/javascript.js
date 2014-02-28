@@ -20,12 +20,17 @@ function open_modal(el,w,h) {
 }
 
 function validate_form(form) {
-	var childNodes = form.getElementsByTagName("input");
-	for (var i = 0; i < childNodes.length; i++) {
-		var value = childNodes[i].value;
-		if (value === "") {
-			alert("Fill in the " + childNodes[i].name);
+	var inputs = form.getElementsByTagName("input");
+	for (var i = 0; i < inputs.length; i++) {
+		if (inputs[i].value === "") {
+			alert("Fill in the " + inputs[i].name);
 			return;
+		} 
+		if (inputs[i].className === "numeric") {
+			if(isNaN(inputs[i].value)) {
+            			alert("Fill number in the " + inputs[i].name);
+             			return;
+			}
 		}
 	}	
 	form.submit();

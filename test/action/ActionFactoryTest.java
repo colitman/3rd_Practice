@@ -1,8 +1,11 @@
 package action;
 
+import static org.junit.Assert.*;
 import action.*;
 import org.junit.*;
 import java.util.*;
+import java.io.*;
+
 
 public class ActionFactoryTest {
 	
@@ -14,7 +17,7 @@ public class ActionFactoryTest {
 	}
 
 	@Test(expected = WrongCommandException.class)
-	public void wrongCommandTest() throws Exception {
+	public void wrongCommandTest() throws WrongCommandException {
 		try {
 			ActionFactory.getInstance().build("zzzzzzzzzzzzzzzzzz");
 		}
@@ -22,7 +25,7 @@ public class ActionFactoryTest {
 			throw new WrongCommandException(e);
 		}
 		catch (Exception ex) {
-		
+			fail("Unexpected exception : " + getStackTrace(ex));
 		}
 	}
 
@@ -61,5 +64,14 @@ public class ActionFactoryTest {
 	@AfterClass
 	public static void deinit() {
 		actions = null;
+	}
+	
+	private static String getStackTrace(Throwable t) {
+    		StringWriter sw = new StringWriter();
+    		PrintWriter pw = new PrintWriter(sw, true);
+    		t.printStackTrace(pw);
+    		pw.flush();
+    		sw.flush();
+    		return sw.toString();
 	}
 }

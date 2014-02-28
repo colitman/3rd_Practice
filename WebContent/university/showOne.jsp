@@ -44,7 +44,7 @@
 						<tr>
 							<td>Departaments count:</td>
 							<td>
-								<input name="departs_count" type="text" value="${parent.departamentsCount}" />
+								<input class="numeric" name="departs_count" type="text" value="${parent.departamentsCount}" />
 							</td>
 						</tr>
 						<tr>

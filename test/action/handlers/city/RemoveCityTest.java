@@ -1,5 +1,6 @@
 package action.handlers.city;
 
+import static org.junit.Assert.*;
 import org.junit.*;
 import action.*;
 import hibernate.logic.*;
@@ -8,7 +9,7 @@ import util.gateway.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 
-public class RemoveCityTest extends Assert {
+public class RemoveCityTest {
 
 	@Test(expected = NullPointerException.class)
 	public void nullTest() throws Exception {

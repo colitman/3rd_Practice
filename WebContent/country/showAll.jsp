@@ -59,19 +59,19 @@
 						<tr>
 							<td>Capital:</td>
 							<td>
-								<input name="capital" type="text" />
+								<input class="numeric" name="capital" type="text" />
 							</td>
 						</tr>
 						<tr>
 							<td>Population:</td>
 							<td>
-								<input name="population" type="text" />
+								<input class="numeric" name="population" type="text" />
 							</td>
 						</tr>
 						<tr>
 							<td>Timezone:</td>
 							<td>
-								<input name="timezone" type="text" />
+								<input class="numeric" name="timezone" type="text" />
 							</td>
 						</tr>
 						<tr>
