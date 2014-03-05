@@ -21,6 +21,8 @@ Literature:
 - Логгирование, часть 2: 
      - http://ru.wikipedia.org/wiki/Slf4J
      - http://www.slf4j.org/
+- Oracle SQL JOINS:
+     - http://ru.wikipedia.org/wiki/Join_%28SQL%29
 
 Possible problems:
 - Не найден файл конфигурации Hibernate:
